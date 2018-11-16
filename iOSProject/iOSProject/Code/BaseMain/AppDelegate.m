@@ -11,6 +11,7 @@
 #import "VoteLoginViewController.h"
 #import "OwnersTabBarViewController.h"
 #import "AdvertisementViewController.h"
+#import "GuidanceViewController.h"
 
 
 @interface AppDelegate ()
@@ -35,7 +36,14 @@
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor whiteColor], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
-    if ([AccountManager sharedInstance].isLogin) {
+    
+    //先判断是否是首次登陆
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
+    {
+        GuidanceViewController *guidanceViewController = [GuidanceViewController new];
+        self.window.rootViewController = guidanceViewController;
+       
+    }else if ([AccountManager sharedInstance].isLogin) {
         //有广告数据才进入广告页面
         NSArray<NSString *> * urlString = [[NSUserDefaults standardUserDefaults] objectForKey: AdvertisementURLs];
         if (urlString != nil && urlString.count > 0) {

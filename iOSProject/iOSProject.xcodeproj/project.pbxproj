@@ -64,6 +64,7 @@
 		1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C645219E9FB800C08114 /* BannerScrollView.m */; };
 		1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C649219EAA7100C08114 /* AdvertisementViewController.m */; };
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
+		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
 		1376DB829E8F2A6AFD7A2A3E /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,8 @@
 		1151C649219EAA7100C08114 /* AdvertisementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisementViewController.m; sourceTree = "<group>"; };
 		1151C64B219EAC9400C08114 /* YLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLConst.h; sourceTree = "<group>"; };
 		1151C64C219EAC9400C08114 /* YLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLConst.m; sourceTree = "<group>"; };
+		1151C64E219EB06D00C08114 /* GuidanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidanceViewController.h; sourceTree = "<group>"; };
+		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
 		12A08ECB809499985BFE69DF /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
 		F3048EB154CC17839965E089 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -526,6 +529,8 @@
 				1151C645219E9FB800C08114 /* BannerScrollView.m */,
 				1151C640219E9F5F00C08114 /* YLProgressView.h */,
 				1151C63E219E9F5F00C08114 /* YLProgressView.m */,
+				1151C64E219EB06D00C08114 /* GuidanceViewController.h */,
+				1151C64F219EB06D00C08114 /* GuidanceViewController.m */,
 			);
 			path = Advertisement;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				1151C6192192BEF600C08114 /* LocalSQliteManager.m in Sources */,
 				1151C5F72192BEF600C08114 /* UIImageView+Extension.m in Sources */,
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
+				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
 				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
