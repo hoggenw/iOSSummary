@@ -28,4 +28,5 @@ typedef NS_ENUM(NSInteger, PhoneType) {
 + (BOOL)isPhoneXPlus;
 + (NSString *)getSystemInfo;
 + (NSString *)getAPPVersion;
++(BOOL)isiPhoneXLater;
 @end

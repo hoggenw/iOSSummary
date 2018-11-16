@@ -9,14 +9,15 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
-#define kNavigationHeight  (kDevice_Is_iPhoneX ? 88 : 64)
+#define ifiPhoneXLater ([YLDeviceUtil isiPhoneXLater])
+#define kNavigationHeight  (ifiPhoneXLater ? 88 : 64)
 #define ScreenWidth   [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
 #define ThemeColor [UIColor colorWithRed:40/255.0 green:197/255.0 blue:190/255.0 alpha:1]
 #define K 1024
 #define M 1024*1024
 #define G 1024*1024*1024
+#define AdvertisementURLs @"AdvertisementURLs"
 
 
 

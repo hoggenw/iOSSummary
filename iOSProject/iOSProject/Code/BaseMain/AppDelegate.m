@@ -10,6 +10,7 @@
 #import "YLUITabBarViewController.h"
 #import "VoteLoginViewController.h"
 #import "OwnersTabBarViewController.h"
+#import "AdvertisementViewController.h"
 
 
 @interface AppDelegate ()
@@ -34,12 +35,20 @@
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor whiteColor], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window makeKeyAndVisible];
     if ([AccountManager sharedInstance].isLogin) {
-      
-        OwnersTabBarViewController * ownerTabVC = [OwnersTabBarViewController new];
-        self.window.rootViewController = ownerTabVC;
+        //有广告数据才进入广告页面
+        NSArray<NSString *> * urlString = [[NSUserDefaults standardUserDefaults] objectForKey: AdvertisementURLs];
+        if (urlString != nil && urlString.count > 0) {
+            AdvertisementViewController *tb = [AdvertisementViewController new];
+            tb.imageUrls = [urlString copy];
+            [self.window setRootViewController:tb];
+        }else {
+            [AdvertisementViewController new];
+            OwnersTabBarViewController * ownerTabVC = [OwnersTabBarViewController new];
+            self.window.rootViewController = ownerTabVC;
+        }
+        
+       
     }else{
        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[VoteLoginViewController new]];
     }
@@ -72,6 +81,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (UIWindow *)window
+{
+    if(!_window)
+    {
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [_window makeKeyAndVisible];
+    }
+    return _window;
 }
 
 

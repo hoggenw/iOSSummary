@@ -11,6 +11,7 @@
 
 #import "YLDeviceUtil.h"
 #import "UserDefUtils.h"
+#import "YLConst.h"
 
 
 @protocol ActionSelcetControlDelegate <NSObject>

@@ -60,6 +60,10 @@
 		1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5EE2192BEF500C08114 /* CLLocation+Sino.m */; };
 		1151C6382192BEF600C08114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1151C5F02192BEF600C08114 /* Assets.xcassets */; };
 		1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C63B2192C0BA00C08114 /* OwnersTabBarViewController.m */; };
+		1151C642219E9F5F00C08114 /* YLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C63E219E9F5F00C08114 /* YLProgressView.m */; };
+		1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C645219E9FB800C08114 /* BannerScrollView.m */; };
+		1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C649219EAA7100C08114 /* AdvertisementViewController.m */; };
+		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1376DB829E8F2A6AFD7A2A3E /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +188,14 @@
 		1151C5F02192BEF600C08114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1151C63A2192C0BA00C08114 /* OwnersTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnersTabBarViewController.h; sourceTree = "<group>"; };
 		1151C63B2192C0BA00C08114 /* OwnersTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnersTabBarViewController.m; sourceTree = "<group>"; };
+		1151C63E219E9F5F00C08114 /* YLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLProgressView.m; sourceTree = "<group>"; };
+		1151C640219E9F5F00C08114 /* YLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLProgressView.h; sourceTree = "<group>"; };
+		1151C644219E9FB800C08114 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerScrollView.h; sourceTree = "<group>"; };
+		1151C645219E9FB800C08114 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
+		1151C648219EAA7100C08114 /* AdvertisementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisementViewController.h; sourceTree = "<group>"; };
+		1151C649219EAA7100C08114 /* AdvertisementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisementViewController.m; sourceTree = "<group>"; };
+		1151C64B219EAC9400C08114 /* YLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLConst.h; sourceTree = "<group>"; };
+		1151C64C219EAC9400C08114 /* YLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLConst.m; sourceTree = "<group>"; };
 		12A08ECB809499985BFE69DF /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
 		F3048EB154CC17839965E089 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,27 +299,27 @@
 		1151C54B2192BEF500C08114 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1151C55F2192BEF500C08114 /* ExtensionHeader.h */,
 				1151C54C2192BEF500C08114 /* UIResponder+Extension.h */,
 				1151C54D2192BEF500C08114 /* UIImageView+Extension.h */,
 				1151C54E2192BEF500C08114 /* NSString+Extension.h */,
+				1151C55C2192BEF500C08114 /* NSString+Extension.m */,
 				1151C54F2192BEF500C08114 /* NSTimer+Extension.h */,
+				1151C55A2192BEF500C08114 /* NSTimer+Extension.m */,
 				1151C5502192BEF500C08114 /* UIColor+Extension.h */,
+				1151C55B2192BEF500C08114 /* UIColor+Extension.m */,
+				1151C5582192BEF500C08114 /* UILabel+Extension.h */,
 				1151C5512192BEF500C08114 /* UILabel+Extension.m */,
 				1151C5522192BEF500C08114 /* NSDate+Extension.h */,
+				1151C5592192BEF500C08114 /* NSDate+Extension.m */,
 				1151C5532192BEF500C08114 /* UIView+Extension.h */,
-				1151C5542192BEF500C08114 /* UIViewController+Extension.m */,
+				1151C5602192BEF500C08114 /* UIView+Extension.m */,
+				1151C55D2192BEF500C08114 /* UIImage+Extension.h */,
 				1151C5552192BEF500C08114 /* UIImage+Extension.m */,
 				1151C5562192BEF500C08114 /* UIImageView+Extension.m */,
 				1151C5572192BEF500C08114 /* UIResponder+Extension.m */,
-				1151C5582192BEF500C08114 /* UILabel+Extension.h */,
-				1151C5592192BEF500C08114 /* NSDate+Extension.m */,
-				1151C55A2192BEF500C08114 /* NSTimer+Extension.m */,
-				1151C55B2192BEF500C08114 /* UIColor+Extension.m */,
-				1151C55C2192BEF500C08114 /* NSString+Extension.m */,
-				1151C55D2192BEF500C08114 /* UIImage+Extension.h */,
 				1151C55E2192BEF500C08114 /* UIViewController+Extension.h */,
-				1151C55F2192BEF500C08114 /* ExtensionHeader.h */,
-				1151C5602192BEF500C08114 /* UIView+Extension.m */,
+				1151C5542192BEF500C08114 /* UIViewController+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -315,6 +327,7 @@
 		1151C5612192BEF500C08114 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1151C63D219E9F1900C08114 /* Helper */,
 				1151C6392192C0A300C08114 /* Base */,
 				1151C59B2192BEF500C08114 /* Login */,
 			);
@@ -362,13 +375,13 @@
 			children = (
 				1151C5A52192BEF500C08114 /* ManagersHeader.h */,
 				1151C5A62192BEF500C08114 /* NetworkManager.h */,
-				1151C5A72192BEF500C08114 /* LocalSQliteManager.h */,
-				1151C5A82192BEF500C08114 /* UserModel.m */,
-				1151C5A92192BEF500C08114 /* AccountManager.m */,
-				1151C5AA2192BEF500C08114 /* LocalSQliteManager.m */,
 				1151C5AB2192BEF500C08114 /* NetworkManager.m */,
 				1151C5AC2192BEF500C08114 /* AccountManager.h */,
+				1151C5A92192BEF500C08114 /* AccountManager.m */,
+				1151C5A72192BEF500C08114 /* LocalSQliteManager.h */,
+				1151C5AA2192BEF500C08114 /* LocalSQliteManager.m */,
 				1151C5AD2192BEF500C08114 /* UserModel.h */,
+				1151C5A82192BEF500C08114 /* UserModel.m */,
 			);
 			path = Management;
 			sourceTree = "<group>";
@@ -376,11 +389,13 @@
 		1151C5AE2192BEF500C08114 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				1151C5AF2192BEF500C08114 /* YLDeviceUtil.h */,
-				1151C5B02192BEF500C08114 /* UserDefUtils.h */,
 				1151C5B12192BEF500C08114 /* UtilsHeader.h */,
-				1151C5B22192BEF500C08114 /* UserDefUtils.m */,
+				1151C5AF2192BEF500C08114 /* YLDeviceUtil.h */,
 				1151C5B32192BEF500C08114 /* YLDeviceUtil.m */,
+				1151C5B02192BEF500C08114 /* UserDefUtils.h */,
+				1151C5B22192BEF500C08114 /* UserDefUtils.m */,
+				1151C64B219EAC9400C08114 /* YLConst.h */,
+				1151C64C219EAC9400C08114 /* YLConst.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -388,21 +403,21 @@
 		1151C5B42192BEF500C08114 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				1151C5B52192BEF500C08114 /* ZJImageMagnification.h */,
-				1151C5B62192BEF500C08114 /* YLWebViewController.h */,
-				1151C5B72192BEF500C08114 /* DatePickerView.h */,
-				1151C5B82192BEF500C08114 /* YLHintView.m */,
-				1151C5B92192BEF500C08114 /* YLWKWebView.m */,
-				1151C5BA2192BEF500C08114 /* YLLabel.h */,
-				1151C5BB2192BEF500C08114 /* PopupView.m */,
-				1151C5BC2192BEF500C08114 /* DatePickerView.m */,
-				1151C5BD2192BEF500C08114 /* YLWebViewController.m */,
-				1151C5BE2192BEF500C08114 /* ZJImageMagnification.m */,
 				1151C5BF2192BEF500C08114 /* CustomHeader.h */,
-				1151C5C02192BEF500C08114 /* PopupView.h */,
-				1151C5C12192BEF500C08114 /* YLLabel.m */,
-				1151C5C22192BEF500C08114 /* YLWKWebView.h */,
+				1151C5B62192BEF500C08114 /* YLWebViewController.h */,
+				1151C5BD2192BEF500C08114 /* YLWebViewController.m */,
+				1151C5B72192BEF500C08114 /* DatePickerView.h */,
+				1151C5BC2192BEF500C08114 /* DatePickerView.m */,
 				1151C5C32192BEF500C08114 /* YLHintView.h */,
+				1151C5B82192BEF500C08114 /* YLHintView.m */,
+				1151C5BA2192BEF500C08114 /* YLLabel.h */,
+				1151C5C12192BEF500C08114 /* YLLabel.m */,
+				1151C5B52192BEF500C08114 /* ZJImageMagnification.h */,
+				1151C5BE2192BEF500C08114 /* ZJImageMagnification.m */,
+				1151C5C02192BEF500C08114 /* PopupView.h */,
+				1151C5BB2192BEF500C08114 /* PopupView.m */,
+				1151C5C22192BEF500C08114 /* YLWKWebView.h */,
+				1151C5B92192BEF500C08114 /* YLWKWebView.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -492,6 +507,27 @@
 				1151C63B2192C0BA00C08114 /* OwnersTabBarViewController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		1151C63D219E9F1900C08114 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1151C647219EA4FF00C08114 /* Advertisement */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1151C647219EA4FF00C08114 /* Advertisement */ = {
+			isa = PBXGroup;
+			children = (
+				1151C648219EAA7100C08114 /* AdvertisementViewController.h */,
+				1151C649219EAA7100C08114 /* AdvertisementViewController.m */,
+				1151C644219E9FB800C08114 /* BannerScrollView.h */,
+				1151C645219E9FB800C08114 /* BannerScrollView.m */,
+				1151C640219E9F5F00C08114 /* YLProgressView.h */,
+				1151C63E219E9F5F00C08114 /* YLProgressView.m */,
+			);
+			path = Advertisement;
 			sourceTree = "<group>";
 		};
 		288C23F5C07629769CBD476E /* Frameworks */ = {
@@ -667,6 +703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1151C61A2192BEF600C08114 /* NetworkManager.m in Sources */,
+				1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */,
 				1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */,
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
@@ -680,6 +717,7 @@
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
 				1151C62D2192BEF600C08114 /* LPDPhotoArrangeCell.m in Sources */,
 				1151C61F2192BEF600C08114 /* PopupView.m in Sources */,
+				1151C642219E9F5F00C08114 /* YLProgressView.m in Sources */,
 				1151C6202192BEF600C08114 /* DatePickerView.m in Sources */,
 				1151C52D2192BE0C00C08114 /* main.m in Sources */,
 				1151C62C2192BEF600C08114 /* LPDProgressView.m in Sources */,
@@ -694,6 +732,7 @@
 				1151C5FA2192BEF600C08114 /* NSTimer+Extension.m in Sources */,
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
+				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
 				1151C5F92192BEF600C08114 /* NSDate+Extension.m in Sources */,
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
@@ -707,6 +746,7 @@
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
+				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
 				1151C62E2192BEF600C08114 /* UpLoadDataModel.m in Sources */,
 				1151C6282192BEF600C08114 /* YLUIDocumentPickerViewViewController.m in Sources */,
 				1151C5F22192BEF600C08114 /* YLNavigationController.m in Sources */,

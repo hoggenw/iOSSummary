@@ -83,4 +83,13 @@
     version = [infoDic objectForKey:@"CFBundleVersion"];
     return version;
 }
++(BOOL)isiPhoneXLater{
+    if (@available(iOS 11.0, *)) {
+        return UIApplication.sharedApplication.keyWindow.safeAreaInsets.bottom > 0.0 ? true : false;
+    } else {
+        return  false;
+    }
+}
+
+
 @end
