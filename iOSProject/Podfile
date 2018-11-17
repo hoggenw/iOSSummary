@@ -13,6 +13,7 @@ target "iOSProject" do
     pod 'Masonry'
     pod 'MBProgressHUD'
 	pod 'SSKeychain'
+    pod 'YYImage'
 
 end
 

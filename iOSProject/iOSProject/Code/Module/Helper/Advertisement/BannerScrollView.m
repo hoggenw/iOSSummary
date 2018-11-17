@@ -9,6 +9,7 @@
 #import "BannerScrollView.h"
 #import "NSTimer+Extension.h"
 #import "YLProgressView.h"
+#import "UIImage+GIF.h"
 
 #define VIEW_WIDTH  [[UIScreen mainScreen]bounds].size.width
 #define VIEW_HEIGHT CGRectGetHeight(self.bounds)
@@ -67,7 +68,19 @@
             imageView.userInteractionEnabled = YES;
             imageView.tag = 200 + i;
             [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapped:)]];
-            [imageView sd_setImageWithURL:[NSURL URLWithString: urls[i]]];
+            NSString * imageString =  urls[i];
+            if ([[imageString componentsSeparatedByString:@"."].lastObject isEqualToString:@"gif"]) {
+                SDWebImageManager *manager = [SDWebImageManager sharedManager];
+                NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:imageString]];
+                SDImageCache* cache = [SDImageCache sharedImageCache];
+                //此方法会先从memory中取。
+                
+                NSData  *imageData  = [cache diskImageDataForKey:key];
+                imageView.image = [UIImage sd_animatedGIFWithData:imageData];
+            }else{
+               [imageView sd_setImageWithURL: [NSURL URLWithString: imageString]];
+            }
+            
             [_scrollView addSubview:imageView];
         }
         _progressView = [[YLProgressView alloc] initWithFrame:CGRectMake(VIEW_WIDTH - 75, VIEW_HEIGHT - 80, 50, 50)];

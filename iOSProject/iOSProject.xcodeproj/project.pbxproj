@@ -199,6 +199,7 @@
 		1151C64C219EAC9400C08114 /* YLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLConst.m; sourceTree = "<group>"; };
 		1151C64E219EB06D00C08114 /* GuidanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidanceViewController.h; sourceTree = "<group>"; };
 		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
+		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		12A08ECB809499985BFE69DF /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
 		F3048EB154CC17839965E089 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,6 +247,7 @@
 		1151C51C2192BE0B00C08114 /* iOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				1151C651219ECD1C00C08114 /* iOSProject.entitlements */,
 				1151C5422192BEF500C08114 /* Code */,
 				1151C5EF2192BEF600C08114 /* Resources */,
 				1151C5412192BE3300C08114 /* Supporting file */,
@@ -603,6 +605,11 @@
 				TargetAttributes = {
 					1151C5192192BE0B00C08114 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1151C5312192BE0C00C08114 = {
 						CreatedOnToolsVersion = 10.1;
@@ -682,6 +689,7 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -693,6 +701,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -901,8 +910,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KD59NK3467;
+				DEVELOPMENT_TEAM = 87F6Z4326W;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSProject/Code/BaseMain/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -910,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectComeOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -922,8 +932,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KD59NK3467;
+				DEVELOPMENT_TEAM = 87F6Z4326W;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSProject/Code/BaseMain/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -931,7 +942,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectComeOn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

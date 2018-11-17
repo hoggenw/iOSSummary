@@ -37,9 +37,10 @@
                                                        [UIColor whiteColor], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
     
+    AdvertisementViewController *tb = [AdvertisementViewController new];
     //先判断是否是首次登陆
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
-    {
+    {[AdvertisementViewController new];
         GuidanceViewController *guidanceViewController = [GuidanceViewController new];
         self.window.rootViewController = guidanceViewController;
        
@@ -47,11 +48,10 @@
         //有广告数据才进入广告页面
         NSArray<NSString *> * urlString = [[NSUserDefaults standardUserDefaults] objectForKey: AdvertisementURLs];
         if (urlString != nil && urlString.count > 0) {
-            AdvertisementViewController *tb = [AdvertisementViewController new];
             tb.imageUrls = [urlString copy];
             [self.window setRootViewController:tb];
         }else {
-            [AdvertisementViewController new];
+            
             OwnersTabBarViewController * ownerTabVC = [OwnersTabBarViewController new];
             self.window.rootViewController = ownerTabVC;
         }
@@ -62,6 +62,51 @@
     }
     
     return YES;
+}
+
+#pragma mark - Universal link 由于微信社交app屏蔽了此功能，故而基本没有啥用
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler{
+    //NSURL *webpageURL = userActivity.webpageURL;
+    //NSLog(@"test webpageURL = %@",webpageURL);
+    if ([userActivity.activityType isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        
+        NSURL *webpageURL = userActivity.webpageURL;
+        NSString * valueString = [webpageURL.absoluteString componentsSeparatedByString: @"?params="].firstObject;
+        NSString * needString = [valueString componentsSeparatedByString:@"85zn.ulml.mob.com/"].lastObject;
+        //NSLog(@"needString: %@",needString);
+        NSArray * infoArray = [needString componentsSeparatedByString:@"&"];
+        
+        NSString *host = webpageURL.host;
+        // NSLog(@"test host = %@， infoArray.count ： %@",host, @(infoArray.count ));
+        if ([host isEqualToString:@"85zn.ulml.mob.com"] && (infoArray.count == 2)) {
+            NSString * goodsId = infoArray.firstObject;
+            NSString * telphoneNUmber = infoArray.lastObject;
+
+ 
+            //NSLog(@"网址首页");
+        }
+        
+    }
+    
+    return YES;
+    
+}
+
+#pragma mark - deviceToken
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString * string = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                          stringByReplacingOccurrencesOfString: @">" withString: @""]
+                         stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"%@", string);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"获取deviceToken" message: string preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       
+    }];
+    [alertController addAction:okAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 

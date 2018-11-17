@@ -126,9 +126,9 @@
         }
     }
 }
-
+#pragma mark - todo登陆z设置为已登录
 - (BOOL)isLogin {
-    return (([self fetchAccessToken] && [self fetchAccessToken] .length > 0));
+    return   true;//(([self fetchAccessToken] && [self fetchAccessToken] .length > 0));
 }
 
 - (void)missLoginDeal {
