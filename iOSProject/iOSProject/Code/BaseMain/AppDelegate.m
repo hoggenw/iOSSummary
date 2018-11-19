@@ -31,7 +31,7 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//改变状态栏的颜色为白色
     //设置返回字体颜色
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
+    
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        [UIColor whiteColor], NSForegroundColorAttributeName, nil]
@@ -43,7 +43,7 @@
     {[AdvertisementViewController new];
         GuidanceViewController *guidanceViewController = [GuidanceViewController new];
         self.window.rootViewController = guidanceViewController;
-       
+        
     }else if ([AccountManager sharedInstance].isLogin) {
         //有广告数据才进入广告页面
         NSArray<NSString *> * urlString = [[NSUserDefaults standardUserDefaults] objectForKey: AdvertisementURLs];
@@ -56,13 +56,50 @@
             self.window.rootViewController = ownerTabVC;
         }
         
-       
+        
     }else{
-       self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[VoteLoginViewController new]];
+        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[VoteLoginViewController new]];
     }
     
+    //注冊消息推送
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    // 2.注册远程推送 或者 用application代理的方式注册
+    [application registerForRemoteNotifications];
     return YES;
 }
+
+// iOS8+需要使用这个方法
+//- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+//    // 检查当前用户是否允许通知,如果允许就调用 registerForRemoteNotifications
+//    if (notificationSettings.types != UIUserNotificationTypeNone) {
+//        [application registerForRemoteNotifications];
+//    }
+//}
+
+#pragma mark - deviceToken
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString * string = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                          stringByReplacingOccurrencesOfString: @">" withString: @""]
+                         stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"%@", string);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"获取deviceToken" message: string preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:okAction];
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"注册远程通知失败: %@", error);
+}
+
+
 
 #pragma mark - Universal link 由于微信社交app屏蔽了此功能，故而基本没有啥用
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler{
@@ -81,8 +118,6 @@
         if ([host isEqualToString:@"85zn.ulml.mob.com"] && (infoArray.count == 2)) {
             NSString * goodsId = infoArray.firstObject;
             NSString * telphoneNUmber = infoArray.lastObject;
-
- 
             //NSLog(@"网址首页");
         }
         
@@ -92,22 +127,7 @@
     
 }
 
-#pragma mark - deviceToken
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-    NSString * string = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
-                          stringByReplacingOccurrencesOfString: @">" withString: @""]
-                         stringByReplacingOccurrencesOfString: @" " withString: @""];
-    
-    NSLog(@"%@", string);
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"获取deviceToken" message: string preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-       
-    }];
-    [alertController addAction:okAction];
-    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
-}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -149,3 +169,4 @@
 
 
 @end
+
