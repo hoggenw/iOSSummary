@@ -17,7 +17,7 @@
     // 友盟分享
  
     /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx3a3022ee215e9b51" appSecret:@"7c57154bf040087296fbd0e796ab6787" redirectURL:@"https://hoggen.top"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx89e14834538c5665" appSecret:@"314873cade5678f73210b8179661948b" redirectURL:@"https://hoggen.top"];
     /*
      * 移除相应平台的分享，如微信收藏
      */
@@ -25,7 +25,7 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105457560"/*设置QQ平台的appID*/  appSecret:@"DDPKWAREc6hyk4oE" redirectURL:@"https://hoggen.top"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105457560" appSecret:@"DDPKWAREc6hyk4oE" redirectURL:@"https://hoggen.top"];
 
 #ifdef DEBUG
     //打开调试日志
