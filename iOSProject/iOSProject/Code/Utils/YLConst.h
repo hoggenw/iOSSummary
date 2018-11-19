@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 无效token的通知名 */
 extern NSString * const Notification_InvalidToken;
-
+extern NSString * const YLThirdSDKUMSocialAppkey;
 @interface YLConst : NSObject
 
 @end

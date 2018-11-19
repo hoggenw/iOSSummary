@@ -12,6 +12,7 @@
 #import "YLDeviceUtil.h"
 #import "UserDefUtils.h"
 #import "YLConst.h"
+#import "YLUMengHelper.h"
 
 
 @protocol ActionSelcetControlDelegate <NSObject>
@@ -29,17 +30,11 @@
 
 typedef NS_ENUM(NSInteger, CellType){
     Default = 0,
-    VoteStyle = 1,
-    HouseStyle = 2,
-    HouseDetailStyle = 3,
-    HouseItemStyle = 4,
-    CouncilVoteStyle = 5,
+    
 };
 
 typedef NS_ENUM(NSInteger, PopupViewType){
     DefaultStyle  = 0,
-    VoteInfoStyle = 1,
-    ProjectInfoStyle = 2,
-    CoucilVoteStyle = 3,
+  
 };
 #endif /* UtilsHeader_h */

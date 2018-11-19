@@ -413,36 +413,6 @@
 
 - (void)sureButtonAction {
     
-    if (self.type == ProjectInfoStyle) {
-        NSDictionary * param = @{@"building_name":self.villageFeild.text,@"title":self.titleFeild.text,@"initiator":self.initiatorFeild.text,@"vote_start":self.timeBeginFeild.text,@"vote_end":self.timeEndField.text};
-        
-        [self removeFromSuperview];
-        [self.backView removeFromSuperview];
-        self.backView = nil;
-        if ([self.delegate respondsToSelector: @selector(actionWithInfo:)]) {
-            [self.delegate actionWithInfo: param];
-        }
-    }else if (self.type == ProjectInfoStyle){
-        NSDictionary * param = @{@"building_name":self.villageFeild.text,@"title":self.titleFeild.text,@"initiator":self.initiatorFeild.text,@"vote_start":self.timeBeginFeild.text,@"vote_end":self.timeEndField.text};
-        
-        [self removeFromSuperview];
-        [self.backView removeFromSuperview];
-        self.backView = nil;
-        if ([self.delegate respondsToSelector: @selector(actionWithInfo:)]) {
-            [self.delegate actionWithInfo: param];
-        }
-    }
-    else{
-        NSDictionary * param = @{@"building_name":self.villageFeild.text,@"title":self.titleFeild.text,@"initiator":self.initiatorFeild.text,@"vote_start":self.timeBeginFeild.text,@"vote_end":self.timeEndField.text};
-        
-        [self removeFromSuperview];
-        [self.backView removeFromSuperview];
-        self.backView = nil;
-        if ([self.delegate respondsToSelector: @selector(actionWithInfo:)]) {
-            [self.delegate actionWithInfo: param];
-        }
-    }
-    
    
     
 }

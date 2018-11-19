@@ -11,7 +11,5 @@
 
 /** 无效token的通知名 */
 NSString * const Notification_InvalidToken = @"InvalidTokenNotification";
+NSString * const YLThirdSDKUMSocialAppkey = @"5bf283a7b465f5a2ab0001e1";
 
-@implementation YLConst
-
-@end

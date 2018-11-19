@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
+		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
+		1135786D21A2A8CF00DDEA74 /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786C21A2A8CF00DDEA74 /* DefaultTableViewCell.m */; };
+		1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786F21A2A8F800DDEA74 /* DefualtCellModel.m */; };
+		1135787321A2B15300DDEA74 /* YLUMengHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135787221A2B15300DDEA74 /* YLUMengHelper.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -79,6 +84,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
+		1135785C21A298E100DDEA74 /* YLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLTableView.m; sourceTree = "<group>"; };
+		1135786521A29D3A00DDEA74 /* Page1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page1ViewController.h; sourceTree = "<group>"; };
+		1135786621A29D3A00DDEA74 /* Page1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page1ViewController.m; sourceTree = "<group>"; };
+		1135786B21A2A8CF00DDEA74 /* DefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewCell.h; sourceTree = "<group>"; };
+		1135786C21A2A8CF00DDEA74 /* DefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewCell.m; sourceTree = "<group>"; };
+		1135786E21A2A8F800DDEA74 /* DefualtCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefualtCellModel.h; sourceTree = "<group>"; };
+		1135786F21A2A8F800DDEA74 /* DefualtCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefualtCellModel.m; sourceTree = "<group>"; };
+		1135787121A2B15300DDEA74 /* YLUMengHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUMengHelper.h; sourceTree = "<group>"; };
+		1135787221A2B15300DDEA74 /* YLUMengHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUMengHelper.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -224,6 +239,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1135785A21A298B500DDEA74 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				1135786B21A2A8CF00DDEA74 /* DefaultTableViewCell.h */,
+				1135786C21A2A8CF00DDEA74 /* DefaultTableViewCell.m */,
+				1135785B21A298E100DDEA74 /* YLTableView.h */,
+				1135785C21A298E100DDEA74 /* YLTableView.m */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		1135785E21A29A7A00DDEA74 /* Pages1 */ = {
+			isa = PBXGroup;
+			children = (
+				1135785F21A29AC100DDEA74 /* Controllers */,
+				1135786021A29AC100DDEA74 /* Modles */,
+				1135786121A29AC100DDEA74 /* Views */,
+			);
+			path = Pages1;
+			sourceTree = "<group>";
+		};
+		1135785F21A29AC100DDEA74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1135786521A29D3A00DDEA74 /* Page1ViewController.h */,
+				1135786621A29D3A00DDEA74 /* Page1ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1135786021A29AC100DDEA74 /* Modles */ = {
+			isa = PBXGroup;
+			children = (
+				1135786E21A2A8F800DDEA74 /* DefualtCellModel.h */,
+				1135786F21A2A8F800DDEA74 /* DefualtCellModel.m */,
+			);
+			path = Modles;
+			sourceTree = "<group>";
+		};
+		1135786121A29AC100DDEA74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1151C5112192BE0B00C08114 = {
 			isa = PBXGroup;
 			children = (
@@ -332,9 +393,11 @@
 		1151C5612192BEF500C08114 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1151C59B2192BEF500C08114 /* Login */,
+				1135785E21A29A7A00DDEA74 /* Pages1 */,
+				1135785A21A298B500DDEA74 /* CommonViews */,
 				1151C63D219E9F1900C08114 /* Helper */,
 				1151C6392192C0A300C08114 /* Base */,
-				1151C59B2192BEF500C08114 /* Login */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -401,6 +464,8 @@
 				1151C5B22192BEF500C08114 /* UserDefUtils.m */,
 				1151C64B219EAC9400C08114 /* YLConst.h */,
 				1151C64C219EAC9400C08114 /* YLConst.m */,
+				1135787121A2B15300DDEA74 /* YLUMengHelper.h */,
+				1135787221A2B15300DDEA74 /* YLUMengHelper.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -566,6 +631,7 @@
 				1151C5172192BE0B00C08114 /* Frameworks */,
 				1151C5182192BE0B00C08114 /* Resources */,
 				B731D48F968E16FFA549D570 /* [CP] Embed Pods Frameworks */,
+				F9DE1200783A1025AD5EC375 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -689,7 +755,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -701,12 +766,29 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9DE1200783A1025AD5EC375 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-resources.sh",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -721,6 +803,7 @@
 				1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */,
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
+				1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */,
 				1151C6332192BEF600C08114 /* LPDPhotoPreviewCell.m in Sources */,
 				1151C5F82192BEF600C08114 /* UIResponder+Extension.m in Sources */,
 				1151C5F52192BEF600C08114 /* UIViewController+Extension.m in Sources */,
@@ -741,9 +824,11 @@
 				1151C6232192BEF600C08114 /* YLLabel.m in Sources */,
 				1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */,
 				1151C5FC2192BEF600C08114 /* NSString+Extension.m in Sources */,
+				1135785D21A298E100DDEA74 /* YLTableView.m in Sources */,
 				1151C6182192BEF600C08114 /* AccountManager.m in Sources */,
 				1151C6362192BEF600C08114 /* NSBundle+LPDImagePicker.m in Sources */,
 				1151C5FA2192BEF600C08114 /* NSTimer+Extension.m in Sources */,
+				1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */,
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
@@ -752,6 +837,7 @@
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
 				1151C5F42192BEF600C08114 /* UILabel+Extension.m in Sources */,
 				1151C62B2192BEF600C08114 /* LPDAssetModel.m in Sources */,
+				1135787321A2B15300DDEA74 /* YLUMengHelper.m in Sources */,
 				1151C6242192BEF600C08114 /* NSData+Base64.m in Sources */,
 				1151C6352192BEF600C08114 /* LPDPhotoPickerController.m in Sources */,
 				1151C6272192BEF600C08114 /* LPDAssetCell.m in Sources */,
@@ -768,6 +854,7 @@
 				1151C6322192BEF600C08114 /* LPDImagePickerController.m in Sources */,
 				1151C6262192BEF600C08114 /* UIImage+MyBundle.m in Sources */,
 				1151C61B2192BEF600C08114 /* UserDefUtils.m in Sources */,
+				1135786D21A2A8CF00DDEA74 /* DefaultTableViewCell.m in Sources */,
 				1151C61D2192BEF600C08114 /* YLHintView.m in Sources */,
 				1151C6252192BEF600C08114 /* LPDPhotoPreviewController.m in Sources */,
 			);
@@ -913,6 +1000,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87F6Z4326W;
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSProject/Code/BaseMain/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -935,6 +1023,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87F6Z4326W;
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSProject/Code/BaseMain/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
