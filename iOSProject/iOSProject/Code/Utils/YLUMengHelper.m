@@ -15,8 +15,11 @@
 + (void)UMSocialStart
 {
     // 友盟分享
- 
+    //设置友盟appkey
+    [UMConfigure initWithAppkey:YLThirdSDKUMSocialAppkey channel:@"App Store"];
     /* 设置微信的appKey和appSecret */
+    //wx3a3022ee215e9b51 7c57154bf040087296fbd0e796ab6787
+    //wx89e14834538c5665   314873cade5678f73210b8179661948b
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx89e14834538c5665" appSecret:@"314873cade5678f73210b8179661948b" redirectURL:@"https://hoggen.top"];
     /*
      * 移除相应平台的分享，如微信收藏
@@ -53,8 +56,7 @@
 + (void)shareTitle:(NSString *)title subTitle:(NSString *)subTitle thumbImage:(NSString *)thumbImage shareURL:(NSString *)shareURL
 {
     
-    //设置友盟appkey
-    [UMConfigure initWithAppkey:YLThirdSDKUMSocialAppkey channel:@"App Store"];
+  
     //显示分享面板
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作

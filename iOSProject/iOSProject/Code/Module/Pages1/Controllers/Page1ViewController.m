@@ -57,10 +57,10 @@
     
     
     DefualtCellModel *model1 = [DefualtCellModel new];
-    model1.title = [NSString stringWithFormat:@"分享"];
-    model1.desc = [NSString stringWithFormat:@"点击进入分享"];
+    model1.title = [NSString stringWithFormat:@"微信登录"];
+    model1.desc = [NSString stringWithFormat:@"点击进入微信登录"];
     model1.leadImageName = @"tabbar-icon-selected-1";
-    model1.cellAccessoryType = UITableViewCellAccessoryNone;
+    model1.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model1];
     [self.tableView.dataArray addObject: model1];
     
@@ -157,7 +157,12 @@
     NSLog(@"%@",@(index));
     if (index == 0) {
         [YLUMengHelper shareTitle:@"HoggenProject" subTitle:@"for love" thumbImage:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542628890298&di=65ec554f0ecd05cd5062f7ed3ec04142&imgtype=0&src=http%3A%2F%2Fpic19.photophoto.cn%2F20110415%2F0012024449042016_b.jpg" shareURL:@"https://github.com/hoggenw"];
+    }else if (index == 1){
+        [YLUMengHelper getUserInfoForPlatform:UMSocialPlatformType_WechatSession completion:^(UMSocialUserInfoResponse *result, NSError *error) {
+            NSLog(@"%@", result);
+        }];
     }
+    
     
 }
 -(void)buttonaction:(UIButton *)sender {
