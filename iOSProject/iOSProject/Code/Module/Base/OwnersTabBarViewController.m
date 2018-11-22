@@ -66,7 +66,7 @@
     
     // 添加子控制器
     NSArray *childVCNames  = @[@"Page1ViewController", @"UIViewController", @"UIViewController"];
-    NSArray *titles = @[@"页面1", @"页面2", @"页面3"];
+    NSArray *titles = @[@"功能", @"页面2", @"页面3"];
     NSArray *iconNames = @[@"1", @"2", @"3"];
     for (int i=0; i<childVCNames.count; i++)
     {
