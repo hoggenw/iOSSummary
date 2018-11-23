@@ -40,6 +40,7 @@ PODS:
   - UMCShare/UI (6.9.5):
     - UMCCommon
     - UMCShare/Core
+  - YLOCScan (1.0.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - UMCShare/Social/ReducedWeChat
   - UMCShare/Social/SMS
   - UMCShare/UI
+  - YLOCScan
   - YYModel
 
 SPEC REPOS:
@@ -70,6 +72,7 @@ SPEC REPOS:
     - UMCCommon
     - UMCSecurityPlugins
     - UMCShare
+    - YLOCScan
     - YYModel
 
 SPEC CHECKSUMS:
@@ -83,8 +86,9 @@ SPEC CHECKSUMS:
   UMCCommon: 016af43c0f769feb1ae1861d65aaf2b23b89c9c7
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
+  YLOCScan: 37b69e729c6080bfd92298c376e72a7651cc4cca
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 347a4886e6a0943b0ba2fc313c347a94a551b869
+PODFILE CHECKSUM: 447ba8ed5ff2fba3028720bbdd7a15d9ebdc0be7
 
 COCOAPODS: 1.5.0

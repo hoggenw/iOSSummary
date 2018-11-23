@@ -64,6 +64,8 @@
 }
 
 
+
+
 //提示订单未在限定的时间支付取消订单
 +(UIView *)hintViewWith:(NSString *)timeString{
     //单例初始化
@@ -156,6 +158,17 @@
     manager.timer = [NSTimer scheduledTimerWithTimeInterval: 2.5 target:self selector:@selector(hintViewRemoveFromSuperview) userInfo:nil repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer:manager.timer
                                  forMode: NSDefaultRunLoopMode];
+}
+
++(void)showAlertMessage:(NSString *)message title:(NSString *)title {
+    
+    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message: message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertController addAction:okAction];
+    [window.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 +(void)loadAnimationShow {

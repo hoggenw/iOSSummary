@@ -10,4 +10,9 @@
 
 @interface FileManager : NSObject
 
++(NSString *)getFileSizeWithPath:(NSString * )path ;
+
+//从某个路径中移除文件
++ (BOOL)removeFileOfPath:(NSString *)filePath;
+
 @end

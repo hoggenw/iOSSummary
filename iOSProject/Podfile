@@ -26,6 +26,8 @@ target "iOSProject" do
     pod 'UMCShare/Social/ReducedQQ'
     # 集成短信
     pod 'UMCShare/Social/SMS'
+#自己的二维码库
+	pod 'YLOCScan'
 
 end
 

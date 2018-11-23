@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [UITabBar appearance].translucent = NO;
     //[self judgeAppVersionUpdate];
     // Do any additional setup after loading the view.
 }

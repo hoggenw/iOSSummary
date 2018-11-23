@@ -13,7 +13,7 @@
 #import "UserDefUtils.h"
 #import "YLConst.h"
 #import "YLUMengHelper.h"
-
+#import "FileManager.h"
 
 @protocol ActionSelcetControlDelegate <NSObject>
 

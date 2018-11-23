@@ -225,23 +225,43 @@
 }
 
 //获取文件大小
-+ (long long)getFileSizeWithPath:(NSString *)path
-{
++(NSString *)getFileSizeWithPath:(NSString * )path {
     unsigned long long fileLength = 0;
     NSNumber *fileSize;
+    NSString *videoSizeString;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:path error:nil];
     if ((fileSize = [fileAttributes objectForKey:NSFileSize])) {
         fileLength = [fileSize unsignedLongLongValue];
     }
-    return fileLength;
-    
-    //    NSFileManager* manager =[NSFileManager defaultManager];
-    //    if ([manager fileExistsAtPath:path]){
-    //        return [[manager attributesOfItemAtPath:path error:nil] fileSize];
-    //    }
-    //    return 0;
+    if (fileLength < 1024) {
+        videoSizeString = [NSString stringWithFormat:@"%.1lluB",fileLength];
+    }else if (fileLength >1024 && fileLength < 1024*1024){
+        videoSizeString = [NSString stringWithFormat:@"%.1lluKB",fileLength/1024];
+    }else if (fileLength >1024*1024 && fileLength < 1024*1024 *1024){
+        videoSizeString = [NSString stringWithFormat:@"%.1lluMB",fileLength/(1024*1024)];
+    }
+    NSLog(@"文件大小为：%@",videoSizeString);
+    return  videoSizeString;
 }
+
+//+ (long long)getFileSizeWithPath:(NSString *)path
+//{
+//    unsigned long long fileLength = 0;
+//    NSNumber *fileSize;
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:path error:nil];
+//    if ((fileSize = [fileAttributes objectForKey:NSFileSize])) {
+//        fileLength = [fileSize unsignedLongLongValue];
+//    }
+//    return fileLength;
+//
+//    //    NSFileManager* manager =[NSFileManager defaultManager];
+//    //    if ([manager fileExistsAtPath:path]){
+//    //        return [[manager attributesOfItemAtPath:path error:nil] fileSize];
+//    //    }
+//    //    return 0;
+//}
 
 //获取文件创建时间
 + (NSString *)getFileCreatDateWithPath:(NSString *)path

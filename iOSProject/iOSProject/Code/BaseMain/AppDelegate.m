@@ -12,6 +12,7 @@
 #import "OwnersTabBarViewController.h"
 #import "AdvertisementViewController.h"
 #import "GuidanceViewController.h"
+#import "YLIFlyHelper.h"
 @interface AppDelegate ()
 
 @end
@@ -62,6 +63,8 @@
     
     // U-Share 平台设置 分享
     [YLUMengHelper UMSocialStart];
+    //人脸识别
+    [YLIFlyHelper makeConfiguration];
     
     //注冊消息推送
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
@@ -100,13 +103,7 @@
                          stringByReplacingOccurrencesOfString: @" " withString: @""];
     
     NSLog(@"%@", string);
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"获取deviceToken" message: string preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [alertController addAction:okAction];
-    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    [YLHintView showAlertMessage:string title:@"获取deviceToken"];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
