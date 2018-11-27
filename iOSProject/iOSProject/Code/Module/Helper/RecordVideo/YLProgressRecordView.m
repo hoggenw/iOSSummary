@@ -76,7 +76,7 @@
     
     NSInteger second =  ((NSInteger )(self.totalTimerInterval * 100)) / 100;
     NSInteger microsecond = ((NSInteger )(self.totalTimerInterval * 100)) % 100;
-    self.timeLeftLabel.text = [NSString stringWithFormat:@"%@″%2d", @(second),microsecond];
+    self.timeLeftLabel.text = [NSString stringWithFormat:@"%@″%2ld", @(second),(long)microsecond];
     //NSLog(@"self.showProgress: %@  ===  self.timeLeftLabel.text : %@ ===self.totalTimerInterval:%@", @(self.showProgress),self.timeLeftLabel.text,@(self.totalTimerInterval));
     [self update: self.showProgress];
     if (self.totalTimerInterval < 0) {

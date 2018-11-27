@@ -14,6 +14,7 @@
 #import "FaceStreamDetectorViewController.h"
 #import "RecordVideoViewController.h"
 #import "AutographViewController.h"
+#import "YLWebViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -103,6 +104,14 @@
     model5.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model5];
+    
+    DefualtCellModel *model6 = [DefualtCellModel new];
+    model6.title = [NSString stringWithFormat:@"WebView"];
+    model6.desc = [NSString stringWithFormat:@"vpn加载及进度条"];
+    model6.leadImageName = @"tabbar-icon-selected-1";
+    model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model6];
     
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -215,6 +224,10 @@
             });
         };
         [self.navigationController pushViewController:autographVC animated:YES];
+    }else if(index == 6){
+        YLWebViewController * webVC = [YLWebViewController new];
+        webVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:webVC animated:YES];
     }
     
     

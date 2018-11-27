@@ -22,7 +22,14 @@
 @implementation YLWKWebView
 
 -(void)dealloc {
-    [self removeObserver:self forKeyPath: @"estimatedProgress"];
+    @try {
+         [self removeObserver:self forKeyPath: @"estimatedProgress"];
+    }
+    @catch (NSException *exception) {
+    }
+    
+  
+   
     
 }
 

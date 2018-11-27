@@ -51,13 +51,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     __weak typeof(self) weakSelf = self;
     if (self.bannerScroller != nil) {
         [self.bannerScroller setTotalPageCount:^ NSInteger{
             return weakSelf.imageUrls.count;
         }];
     }
-    
 }
 
 - (void)jumpToTabbar  {
@@ -121,7 +126,7 @@
          
          if([errnos isEqualToString:@"0"])//成功
          {
-             NSArray * dictionaryArray = [NSMutableArray arrayWithArray:[[responseObject objectForKey:@"result"] objectForKey:@"ad"]];
+       
              //             for (int i = 0; i < dictionaryArray.count; i++) {
              //                 NSDictionary * dic = dictionaryArray[i];
              //                 NSString * imageUrlString =  dic[@"img"];
