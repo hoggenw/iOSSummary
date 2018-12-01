@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
 		1135786D21A2A8CF00DDEA74 /* DefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786C21A2A8CF00DDEA74 /* DefaultTableViewCell.m */; };
@@ -121,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
 		1135785C21A298E100DDEA74 /* YLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLTableView.m; sourceTree = "<group>"; };
 		1135786521A29D3A00DDEA74 /* Page1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page1ViewController.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				1135790021A6975500DDEA74 /* RecordVideoViewController.m */,
 				1135789221A6511100DDEA74 /* QRCreatViewController.h */,
 				1135789321A6511100DDEA74 /* QRCreatViewController.m */,
+				1132578021B024E3001A5439 /* FileViewController.h */,
+				1132578121B024E3001A5439 /* FileViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1117,6 +1122,7 @@
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
 				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
 				113578B721A656AA00DDEA74 /* IFlyFaceResultKeys.m in Sources */,
+				1132578221B024E3001A5439 /* FileViewController.m in Sources */,
 				1151C62E2192BEF600C08114 /* UpLoadDataModel.m in Sources */,
 				1151C6282192BEF600C08114 /* YLUIDocumentPickerViewViewController.m in Sources */,
 				1151C5F22192BEF600C08114 /* YLNavigationController.m in Sources */,

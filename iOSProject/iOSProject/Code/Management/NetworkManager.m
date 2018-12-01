@@ -462,7 +462,7 @@ NSString * const CouncilChangeVoteThemeApi = @"/vote/building/change";
     if (needToken) {
         UserModel * user = [[AccountManager sharedInstance] fetch];
         NSLog(@"yltoken = %@", user.accessToken);
-        [sessionManager.requestSerializer setValue: user.accessToken forHTTPHeaderField:@"token"];
+        [sessionManager.requestSerializer setValue: @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblR5cGUiOiIyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJleHAiOjE1NDM2NTI1MDcsInVzZXJJZCI6IncxMjM0NTYifQ.T0XDuNNscTf4eQ5LQt-ngLpheGMDP3WpUHu7B9k4T7g" forHTTPHeaderField:@"token"];
     }
     return sessionManager;
 }

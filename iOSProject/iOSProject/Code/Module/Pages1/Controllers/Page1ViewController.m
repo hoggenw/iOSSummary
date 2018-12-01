@@ -15,6 +15,7 @@
 #import "RecordVideoViewController.h"
 #import "AutographViewController.h"
 #import "YLWebViewController.h"
+#import "FileViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -114,6 +115,15 @@
     [self.dataArray addObject: model6];
     
     
+    DefualtCellModel *model7 = [DefualtCellModel new];
+    model7.title = [NSString stringWithFormat:@"资源文件选择"];
+    model7.desc = [NSString stringWithFormat:@"iCloud与相册"];
+    model7.leadImageName = @"tabbar-icon-selected-1";
+    model7.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model7];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];
@@ -158,6 +168,61 @@
 
 #pragma mark - Events
 -(void)rightButtonAction{
+    NSString * url = @"http://192.168.20.17:8888/admin/changeStandards";
+    NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
+    dictionary[@"catalog_id"] = @"10001";
+    NSMutableArray * values =  [NSMutableArray array];
+    NSMutableDictionary * dictionaryValue = [NSMutableDictionary dictionary];
+    dictionaryValue[@"standardTitle"] = @"标题1";
+    dictionaryValue[@"min"] = @"1";
+    dictionaryValue[@"max"] = @"10";
+    dictionaryValue[@"color"] = @"#6495ED";
+    dictionaryValue[@"standardId"] = @"100011";
+    [values addObject: dictionaryValue];
+    
+    
+    NSMutableDictionary * dictionaryValue1 = [NSMutableDictionary dictionary];
+    dictionaryValue1[@"standardTitle"] = @"标题2";
+    dictionaryValue1[@"min"] = @"1";
+    dictionaryValue1[@"max"] = @"10";
+    dictionaryValue1[@"color"] = @"#6495ED";
+    [values addObject: dictionaryValue1];
+    
+    NSMutableDictionary * dictionaryValue2 = [NSMutableDictionary dictionary];
+    dictionaryValue2[@"standardTitle"] = @"标题2";
+    dictionaryValue2[@"min"] = @"1";
+    dictionaryValue2[@"max"] = @"10";
+    dictionaryValue2[@"color"] = @"#6495ED";
+    [values addObject: dictionaryValue2];
+    
+    NSMutableDictionary * dictionaryValue3 = [NSMutableDictionary dictionary];
+    dictionaryValue3[@"standardTitle"] = @"标题2";
+    dictionaryValue3[@"min"] = @"1";
+    dictionaryValue3[@"max"] = @"10";
+    dictionaryValue3[@"color"] = @"#6495ED";
+    [values addObject: dictionaryValue3];
+    
+    NSMutableDictionary * dictionaryValue4 = [NSMutableDictionary dictionary];
+    dictionaryValue4[@"standardTitle"] = @"标题2";
+    dictionaryValue4[@"min"] = @"1";
+    dictionaryValue4[@"max"] = @"10";
+    dictionaryValue4[@"color"] = @"#6495ED";
+    [values addObject: dictionaryValue4];
+    
+    NSMutableDictionary * dictionaryValue5 = [NSMutableDictionary dictionary];
+    dictionaryValue5[@"standardTitle"] = @"标题2";
+    dictionaryValue5[@"min"] = @"1";
+    dictionaryValue5[@"max"] = @"10";
+    dictionaryValue5[@"color"] = @"#6495ED";
+    [values addObject: dictionaryValue5];
+    NSString * jsonString = [values yy_modelToJSONString];
+    dictionary[@"values"] = jsonString;
+    NSLog(@"jsonString: %@", jsonString);
+    [[NetworkManager sharedInstance] postWithURL:url param:dictionary needToken:true returnBlock:^(NSDictionary *returnDict) {
+        NSLog(@"returnDict: %@", returnDict);
+    }];
+    
+    return;
     YLScanViewManager * manager = [YLScanViewManager sharedInstance];
     manager.imageStyle = secondeNetGrid;
     manager.delegate = self;
@@ -228,6 +293,10 @@
         YLWebViewController * webVC = [YLWebViewController new];
         webVC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:webVC animated:YES];
+    }else if(index == 7){
+        FileViewController * VC = [FileViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }
     
     

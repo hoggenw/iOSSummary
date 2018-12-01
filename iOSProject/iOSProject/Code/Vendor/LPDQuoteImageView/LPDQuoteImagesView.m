@@ -106,7 +106,7 @@
 #pragma mark UICollectionView
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-  if(_selectedPhotos.count < 3) {
+  if(_selectedPhotos.count < _totalSelectedCount) {
     return _selectedPhotos.count + 1;
   }else {
     return _selectedPhotos.count  ;
@@ -119,7 +119,7 @@
     cell.imageThumbnail.hidden = false;
     cell.showLabel.hidden = true;
     cell.nookDeleteBtn.hidden = false;
-  if(_selectedPhotos.count< 3) {
+  if(_selectedPhotos.count< _totalSelectedCount) {
     if (indexPath.row == _selectedPhotos.count) {
       [cell.imageThumbnail setImage:[UIImage imageNamedFromMyBundle:@"AlbumAddBtn.png"]];//
       cell.imageThumbnail.layer.borderWidth = 2;
@@ -170,7 +170,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    NSLog(@"self.selectedPhotos.count  : %@",@(self.selectedPhotos.count));
     if (self.selectedPhotos.count  == indexPath.row || self.selectedPhotos.count == 0) {
-        self.maxSelectedCount = 3 - self.selectedPhotos.count;
+        self.maxSelectedCount = _totalSelectedCount - self.selectedPhotos.count;
     }else{
         self.maxSelectedCount = 1;
         self.chioceModel = self.selectedPhotos[indexPath.row];
@@ -274,8 +274,10 @@
         [self.selectedPhotos removeObjectAtIndex: self.chioceRow];
         [self.selectedPhotos insertObject: model atIndex: self.chioceRow];
         self.chioceRow = -1;
+       
     }else{
         [self.selectedPhotos addObject: model];
+        
     }
     
     

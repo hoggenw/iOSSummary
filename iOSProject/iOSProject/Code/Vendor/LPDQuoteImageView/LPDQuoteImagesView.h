@@ -20,15 +20,16 @@
 #import "LPDPhotoPreviewController.h"
 
 @protocol LPDQuoteImagesViewDelegate <NSObject>
-@optional
 
+@optional
+-(void)quoteImagesViewNeedUpdateView:(BOOL)bigger;
 @end
 
 @interface LPDQuoteImagesView : UIView
 
 @property(strong, nonatomic) LPDImagePickerController *lpdImagePickerVc;
 
-
+@property (assign, nonatomic) NSUInteger totalSelectedCount;       ///最大可选数
 @property (assign, nonatomic) NSUInteger maxSelectedCount;       ///最大可选照片数
 @property (assign, nonatomic) NSUInteger countPerRowInAlbum;     ///相册每行照片数
 

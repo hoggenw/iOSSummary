@@ -140,23 +140,7 @@
     sender.enabled = false;
     NSLog(@"self.codeType : %@",self.codeType);
     NSDictionary * param = @{@"phone": self.phoneNumberTextFeild.text,@"type": self.codeType};
-    [YLHintView loadAnimationShowOnView: self];
-    [[NetworkManager sharedInstance]  postWithGetCodeParam:param returnBlock:^(NSDictionary *returnDict) {
-        NSString * code = [NSString stringWithFormat:@"%@", returnDict[@"retcode"]];
-        NSLog(@"returnDict: %@",returnDict);
-        if ([code isEqualToString:@"0"]) {
-            self.time = 61;
-            self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countdown) userInfo:nil repeats:YES];
-            [self.codeTextFeild becomeFirstResponder];
-            sender.enabled = true;
-            NSLog(@"send sucess");
-        }else{
-            [YLHintView showMessageOnThisPage: [NSString stringWithFormat:@"%@", returnDict[@"retmsg"]]];
-            NSLog(@"send失败");
-            sender.enabled = true;
-        }
-        [YLHintView removeLoadAnimationFromView: self];
-    }];
+
     
     
 }
