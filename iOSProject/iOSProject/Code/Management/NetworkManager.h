@@ -39,8 +39,9 @@ extern NSString * const ImageUploadApi;
 -(void)postImageUploadApiParam:(NSDictionary *)paramDic returnBlock:(ReturnBlock)infoBlock;
 
 
-
+//放入请求头
 - (void)postWithURL:(NSString *)requestURL param:(NSDictionary *)paramDic needToken:(BOOL)needToken returnBlock:(ReturnBlock)infoBlock;
 
-
+//放入请求体
+- (void)postWithURL:(NSString *)requestURL paramBody:(NSDictionary *)paramDic needToken:(BOOL)needToken returnBlock:(ReturnBlock)infoBlock;
 @end

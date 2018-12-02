@@ -343,6 +343,7 @@ NSString * const CouncilChangeVoteThemeApi = @"/vote/building/change";
 
 
 #pragma mark - 基础请求方法
+//放入请求头
 - (void)postWithURL:(NSString *)requestURL param:(NSDictionary *)paramDic needToken:(BOOL)needToken returnBlock:(ReturnBlock)infoBlock {
     AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getSessionManager: needToken];
     
@@ -365,6 +366,32 @@ NSString * const CouncilChangeVoteThemeApi = @"/vote/building/change";
         self.returnBlock = infoBlock;
         self.returnBlock(dict);
     }];
+}
+
+//放入请求体
+- (void)postWithURL:(NSString *)requestURL paramBody:(NSDictionary *)paramDic needToken:(BOOL)needToken returnBlock:(ReturnBlock)infoBlock {
+    AFHTTPSessionManager *manager = [[NetworkManager sharedInstance] getSessionManager: needToken];
+    [manager POST:requestURL parameters:paramDic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:responseObject];
+        
+        if ([[NSString stringWithFormat:@"%@" ,dict[@"retcode"]] isEqualToString:@"127"]) {
+            AppDelegate *AppDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            AppDele.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[VoteLoginViewController new]];
+            [[AccountManager sharedInstance] missLoginDeal];
+            return ;
+        }
+        
+        self.returnBlock = infoBlock;
+        self.returnBlock(dict);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"failure error: %@", error);
+        NSDictionary *dict = @{@"returnInfo" : @NO};
+        self.returnBlock = infoBlock;
+        self.returnBlock(dict);
+    }];
+
 }
 
 - (void)getWithURL:(NSString *)requestURL param:(NSDictionary *)paramDic  needToken:(BOOL)needToken returnBlock:(ReturnBlock)infoBlock {
@@ -433,9 +460,11 @@ NSString * const CouncilChangeVoteThemeApi = @"/vote/building/change";
     static AFHTTPSessionManager *sessionManager = nil;
     sessionManager = [AFHTTPSessionManager manager];
     sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //(这里设置涉及到AFHTTPRequestSerializer  ，AFJSONRequestSerializer java 后台getParameter能否收到参数，AFHTTPRequestSerializer能)测试无效
     
     [sessionManager.requestSerializer setValue:@"XMLHttpRequest" forHTTPHeaderField:@"X-Requested-With"];
     [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    //[sessionManager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Content-Type"];
     [sessionManager.requestSerializer setCachePolicy:NSURLRequestUseProtocolCachePolicy];
     
     sessionManager.requestSerializer.timeoutInterval = NetworkTimeoutInterval;
@@ -462,7 +491,7 @@ NSString * const CouncilChangeVoteThemeApi = @"/vote/building/change";
     if (needToken) {
         UserModel * user = [[AccountManager sharedInstance] fetch];
         NSLog(@"yltoken = %@", user.accessToken);
-        [sessionManager.requestSerializer setValue: @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblR5cGUiOiIyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJleHAiOjE1NDM2NTI1MDcsInVzZXJJZCI6IncxMjM0NTYifQ.T0XDuNNscTf4eQ5LQt-ngLpheGMDP3WpUHu7B9k4T7g" forHTTPHeaderField:@"token"];
+        [sessionManager.requestSerializer setValue: @"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblR5cGUiOiIyIiwibG9naW5OYW1lIjoiYWRtaW4iLCJleHAiOjE1NDM4MzE1MzQsInVzZXJJZCI6IncxMjM0NTYifQ.fRtN4k7s9Fu71XiRFUw_Hj7edn3fswsxvPM9qKHXPz4" forHTTPHeaderField:@"token"];
     }
     return sessionManager;
 }
