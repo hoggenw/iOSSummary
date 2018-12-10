@@ -107,10 +107,30 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
   if(_selectedPhotos.count < _totalSelectedCount) {
+      [self viewNeedupdate:_selectedPhotos.count + 1];
     return _selectedPhotos.count + 1;
+      
   }else {
+      [self viewNeedupdate:_selectedPhotos.count];
     return _selectedPhotos.count  ;
   }
+}
+
+-(void)viewNeedupdate:(NSInteger)count {
+    unsigned long line = count /_countPerRowInView;
+    unsigned long left = count % _countPerRowInView;
+    if (left > 0) {
+        line = line + 1;
+    }
+    float add =  2 *_margin * line - _margin;
+    if (line == 1) {
+        add = add + _margin;
+    }
+    CGFloat width = (ScreenWidth- 50 )/4;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, (line * (width)) + 20 + add);
+    self.collectionView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.frame.size.width, (line * (width)) + 20 + add);
+    NSLog(@"self.frame.height:%@   =====  self.collectionView.frame.height:%@   ===== line: %@",@(self.frame.size.height),@(self.collectionView.frame.size.height),@(line));
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

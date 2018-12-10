@@ -215,11 +215,11 @@
 //    dictionaryValue5[@"max"] = @"10";
 //    dictionaryValue5[@"color"] = @"#6495ED";
 //    [values addObject: dictionaryValue5];
-    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
-    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
+//    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
+//    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
     NSString * jsonString = [values yy_modelToJSONString];
  //   dictionary[@"values"] = jsonString;
-    NSLog(@"jsonString: %@", jsonString);
+//    NSLog(@"jsonString: %@", jsonString);
 ////    [[NetworkManager sharedInstance] postWithURL:url param:dictionary needToken:true returnBlock:^(NSDictionary *returnDict) {
 ////        NSLog(@"returnDict: %@", returnDict);
 ////    }];
