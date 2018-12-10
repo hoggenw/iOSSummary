@@ -215,8 +215,8 @@
 //    dictionaryValue5[@"max"] = @"10";
 //    dictionaryValue5[@"color"] = @"#6495ED";
 //    [values addObject: dictionaryValue5];
-    [values addObject:@"20181206_9496d9c3-1853-4bcf-b20f-3c24a3cb1954"];
-    [values addObject:@"20181206_04b9461b-9b7e-4771-b623-6bd125d58de0"];
+    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
+    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
     NSString * jsonString = [values yy_modelToJSONString];
  //   dictionary[@"values"] = jsonString;
     NSLog(@"jsonString: %@", jsonString);
