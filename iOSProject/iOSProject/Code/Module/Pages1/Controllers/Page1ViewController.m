@@ -124,6 +124,15 @@
     [self.dataArray addObject: model7];
     
     
+    DefualtCellModel *model8 = [DefualtCellModel new];
+    model8.title = [NSString stringWithFormat:@"聊天页面与功能"];
+    model8.desc = [NSString stringWithFormat:@"聊天页面与功能"];
+    model8.leadImageName = @"tabbar-icon-selected-1";
+    model8.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model8];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];

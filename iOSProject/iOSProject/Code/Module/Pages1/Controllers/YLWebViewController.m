@@ -53,19 +53,19 @@
     self.selectView.titles = titles;
     [self.selectView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(kNavigationHeight);
+        make.bottom.equalTo(self.view.mas_bottom).offset(0);
         make.height.equalTo(@(50));
     }];
     self.webType = 0;
     
-    _wkWebView = [[YLWKWebView alloc]initWithFrame:CGRectMake(0,kNavigationHeight+50 , ScreenWidth, ScreenHeight - kNavigationHeight)];
+    _wkWebView = [[YLWKWebView alloc]initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];
     _wkWebView.backgroundColor = [UIColor clearColor];
     _wkWebView.progressCorlor = [UIColor greenColor];
     _wkWebView.navigationDelegate = self;
     [self.view addSubview:_wkWebView];
     
     
-    _uiWebView =  [[YLUIWebView alloc] initWithFrame:CGRectMake(0,kNavigationHeight+50 , ScreenWidth, ScreenHeight - kNavigationHeight)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
+    _uiWebView =  [[YLUIWebView alloc] initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
     _uiWebView.backgroundColor = [UIColor clearColor];
     _uiWebView.progressCorlor = [UIColor greenColor];
     _uiWebView.delegate = self;
@@ -114,6 +114,13 @@
     
     
     return  true;
+}
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+//    webView.
+//    webView.evaluateJavaScript(, completionHandler: nil);
+    [webView evaluateJavaScript:@"javascript:(function(){var styleElem=null,doc=document,ie=doc.all,fontColor=50,sel='body,body *';styleElem=createCSS(sel,setStyle(fontColor),styleElem);function setStyle(fontColor){var colorArr=[fontColor,fontColor,fontColor];return'background-color:#000 !important;color:RGB('+colorArr.join('%,')+'%) !important;'};function createCSS(sel,decl,styleElem){var doc=document,h=doc.getElementsByTagName('head')[0],styleElem=styleElem;if(!styleElem){s=doc.createElement('style');s.setAttribute('type','text/css');styleElem=ie?doc.styleSheets[doc.styleSheets.length-1]:h.appendChild(s)};if(ie){styleElem.addRule(sel,decl)}else{styleElem.innerHTML='';styleElem.appendChild(doc.createTextNode(sel+' {'+decl+'}'))};return styleElem}})();" completionHandler:^(id _Nullable rest, NSError * _Nullable error) {
+        
+    }];
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView {
 }
