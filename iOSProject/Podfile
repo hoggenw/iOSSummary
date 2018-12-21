@@ -28,6 +28,8 @@ target "iOSProject" do
     pod 'UMCShare/Social/SMS'
 #自己的二维码库
 	pod 'YLOCScan'
+    pod 'CocoaAsyncSocket'
+    pod 'SocketRocket'
 
 end
 
