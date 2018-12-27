@@ -30,6 +30,7 @@ target "iOSProject" do
 	pod 'YLOCScan'
     pod 'CocoaAsyncSocket'
     pod 'SocketRocket'
+   pod 'QBImagePickerController'
 
 end
 

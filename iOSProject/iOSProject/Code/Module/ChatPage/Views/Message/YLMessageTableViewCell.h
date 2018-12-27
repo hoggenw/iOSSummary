@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YLImageView.h"
 
 @class ChatMessageModel;
-@class YLImageView;
 
 @interface YLMessageTableViewCell : UITableViewCell
 

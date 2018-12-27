@@ -8,9 +8,14 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
+//这步很重要，引入Recorder&Player
+#ifdef __OBJC__
 
 #define ifiPhoneXLater ([YLDeviceUtil isiPhoneXLater])
 #define kNavigationHeight  (ifiPhoneXLater ? 88 : 64)
+#define HEIGHT_STATUSBAR    (ifiPhoneXLater ? 44 : 20) // 状态栏
+#define HEIGHT_TABBAR       49 // 标签
+#define HEIGHT_NAVBAR       44 // 导航
 #define ScreenWidth   [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
 #define ThemeColor [UIColor colorWithRed:40/255.0 green:197/255.0 blue:190/255.0 alpha:1]
@@ -36,5 +41,7 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
 
 #endif /* PrefixHeader_pch */
