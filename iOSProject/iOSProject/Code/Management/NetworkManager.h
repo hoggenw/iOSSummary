@@ -15,16 +15,7 @@ typedef void (^ReturnBlock)(NSDictionary *returnDict);
 extern NSString * const BaseUrl;              // 网络请求的BaseUrl
 extern NSString * const WebBaseUrl;         // 通用网页的BaseUrl
 
-extern NSString * const LoginApi;
-extern NSString * const PhoneCodeApi;
-extern NSString * const RegisteredApi;
 
-extern NSString * const SetPayPassWorldApi;
-extern NSString * const SetVerifyCodeApi;
-extern NSString * const ChangeMobileApi;
-
-extern NSString * const GETPortApi;
-extern NSString * const ImageUploadApi;
 
 @interface NetworkManager : NSObject
 

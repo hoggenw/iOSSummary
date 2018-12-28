@@ -16,6 +16,7 @@
 #import "AutographViewController.h"
 #import "YLWebViewController.h"
 #import "FileViewController.h"
+#import "ChatListViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -309,6 +310,11 @@
         [self.navigationController pushViewController:webVC animated:YES];
     }else if(index == 7){
         FileViewController * VC = [FileViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    else if(index == 8){
+        ChatListViewController * VC = [ChatListViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }
