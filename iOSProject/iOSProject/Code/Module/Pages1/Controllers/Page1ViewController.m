@@ -134,6 +134,15 @@
     [self.dataArray addObject: model8];
     
     
+    DefualtCellModel *model9 = [DefualtCellModel new];
+    model9.title = [NSString stringWithFormat:@"日历选择器"];
+    model9.desc = [NSString stringWithFormat:@"日历选择器"];
+    model9.leadImageName = @"tabbar-icon-selected-1";
+    model9.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model9];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];
