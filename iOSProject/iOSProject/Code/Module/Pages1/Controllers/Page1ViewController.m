@@ -17,8 +17,9 @@
 #import "YLWebViewController.h"
 #import "FileViewController.h"
 #import "ChatListViewController.h"
+#import "DatePickerView.h"
 
-@interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate>
+@interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
@@ -327,13 +328,10 @@
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }else if (index == 9){
-//        DatePickerView * pickView = [[DatePickerView alloc] initWithFrame: CGRectMake(0, ScreenHeight - 260,  ScreenWidth,  260)];
-//        [self addSubview: pickView];
-//        pickView.delegate = self;
-//        pickView.beginTime = _beginTime;
-//        pickView.endTime = _endTime;
-//        pickView.typeFeild = self.typeFeild;
-//        [pickView showDateTimePickerView];
+        DatePickerView * pickView = [[DatePickerView alloc] initWithFrame: CGRectMake(0, ScreenHeight - 260,  ScreenWidth,  260)];
+        [self.view addSubview: pickView];
+        pickView.delegate = self;
+        [pickView showDateTimePickerView];
     }
     
     
@@ -354,6 +352,17 @@
 -(void)YLTableViewLoadMoreAction:(UIView *)view {
     self.page++;
     [self.tableView.tableView.mj_footer endRefreshing];
+    
+}
+
+#pragma mark -DatePickerViewDelegate
+-(void)didClickFinishDateTimePickerView:(NSString*)date {
+    
+    [YLHintView showMessageOnThisPage:date];
+    NSLog(@"%@",date);
+}
+
+-(void)cancelDateTimePickerView{
     
 }
 @end
