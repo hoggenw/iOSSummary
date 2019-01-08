@@ -147,6 +147,15 @@
     [self.dataArray addObject: model9];
     
     
+    DefualtCellModel *model10 = [DefualtCellModel new];
+    model10.title = [NSString stringWithFormat:@"地址选择器"];
+    model10.desc = [NSString stringWithFormat:@"地址选择器"];
+    model10.leadImageName = @"tabbar-icon-selected-1";
+    model10.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model10];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];

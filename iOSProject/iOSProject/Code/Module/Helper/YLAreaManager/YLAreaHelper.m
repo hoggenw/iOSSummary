@@ -15,9 +15,6 @@
 @property (strong, nonatomic) NSArray<YLArea *> *provinceList;
 
 
-/** 从数组中加载 */
-- (void)loadDataWithArray:(NSArray<NSDictionary *> *)array;
-
 /**
  *  网络请求
  */
@@ -47,7 +44,7 @@
 {
     self = [super init];
     if (self) {
-        self.fileName = @"Address.plist";
+        self.fileName = @"city";
     }
     return self;
 }
@@ -167,10 +164,11 @@
 - (NSString *)localFilePath
 {
     //检索Documents目录
-    NSString *fileName = self.fileName;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
-    NSString *documentsDirectory = [paths lastObject];
-    return [documentsDirectory stringByAppendingPathComponent:fileName];
+    //NSString *fileName = self.fileName;
+    
+    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES);
+    NSString *documentsDirectory  = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", self.fileName] ofType:@"json"];
+    return documentsDirectory;
 }
 
 #pragma mark - private other
@@ -192,80 +190,49 @@
 
 
 // 从数组中加载
-- (void)loadDataWithArray:(NSArray<NSDictionary *> *)array
+- (void)loadDataWithArray:(NSDictionary *)dic
 {
     
     NSMutableArray<YLArea *> *provinceList = [NSMutableArray array];
-    NSMutableArray<YLArea *> *cityList   = [NSMutableArray array];
-    NSMutableArray<YLArea *> *zoneList   = [NSMutableArray array];
+//    NSMutableArray<YLArea *> *cityList   = [NSMutableArray array];
+//    NSMutableArray<YLArea *> *zoneList   = [NSMutableArray array];
     
+    NSDictionary * dataDictionary = dic[@"threeSelectData"];
     // 循环1，获取省级列表
-    for (NSDictionary *dicInfo in array)
+    for (NSString *key in dataDictionary.allKeys)
     {
-        // dicInfo -> model
-        YLArea *area = [YLArea yy_modelWithDictionary:dicInfo];
-        
-        // 数据筛选(后台数据可能异常，没有title者一律抛弃)
-        if (!area.title) {
-            continue;
-        }
-        
-        if (0 == area.parentId) // 省级Id
-        {
-            [provinceList addObject:area];
-        }
-        else
-        {
-            [cityList addObject:area];
-        }
-    }
-    
-    // 循环2，获取市级列表
-    for (YLArea *cityModel in cityList)
-    {
-        //现在区级必选
-        //        // 添加占位区级(区可不选)
-        //        PSArea *spaceZone = [[PSArea alloc] init];
-        //        spaceZone.title = @"";
-        //        [cityModel.childs addObject:spaceZone];
-        
-        BOOL isCityFlag = NO;
-        for (YLArea *provinceModel in provinceList)
-        {
-            if (cityModel.parentId == provinceModel.areaId) // 该省级下的市级
-            {
-                isCityFlag = YES;
-                [provinceModel.childs addObject:cityModel];
-                break;
-            }
-        }
-        
-        if (!isCityFlag)
-        {
-            [zoneList addObject:cityModel];
-        }
-    }
-    
-    // 循环3，获取区级列表
-    for (YLArea *zoneModel in zoneList)
-    {
-        BOOL isAddFlag = NO;
-        for (YLArea *provinceModel in provinceList)
-        {
-            for (YLArea *cityModel in provinceModel.childs)    // 该市级下的区级
-            {
-                if (zoneModel.parentId == cityModel.areaId)
-                {
-                    isAddFlag = YES;
-                    [cityModel.childs addObject:zoneModel];
-                    break;
-                }
+        // 获取省级列表
+        YLArea *area = [YLArea new];
+        area.title = key;
+        NSDictionary * proviceDic = dataDictionary[key];
+        area.areaId = [[NSString stringWithFormat:@"%@",proviceDic[@"val"]] integerValue];
+        area.parentId = 0;
+        area.childs = [NSMutableArray array];
+        [provinceList addObject:area];
+        //获取市级列表
+        NSDictionary * cityDic = proviceDic[@"items"];
+        for (NSString *cityKey in cityDic.allKeys) {
+            YLArea *cityArea = [YLArea new];
+            cityArea.title = cityKey;
+            NSDictionary * cityDic2 = cityDic[cityKey];
+            cityArea.areaId = [[NSString stringWithFormat:@"%@",cityDic2[@"val"]] integerValue];
+            cityArea.parentId = area.areaId;
+            [area.childs addObject:cityArea];
+            cityArea.childs = [NSMutableArray array];
+            
+            //获取区级列表
+            NSDictionary *zoneDic = cityDic2[@"items"];
+            for (NSString *zoneKey in zoneDic.allKeys) {
+                YLArea *zoneArea = [YLArea new];
+                zoneArea.title = zoneKey;
+                zoneArea.areaId = [[NSString stringWithFormat:@"%@",zoneDic[zoneKey]] integerValue];
+                zoneArea.parentId = cityArea.areaId;
+                [cityArea.childs addObject: zoneArea];
             }
             
-            if (isAddFlag) {
-                break;
-            }
+            
         }
+        
     }
     
     // 数据保存
@@ -303,9 +270,13 @@
     NSString *filePath = [self localFilePath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])    // 本地存在
     {
-        NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
         
-        [self loadDataWithArray:array];
+        // 将文件数据化
+        NSData *data = [[NSData alloc] initWithContentsOfFile:filePath];
+        // 对数据进行JSON格式化并返回字典形式
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        
+        [self loadDataWithArray:dictionary];
     }
     else
     {

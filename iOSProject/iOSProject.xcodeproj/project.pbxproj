@@ -52,9 +52,12 @@
 		1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */; };
 		1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135792021ABC9DC00DDEA74 /* YLWebViewController.m */; };
 		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
-		1149892821E35968001E1443 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1149892721E35968001E1443 /* Address.plist */; };
 		1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */; };
 		1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893021E35E4A001E1443 /* YLPickerShowView.m */; };
+		1149893421E44EAF001E1443 /* YLArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893321E44EAF001E1443 /* YLArea.m */; };
+		1149893721E44ED5001E1443 /* YLAreaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893621E44ED5001E1443 /* YLAreaData.m */; };
+		1149894621E47707001E1443 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1149894521E47707001E1443 /* Address.plist */; };
+		1149894821E479A8001E1443 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 1149894721E479A8001E1443 /* city.json */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -268,11 +271,16 @@
 		1135792021ABC9DC00DDEA74 /* YLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWebViewController.m; sourceTree = "<group>"; };
 		1149892421E355BA001E1443 /* YLAreaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaHelper.h; sourceTree = "<group>"; };
 		1149892521E355BA001E1443 /* YLAreaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaHelper.m; sourceTree = "<group>"; };
-		1149892721E35968001E1443 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		1149892921E35C24001E1443 /* YLAddressPickerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAddressPickerUtil.h; sourceTree = "<group>"; };
 		1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAddressPickerUtil.m; sourceTree = "<group>"; };
 		1149892F21E35E4A001E1443 /* YLPickerShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPickerShowView.h; sourceTree = "<group>"; };
 		1149893021E35E4A001E1443 /* YLPickerShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPickerShowView.m; sourceTree = "<group>"; };
+		1149893221E44EAF001E1443 /* YLArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLArea.h; sourceTree = "<group>"; };
+		1149893321E44EAF001E1443 /* YLArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLArea.m; sourceTree = "<group>"; };
+		1149893521E44ED5001E1443 /* YLAreaData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaData.h; sourceTree = "<group>"; };
+		1149893621E44ED5001E1443 /* YLAreaData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaData.m; sourceTree = "<group>"; };
+		1149894521E47707001E1443 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		1149894721E479A8001E1443 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -735,6 +743,10 @@
 				1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */,
 				1149892F21E35E4A001E1443 /* YLPickerShowView.h */,
 				1149893021E35E4A001E1443 /* YLPickerShowView.m */,
+				1149893221E44EAF001E1443 /* YLArea.h */,
+				1149893321E44EAF001E1443 /* YLArea.m */,
+				1149893521E44ED5001E1443 /* YLAreaData.h */,
+				1149893621E44ED5001E1443 /* YLAreaData.m */,
 			);
 			path = YLAreaManager;
 			sourceTree = "<group>";
@@ -782,7 +794,8 @@
 		1151C5412192BE3300C08114 /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
-				1149892721E35968001E1443 /* Address.plist */,
+				1149894721E479A8001E1443 /* city.json */,
+				1149894521E47707001E1443 /* Address.plist */,
 				11DF0C9E21D4C798006A1D36 /* normal_face.plist */,
 				1151C52B2192BE0C00C08114 /* Info.plist */,
 				1151C52C2192BE0C00C08114 /* main.m */,
@@ -1462,11 +1475,12 @@
 			files = (
 				1151C62F2192BEF600C08114 /* LPDImagePickerController.bundle in Resources */,
 				11DF0C9D21D4C48C006A1D36 /* send_head.jpg in Resources */,
+				1149894821E479A8001E1443 /* city.json in Resources */,
 				1151C6152192BEF600C08114 /* LoginView.xib in Resources */,
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
 				11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */,
 				11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */,
-				1149892821E35968001E1443 /* Address.plist in Resources */,
+				1149894621E47707001E1443 /* Address.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1646,6 +1660,7 @@
 				11DF0C8021D4BCFB006A1D36 /* GPBMessage.m in Sources */,
 				1151C62B2192BEF600C08114 /* LPDAssetModel.m in Sources */,
 				11DF0C8321D4BCFB006A1D36 /* GPBExtensionInternals.m in Sources */,
+				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
 				1135790921A6986F00DDEA74 /* YLRecordControlView.m in Sources */,
 				11DF0C1B21D4B82E006A1D36 /* YLChatBoxView.m in Sources */,
 				113578B621A656AA00DDEA74 /* CaptureManager.m in Sources */,
@@ -1669,6 +1684,7 @@
 				11DF0C1121D4B82E006A1D36 /* ChatMessageModel.m in Sources */,
 				1151C6192192BEF600C08114 /* LocalSQliteManager.m in Sources */,
 				11DF0C9121D4BCFB006A1D36 /* GPBUnknownField.m in Sources */,
+				1149893721E44ED5001E1443 /* YLAreaData.m in Sources */,
 				11DF0C0E21D4B82E006A1D36 /* ChatUserModel.m in Sources */,
 				1151C5F72192BEF600C08114 /* UIImageView+Extension.m in Sources */,
 				1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */,
