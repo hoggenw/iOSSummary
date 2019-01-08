@@ -18,11 +18,14 @@
 #import "FileViewController.h"
 #import "ChatListViewController.h"
 #import "DatePickerView.h"
+#import "YLAddressPickerUtil.h"
+#import "YLAreaHelper.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
+@property (strong, nonatomic) YLAreaData * selectAreaData;
 
 
 @end
@@ -332,6 +335,25 @@
         [self.view addSubview: pickView];
         pickView.delegate = self;
         [pickView showDateTimePickerView];
+    }else if (index == 10){
+        
+        NSInteger areaId = 0;
+        if (self.selectAreaData && self.selectAreaData.zoneTitle) {
+            areaId = self.selectAreaData.areaId;
+        }
+        YLAddressPickerUtil *addressUtil = [[YLAddressPickerUtil alloc] init];
+        addressUtil.doneBtnClickAction = ^(YLAreaData *selectAreaData){
+            // 数据保存
+            self.selectAreaData = selectAreaData;
+            
+            // 数据展示
+            NSString * provinceTitle = selectAreaData.provinceTitle;
+            NSString * cityTitle = selectAreaData.cityTitle;
+            NSString * zoneTitle = selectAreaData.zoneTitle;
+            NSString * regionTitle = [NSString stringWithFormat:@"%@ %@ %@", provinceTitle, cityTitle, zoneTitle];
+            [YLHintView showMessageOnThisPage: regionTitle];
+        };
+        [addressUtil showWithAreaId:areaId];
     }
     
     

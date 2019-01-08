@@ -51,6 +51,10 @@
 		1135791821ABC4C700DDEA74 /* YLUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791721ABC4C700DDEA74 /* YLUIWebView.m */; };
 		1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */; };
 		1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135792021ABC9DC00DDEA74 /* YLWebViewController.m */; };
+		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
+		1149892821E35968001E1443 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1149892721E35968001E1443 /* Address.plist */; };
+		1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */; };
+		1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893021E35E4A001E1443 /* YLPickerShowView.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -262,6 +266,13 @@
 		1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSliderSelectView.m; sourceTree = "<group>"; };
 		1135791F21ABC9DC00DDEA74 /* YLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWebViewController.h; sourceTree = "<group>"; };
 		1135792021ABC9DC00DDEA74 /* YLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWebViewController.m; sourceTree = "<group>"; };
+		1149892421E355BA001E1443 /* YLAreaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaHelper.h; sourceTree = "<group>"; };
+		1149892521E355BA001E1443 /* YLAreaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaHelper.m; sourceTree = "<group>"; };
+		1149892721E35968001E1443 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		1149892921E35C24001E1443 /* YLAddressPickerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAddressPickerUtil.h; sourceTree = "<group>"; };
+		1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAddressPickerUtil.m; sourceTree = "<group>"; };
+		1149892F21E35E4A001E1443 /* YLPickerShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPickerShowView.h; sourceTree = "<group>"; };
+		1149893021E35E4A001E1443 /* YLPickerShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPickerShowView.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -715,6 +726,19 @@
 			path = Signature;
 			sourceTree = "<group>";
 		};
+		1149892321E35594001E1443 /* YLAreaManager */ = {
+			isa = PBXGroup;
+			children = (
+				1149892421E355BA001E1443 /* YLAreaHelper.h */,
+				1149892521E355BA001E1443 /* YLAreaHelper.m */,
+				1149892921E35C24001E1443 /* YLAddressPickerUtil.h */,
+				1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */,
+				1149892F21E35E4A001E1443 /* YLPickerShowView.h */,
+				1149893021E35E4A001E1443 /* YLPickerShowView.m */,
+			);
+			path = YLAreaManager;
+			sourceTree = "<group>";
+		};
 		1151C5112192BE0B00C08114 = {
 			isa = PBXGroup;
 			children = (
@@ -758,6 +782,7 @@
 		1151C5412192BE3300C08114 /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
+				1149892721E35968001E1443 /* Address.plist */,
 				11DF0C9E21D4C798006A1D36 /* normal_face.plist */,
 				1151C52B2192BE0C00C08114 /* Info.plist */,
 				1151C52C2192BE0C00C08114 /* main.m */,
@@ -1022,6 +1047,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1149892321E35594001E1443 /* YLAreaManager */,
 				1135790F21A6B54500DDEA74 /* Signature */,
 				113578DF21A6904400DDEA74 /* RecordVideo */,
 				1135789521A6555600DDEA74 /* FaceDistinguish  */,
@@ -1110,12 +1136,12 @@
 			isa = PBXGroup;
 			children = (
 				11DF0BDB21D4B82E006A1D36 /* ChatViewController.m */,
-				11DF0BDC21D4B82E006A1D36 /* ChatShowMessageViewController.m */,
+				11DF0BE021D4B82E006A1D36 /* YLPhotoPreviewController.h */,
 				11DF0BDD21D4B82E006A1D36 /* YLPhotoPreviewController.m */,
 				11DF0BDE21D4B82E006A1D36 /* ChatBoxViewController.h */,
 				11DF0BDF21D4B82E006A1D36 /* ChatBoxViewController.m */,
-				11DF0BE021D4B82E006A1D36 /* YLPhotoPreviewController.h */,
 				11DF0BE121D4B82E006A1D36 /* ChatShowMessageViewController.h */,
+				11DF0BDC21D4B82E006A1D36 /* ChatShowMessageViewController.m */,
 				11DF0BE221D4B82E006A1D36 /* ChatViewController.h */,
 			);
 			path = Controllers;
@@ -1440,6 +1466,7 @@
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
 				11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */,
 				11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */,
+				1149892821E35968001E1443 /* Address.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1555,6 +1582,7 @@
 				1151C5F62192BEF600C08114 /* UIImage+Extension.m in Sources */,
 				113578B921A656AA00DDEA74 /* UIImage+compress.m in Sources */,
 				1151C6312192BEF600C08114 /* LPDPhotoArrangeCVlLayout.m in Sources */,
+				1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */,
 				11DF0C1E21D4B82E006A1D36 /* TopViewAnimaton.m in Sources */,
 				113578B421A656AA00DDEA74 /* AVAssetWriteManager.m in Sources */,
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
@@ -1611,6 +1639,7 @@
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
 				11DF0C9421D4BCFB006A1D36 /* GPBDictionary.m in Sources */,
 				11DF0C2421D4B82E006A1D36 /* YLSystemMessageCell.m in Sources */,
+				1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */,
 				11DF0C0D21D4B82E006A1D36 /* ChatListUserModel.m in Sources */,
 				11DF0C8F21D4BCFB006A1D36 /* GPBCodedInputStream.m in Sources */,
 				1151C5F42192BEF600C08114 /* UILabel+Extension.m in Sources */,
@@ -1670,6 +1699,7 @@
 				11DF0C8E21D4BCFB006A1D36 /* Struct.pbobjc.m in Sources */,
 				11DF0C1D21D4B82E006A1D36 /* YLChatFaceItemView.m in Sources */,
 				1151C61D2192BEF600C08114 /* YLHintView.m in Sources */,
+				1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */,
 				11DF0C1421D4B82E006A1D36 /* ChatShowMessageViewController.m in Sources */,
 				1135791521A6B57000DDEA74 /* AutographViewController.m in Sources */,
 				11DF0C2721D4B82E006A1D36 /* YLVoiceMessageCell.m in Sources */,
