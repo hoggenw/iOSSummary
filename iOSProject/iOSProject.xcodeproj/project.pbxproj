@@ -58,6 +58,7 @@
 		1149893721E44ED5001E1443 /* YLAreaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893621E44ED5001E1443 /* YLAreaData.m */; };
 		1149894621E47707001E1443 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1149894521E47707001E1443 /* Address.plist */; };
 		1149894821E479A8001E1443 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = 1149894721E479A8001E1443 /* city.json */; };
+		1149894C21E48C35001E1443 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149894B21E48C35001E1443 /* IJKMediaFramework.framework */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -281,6 +282,7 @@
 		1149893621E44ED5001E1443 /* YLAreaData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaData.m; sourceTree = "<group>"; };
 		1149894521E47707001E1443 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
 		1149894721E479A8001E1443 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		1149894B21E48C35001E1443 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				113578DC21A65CAF00DDEA74 /* CoreGraphics.framework in Frameworks */,
 				113578DA21A65C9100DDEA74 /* QuartzCore.framework in Frameworks */,
 				113578D821A65C8B00DDEA74 /* AddressBook.framework in Frameworks */,
+				1149894C21E48C35001E1443 /* IJKMediaFramework.framework in Frameworks */,
 				113578D621A65C7F00DDEA74 /* Contacts.framework in Frameworks */,
 				113578D421A65C7700DDEA74 /* CoreLocation.framework in Frameworks */,
 				113578D221A65C6E00DDEA74 /* UIKit.framework in Frameworks */,
@@ -976,6 +979,7 @@
 		1151C5C42192BEF500C08114 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1149894B21E48C35001E1443 /* IJKMediaFramework.framework */,
 				11DF0C3C21D4BCFB006A1D36 /* Protubuf */,
 				11DF0C2A21D4B9A3006A1D36 /* Recorder&Player */,
 				1135789821A656AA00DDEA74 /* Tools */,
