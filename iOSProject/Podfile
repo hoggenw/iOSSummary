@@ -31,6 +31,7 @@ target "iOSProject" do
     pod 'CocoaAsyncSocket'
     pod 'SocketRocket'
     pod 'QBImagePickerController'
+    
 
 end
 
