@@ -13,6 +13,7 @@
 #import "AdvertisementViewController.h"
 #import "GuidanceViewController.h"
 #import "YLIFlyHelper.h"
+
 @interface AppDelegate ()
 
 @end
@@ -71,7 +72,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     // 2.注册远程推送 或者 用application代理的方式注册
     [application registerForRemoteNotifications];
-    
+
     
     //远程通知调用，未启动app时候需要在此做相关调用
     // 取到url scheme跳转信息 未启动时走这一步
@@ -138,6 +139,8 @@
     return YES;
     
 }
+
+#pragma mark - 微信重写openURL
 
 
 #pragma mark- 远程推送调用处理,或者app之间调用处理
