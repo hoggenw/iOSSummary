@@ -20,6 +20,8 @@
 #import "DatePickerView.h"
 #import "YLAddressPickerUtil.h"
 #import "YLAreaHelper.h"
+#import "IJKFrameworkViewController.h"
+#import "ToWordsViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -154,6 +156,24 @@
     model10.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model10];
+    
+    
+    DefualtCellModel *model11 = [DefualtCellModel new];
+    model11.title = [NSString stringWithFormat:@"直播功能"];
+    model11.desc = [NSString stringWithFormat:@"直播功能"];
+    model11.leadImageName = @"tabbar-icon-selected-1";
+    model11.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model11];
+    
+    
+    DefualtCellModel *model12 = [DefualtCellModel new];
+    model12.title = [NSString stringWithFormat:@"语音转文字"];
+    model12.desc = [NSString stringWithFormat:@"语音转文字"];
+    model12.leadImageName = @"tabbar-icon-selected-1";
+    model12.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model12];
     
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -363,6 +383,16 @@
             [YLHintView showMessageOnThisPage: regionTitle];
         };
         [addressUtil showWithAreaId:areaId];
+    }else if(index == 11){
+        IJKFrameworkViewController * VC = [IJKFrameworkViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    
+    else if(index == 12){
+        ToWordsViewController * VC = [ToWordsViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }
     
     
