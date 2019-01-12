@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - BaiduMapKit (4.2.1)
   - CocoaAsyncSocket (7.6.3)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -48,6 +49,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - BaiduMapKit
   - CocoaAsyncSocket
   - FMDB
   - Masonry
@@ -69,6 +71,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - BaiduMapKit
     - CocoaAsyncSocket
     - FMDB
     - Masonry
@@ -86,6 +89,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BaiduMapKit: b7430823de488bb6d082e4e1d356dadf09d3edb2
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -101,6 +105,6 @@ SPEC CHECKSUMS:
   YLOCScan: 37b69e729c6080bfd92298c376e72a7651cc4cca
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 70d64150ad31c924f1e72b86c4b8f3a561162ad4
+PODFILE CHECKSUM: 71b1249e1b9ccdfb5e31b236f6a063f3c3537739
 
 COCOAPODS: 1.5.0
