@@ -176,6 +176,15 @@
     [self.dataArray addObject: model12];
     
     
+    DefualtCellModel *model13 = [DefualtCellModel new];
+    model13.title = [NSString stringWithFormat:@"地图"];
+    model13.desc = [NSString stringWithFormat:@"百度地图跟随"];
+    model13.leadImageName = @"tabbar-icon-selected-1";
+    model13.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model13];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];
@@ -390,6 +399,11 @@
     }
     
     else if(index == 12){
+        ToWordsViewController * VC = [ToWordsViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    else if(index == 13){
         ToWordsViewController * VC = [ToWordsViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];

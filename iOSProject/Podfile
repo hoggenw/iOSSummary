@@ -32,6 +32,8 @@ target "iOSProject" do
     pod 'SocketRocket'
     pod 'QBImagePickerController'
     
+    pod 'BaiduMapKit' #百度地图SDK
+    
 
 end
 
