@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1118C0AF21E990EE00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0AE21E990EE00C6837A /* ToWordsViewController.m */; };
 		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
@@ -68,7 +69,6 @@
 		1149895E21E48F4E001E1443 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895D21E48F4E001E1443 /* MediaPlayer.framework */; };
 		1149896021E48F56001E1443 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895F21E48F56001E1443 /* CoreVideo.framework */; };
 		1149896221E48F8A001E1443 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149896121E48F8A001E1443 /* libbz2.tbd */; };
-		1149896821E49AE9001E1443 /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149896721E49AE9001E1443 /* ToWordsViewController.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -203,6 +203,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1118C0AD21E990EE00C6837A /* ToWordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToWordsViewController.h; path = ../../../../../../ToWordsViewController.h; sourceTree = "<group>"; };
+		1118C0AE21E990EE00C6837A /* ToWordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToWordsViewController.m; path = ../../../../../../ToWordsViewController.m; sourceTree = "<group>"; };
 		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
@@ -303,8 +305,6 @@
 		1149895D21E48F4E001E1443 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1149895F21E48F56001E1443 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1149896121E48F8A001E1443 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		1149896621E49AE9001E1443 /* ToWordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToWordsViewController.h; sourceTree = "<group>"; };
-		1149896721E49AE9001E1443 /* ToWordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToWordsViewController.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -608,6 +608,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
+			isa = PBXGroup;
+			children = (
+				1118C0AD21E990EE00C6837A /* ToWordsViewController.h */,
+				1118C0AE21E990EE00C6837A /* ToWordsViewController.m */,
+			);
+			path = VoiceToWords;
+			sourceTree = "<group>";
+		};
 		1135785A21A298B500DDEA74 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -791,15 +800,6 @@
 				1149895121E48E1D001E1443 /* IJKFrameworkViewController.m */,
 			);
 			path = LiveBroadcast;
-			sourceTree = "<group>";
-		};
-		1149896521E49A9D001E1443 /* VoiceToWords */ = {
-			isa = PBXGroup;
-			children = (
-				1149896621E49AE9001E1443 /* ToWordsViewController.h */,
-				1149896721E49AE9001E1443 /* ToWordsViewController.m */,
-			);
-			path = VoiceToWords;
 			sourceTree = "<group>";
 		};
 		1151C5112192BE0B00C08114 = {
@@ -1112,7 +1112,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				1149896521E49A9D001E1443 /* VoiceToWords */,
+				1118C0AC21E990C500C6837A /* VoiceToWords */,
 				1149894F21E48DE0001E1443 /* LiveBroadcast */,
 				1149892321E35594001E1443 /* YLAreaManager */,
 				1135790F21A6B54500DDEA74 /* Signature */,
@@ -1740,7 +1740,7 @@
 				1151C6242192BEF600C08114 /* NSData+Base64.m in Sources */,
 				11DF0C8A21D4BCFB006A1D36 /* Duration.pbobjc.m in Sources */,
 				11DF0C1621D4B82E006A1D36 /* ChatBoxViewController.m in Sources */,
-				1149896821E49AE9001E1443 /* ToWordsViewController.m in Sources */,
+				1118C0AF21E990EE00C6837A /* ToWordsViewController.m in Sources */,
 				1151C6352192BEF600C08114 /* LPDPhotoPickerController.m in Sources */,
 				113578B821A656AA00DDEA74 /* IFlyFaceImage.m in Sources */,
 				1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */,
@@ -1947,7 +1947,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Code/Vendor/Recorder&Player",
@@ -1981,7 +1984,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/iOSProject/Supporting file/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Code/Vendor/Recorder&Player",
@@ -1999,7 +2005,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD59NK3467;
 				INFOPLIST_FILE = iOSProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2014,7 +2024,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD59NK3467;
 				INFOPLIST_FILE = iOSProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
