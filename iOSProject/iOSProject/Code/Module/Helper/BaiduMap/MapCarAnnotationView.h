@@ -6,11 +6,14 @@
 //  Copyright © 2019 hoggenWang.com. All rights reserved.
 //
 
-#import <BaiduMapAPI_Map/BaiduMapAPI_Map.h>
+#import <BaiduMapAPI_Map/BMKAnnotationView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MapCarAnnotationView : BMKAnnotationView
+
+@property (nonatomic, strong) UIImageView *busImageView;
+
 
 @end
 

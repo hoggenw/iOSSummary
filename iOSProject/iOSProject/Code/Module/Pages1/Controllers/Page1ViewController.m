@@ -22,6 +22,7 @@
 #import "YLAreaHelper.h"
 #import "IJKFrameworkViewController.h"
 #import "ToWordsViewController.h"
+#import "BaiduMapViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -183,6 +184,24 @@
     model13.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model13];
+    
+    
+    DefualtCellModel *model14 = [DefualtCellModel new];
+    model14.title = [NSString stringWithFormat:@"解锁"];
+    model14.desc = [NSString stringWithFormat:@"九宫格解锁"];
+    model14.leadImageName = @"tabbar-icon-selected-1";
+    model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model14];
+    
+    
+    DefualtCellModel *model15 = [DefualtCellModel new];
+    model15.title = [NSString stringWithFormat:@"解锁"];
+    model15.desc = [NSString stringWithFormat:@"人脸识别解锁"];
+    model15.leadImageName = @"tabbar-icon-selected-1";
+    model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model15];
     
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -404,7 +423,7 @@
         [self.navigationController pushViewController:VC animated:YES];
     }
     else if(index == 13){
-        ToWordsViewController * VC = [ToWordsViewController new];
+        BaiduMapViewController * VC = [BaiduMapViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }

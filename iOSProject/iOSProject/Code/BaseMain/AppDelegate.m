@@ -13,8 +13,11 @@
 #import "AdvertisementViewController.h"
 #import "GuidanceViewController.h"
 #import "YLIFlyHelper.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    BMKMapManager* _mapManager;
+}
 
 @end
 
@@ -73,6 +76,13 @@
     // 2.注册远程推送 或者 用application代理的方式注册
     [application registerForRemoteNotifications];
 
+    //地图消息
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"NS6lYC0TtQdaKmuWseunZ5pqobicYbyY"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
     //远程通知调用，未启动app时候需要在此做相关调用
     // 取到url scheme跳转信息 未启动时走这一步

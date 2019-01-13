@@ -10,6 +10,15 @@
 
 @implementation MapCarAnnotationView
 
+- (id)initWithAnnotation:(id<BMKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
+    self =  [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.layer.masksToBounds = NO;
+    }
+    
+    return self;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

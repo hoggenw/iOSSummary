@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1118C0AF21E990EE00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0AE21E990EE00C6837A /* ToWordsViewController.m */; };
+		1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */; };
+		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
+		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
 		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
@@ -203,8 +205,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1118C0AD21E990EE00C6837A /* ToWordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToWordsViewController.h; path = ../../../../../../ToWordsViewController.h; sourceTree = "<group>"; };
-		1118C0AE21E990EE00C6837A /* ToWordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ToWordsViewController.m; path = ../../../../../../ToWordsViewController.m; sourceTree = "<group>"; };
+		1118C0B121E9954C00C6837A /* MapCarAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapCarAnnotationView.h; sourceTree = "<group>"; };
+		1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapCarAnnotationView.m; sourceTree = "<group>"; };
+		1118C0B421E996A800C6837A /* BaiduMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMapViewController.h; sourceTree = "<group>"; };
+		1118C0B521E996A800C6837A /* BaiduMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiduMapViewController.m; sourceTree = "<group>"; };
+		1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToWordsViewController.m; sourceTree = "<group>"; };
+		1118C0BA21E9BE2E00C6837A /* ToWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToWordsViewController.h; sourceTree = "<group>"; };
 		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
@@ -611,10 +617,21 @@
 		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
 			isa = PBXGroup;
 			children = (
-				1118C0AD21E990EE00C6837A /* ToWordsViewController.h */,
-				1118C0AE21E990EE00C6837A /* ToWordsViewController.m */,
+				1118C0BA21E9BE2E00C6837A /* ToWordsViewController.h */,
+				1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */,
 			);
 			path = VoiceToWords;
+			sourceTree = "<group>";
+		};
+		1118C0B021E9952100C6837A /* BaiduMap */ = {
+			isa = PBXGroup;
+			children = (
+				1118C0B121E9954C00C6837A /* MapCarAnnotationView.h */,
+				1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */,
+				1118C0B421E996A800C6837A /* BaiduMapViewController.h */,
+				1118C0B521E996A800C6837A /* BaiduMapViewController.m */,
+			);
+			path = BaiduMap;
 			sourceTree = "<group>";
 		};
 		1135785A21A298B500DDEA74 /* CommonViews */ = {
@@ -1112,6 +1129,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1118C0B021E9952100C6837A /* BaiduMap */,
 				1118C0AC21E990C500C6837A /* VoiceToWords */,
 				1149894F21E48DE0001E1443 /* LiveBroadcast */,
 				1149892321E35594001E1443 /* YLAreaManager */,
@@ -1669,6 +1687,7 @@
 				1151C61F2192BEF600C08114 /* PopupView.m in Sources */,
 				113578BA21A656AA00DDEA74 /* CalculatorTools.m in Sources */,
 				11DF0C1C21D4B82E006A1D36 /* YLChatFaceView.m in Sources */,
+				1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */,
 				1151C642219E9F5F00C08114 /* YLProgressView.m in Sources */,
 				11DF0C3821D4B9A3006A1D36 /* DPAudioRecorder.m in Sources */,
 				1151C6202192BEF600C08114 /* DatePickerView.m in Sources */,
@@ -1716,6 +1735,7 @@
 				11DF0C8B21D4BCFB006A1D36 /* Wrappers.pbobjc.m in Sources */,
 				1151C5F92192BEF600C08114 /* NSDate+Extension.m in Sources */,
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
+				1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */,
 				11DF0C9421D4BCFB006A1D36 /* GPBDictionary.m in Sources */,
 				11DF0C2421D4B82E006A1D36 /* YLSystemMessageCell.m in Sources */,
 				1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */,
@@ -1740,13 +1760,13 @@
 				1151C6242192BEF600C08114 /* NSData+Base64.m in Sources */,
 				11DF0C8A21D4BCFB006A1D36 /* Duration.pbobjc.m in Sources */,
 				11DF0C1621D4B82E006A1D36 /* ChatBoxViewController.m in Sources */,
-				1118C0AF21E990EE00C6837A /* ToWordsViewController.m in Sources */,
 				1151C6352192BEF600C08114 /* LPDPhotoPickerController.m in Sources */,
 				113578B821A656AA00DDEA74 /* IFlyFaceImage.m in Sources */,
 				1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */,
 				11DF0C3421D4B9A3006A1D36 /* DPAudioPlayer.m in Sources */,
 				1151C6272192BEF600C08114 /* LPDAssetCell.m in Sources */,
 				11DF0C2621D4B82E006A1D36 /* YLImageMessageCell.m in Sources */,
+				1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */,
 				11DF0C1121D4B82E006A1D36 /* ChatMessageModel.m in Sources */,
 				1151C6192192BEF600C08114 /* LocalSQliteManager.m in Sources */,
 				11DF0C9121D4BCFB006A1D36 /* GPBUnknownField.m in Sources */,
