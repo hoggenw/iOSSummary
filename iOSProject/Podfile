@@ -33,7 +33,7 @@ target "iOSProject" do
     pod 'QBImagePickerController'
     
     pod 'BaiduMapKit' #百度地图SDK
-    
+    pod 'BMKLocationKit' #定位功能
 
 end
 
