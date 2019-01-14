@@ -634,6 +634,13 @@
 			path = BaiduMap;
 			sourceTree = "<group>";
 		};
+		1118C0BC21EC35E500C6837A /* Jiugongge_Password */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Jiugongge_Password;
+			sourceTree = "<group>";
+		};
 		1135785A21A298B500DDEA74 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1136,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1118C0BC21EC35E500C6837A /* Jiugongge_Password */,
 				1118C0B021E9952100C6837A /* BaiduMap */,
 				1118C0AC21E990C500C6837A /* VoiceToWords */,
 				1149894F21E48DE0001E1443 /* LiveBroadcast */,
