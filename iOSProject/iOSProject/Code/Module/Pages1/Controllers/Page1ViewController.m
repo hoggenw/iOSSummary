@@ -193,15 +193,7 @@
     model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model14];
-    
-    
-    DefualtCellModel *model15 = [DefualtCellModel new];
-    model15.title = [NSString stringWithFormat:@"解锁"];
-    model15.desc = [NSString stringWithFormat:@"人脸识别解锁"];
-    model15.leadImageName = @"tabbar-icon-selected-1";
-    model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    [self.dataArray addObject: model15];
+  
     
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
