@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1109C4F421F4189B00207328 /* YLGestureLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1109C4F321F4189B00207328 /* YLGestureLockView.m */; };
 		1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */; };
 		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
 		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
@@ -205,6 +206,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1109C4F221F4189B00207328 /* YLGestureLockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGestureLockView.h; sourceTree = "<group>"; };
+		1109C4F321F4189B00207328 /* YLGestureLockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGestureLockView.m; sourceTree = "<group>"; };
 		1118C0B121E9954C00C6837A /* MapCarAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapCarAnnotationView.h; sourceTree = "<group>"; };
 		1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapCarAnnotationView.m; sourceTree = "<group>"; };
 		1118C0B421E996A800C6837A /* BaiduMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMapViewController.h; sourceTree = "<group>"; };
@@ -614,6 +617,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1109C4F121F4185E00207328 /* GestureLock */ = {
+			isa = PBXGroup;
+			children = (
+				1109C4F221F4189B00207328 /* YLGestureLockView.h */,
+				1109C4F321F4189B00207328 /* YLGestureLockView.m */,
+			);
+			path = GestureLock;
+			sourceTree = "<group>";
+		};
 		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1148,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1109C4F121F4185E00207328 /* GestureLock */,
 				1118C0BC21EC35E500C6837A /* Jiugongge_Password */,
 				1118C0B021E9952100C6837A /* BaiduMap */,
 				1118C0AC21E990C500C6837A /* VoiceToWords */,
@@ -1769,6 +1782,7 @@
 				11DF0C8A21D4BCFB006A1D36 /* Duration.pbobjc.m in Sources */,
 				11DF0C1621D4B82E006A1D36 /* ChatBoxViewController.m in Sources */,
 				1151C6352192BEF600C08114 /* LPDPhotoPickerController.m in Sources */,
+				1109C4F421F4189B00207328 /* YLGestureLockView.m in Sources */,
 				113578B821A656AA00DDEA74 /* IFlyFaceImage.m in Sources */,
 				1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */,
 				11DF0C3421D4B9A3006A1D36 /* DPAudioPlayer.m in Sources */,
