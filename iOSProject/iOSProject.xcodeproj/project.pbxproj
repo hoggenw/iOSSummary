@@ -626,6 +626,15 @@
 			path = GestureLock;
 			sourceTree = "<group>";
 		};
+		1109C4F721F96E1400207328 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				11DF0BC821D4B82E006A1D36 /* ChatList */,
+				11DF0BD421D4B82E006A1D36 /* ChatPage */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
 			isa = PBXGroup;
 			children = (
@@ -950,9 +959,6 @@
 		1151C5612192BEF500C08114 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				11DF0BC821D4B82E006A1D36 /* ChatList */,
-				11DF0BD421D4B82E006A1D36 /* ChatPage */,
-				1151C59B2192BEF500C08114 /* Login */,
 				1135785E21A29A7A00DDEA74 /* Pages1 */,
 				1151C63D219E9F1900C08114 /* Helper */,
 				1151C6392192C0A300C08114 /* Base */,
@@ -1148,6 +1154,8 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1151C59B2192BEF500C08114 /* Login */,
+				1109C4F721F96E1400207328 /* Chart */,
 				1109C4F121F4185E00207328 /* GestureLock */,
 				1118C0BC21EC35E500C6837A /* Jiugongge_Password */,
 				1118C0B021E9952100C6837A /* BaiduMap */,
