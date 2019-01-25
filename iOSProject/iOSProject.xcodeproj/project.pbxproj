@@ -635,6 +635,37 @@
 			path = Chart;
 			sourceTree = "<group>";
 		};
+		1109C4F821FAAF7C00207328 /* Page2 */ = {
+			isa = PBXGroup;
+			children = (
+				1109C4FB21FAAFAC00207328 /* Views */,
+				1109C4FA21FAAF9D00207328 /* Models */,
+				1109C4F921FAAF9100207328 /* Controllers */,
+			);
+			path = Page2;
+			sourceTree = "<group>";
+		};
+		1109C4F921FAAF9100207328 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1109C4FA21FAAF9D00207328 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1109C4FB21FAAFAC00207328 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
 			isa = PBXGroup;
 			children = (
@@ -959,6 +990,7 @@
 		1151C5612192BEF500C08114 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				1109C4F821FAAF7C00207328 /* Page2 */,
 				1135785E21A29A7A00DDEA74 /* Pages1 */,
 				1151C63D219E9F1900C08114 /* Helper */,
 				1151C6392192C0A300C08114 /* Base */,
