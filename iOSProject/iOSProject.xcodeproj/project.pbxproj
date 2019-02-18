@@ -11,6 +11,7 @@
 		1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */; };
 		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
 		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
+		111B9452221A8B2C00AA7C26 /* Page2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9451221A8B2C00AA7C26 /* Page2ViewController.m */; };
 		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
@@ -214,6 +215,8 @@
 		1118C0B521E996A800C6837A /* BaiduMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiduMapViewController.m; sourceTree = "<group>"; };
 		1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToWordsViewController.m; sourceTree = "<group>"; };
 		1118C0BA21E9BE2E00C6837A /* ToWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToWordsViewController.h; sourceTree = "<group>"; };
+		111B9450221A8B2C00AA7C26 /* Page2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page2ViewController.h; sourceTree = "<group>"; };
+		111B9451221A8B2C00AA7C26 /* Page2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page2ViewController.m; sourceTree = "<group>"; };
 		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
@@ -648,6 +651,8 @@
 		1109C4F921FAAF9100207328 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				111B9450221A8B2C00AA7C26 /* Page2ViewController.h */,
+				111B9451221A8B2C00AA7C26 /* Page2ViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1736,6 +1741,7 @@
 				1151C6162192BEF600C08114 /* LoginView.m in Sources */,
 				1149895221E48E1D001E1443 /* IJKFrameworkViewController.m in Sources */,
 				11DF0C8D21D4BCFB006A1D36 /* FieldMask.pbobjc.m in Sources */,
+				111B9452221A8B2C00AA7C26 /* Page2ViewController.m in Sources */,
 				1151C6222192BEF600C08114 /* ZJImageMagnification.m in Sources */,
 				1151C5F62192BEF600C08114 /* UIImage+Extension.m in Sources */,
 				113578B921A656AA00DDEA74 /* UIImage+compress.m in Sources */,
