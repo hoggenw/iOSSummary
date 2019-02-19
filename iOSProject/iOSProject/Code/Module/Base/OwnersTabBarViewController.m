@@ -9,6 +9,7 @@
 #import "OwnersTabBarViewController.h"
 #import "YLNavigationController.h"
 #import "Page1ViewController.h"
+#import "Page2ViewController.h"
 
 @interface OwnersTabBarViewController ()<UITabBarControllerDelegate>
 
@@ -65,7 +66,7 @@
     self.delegate = self;
     
     // 添加子控制器
-    NSArray *childVCNames  = @[@"Page1ViewController", @"UIViewController", @"UIViewController"];
+    NSArray *childVCNames  = @[@"Page1ViewController", @"Page2ViewController", @"UIViewController"];
     NSArray *titles = @[@"功能", @"页面2", @"页面3"];
     NSArray *iconNames = @[@"1", @"2", @"3"];
     for (int i=0; i<childVCNames.count; i++)

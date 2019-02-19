@@ -111,61 +111,63 @@
 //获取引导页
 -(void)GetAdvertising
 {
-    //AppDelegate *AppDele = ((AppDelegate *)[[UIApplication sharedApplication] delegate]);
-    //NSString *url = [((AppDelegate *)[[UIApplication sharedApplication] delegate]).Url stringByAppendingString:@"/welcome/ad"];
-    NSString *url = @"https://www.ftxmall.net/api/welcome/ad";
-#if defined(DEBUG)||defined(_DEBUG)
     
-#endif
+    [self.imageUrl addObject:@"http://img.gaoxiaogif.cn/GaoxiaoGiffiles/images/2015/11/14/jie%2Czanshiqinshengdema.gif"];
+    [self.imageUrl addObject:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542370154375&di=a4d53a756f8d30baf000cd60b4c2e8f0&imgtype=0&src=http%3A%2F%2Fstatic01.coloros.com%2Fbbs%2Fdata%2Fattachment%2Fforum%2F201409%2F01%2F235054mywky0xww24wkkky.png"];
+    for (NSString * temp in  self.imageUrl) {
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:temp]];
+        SDImageCache* cache = [SDImageCache sharedImageCache];
+        //此方法会先从memory中取。
+        
+        NSData  *imageData  = [cache diskImageDataForKey:key];
+        if (imageData == NULL) {
+            [[manager imageDownloader] downloadImageWithURL:[NSURL URLWithString: temp] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+                
+            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+                [cache storeImageDataToDisk:data forKey: key];
+            }];
+        }
+    }
     
-    [[AFHTTPSessionManager manager] GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-     {
-         NSString *errnos = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"errno"]];
-         
-         
-         if([errnos isEqualToString:@"0"])//成功
-         {
-       
-             //             for (int i = 0; i < dictionaryArray.count; i++) {
-             //                 NSDictionary * dic = dictionaryArray[i];
-             //                 NSString * imageUrlString =  dic[@"img"];
-             //                 //NSLog(@"img: %@",imageUrlString);
-             //                 [self.imageUrl addObject: imageUrlString];
-             //
-             //
-             //             }
-             [self.imageUrl addObject:@"http://img.soogif.com/GC0UnmaIOkkQq2pviBckVpO90C7HM3mo.gif"];
-             [self.imageUrl addObject:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542370154375&di=a4d53a756f8d30baf000cd60b4c2e8f0&imgtype=0&src=http%3A%2F%2Fstatic01.coloros.com%2Fbbs%2Fdata%2Fattachment%2Fforum%2F201409%2F01%2F235054mywky0xww24wkkky.png"];
-             for (NSString * temp in  self.imageUrl) {
-                 SDWebImageManager *manager = [SDWebImageManager sharedManager];
-                 NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:temp]];
-                 SDImageCache* cache = [SDImageCache sharedImageCache];
-                 //此方法会先从memory中取。
-                 
-                 NSData  *imageData  = [cache diskImageDataForKey:key];
-                 if (imageData == NULL) {
-                     [[manager imageDownloader] downloadImageWithURL:[NSURL URLWithString: temp] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-                         
-                     } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
-                         [cache storeImageDataToDisk:data forKey: key];
-                     }];
-                 }
-             }
-             
-             
-             [[NSUserDefaults standardUserDefaults] setObject:self.imageUrl forKey:AdvertisementURLs];
-             
-         }
-         
-         
-         
-     }
-                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-     {
-         NSLog(@"请求失败：%@",error);
-         
-     }];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.imageUrl forKey:AdvertisementURLs];
+//    //AppDelegate *AppDele = ((AppDelegate *)[[UIApplication sharedApplication] delegate]);
+//    //NSString *url = [((AppDelegate *)[[UIApplication sharedApplication] delegate]).Url stringByAppendingString:@"/welcome/ad"];
+//    NSString *url = @"https://www.ftxmall.net/api/welcome/ad";
+//#if defined(DEBUG)||defined(_DEBUG)
+//
+//#endif
+//
+//    [[AFHTTPSessionManager manager] GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+//     {
+//         NSString *errnos = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"errno"]];
+//
+//
+//         if([errnos isEqualToString:@"0"])//成功
+//         {
+//
+//             //             for (int i = 0; i < dictionaryArray.count; i++) {
+//             //                 NSDictionary * dic = dictionaryArray[i];
+//             //                 NSString * imageUrlString =  dic[@"img"];
+//             //                 //NSLog(@"img: %@",imageUrlString);
+//             //                 [self.imageUrl addObject: imageUrlString];
+//             //
+//             //
+//             //             }
+//
+//
+//         }
+//
+//
+//
+//     }
+//                                failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
+//     {
+//         NSLog(@"请求失败：%@",error);
+//
+//     }];
 }
 /*
  #pragma mark - Navigation

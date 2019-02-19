@@ -193,6 +193,15 @@
     model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model14];
+    
+    
+    DefualtCellModel *model15 = [DefualtCellModel new];
+    model15.title = [NSString stringWithFormat:@"核心动画"];
+    model15.desc = [NSString stringWithFormat:@"选择动画"];
+    model15.leadImageName = @"tabbar-icon-selected-1";
+    model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model15];
   
     
     
