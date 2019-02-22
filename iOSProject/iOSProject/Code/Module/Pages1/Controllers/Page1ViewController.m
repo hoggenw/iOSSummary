@@ -23,6 +23,7 @@
 #import "IJKFrameworkViewController.h"
 #import "ToWordsViewController.h"
 #import "BaiduMapViewController.h"
+#import "ChangeLanguageViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -202,6 +203,14 @@
     model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model15];
+    
+    DefualtCellModel *model16 = [DefualtCellModel new];
+    model16.title = [NSString stringWithFormat:@"国际化"];
+    model16.desc = [NSString stringWithFormat:@"APP内国际化及app名称国际化"];
+    model16.leadImageName = @"tabbar-icon-selected-1";
+    model16.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model16];
   
     
     
@@ -428,6 +437,18 @@
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }
+    else if(index == 14){
+   
+    }
+    else if(index == 15){
+      
+    }else if(index == 16){
+        ChangeLanguageViewController * VC = [ChangeLanguageViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    
+   
     
     
 }

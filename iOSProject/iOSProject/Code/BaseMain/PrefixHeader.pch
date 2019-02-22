@@ -11,6 +11,7 @@
 //这步很重要，引入Recorder&Player
 #ifdef __OBJC__
 
+#define  Localized(key)  ([LanguageUtil languageForKey:(key)])
 #define ifiPhoneXLater ([YLDeviceUtil isiPhoneXLater])
 #define kNavigationHeight  (ifiPhoneXLater ? 88 : 64)
 #define HEIGHT_STATUSBAR    (ifiPhoneXLater ? 44 : 20) // 状态栏

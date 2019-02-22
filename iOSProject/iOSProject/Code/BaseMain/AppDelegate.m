@@ -40,6 +40,19 @@
                                                        [UIColor whiteColor], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
     
+    
+    //国际化设置
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:@"appLanguage"]) {
+        NSArray *languages = [NSLocale preferredLanguages];
+        NSString *language = [languages objectAtIndex:0];
+        if ([language hasPrefix:@"zh-Hans"]) {//开头匹配
+            [[NSUserDefaults standardUserDefaults] setObject:@"zh-Hans" forKey:@"appLanguage"];
+        }else{
+            [[NSUserDefaults standardUserDefaults] setObject:@"en" forKey:@"appLanguage"];
+        }
+    }
+    
+    
     AdvertisementViewController *tb = [AdvertisementViewController new];
     //先判断是否是首次登陆
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])

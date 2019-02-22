@@ -67,7 +67,7 @@
     
     // 添加子控制器
     NSArray *childVCNames  = @[@"Page1ViewController", @"Page2ViewController", @"UIViewController"];
-    NSArray *titles = @[@"功能", @"页面2", @"页面3"];
+    NSArray *titles = @[Localized(@"TabbarHome"), Localized(@"TabbarFeatures"), Localized(@"TabbarMe")];
     NSArray *iconNames = @[@"1", @"2", @"3"];
     for (int i=0; i<childVCNames.count; i++)
     {

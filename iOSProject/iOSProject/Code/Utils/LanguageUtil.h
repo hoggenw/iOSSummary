@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LanguageUtil : NSObject
-
++(NSString *)languageForKey:(NSString *)key;
 @end
 
 NS_ASSUME_NONNULL_END

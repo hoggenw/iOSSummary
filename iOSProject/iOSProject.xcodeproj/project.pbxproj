@@ -12,6 +12,10 @@
 		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
 		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
 		111B9452221A8B2C00AA7C26 /* Page2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9451221A8B2C00AA7C26 /* Page2ViewController.m */; };
+		111B9455221D298C00AA7C26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B9457221D298C00AA7C26 /* InfoPlist.strings */; };
+		111B945B221D2B5400AA7C26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B945D221D2B5400AA7C26 /* Localizable.strings */; };
+		111B9461221D340700AA7C26 /* LanguageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9460221D340700AA7C26 /* LanguageUtil.m */; };
+		111B9464221D397F00AA7C26 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9463221D397F00AA7C26 /* ChangeLanguageViewController.m */; };
 		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
@@ -217,6 +221,14 @@
 		1118C0BA21E9BE2E00C6837A /* ToWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToWordsViewController.h; sourceTree = "<group>"; };
 		111B9450221A8B2C00AA7C26 /* Page2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page2ViewController.h; sourceTree = "<group>"; };
 		111B9451221A8B2C00AA7C26 /* Page2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page2ViewController.m; sourceTree = "<group>"; };
+		111B9456221D298C00AA7C26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		111B9458221D29D400AA7C26 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		111B945C221D2B5400AA7C26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		111B945E221D2B5600AA7C26 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		111B945F221D340700AA7C26 /* LanguageUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageUtil.h; sourceTree = "<group>"; };
+		111B9460221D340700AA7C26 /* LanguageUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageUtil.m; sourceTree = "<group>"; };
+		111B9462221D397F00AA7C26 /* ChangeLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeLanguageViewController.h; sourceTree = "<group>"; };
+		111B9463221D397F00AA7C26 /* ChangeLanguageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeLanguageViewController.m; sourceTree = "<group>"; };
 		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
@@ -732,6 +744,8 @@
 				1135789321A6511100DDEA74 /* QRCreatViewController.m */,
 				1132578021B024E3001A5439 /* FileViewController.h */,
 				1132578121B024E3001A5439 /* FileViewController.m */,
+				111B9462221D397F00AA7C26 /* ChangeLanguageViewController.h */,
+				111B9463221D397F00AA7C26 /* ChangeLanguageViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -931,6 +945,8 @@
 				11DF0C9E21D4C798006A1D36 /* normal_face.plist */,
 				1151C52B2192BE0C00C08114 /* Info.plist */,
 				1151C52C2192BE0C00C08114 /* main.m */,
+				111B9457221D298C00AA7C26 /* InfoPlist.strings */,
+				111B945D221D2B5400AA7C26 /* Localizable.strings */,
 			);
 			path = "Supporting file";
 			sourceTree = "<group>";
@@ -1073,6 +1089,8 @@
 				1135787221A2B15300DDEA74 /* YLUMengHelper.m */,
 				113578C821A65B7F00DDEA74 /* YLIFlyHelper.h */,
 				113578C921A65B7F00DDEA74 /* YLIFlyHelper.m */,
+				111B945F221D340700AA7C26 /* LanguageUtil.h */,
+				111B9460221D340700AA7C26 /* LanguageUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1602,6 +1620,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 1151C5112192BE0B00C08114;
 			productRefGroup = 1151C51B2192BE0B00C08114 /* Products */;
@@ -1624,8 +1643,10 @@
 				1149894821E479A8001E1443 /* city.json in Resources */,
 				1151C6152192BEF600C08114 /* LoginView.xib in Resources */,
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
+				111B945B221D2B5400AA7C26 /* Localizable.strings in Resources */,
 				11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */,
 				11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */,
+				111B9455221D298C00AA7C26 /* InfoPlist.strings in Resources */,
 				1149894621E47707001E1443 /* Address.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1816,6 +1837,7 @@
 				1135790921A6986F00DDEA74 /* YLRecordControlView.m in Sources */,
 				11DF0C1B21D4B82E006A1D36 /* YLChatBoxView.m in Sources */,
 				113578B621A656AA00DDEA74 /* CaptureManager.m in Sources */,
+				111B9461221D340700AA7C26 /* LanguageUtil.m in Sources */,
 				11DF0BC321D477DC006A1D36 /* YLImageView.m in Sources */,
 				113578CA21A65B7F00DDEA74 /* YLIFlyHelper.m in Sources */,
 				11DF0C8921D4BCFB006A1D36 /* Api.pbobjc.m in Sources */,
@@ -1823,6 +1845,7 @@
 				11DF0C2521D4B82E006A1D36 /* YLTextTableViewCell.m in Sources */,
 				11DF0C1F21D4B82E006A1D36 /* MicrophoneTopView.m in Sources */,
 				113578B321A656AA00DDEA74 /* CanvasView.m in Sources */,
+				111B9464221D397F00AA7C26 /* ChangeLanguageViewController.m in Sources */,
 				1135787321A2B15300DDEA74 /* YLUMengHelper.m in Sources */,
 				1151C6242192BEF600C08114 /* NSData+Base64.m in Sources */,
 				11DF0C8A21D4BCFB006A1D36 /* Duration.pbobjc.m in Sources */,
@@ -1899,11 +1922,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		111B9457221D298C00AA7C26 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111B9456221D298C00AA7C26 /* en */,
+				111B9458221D29D400AA7C26 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		111B945D221D2B5400AA7C26 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111B945C221D2B5400AA7C26 /* en */,
+				111B945E221D2B5600AA7C26 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1151C5392192BE0C00C08114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1963,6 +2008,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
