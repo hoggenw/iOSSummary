@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TopViewAnimaton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YLAnimationVoiceView : UIView
 
+//开始动画
+- (void)startAnimation;
+- (void)stopArcAnimation;
 @end
 
 NS_ASSUME_NONNULL_END

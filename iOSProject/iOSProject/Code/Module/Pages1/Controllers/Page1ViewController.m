@@ -24,6 +24,7 @@
 #import "ToWordsViewController.h"
 #import "BaiduMapViewController.h"
 #import "ChangeLanguageViewController.h"
+#import "Animation1ViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -198,10 +199,9 @@
     
     DefualtCellModel *model15 = [DefualtCellModel new];
     model15.title = [NSString stringWithFormat:@"核心动画"];
-    model15.desc = [NSString stringWithFormat:@"选择动画"];
+    model15.desc = [NSString stringWithFormat:@"动画1"];
     model15.leadImageName = @"tabbar-icon-selected-1";
     model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     [self.dataArray addObject: model15];
     
     DefualtCellModel *model16 = [DefualtCellModel new];
@@ -441,7 +441,9 @@
    
     }
     else if(index == 15){
-      
+        Animation1ViewController * VC = [Animation1ViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }else if(index == 16){
         ChangeLanguageViewController * VC = [ChangeLanguageViewController new];
         VC.hidesBottomBarWhenPushed = true;
