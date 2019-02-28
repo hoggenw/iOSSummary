@@ -135,11 +135,6 @@
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
 		11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */; };
-		11D6BCFD222528C1006E47DE /* TopViewAnimaton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE4222528C1006E47DE /* TopViewAnimaton.m */; };
-		11D6BCFE222528C1006E47DE /* MicrophoneTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE5222528C1006E47DE /* MicrophoneTopView.m */; };
-		11D6BCFF222528C1006E47DE /* MicrophoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE6222528C1006E47DE /* MicrophoneView.m */; };
-		11D6BD00222528C1006E47DE /* TopArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE7222528C1006E47DE /* TopArcView.m */; };
-		11D6BD01222528C1006E47DE /* MicrophoneBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCED222528C1006E47DE /* MicrophoneBottomView.m */; };
 		11D6BD02222528C1006E47DE /* YLMicphoneVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */; };
 		11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF1222528C1006E47DE /* YLCircleView.m */; };
 		11D6BD05222528C1006E47DE /* YLVoiceAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF4222528C1006E47DE /* YLVoiceAnimationViewController.m */; };
@@ -462,16 +457,6 @@
 		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLVoiceCircleView.m; sourceTree = "<group>"; };
-		11D6BCE4222528C1006E47DE /* TopViewAnimaton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewAnimaton.m; sourceTree = "<group>"; };
-		11D6BCE5222528C1006E47DE /* MicrophoneTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneTopView.m; sourceTree = "<group>"; };
-		11D6BCE6222528C1006E47DE /* MicrophoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneView.m; sourceTree = "<group>"; };
-		11D6BCE7222528C1006E47DE /* TopArcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopArcView.m; sourceTree = "<group>"; };
-		11D6BCE8222528C1006E47DE /* MicrophoneBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneBottomView.h; sourceTree = "<group>"; };
-		11D6BCE9222528C1006E47DE /* MicrophoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneView.h; sourceTree = "<group>"; };
-		11D6BCEA222528C1006E47DE /* MicrophoneTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneTopView.h; sourceTree = "<group>"; };
-		11D6BCEB222528C1006E47DE /* TopViewAnimaton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewAnimaton.h; sourceTree = "<group>"; };
-		11D6BCEC222528C1006E47DE /* TopArcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopArcView.h; sourceTree = "<group>"; };
-		11D6BCED222528C1006E47DE /* MicrophoneBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneBottomView.m; sourceTree = "<group>"; };
 		11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMicphoneVoiceView.m; sourceTree = "<group>"; };
 		11D6BCF1222528C1006E47DE /* YLCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
 		11D6BCF2222528C1006E47DE /* YLCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLCircleView.h; sourceTree = "<group>"; };
@@ -1248,6 +1233,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				11D6BD1122266AA1006E47DE /* GesturePassword */,
 				11D6BCE0222528C1006E47DE /* Animation1 */,
 				1151C59B2192BEF500C08114 /* Login */,
 				1109C4F721F96E1400207328 /* Chart */,
@@ -1302,16 +1288,6 @@
 		11D6BCE3222528C1006E47DE /* part one */ = {
 			isa = PBXGroup;
 			children = (
-				11D6BCE4222528C1006E47DE /* TopViewAnimaton.m */,
-				11D6BCE5222528C1006E47DE /* MicrophoneTopView.m */,
-				11D6BCE6222528C1006E47DE /* MicrophoneView.m */,
-				11D6BCE7222528C1006E47DE /* TopArcView.m */,
-				11D6BCE8222528C1006E47DE /* MicrophoneBottomView.h */,
-				11D6BCE9222528C1006E47DE /* MicrophoneView.h */,
-				11D6BCEA222528C1006E47DE /* MicrophoneTopView.h */,
-				11D6BCEB222528C1006E47DE /* TopViewAnimaton.h */,
-				11D6BCEC222528C1006E47DE /* TopArcView.h */,
-				11D6BCED222528C1006E47DE /* MicrophoneBottomView.m */,
 			);
 			path = "part one";
 			sourceTree = "<group>";
@@ -1336,6 +1312,13 @@
 				11D6BCF9222528C1006E47DE /* YLVoiceCircleViewController.h */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11D6BD1122266AA1006E47DE /* GesturePassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GesturePassword;
 			sourceTree = "<group>";
 		};
 		11DF0BC821D4B82E006A1D36 /* ChatList */ = {
@@ -1844,7 +1827,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				113578B521A656AA00DDEA74 /* XCFileManager.m in Sources */,
-				11D6BCFD222528C1006E47DE /* TopViewAnimaton.m in Sources */,
 				1151C61A2192BEF600C08114 /* NetworkManager.m in Sources */,
 				1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */,
 				1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */,
@@ -1921,7 +1903,6 @@
 				11DF0C1521D4B82E006A1D36 /* YLPhotoPreviewController.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
 				11DF0C3721D4B9A3006A1D36 /* amr_wav_converter.c in Sources */,
-				11D6BCFE222528C1006E47DE /* MicrophoneTopView.m in Sources */,
 				11DF0C8B21D4BCFB006A1D36 /* Wrappers.pbobjc.m in Sources */,
 				1151C5F92192BEF600C08114 /* NSDate+Extension.m in Sources */,
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
@@ -1974,8 +1955,6 @@
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				11DF0C2221D4B82E006A1D36 /* YLVoiceView.m in Sources */,
 				11DF0C9021D4BCFB006A1D36 /* GPBWellKnownTypes.m in Sources */,
-				11D6BCFF222528C1006E47DE /* MicrophoneView.m in Sources */,
-				11D6BD01222528C1006E47DE /* MicrophoneBottomView.m in Sources */,
 				11DF0C8821D4BCFB006A1D36 /* SourceContext.pbobjc.m in Sources */,
 				11DF0C8121D4BCFB006A1D36 /* GPBWireFormat.m in Sources */,
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
@@ -1988,7 +1967,6 @@
 				1151C6282192BEF600C08114 /* YLUIDocumentPickerViewViewController.m in Sources */,
 				11D6BD06222528C1006E47DE /* YLVoiceCircleViewController.m in Sources */,
 				1151C5F22192BEF600C08114 /* YLNavigationController.m in Sources */,
-				11D6BD00222528C1006E47DE /* TopArcView.m in Sources */,
 				1151C6322192BEF600C08114 /* LPDImagePickerController.m in Sources */,
 				11DF0C9821D4BD21006A1D36 /* Message.pbobjc.m in Sources */,
 				1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */,
