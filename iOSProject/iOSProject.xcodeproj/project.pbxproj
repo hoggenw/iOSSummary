@@ -143,6 +143,8 @@
 		11D6BD0A22252901006E47DE /* Animation1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BD0922252901006E47DE /* Animation1ViewController.m */; };
 		11D6BD0D22252B38006E47DE /* YLAnimationVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BD0C22252B38006E47DE /* YLAnimationVoiceView.m */; };
 		11D6BD1022252CB6006E47DE /* TopArcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BD0E22252CB6006E47DE /* TopArcView.m */; };
+		11D6BD142227B62C006E47DE /* ShowPSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BD132227B62C006E47DE /* ShowPSDViewController.m */; };
+		11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BD162227D57C006E47DE /* GesturePasswordView.m */; };
 		11DF0BC321D477DC006A1D36 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0BC221D477DC006A1D36 /* YLImageView.m */; };
 		11DF0C0D21D4B82E006A1D36 /* ChatListUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0BCA21D4B82E006A1D36 /* ChatListUserModel.m */; };
 		11DF0C0E21D4B82E006A1D36 /* ChatUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0BCB21D4B82E006A1D36 /* ChatUserModel.m */; };
@@ -474,6 +476,10 @@
 		11D6BD0C22252B38006E47DE /* YLAnimationVoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAnimationVoiceView.m; sourceTree = "<group>"; };
 		11D6BD0E22252CB6006E47DE /* TopArcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopArcView.m; sourceTree = "<group>"; };
 		11D6BD0F22252CB6006E47DE /* TopArcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopArcView.h; sourceTree = "<group>"; };
+		11D6BD122227B62C006E47DE /* ShowPSDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowPSDViewController.h; sourceTree = "<group>"; };
+		11D6BD132227B62C006E47DE /* ShowPSDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowPSDViewController.m; sourceTree = "<group>"; };
+		11D6BD152227D57C006E47DE /* GesturePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GesturePasswordView.h; sourceTree = "<group>"; };
+		11D6BD162227D57C006E47DE /* GesturePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GesturePasswordView.m; sourceTree = "<group>"; };
 		11DF0BC121D477DB006A1D36 /* YLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLImageView.h; sourceTree = "<group>"; };
 		11DF0BC221D477DC006A1D36 /* YLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLImageView.m; sourceTree = "<group>"; };
 		11DF0BCA21D4B82E006A1D36 /* ChatListUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListUserModel.m; sourceTree = "<group>"; };
@@ -1317,6 +1323,10 @@
 		11D6BD1122266AA1006E47DE /* GesturePassword */ = {
 			isa = PBXGroup;
 			children = (
+				11D6BD122227B62C006E47DE /* ShowPSDViewController.h */,
+				11D6BD132227B62C006E47DE /* ShowPSDViewController.m */,
+				11D6BD152227D57C006E47DE /* GesturePasswordView.h */,
+				11D6BD162227D57C006E47DE /* GesturePasswordView.m */,
 			);
 			path = GesturePassword;
 			sourceTree = "<group>";
@@ -1859,6 +1869,7 @@
 				1151C642219E9F5F00C08114 /* YLProgressView.m in Sources */,
 				11DF0C3821D4B9A3006A1D36 /* DPAudioRecorder.m in Sources */,
 				1151C6202192BEF600C08114 /* DatePickerView.m in Sources */,
+				11D6BD142227B62C006E47DE /* ShowPSDViewController.m in Sources */,
 				1151C52D2192BE0C00C08114 /* main.m in Sources */,
 				11DF0C1A21D4B82E006A1D36 /* YLChatFaceMenuVIew.m in Sources */,
 				113578BB21A656AA00DDEA74 /* UIImage+Extensions.m in Sources */,
@@ -1951,6 +1962,7 @@
 				1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */,
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
+				11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */,
 				11DF0C8C21D4BCFB006A1D36 /* Empty.pbobjc.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				11DF0C2221D4B82E006A1D36 /* YLVoiceView.m in Sources */,

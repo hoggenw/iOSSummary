@@ -25,6 +25,7 @@
 #import "BaiduMapViewController.h"
 #import "ChangeLanguageViewController.h"
 #import "Animation1ViewController.h"
+#import "ShowPSDViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -438,7 +439,9 @@
         [self.navigationController pushViewController:VC animated:YES];
     }
     else if(index == 14){
-   
+        ShowPSDViewController * VC = [ShowPSDViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }
     else if(index == 15){
         Animation1ViewController * VC = [Animation1ViewController new];
