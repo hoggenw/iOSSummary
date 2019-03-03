@@ -212,6 +212,15 @@
     model16.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model16];
+    
+    
+    DefualtCellModel *model17 = [DefualtCellModel new];
+    model17.title = [NSString stringWithFormat:@"核心动画"];
+    model17.desc = [NSString stringWithFormat:@"动画2"];
+    model17.leadImageName = @"tabbar-icon-selected-1";
+    model17.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model17];
   
     
     
@@ -451,6 +460,8 @@
         ChangeLanguageViewController * VC = [ChangeLanguageViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
+    }else if(index == 17){
+        
     }
     
    
