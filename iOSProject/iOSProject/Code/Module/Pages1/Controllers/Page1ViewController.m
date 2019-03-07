@@ -26,6 +26,7 @@
 #import "ChangeLanguageViewController.h"
 #import "Animation1ViewController.h"
 #import "ShowPSDViewController.h"
+#import "Animation2ViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -461,7 +462,9 @@
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }else if(index == 17){
-        
+        Animation2ViewController * VC = [Animation2ViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }
     
    

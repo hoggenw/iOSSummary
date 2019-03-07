@@ -77,6 +77,7 @@
 		1149895E21E48F4E001E1443 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895D21E48F4E001E1443 /* MediaPlayer.framework */; };
 		1149896021E48F56001E1443 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895F21E48F56001E1443 /* CoreVideo.framework */; };
 		1149896221E48F8A001E1443 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149896121E48F8A001E1443 /* libbz2.tbd */; };
+		1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -339,6 +340,8 @@
 		1149895D21E48F4E001E1443 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1149895F21E48F56001E1443 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1149896121E48F8A001E1443 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation2ViewController.h; sourceTree = "<group>"; };
+		1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation2ViewController.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -716,6 +719,8 @@
 		110A9669222E7DBA002F9EB3 /* Animation2 */ = {
 			isa = PBXGroup;
 			children = (
+				1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */,
+				1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */,
 			);
 			path = Animation2;
 			sourceTree = "<group>";
@@ -1904,6 +1909,7 @@
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				11DF0C1021D4B82E006A1D36 /* ChatListTableViewCell.m in Sources */,
 				11DF0C8521D4BCFB006A1D36 /* Type.pbobjc.m in Sources */,
+				1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */,
 				113578BC21A656AA00DDEA74 /* PermissionDetector.m in Sources */,
 				11DF0C3621D4B9A3006A1D36 /* JX_GCDTimerManager.m in Sources */,
 				11DF0C7F21D4BCFB006A1D36 /* GPBDescriptor.m in Sources */,
