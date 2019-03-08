@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    UIButton * waveButton = [self creatNormalBUttonWithName:@"开始动画" frame: CGRectMake(120, 100, 60, 50)];
+    [waveButton addTarget: self action:@selector(waveAnimation) forControlEvents: UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,10 +33,24 @@
 
 
 #pragma mark - Events
-
+- (void)waveAnimation {
+    
+    
+}
 
 #pragma mark - Private Methods
-
+-(UIButton *)creatNormalBUttonWithName:(NSString *)name frame:(CGRect)frame {
+    
+    UIButton * button = [UIButton new];
+    button.frame = frame;
+    [self.view addSubview: button];
+    button.titleLabel.textColor = [UIColor blackColor];
+    [button setTitle: name forState: UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
+    
+    return button;
+    
+}
 
 #pragma mark - Extension Delegate or Protocol
 

@@ -78,6 +78,8 @@
 		1149896021E48F56001E1443 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895F21E48F56001E1443 /* CoreVideo.framework */; };
 		1149896221E48F8A001E1443 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149896121E48F8A001E1443 /* libbz2.tbd */; };
 		1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */; };
+		1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */; };
+		1150E6F3223115440030CD0E /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F2223115440030CD0E /* CircleView.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -342,6 +344,10 @@
 		1149896121E48F8A001E1443 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation2ViewController.h; sourceTree = "<group>"; };
 		1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation2ViewController.m; sourceTree = "<group>"; };
+		1150E6EE22310F250030CD0E /* CircleAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleAnimationViewController.h; sourceTree = "<group>"; };
+		1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleAnimationViewController.m; sourceTree = "<group>"; };
+		1150E6F1223115440030CD0E /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		1150E6F2223115440030CD0E /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -719,6 +725,7 @@
 		110A9669222E7DBA002F9EB3 /* Animation2 */ = {
 			isa = PBXGroup;
 			children = (
+				1150E6ED22310EF90030CD0E /* circle */,
 				1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */,
 				1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */,
 			);
@@ -930,6 +937,17 @@
 				1149895121E48E1D001E1443 /* IJKFrameworkViewController.m */,
 			);
 			path = LiveBroadcast;
+			sourceTree = "<group>";
+		};
+		1150E6ED22310EF90030CD0E /* circle */ = {
+			isa = PBXGroup;
+			children = (
+				1150E6EE22310F250030CD0E /* CircleAnimationViewController.h */,
+				1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */,
+				1150E6F1223115440030CD0E /* CircleView.h */,
+				1150E6F2223115440030CD0E /* CircleView.m */,
+			);
+			path = circle;
 			sourceTree = "<group>";
 		};
 		1151C5112192BE0B00C08114 = {
@@ -1877,6 +1895,7 @@
 				11D6BD142227B62C006E47DE /* ShowPSDViewController.m in Sources */,
 				1151C52D2192BE0C00C08114 /* main.m in Sources */,
 				11DF0C1A21D4B82E006A1D36 /* YLChatFaceMenuVIew.m in Sources */,
+				1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */,
 				113578BB21A656AA00DDEA74 /* UIImage+Extensions.m in Sources */,
 				11DF0C2921D4B82E006A1D36 /* YLPhotoPreviewCell.m in Sources */,
 				11DF0C8721D4BCFB006A1D36 /* Any.pbobjc.m in Sources */,
@@ -1956,6 +1975,7 @@
 				1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */,
 				11DF0C3421D4B9A3006A1D36 /* DPAudioPlayer.m in Sources */,
 				1151C6272192BEF600C08114 /* LPDAssetCell.m in Sources */,
+				1150E6F3223115440030CD0E /* CircleView.m in Sources */,
 				11DF0C2621D4B82E006A1D36 /* YLImageMessageCell.m in Sources */,
 				11D6BD0A22252901006E47DE /* Animation1ViewController.m in Sources */,
 				1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */,

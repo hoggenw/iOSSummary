@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     //波浪动画
     UIButton * waveButton = [self creatNormalBUttonWithName:@"波浪动画" frame: CGRectMake(80, 100, 100, 40)];
     [waveButton addTarget: self action:@selector(waveAnimation) forControlEvents: UIControlEventTouchUpInside];
@@ -30,7 +31,7 @@
     UIButton * flipButton2 = [self creatNormalBUttonWithName:@"3D动画2" frame: CGRectMake(80, 220, 100, 60)];
     [flipButton2 addTarget: self action:@selector(flip2Animation) forControlEvents: UIControlEventTouchUpInside];
     
-    UIButton * circleButton = [self creatNormalBUttonWithName:@"旋转动画" frame: CGRectMake(80, 220, 100, 60)];
+    UIButton * circleButton = [self creatNormalBUttonWithName:@"旋转动画" frame: CGRectMake(80, 280, 100, 60)];
     [circleButton addTarget: self action:@selector(circleAnimation) forControlEvents: UIControlEventTouchUpInside];
 }
 
