@@ -7,8 +7,11 @@
 //
 
 #import "CircleAnimationViewController.h"
+#import "CircleView.h"
 
 @interface CircleAnimationViewController ()
+
+@property (nonatomic, strong) CircleView * circleView;
 
 @end
 
@@ -22,6 +25,10 @@
     [super viewDidLoad];
     UIButton * waveButton = [self creatNormalBUttonWithName:@"开始动画" frame: CGRectMake(120, 100, 60, 50)];
     [waveButton addTarget: self action:@selector(waveAnimation) forControlEvents: UIControlEventTouchUpInside];
+    self.view.backgroundColor = [UIColor whiteColor];
+    _circleView =  [[CircleView alloc] initWithFrame:CGRectMake(100, 200, 80, 80)];//(frame: CGRect(x: 100, y: 200, width: 80, height: 80))
+    _circleView.center = self.view.center;
+    [self.view addSubview: _circleView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +41,7 @@
 
 #pragma mark - Events
 - (void)waveAnimation {
-    
+    [_circleView beginAnimation];
     
 }
 
@@ -51,6 +58,8 @@
     return button;
     
 }
+
+
 
 #pragma mark - Extension Delegate or Protocol
 

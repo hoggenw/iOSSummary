@@ -7,6 +7,7 @@
 //
 
 #import "Animation2ViewController.h"
+#import "CircleAnimationViewController.h"
 
 @interface Animation2ViewController ()
 
@@ -61,7 +62,8 @@
 
 
 - (void)circleAnimation {
-    
+    CircleAnimationViewController * circleVC = [CircleAnimationViewController new];
+    [self.navigationController pushViewController: circleVC animated: true];
     
 }
 
