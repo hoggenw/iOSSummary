@@ -12,7 +12,7 @@
 
 @interface CircleView ()
 @property (nonatomic, strong) CAShapeLayer * circleLayer1;
-@property (nonatomic, weak) CAGradientLayer *circleGradientLayer;
+@property (nonatomic, strong) CAGradientLayer *circleGradientLayer;
 @property (nonatomic, strong) CAShapeLayer * arrows1 ;
 @property (nonatomic, strong) UIBezierPath *arrow1StartPath;
 @property (nonatomic, strong) UIBezierPath *arrow1EndPath;
@@ -22,15 +22,15 @@
 @property (nonatomic, strong) UIBezierPath *arrow2StartPath;
 @property (nonatomic, strong) UIBezierPath *arrow2EndPath;
 
-@property (nonatomic, weak) CABasicAnimation *baseAnimation1;// = CABasicAnimation(keyPath: "transform.rotation.z");
-@property (nonatomic, weak) CABasicAnimation *baseAnimation2;// = CABasicAnimation(keyPath: "transform.rotation.z");
+@property (nonatomic, strong) CABasicAnimation *baseAnimation1;// = CABasicAnimation(keyPath: "transform.rotation.z");
+@property (nonatomic, strong) CABasicAnimation *baseAnimation2;// = CABasicAnimation(keyPath: "transform.rotation.z");
 
-@property (nonatomic, weak) CAKeyframeAnimation* keyAnimation2;// = CAKeyframeAnimation(keyPath: "path");
-@property (nonatomic, weak) CAKeyframeAnimation* keyAnimation1;// = CAKeyframeAnimation(keyPath: "path");
+@property (nonatomic, strong) CAKeyframeAnimation* keyAnimation2;// = CAKeyframeAnimation(keyPath: "path");
+@property (nonatomic, strong) CAKeyframeAnimation* keyAnimation1;// = CAKeyframeAnimation(keyPath: "path");
 
 @property (nonatomic, strong) UIView *circle2View;// UIView = UIView()
 
-@property (nonatomic, weak)  NSTimer * progressTimer;
+@property (nonatomic, strong)  NSTimer * progressTimer;
 
 
 @end
@@ -82,29 +82,16 @@
         [self tintColorDidChange];
         [self.layer addSublayer:self.circleLayer1];
         [self.circleLayer1 addSublayer:self.arrows1];
-        
         [self.circle2View.layer addSublayer:self.circleLayer2];
         [self.circleLayer2 addSublayer:self.arrows2Layer];
         
-        _baseAnimation1 = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-        [_baseAnimation1 setFromValue: [NSNumber numberWithFloat:  M_PI * 2 ]];
-        _baseAnimation1.toValue = 0;
-        _baseAnimation1.duration = 2.5;
-        _baseAnimation1.repeatCount = HUGE;
-        //kCAMediaTimingFunctionEaseInEaseOut 使用该值，动画在开始和结束时速度较慢，中间时间段内速度较快。
-        _baseAnimation1.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+
         
+        self.baseAnimation1 = [self installAnimation];
         
-        _baseAnimation2 = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        self.baseAnimation2 = [self installAnimation];
         
-        [_baseAnimation2 setFromValue: [NSNumber numberWithFloat:  M_PI * 2 ]];
-        _baseAnimation2.toValue = 0;
-        _baseAnimation2.duration = 2.5;
-        _baseAnimation2.repeatCount = HUGE;
-        //kCAMediaTimingFunctionEaseInEaseOut 使用该值，动画在开始和结束时速度较慢，中间时间段内速度较快。
-        _baseAnimation2.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-        
-         NSLog(@"开始动画 %@===%@",@(self.baseAnimation1.duration),@(self.baseAnimation2.duration));
+         NSLog(@"开始动画 %@===%@",@(_baseAnimation1.duration),@(_baseAnimation2.duration));
     }
     
     return self;
@@ -221,33 +208,35 @@
     self.baseAnimation1.beginTime = CACurrentMediaTime() + 0.1;
    
     NSLog(@"开始动画 %@===%@",@(self.baseAnimation1.duration),@(self.baseAnimation2.duration));
-    NSArray * values2 = @[ self.arrow2StartPath,self.arrow2EndPath,self.arrow2StartPath,self.arrow2EndPath,self.arrow2StartPath];
+    NSArray * values2 = @[ (id)self.arrow2StartPath.CGPath,(id)self.arrow2EndPath.CGPath,(id)self.arrow2StartPath.CGPath,(id)self.arrow2EndPath.CGPath,(id)self.arrow2StartPath.CGPath];
     
-    //[self installKeyframeAnimation:self.keyAnimation2 values:values2];
+    [self installKeyframeAnimation:self.keyAnimation2 values:values2 duration:2.5];
     
-    NSArray * values1 = @[self.arrow1StartPath,self.arrow1EndPath,self.arrow1StartPath,self.arrow1EndPath,self.arrow1StartPath];
-    //[self installKeyframeAnimation:self.keyAnimation1 values:values1];
+    NSArray * values1 = @[(id)self.arrow1StartPath.CGPath,(id)self.arrow1EndPath.CGPath,(id)self.arrow1StartPath.CGPath,(id)self.arrow1EndPath.CGPath,(id)self.arrow1StartPath.CGPath];
+    [self installKeyframeAnimation:self.keyAnimation1 values:values1 duration:2.5];
     [self.circleLayer1 addAnimation: self.baseAnimation1 forKey:@"baseanimation1"];
     [self.circleLayer2 addAnimation: self.baseAnimation2 forKey: @"baseanimation2"];
-//    [self.arrows2Layer addAnimation: self.keyAnimation2 forKey: @"keyAnimation2"];
-//    [self.arrows1 addAnimation: self. keyAnimation1 forKey: @"keyAnimation1"];
+    [self.arrows2Layer addAnimation: self.keyAnimation2 forKey: @"keyAnimation2"];
+    [self.arrows1 addAnimation: self.keyAnimation1 forKey: @"keyAnimation1"];
     
 }
--(void)installAnimation:(CABasicAnimation *) baseAnimation {
+-(CABasicAnimation *)installAnimation{
+
+    CABasicAnimation *baseAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     [baseAnimation setFromValue: [NSNumber numberWithFloat:  M_PI * 2 ]];
     baseAnimation.toValue = 0;
     baseAnimation.duration = 2.5;
     baseAnimation.repeatCount = HUGE;
     //kCAMediaTimingFunctionEaseInEaseOut 使用该值，动画在开始和结束时速度较慢，中间时间段内速度较快。
     baseAnimation.timingFunction =  [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]; //CAMediaTimingFunction(name:  kCAMediaTimingFunctionEaseOut);
-    NSLog(@"进入构建");
+    return  baseAnimation;
 }
--(void)installKeyframeAnimation:(CAKeyframeAnimation *)keyAnimation values:(NSArray *)values {
+-(void)installKeyframeAnimation:(CAKeyframeAnimation *)keyAnimation values:(NSArray *)values duration:(CFTimeInterval)duration {
     keyAnimation.values = values;
     keyAnimation.keyTimes = @[@0.1,@0.2,@0.3,@0.4,@0.5];
     keyAnimation.autoreverses = false;
     keyAnimation.repeatCount = HUGE;
-    keyAnimation.duration = 2.5;
+    keyAnimation.duration = duration;
 }
 
 
