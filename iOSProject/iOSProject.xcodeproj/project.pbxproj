@@ -80,6 +80,8 @@
 		1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */; };
 		1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */; };
 		1150E6F3223115440030CD0E /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F2223115440030CD0E /* CircleView.m */; };
+		1150E6FA223633E10030CD0E /* WaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F9223633E10030CD0E /* WaveViewController.m */; };
+		1150E6FD223634370030CD0E /* WaveAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6FC223634370030CD0E /* WaveAnimationView.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -348,6 +350,10 @@
 		1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleAnimationViewController.m; sourceTree = "<group>"; };
 		1150E6F1223115440030CD0E /* CircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		1150E6F2223115440030CD0E /* CircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		1150E6F8223633E10030CD0E /* WaveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveViewController.h; sourceTree = "<group>"; };
+		1150E6F9223633E10030CD0E /* WaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveViewController.m; sourceTree = "<group>"; };
+		1150E6FB223634370030CD0E /* WaveAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveAnimationView.h; sourceTree = "<group>"; };
+		1150E6FC223634370030CD0E /* WaveAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveAnimationView.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -725,6 +731,7 @@
 		110A9669222E7DBA002F9EB3 /* Animation2 */ = {
 			isa = PBXGroup;
 			children = (
+				1150E6F7223633530030CD0E /* Wave */,
 				1150E6ED22310EF90030CD0E /* circle */,
 				1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */,
 				1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */,
@@ -948,6 +955,17 @@
 				1150E6F2223115440030CD0E /* CircleView.m */,
 			);
 			path = circle;
+			sourceTree = "<group>";
+		};
+		1150E6F7223633530030CD0E /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				1150E6F8223633E10030CD0E /* WaveViewController.h */,
+				1150E6F9223633E10030CD0E /* WaveViewController.m */,
+				1150E6FB223634370030CD0E /* WaveAnimationView.h */,
+				1150E6FC223634370030CD0E /* WaveAnimationView.m */,
+			);
+			path = Wave;
 			sourceTree = "<group>";
 		};
 		1151C5112192BE0B00C08114 = {
@@ -1861,6 +1879,7 @@
 			files = (
 				113578B521A656AA00DDEA74 /* XCFileManager.m in Sources */,
 				1151C61A2192BEF600C08114 /* NetworkManager.m in Sources */,
+				1150E6FA223633E10030CD0E /* WaveViewController.m in Sources */,
 				1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */,
 				1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */,
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
@@ -1906,6 +1925,7 @@
 				1135790A21A6986F00DDEA74 /* YLRecordVideoManager.m in Sources */,
 				11DF0C1721D4B82E006A1D36 /* YLChatBoxMoreView.m in Sources */,
 				1151C6172192BEF600C08114 /* UserModel.m in Sources */,
+				1150E6FD223634370030CD0E /* WaveAnimationView.m in Sources */,
 				11DF0C8221D4BCFB006A1D36 /* GPBUtilities.m in Sources */,
 				1135787721A3B0AA00DDEA74 /* FileManager.m in Sources */,
 				1151C6232192BEF600C08114 /* YLLabel.m in Sources */,

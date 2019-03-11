@@ -8,6 +8,8 @@
 
 #import "Animation2ViewController.h"
 #import "CircleAnimationViewController.h"
+#import "WaveViewController.h"
+
 
 @interface Animation2ViewController ()
 
@@ -46,7 +48,8 @@
 
 #pragma mark - Events
 - (void)waveAnimation {
-  
+    WaveViewController * VC = [WaveViewController new];
+    [self.navigationController pushViewController: VC animated: true];
     
 }
 

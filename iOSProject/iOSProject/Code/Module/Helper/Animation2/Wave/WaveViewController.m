@@ -8,6 +8,8 @@
 
 #import "WaveViewController.h"
 
+#import "WaveAnimationView.h"
+
 @interface WaveViewController ()
 
 @end
@@ -20,7 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    WaveAnimationView * waveView = [[WaveAnimationView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+    waveView.center = self.view.center;
+    waveView.backgroundColor = [UIColor colorWithRed: 200/255 green:20/255 blue:20/255 alpha:1];
+    waveView.layer.cornerRadius = 50;
+    waveView.clipsToBounds = true;
+    [self.view addSubview: waveView];
+    [waveView animationBegin];
 }
 
 - (void)didReceiveMemoryWarning {

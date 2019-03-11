@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WaveAnimationView : UIView
+-(instancetype)initWithFrame:(CGRect)frame ;
+-(void)animationBegin;
 
 @end
 
