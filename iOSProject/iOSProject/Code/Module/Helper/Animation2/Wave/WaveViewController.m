@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     WaveAnimationView * waveView = [[WaveAnimationView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
     waveView.center = self.view.center;
-    waveView.backgroundColor = [UIColor colorWithRed: 200/255 green:20/255 blue:20/255 alpha:1];
+    waveView.backgroundColor = [UIColor colorWithRed: 200/255.0 green:20/255.0 blue:20/255.0 alpha:1];
     waveView.layer.cornerRadius = 50;
     waveView.clipsToBounds = true;
     [self.view addSubview: waveView];

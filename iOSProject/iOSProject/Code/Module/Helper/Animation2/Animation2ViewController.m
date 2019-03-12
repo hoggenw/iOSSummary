@@ -10,6 +10,7 @@
 #import "CircleAnimationViewController.h"
 #import "WaveViewController.h"
 
+#import "Menu3DViewController.h"
 
 @interface Animation2ViewController ()
 
@@ -31,10 +32,7 @@
     UIButton * flipButton = [self creatNormalBUttonWithName:@"3D动画" frame: CGRectMake(80, 160, 100, 40)];
     [flipButton addTarget: self action:@selector(flipAnimation) forControlEvents: UIControlEventTouchUpInside];
     
-    UIButton * flipButton2 = [self creatNormalBUttonWithName:@"3D动画2" frame: CGRectMake(80, 220, 100, 60)];
-    [flipButton2 addTarget: self action:@selector(flip2Animation) forControlEvents: UIControlEventTouchUpInside];
-    
-    UIButton * circleButton = [self creatNormalBUttonWithName:@"旋转动画" frame: CGRectMake(80, 280, 100, 60)];
+    UIButton * circleButton = [self creatNormalBUttonWithName:@"旋转动画" frame: CGRectMake(80, 220, 100, 60)];
     [circleButton addTarget: self action:@selector(circleAnimation) forControlEvents: UIControlEventTouchUpInside];
 }
 
@@ -54,14 +52,12 @@
 }
 
 - (void)flipAnimation {
-    
+    Menu3DViewController * VC = [Menu3DViewController new];
+    [self.navigationController pushViewController: VC animated: true];
     
 }
 
-- (void)flip2Animation {
-    
-    
-}
+
 
 
 - (void)circleAnimation {

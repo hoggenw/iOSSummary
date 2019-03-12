@@ -82,6 +82,8 @@
 		1150E6F3223115440030CD0E /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F2223115440030CD0E /* CircleView.m */; };
 		1150E6FA223633E10030CD0E /* WaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F9223633E10030CD0E /* WaveViewController.m */; };
 		1150E6FD223634370030CD0E /* WaveAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6FC223634370030CD0E /* WaveAnimationView.m */; };
+		1150E701223660DE0030CD0E /* Menu3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E700223660DE0030CD0E /* Menu3DViewController.m */; };
+		1150E704223660FE0030CD0E /* Menu3DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E703223660FE0030CD0E /* Menu3DView.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -354,6 +356,10 @@
 		1150E6F9223633E10030CD0E /* WaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveViewController.m; sourceTree = "<group>"; };
 		1150E6FB223634370030CD0E /* WaveAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveAnimationView.h; sourceTree = "<group>"; };
 		1150E6FC223634370030CD0E /* WaveAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveAnimationView.m; sourceTree = "<group>"; };
+		1150E6FF223660DE0030CD0E /* Menu3DViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu3DViewController.h; sourceTree = "<group>"; };
+		1150E700223660DE0030CD0E /* Menu3DViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Menu3DViewController.m; sourceTree = "<group>"; };
+		1150E702223660FE0030CD0E /* Menu3DView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu3DView.h; sourceTree = "<group>"; };
+		1150E703223660FE0030CD0E /* Menu3DView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Menu3DView.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -731,6 +737,7 @@
 		110A9669222E7DBA002F9EB3 /* Animation2 */ = {
 			isa = PBXGroup;
 			children = (
+				1150E6FE223660B90030CD0E /* Animation3D */,
 				1150E6F7223633530030CD0E /* Wave */,
 				1150E6ED22310EF90030CD0E /* circle */,
 				1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */,
@@ -966,6 +973,17 @@
 				1150E6FC223634370030CD0E /* WaveAnimationView.m */,
 			);
 			path = Wave;
+			sourceTree = "<group>";
+		};
+		1150E6FE223660B90030CD0E /* Animation3D */ = {
+			isa = PBXGroup;
+			children = (
+				1150E6FF223660DE0030CD0E /* Menu3DViewController.h */,
+				1150E700223660DE0030CD0E /* Menu3DViewController.m */,
+				1150E702223660FE0030CD0E /* Menu3DView.h */,
+				1150E703223660FE0030CD0E /* Menu3DView.m */,
+			);
+			path = Animation3D;
 			sourceTree = "<group>";
 		};
 		1151C5112192BE0B00C08114 = {
@@ -1899,6 +1917,7 @@
 				1151C5F62192BEF600C08114 /* UIImage+Extension.m in Sources */,
 				113578B921A656AA00DDEA74 /* UIImage+compress.m in Sources */,
 				1151C6312192BEF600C08114 /* LPDPhotoArrangeCVlLayout.m in Sources */,
+				1150E704223660FE0030CD0E /* Menu3DView.m in Sources */,
 				1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */,
 				11DF0C1E21D4B82E006A1D36 /* TopViewAnimaton.m in Sources */,
 				113578B421A656AA00DDEA74 /* AVAssetWriteManager.m in Sources */,
@@ -1998,6 +2017,7 @@
 				1150E6F3223115440030CD0E /* CircleView.m in Sources */,
 				11DF0C2621D4B82E006A1D36 /* YLImageMessageCell.m in Sources */,
 				11D6BD0A22252901006E47DE /* Animation1ViewController.m in Sources */,
+				1150E701223660DE0030CD0E /* Menu3DViewController.m in Sources */,
 				1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */,
 				11DF0C1121D4B82E006A1D36 /* ChatMessageModel.m in Sources */,
 				1151C6192192BEF600C08114 /* LocalSQliteManager.m in Sources */,

@@ -50,6 +50,8 @@
 }
 
 -(void)doAnimation {
+    //NSLog(@"sdsadasdas");
+    
     _offset += _speed;
     _offset2 += _speed2;
     
@@ -76,7 +78,7 @@
     CGPathAddLineToPoint(pathRefB, NULL, _waveWidth, self.frame.size.height);
     CGPathAddLineToPoint(pathRefB, NULL, 0, self.frame.size.height);
     CGPathCloseSubpath(pathRefB);
-    _layerA.path = pathRefB;
+    _layerB.path = pathRefB;
     
     
 }
