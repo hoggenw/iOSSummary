@@ -112,7 +112,7 @@
 -(void)GetAdvertising
 {
     
-    [self.imageUrl addObject:@"http://img.gaoxiaogif.cn/GaoxiaoGiffiles/images/2015/11/14/jie%2Czanshiqinshengdema.gif"];
+    [self.imageUrl addObject:@"http://pic1.win4000.com/mobile/8/52084a0c27f9e.gif"];
     [self.imageUrl addObject:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542370154375&di=a4d53a756f8d30baf000cd60b4c2e8f0&imgtype=0&src=http%3A%2F%2Fstatic01.coloros.com%2Fbbs%2Fdata%2Fattachment%2Fforum%2F201409%2F01%2F235054mywky0xww24wkkky.png"];
     for (NSString * temp in  self.imageUrl) {
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
