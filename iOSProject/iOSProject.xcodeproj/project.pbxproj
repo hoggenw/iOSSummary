@@ -57,7 +57,6 @@
 		1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135790C21A6987A00DDEA74 /* YLRecordVideoView.m */; };
 		1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791021A6B56F00DDEA74 /* PSSignatureView.m */; };
 		1135791521A6B57000DDEA74 /* AutographViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791121A6B56F00DDEA74 /* AutographViewController.m */; };
-		1135791821ABC4C700DDEA74 /* YLUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791721ABC4C700DDEA74 /* YLUIWebView.m */; };
 		1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */; };
 		1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135792021ABC9DC00DDEA74 /* YLWebViewController.m */; };
 		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
@@ -84,7 +83,10 @@
 		1150E6FD223634370030CD0E /* WaveAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6FC223634370030CD0E /* WaveAnimationView.m */; };
 		1150E701223660DE0030CD0E /* Menu3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E700223660DE0030CD0E /* Menu3DViewController.m */; };
 		1150E704223660FE0030CD0E /* Menu3DView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E703223660FE0030CD0E /* Menu3DView.m */; };
-		1150E707223A2C4B0030CD0E /* YLGradientWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E706223A2C4B0030CD0E /* YLGradientWKWebview.m */; };
+		1150E70F223A31FD0030CD0E /* YLWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E70A223A31FD0030CD0E /* YLWKWebView.m */; };
+		1150E710223A31FD0030CD0E /* YLGradientWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E70B223A31FD0030CD0E /* YLGradientWKWebview.m */; };
+		1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E70E223A31FD0030CD0E /* YLUIWebView.m */; };
+		1150E714223A650F0030CD0E /* GradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E713223A650F0030CD0E /* GradientProgressView.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -110,7 +112,6 @@
 		1151C61B2192BEF600C08114 /* UserDefUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5B22192BEF500C08114 /* UserDefUtils.m */; };
 		1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5B32192BEF500C08114 /* YLDeviceUtil.m */; };
 		1151C61D2192BEF600C08114 /* YLHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5B82192BEF500C08114 /* YLHintView.m */; };
-		1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5B92192BEF500C08114 /* YLWKWebView.m */; };
 		1151C61F2192BEF600C08114 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5BB2192BEF500C08114 /* PopupView.m */; };
 		1151C6202192BEF600C08114 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5BC2192BEF500C08114 /* DatePickerView.m */; };
 		1151C6222192BEF600C08114 /* ZJImageMagnification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5BE2192BEF500C08114 /* ZJImageMagnification.m */; };
@@ -318,8 +319,6 @@
 		1135791121A6B56F00DDEA74 /* AutographViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutographViewController.m; sourceTree = "<group>"; };
 		1135791221A6B57000DDEA74 /* AutographViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutographViewController.h; sourceTree = "<group>"; };
 		1135791321A6B57000DDEA74 /* PSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSignatureView.h; sourceTree = "<group>"; };
-		1135791621ABC4C700DDEA74 /* YLUIWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUIWebView.h; sourceTree = "<group>"; };
-		1135791721ABC4C700DDEA74 /* YLUIWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUIWebView.m; sourceTree = "<group>"; };
 		1135791C21ABC7EC00DDEA74 /* YLSliderSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSliderSelectView.h; sourceTree = "<group>"; };
 		1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSliderSelectView.m; sourceTree = "<group>"; };
 		1135791F21ABC9DC00DDEA74 /* YLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWebViewController.h; sourceTree = "<group>"; };
@@ -361,8 +360,14 @@
 		1150E700223660DE0030CD0E /* Menu3DViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Menu3DViewController.m; sourceTree = "<group>"; };
 		1150E702223660FE0030CD0E /* Menu3DView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu3DView.h; sourceTree = "<group>"; };
 		1150E703223660FE0030CD0E /* Menu3DView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Menu3DView.m; sourceTree = "<group>"; };
-		1150E705223A2C4B0030CD0E /* YLGradientWKWebview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGradientWKWebview.h; sourceTree = "<group>"; };
-		1150E706223A2C4B0030CD0E /* YLGradientWKWebview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGradientWKWebview.m; sourceTree = "<group>"; };
+		1150E709223A31FD0030CD0E /* YLWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKWebView.h; sourceTree = "<group>"; };
+		1150E70A223A31FD0030CD0E /* YLWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKWebView.m; sourceTree = "<group>"; };
+		1150E70B223A31FD0030CD0E /* YLGradientWKWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGradientWKWebview.m; sourceTree = "<group>"; };
+		1150E70C223A31FD0030CD0E /* YLUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLUIWebView.h; sourceTree = "<group>"; };
+		1150E70D223A31FD0030CD0E /* YLGradientWKWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGradientWKWebview.h; sourceTree = "<group>"; };
+		1150E70E223A31FD0030CD0E /* YLUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUIWebView.m; sourceTree = "<group>"; };
+		1150E712223A650F0030CD0E /* GradientProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientProgressView.h; sourceTree = "<group>"; };
+		1150E713223A650F0030CD0E /* GradientProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientProgressView.m; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -419,7 +424,6 @@
 		1151C5B52192BEF500C08114 /* ZJImageMagnification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJImageMagnification.h; sourceTree = "<group>"; };
 		1151C5B72192BEF500C08114 /* DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerView.h; sourceTree = "<group>"; };
 		1151C5B82192BEF500C08114 /* YLHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLHintView.m; sourceTree = "<group>"; };
-		1151C5B92192BEF500C08114 /* YLWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKWebView.m; sourceTree = "<group>"; };
 		1151C5BA2192BEF500C08114 /* YLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLLabel.h; sourceTree = "<group>"; };
 		1151C5BB2192BEF500C08114 /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
 		1151C5BC2192BEF500C08114 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
@@ -427,7 +431,6 @@
 		1151C5BF2192BEF500C08114 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
 		1151C5C02192BEF500C08114 /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
 		1151C5C12192BEF500C08114 /* YLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLLabel.m; sourceTree = "<group>"; };
-		1151C5C22192BEF500C08114 /* YLWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKWebView.h; sourceTree = "<group>"; };
 		1151C5C32192BEF500C08114 /* YLHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLHintView.h; sourceTree = "<group>"; };
 		1151C5C62192BEF500C08114 /* CLLocation+Sino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Sino.h"; sourceTree = "<group>"; };
 		1151C5C82192BEF500C08114 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -989,6 +992,21 @@
 			path = Animation3D;
 			sourceTree = "<group>";
 		};
+		1150E708223A30A20030CD0E /* Webviews */ = {
+			isa = PBXGroup;
+			children = (
+				1150E70D223A31FD0030CD0E /* YLGradientWKWebview.h */,
+				1150E70B223A31FD0030CD0E /* YLGradientWKWebview.m */,
+				1150E70C223A31FD0030CD0E /* YLUIWebView.h */,
+				1150E70E223A31FD0030CD0E /* YLUIWebView.m */,
+				1150E709223A31FD0030CD0E /* YLWKWebView.h */,
+				1150E70A223A31FD0030CD0E /* YLWKWebView.m */,
+				1150E712223A650F0030CD0E /* GradientProgressView.h */,
+				1150E713223A650F0030CD0E /* GradientProgressView.m */,
+			);
+			path = Webviews;
+			sourceTree = "<group>";
+		};
 		1151C5112192BE0B00C08114 = {
 			isa = PBXGroup;
 			children = (
@@ -1203,14 +1221,8 @@
 				1151C5BE2192BEF500C08114 /* ZJImageMagnification.m */,
 				1151C5C02192BEF500C08114 /* PopupView.h */,
 				1151C5BB2192BEF500C08114 /* PopupView.m */,
-				1151C5C22192BEF500C08114 /* YLWKWebView.h */,
-				1151C5B92192BEF500C08114 /* YLWKWebView.m */,
-				1135791621ABC4C700DDEA74 /* YLUIWebView.h */,
-				1135791721ABC4C700DDEA74 /* YLUIWebView.m */,
 				1135791C21ABC7EC00DDEA74 /* YLSliderSelectView.h */,
 				1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */,
-				1150E705223A2C4B0030CD0E /* YLGradientWKWebview.h */,
-				1150E706223A2C4B0030CD0E /* YLGradientWKWebview.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1303,6 +1315,7 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1150E708223A30A20030CD0E /* Webviews */,
 				110A9669222E7DBA002F9EB3 /* Animation2 */,
 				11D6BD1122266AA1006E47DE /* GesturePassword */,
 				11D6BCE0222528C1006E47DE /* Animation1 */,
@@ -1902,9 +1915,9 @@
 			files = (
 				113578B521A656AA00DDEA74 /* XCFileManager.m in Sources */,
 				1151C61A2192BEF600C08114 /* NetworkManager.m in Sources */,
+				1150E70F223A31FD0030CD0E /* YLWKWebView.m in Sources */,
 				1150E6FA223633E10030CD0E /* WaveViewController.m in Sources */,
 				1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */,
-				1151C61E2192BEF600C08114 /* YLWKWebView.m in Sources */,
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
 				1135790121A6975500DDEA74 /* RecordVideoViewController.m in Sources */,
 				11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */,
@@ -1915,6 +1928,7 @@
 				1151C5F82192BEF600C08114 /* UIResponder+Extension.m in Sources */,
 				1151C5F52192BEF600C08114 /* UIViewController+Extension.m in Sources */,
 				1151C6162192BEF600C08114 /* LoginView.m in Sources */,
+				1150E714223A650F0030CD0E /* GradientProgressView.m in Sources */,
 				1149895221E48E1D001E1443 /* IJKFrameworkViewController.m in Sources */,
 				11DF0C8D21D4BCFB006A1D36 /* FieldMask.pbobjc.m in Sources */,
 				111B9452221A8B2C00AA7C26 /* Page2ViewController.m in Sources */,
@@ -1977,7 +1991,6 @@
 				11DF0C3621D4B9A3006A1D36 /* JX_GCDTimerManager.m in Sources */,
 				11DF0C7F21D4BCFB006A1D36 /* GPBDescriptor.m in Sources */,
 				11DF0C2021D4B82E006A1D36 /* MicrophoneView.m in Sources */,
-				1150E707223A2C4B0030CD0E /* YLGradientWKWebview.m in Sources */,
 				11DF0C0F21D4B82E006A1D36 /* ChatListViewController.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
@@ -1998,6 +2011,7 @@
 				1151C62B2192BEF600C08114 /* LPDAssetModel.m in Sources */,
 				11DF0C8321D4BCFB006A1D36 /* GPBExtensionInternals.m in Sources */,
 				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
+				1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */,
 				1135790921A6986F00DDEA74 /* YLRecordControlView.m in Sources */,
 				11DF0C1B21D4B82E006A1D36 /* YLChatBoxView.m in Sources */,
 				113578B621A656AA00DDEA74 /* CaptureManager.m in Sources */,
@@ -2035,6 +2049,7 @@
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
 				11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */,
+				1150E710223A31FD0030CD0E /* YLGradientWKWebview.m in Sources */,
 				11DF0C8C21D4BCFB006A1D36 /* Empty.pbobjc.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				11DF0C2221D4B82E006A1D36 /* YLVoiceView.m in Sources */,
@@ -2067,7 +2082,6 @@
 				11D6BD0D22252B38006E47DE /* YLAnimationVoiceView.m in Sources */,
 				1135791521A6B57000DDEA74 /* AutographViewController.m in Sources */,
 				11DF0C2721D4B82E006A1D36 /* YLVoiceMessageCell.m in Sources */,
-				1135791821ABC4C700DDEA74 /* YLUIWebView.m in Sources */,
 				1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */,
 				11DF0C2321D4B82E006A1D36 /* MicrophoneBottomView.m in Sources */,
 				1151C6252192BEF600C08114 /* LPDPhotoPreviewController.m in Sources */,

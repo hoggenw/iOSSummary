@@ -11,7 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GradientProgressView : UIView
+/**  Progress values go from 0.0 to 1.0  */
+@property (nonatomic, assign) CGFloat progress;
 
+
+- (instancetype)initWithFrame:(CGRect )frame;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -47,7 +47,7 @@
     //选择
     self.selectView = [[YLSliderSelectView alloc] initWithFrame: CGRectZero ];
     self.selectView.backgroundColor = [UIColor colorWithHexString:@"f7f7f7"];
-    NSArray <NSString *> * titles = @[@"YLUIWebView", @"YLWKWebview"];
+    NSArray <NSString *> * titles = @[@"GradientWKWebview", @"YLWKWebview"];
     [self.view addSubview: self.selectView];
     self.selectView.delegate = self;
     self.selectView.titles = titles;
