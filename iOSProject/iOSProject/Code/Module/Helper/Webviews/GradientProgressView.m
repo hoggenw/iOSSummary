@@ -9,7 +9,7 @@
 #import "GradientProgressView.h"
 
 
-@interface GradientProgressView ()
+@interface GradientProgressView ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) CALayer * maskLayer;
 

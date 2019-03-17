@@ -58,7 +58,6 @@
 		1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791021A6B56F00DDEA74 /* PSSignatureView.m */; };
 		1135791521A6B57000DDEA74 /* AutographViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791121A6B56F00DDEA74 /* AutographViewController.m */; };
 		1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */; };
-		1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135792021ABC9DC00DDEA74 /* YLWebViewController.m */; };
 		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
 		1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */; };
 		1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893021E35E4A001E1443 /* YLPickerShowView.m */; };
@@ -87,6 +86,7 @@
 		1150E710223A31FD0030CD0E /* YLGradientWKWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E70B223A31FD0030CD0E /* YLGradientWKWebview.m */; };
 		1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E70E223A31FD0030CD0E /* YLUIWebView.m */; };
 		1150E714223A650F0030CD0E /* GradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E713223A650F0030CD0E /* GradientProgressView.m */; };
+		1150E717223B58050030CD0E /* YLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E715223B58050030CD0E /* YLWebViewController.m */; };
 		1151C52D2192BE0C00C08114 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C52C2192BE0C00C08114 /* main.m */; };
 		1151C5372192BE0C00C08114 /* iOSProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5362192BE0C00C08114 /* iOSProjectTests.m */; };
 		1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C5462192BEF500C08114 /* YLUITabBarViewController.m */; };
@@ -321,8 +321,6 @@
 		1135791321A6B57000DDEA74 /* PSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSignatureView.h; sourceTree = "<group>"; };
 		1135791C21ABC7EC00DDEA74 /* YLSliderSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSliderSelectView.h; sourceTree = "<group>"; };
 		1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSliderSelectView.m; sourceTree = "<group>"; };
-		1135791F21ABC9DC00DDEA74 /* YLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWebViewController.h; sourceTree = "<group>"; };
-		1135792021ABC9DC00DDEA74 /* YLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWebViewController.m; sourceTree = "<group>"; };
 		1149892421E355BA001E1443 /* YLAreaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaHelper.h; sourceTree = "<group>"; };
 		1149892521E355BA001E1443 /* YLAreaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaHelper.m; sourceTree = "<group>"; };
 		1149892921E35C24001E1443 /* YLAddressPickerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAddressPickerUtil.h; sourceTree = "<group>"; };
@@ -368,6 +366,8 @@
 		1150E70E223A31FD0030CD0E /* YLUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUIWebView.m; sourceTree = "<group>"; };
 		1150E712223A650F0030CD0E /* GradientProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientProgressView.h; sourceTree = "<group>"; };
 		1150E713223A650F0030CD0E /* GradientProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientProgressView.m; sourceTree = "<group>"; };
+		1150E715223B58050030CD0E /* YLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWebViewController.m; sourceTree = "<group>"; };
+		1150E716223B58050030CD0E /* YLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWebViewController.h; sourceTree = "<group>"; };
 		1151C51A2192BE0B00C08114 /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1151C52B2192BE0C00C08114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1151C52C2192BE0C00C08114 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -796,8 +796,6 @@
 		1135785F21A29AC100DDEA74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1135791F21ABC9DC00DDEA74 /* YLWebViewController.h */,
-				1135792021ABC9DC00DDEA74 /* YLWebViewController.m */,
 				1135786521A29D3A00DDEA74 /* Page1ViewController.h */,
 				1135786621A29D3A00DDEA74 /* Page1ViewController.m */,
 				113578FF21A6975400DDEA74 /* RecordVideoViewController.h */,
@@ -995,6 +993,8 @@
 		1150E708223A30A20030CD0E /* Webviews */ = {
 			isa = PBXGroup;
 			children = (
+				1150E716223B58050030CD0E /* YLWebViewController.h */,
+				1150E715223B58050030CD0E /* YLWebViewController.m */,
 				1150E70D223A31FD0030CD0E /* YLGradientWKWebview.h */,
 				1150E70B223A31FD0030CD0E /* YLGradientWKWebview.m */,
 				1150E70C223A31FD0030CD0E /* YLUIWebView.h */,
@@ -2045,7 +2045,6 @@
 				1149893721E44ED5001E1443 /* YLAreaData.m in Sources */,
 				11DF0C0E21D4B82E006A1D36 /* ChatUserModel.m in Sources */,
 				1151C5F72192BEF600C08114 /* UIImageView+Extension.m in Sources */,
-				1135792121ABC9DC00DDEA74 /* YLWebViewController.m in Sources */,
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
 				11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */,
@@ -2058,6 +2057,7 @@
 				11DF0C8121D4BCFB006A1D36 /* GPBWireFormat.m in Sources */,
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
 				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
+				1150E717223B58050030CD0E /* YLWebViewController.m in Sources */,
 				113578B721A656AA00DDEA74 /* IFlyFaceResultKeys.m in Sources */,
 				1132578221B024E3001A5439 /* FileViewController.m in Sources */,
 				11D6BD05222528C1006E47DE /* YLVoiceAnimationViewController.m in Sources */,
