@@ -10,12 +10,13 @@
 #import "YLSliderSelectView.h"
 #import "YLWKWebView.h"
 #import "YLUIWebView.h"
+#import "YLGradientWKWebview.h"
 
 @interface YLWebViewController ()<ActionSelcetControlDelegate,WKNavigationDelegate,UIWebViewDelegate>
 @property (nonatomic, strong) YLSliderSelectView * selectView;
 @property (nonatomic, assign) int  webType;
 @property (nonatomic, strong) YLWKWebView *wkWebView;
-@property (nonatomic, strong) YLUIWebView *uiWebView;
+@property (nonatomic, strong) YLGradientWKWebview *uiWebView;
 
 @end
 
@@ -65,10 +66,9 @@
     [self.view addSubview:_wkWebView];
     
     
-    _uiWebView =  [[YLUIWebView alloc] initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
+    _uiWebView =  [[YLGradientWKWebview alloc] initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
     _uiWebView.backgroundColor = [UIColor clearColor];
-    _uiWebView.progressCorlor = [UIColor greenColor];
-    _uiWebView.delegate = self;
+    _uiWebView.navigationDelegate = self;
     [self.view addSubview:_uiWebView];
     if (self.webType == 0) {
         [_wkWebView setHidden: true];
@@ -87,7 +87,7 @@
   
     if (index == 200)//UIwebview
     {
-        self.url = @"https://twitter.com/";
+        self.url = @"https://www.baidu.com/";
         [_wkWebView setHidden: true];
         [_uiWebView setHidden: false];
           NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:[self.url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
