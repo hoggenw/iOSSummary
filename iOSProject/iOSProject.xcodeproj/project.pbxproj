@@ -143,6 +143,7 @@
 		1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C649219EAA7100C08114 /* AdvertisementViewController.m */; };
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
+		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
 		11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */; };
 		11D6BD02222528C1006E47DE /* YLMicphoneVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */; };
 		11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF1222528C1006E47DE /* YLCircleView.m */; };
@@ -485,6 +486,8 @@
 		1151C64E219EB06D00C08114 /* GuidanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidanceViewController.h; sourceTree = "<group>"; };
 		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
+		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
 		11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLVoiceCircleView.m; sourceTree = "<group>"; };
 		11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMicphoneVoiceView.m; sourceTree = "<group>"; };
 		11D6BCF1222528C1006E47DE /* YLCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
@@ -1094,6 +1097,8 @@
 			isa = PBXGroup;
 			children = (
 				1151C55F2192BEF500C08114 /* ExtensionHeader.h */,
+				117D7AF6224092C600040568 /* UIScrollView+Extension.h */,
+				117D7AF5224092C600040568 /* UIScrollView+Extension.m */,
 				1151C54C2192BEF500C08114 /* UIResponder+Extension.h */,
 				1151C5572192BEF500C08114 /* UIResponder+Extension.m */,
 				1151C54D2192BEF500C08114 /* UIImageView+Extension.h */,
@@ -1921,6 +1926,7 @@
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
 				1135790121A6975500DDEA74 /* RecordVideoViewController.m in Sources */,
 				11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */,
+				117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */,
 				11DF0C1821D4B82E006A1D36 /* YLChatBoxItemView.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
 				1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */,
