@@ -34,8 +34,8 @@
     
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         _progressView = [[GradientProgressView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 4.0)];
         [self addSubview:_progressView];
 
@@ -54,7 +54,7 @@
 }
 
 - (void)update:(CGFloat) progress {
-    NSLog(@"更新内容： %@",@(progress));
+    
     _progressView.progress = progress;
     
 }

@@ -58,24 +58,34 @@
         make.height.equalTo(@(50));
     }];
     self.webType = 0;
-    
-    _wkWebView = [[YLWKWebView alloc]initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];
-    _wkWebView.backgroundColor = [UIColor clearColor];
-    _wkWebView.progressCorlor = [UIColor greenColor];
-    _wkWebView.navigationDelegate = self;
-    [self.view addSubview:_wkWebView];
-    
-    
-    _uiWebView =  [[YLGradientWKWebview alloc] initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
-    _uiWebView.backgroundColor = [UIColor clearColor];
-    _uiWebView.navigationDelegate = self;
-    [self.view addSubview:_uiWebView];
     if (self.webType == 0) {
-        [_wkWebView setHidden: true];
+        [self.wkWebView setHidden: true];
     }else{
-        [_uiWebView setHidden: true];
+        [self.uiWebView setHidden: true];
     }
     
+}
+
+
+-(YLWKWebView *)wkWebView {
+    if (_wkWebView == nil) {
+        _wkWebView = [[YLWKWebView alloc]initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];
+        _wkWebView.backgroundColor = [UIColor clearColor];
+        _wkWebView.progressCorlor = [UIColor greenColor];
+        _wkWebView.navigationDelegate = self;
+        [self.view addSubview:_wkWebView];
+    }
+    return  _wkWebView;
+}
+
+-(YLGradientWKWebview *)uiWebView {
+    if (_uiWebView == nil) {
+        _uiWebView =  [[YLGradientWKWebview alloc] initWithFrame:CGRectMake(0,kNavigationHeight , ScreenWidth, ScreenHeight - kNavigationHeight - 50)];//[[YLUIWebView alloc]initWithFrame:CGRectMake()];
+        _uiWebView.backgroundColor = [UIColor clearColor];
+        _uiWebView.navigationDelegate = self;
+        [self.view addSubview:_uiWebView];
+    }
+    return _uiWebView;
 }
 
 #pragma mark - Extension Delegate or Protocol
@@ -84,22 +94,22 @@
     //在iOS开发中，特别是在对Web服务调用的时候，经常会遇到请求参数为中文的情况，那么这时候就需要将Url转成UTF-8编码才能进行请求。
     //显示用户须知
   
-  
+    NSLog(@"index = %@",@(index));
     if (index == 200)//UIwebview
     {
         self.url = @"https://www.baidu.com/";
-        [_wkWebView setHidden: true];
-        [_uiWebView setHidden: false];
+        [self.wkWebView setHidden: true];
+        [self.uiWebView setHidden: false];
           NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:[self.url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
-        [_uiWebView loadRequest:request];
+        [self.uiWebView loadRequest:request];
     }
     else if (index == 201)//Wkwebview
     {
         self.url = @"https://www.baidu.com/";
-        [_wkWebView setHidden: false];
-        [_uiWebView setHidden: true];
+        [self.wkWebView setHidden: false];
+        [self.uiWebView setHidden: true];
           NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:[self.url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
-         [_wkWebView loadRequest:request];
+         [self.wkWebView loadRequest:request];
         
     }
 }

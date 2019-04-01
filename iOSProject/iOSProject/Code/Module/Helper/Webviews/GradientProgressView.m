@@ -67,6 +67,7 @@
     NSArray * shiftedColors = [NSArray arrayWithArray:colorArray];
     
     [layer setColors:shiftedColors];
+    NSLog(@"colorArray count %@",@(colorArray.count));
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"colors"];
     [animation setToValue:shiftedColors];
@@ -78,15 +79,22 @@
 
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
 {
-    [self performAnimation];
+    
+    if (self.progress >= 1.0) {
+        [self setHidden: true];
+    }else if (self.progress <= 0){
+       [self setHidden: false];
+    }else{
+         [self performAnimation];
+    }
 }
 
 
-- (void)setProgress:(CGFloat)value
-{
-    if (_progress != value)
+-(void)setProgress:(CGFloat)progress {
+    NSLog(@"更新内容： %@",@(progress));
+    if (_progress != progress)
     {
-        _progress = MIN(1.0, fabs(value));
+        _progress = MIN(1.0, fabs(progress));
         [self setNeedsLayout];
     }
 }
@@ -95,7 +103,9 @@
 {
     CGRect maskRect = [self.maskLayer frame];
     maskRect.size.width = CGRectGetWidth([self bounds]) * self.progress;
+    NSLog(@"frame:%@",NSStringFromCGRect( maskRect));
     [self.maskLayer setFrame:maskRect];
+    
 }
 
 
