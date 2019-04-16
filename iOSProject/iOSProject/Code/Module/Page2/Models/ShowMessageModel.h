@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    TextType,
+    ImageType,
+    Other,
+} ShowMessageType;
+
+
 @interface ShowMessageModel : NSObject
+
+@property (nonatomic, copy) NSString * content;
+@property (nonatomic, assign) ShowMessageType showType;
+@property (nonatomic, strong) UIImage * image;
+@property (nonatomic, copy) NSString * url;
 
 @end
 

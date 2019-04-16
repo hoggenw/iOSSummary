@@ -9,6 +9,7 @@
 #import "RuntimeListViewController.h"
 #import "YLTableView.h"
 #import "DefualtCellModel.h"
+#import "ShowInfoViewController.h"
 
 
 @interface RuntimeListViewController ()<YLTableViewDelete>
@@ -90,7 +91,8 @@
     
     NSLog(@"%@",@(index));
     if (index == 0) {
-        
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        [self.navigationController pushViewController: vc animated: true];
     }else if (index == 1){
         
     }else if (index == 2){

@@ -58,6 +58,10 @@
 		1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791021A6B56F00DDEA74 /* PSSignatureView.m */; };
 		1135791521A6B57000DDEA74 /* AutographViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791121A6B56F00DDEA74 /* AutographViewController.m */; };
 		1135791E21ABC7EC00DDEA74 /* YLSliderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */; };
+		114883EC2265B36000BB6A81 /* RuntimeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883EB2265B36000BB6A81 /* RuntimeListViewController.m */; };
+		114883F32265B71500BB6A81 /* ShowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F22265B71500BB6A81 /* ShowInfoViewController.m */; };
+		114883F62265B89400BB6A81 /* ShowMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F52265B89400BB6A81 /* ShowMessageModel.m */; };
+		114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */; };
 		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
 		1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */; };
 		1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893021E35E4A001E1443 /* YLPickerShowView.m */; };
@@ -322,6 +326,14 @@
 		1135791321A6B57000DDEA74 /* PSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSignatureView.h; sourceTree = "<group>"; };
 		1135791C21ABC7EC00DDEA74 /* YLSliderSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLSliderSelectView.h; sourceTree = "<group>"; };
 		1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLSliderSelectView.m; sourceTree = "<group>"; };
+		114883EA2265B36000BB6A81 /* RuntimeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeListViewController.h; sourceTree = "<group>"; };
+		114883EB2265B36000BB6A81 /* RuntimeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeListViewController.m; sourceTree = "<group>"; };
+		114883F12265B71500BB6A81 /* ShowInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowInfoViewController.h; sourceTree = "<group>"; };
+		114883F22265B71500BB6A81 /* ShowInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowInfoViewController.m; sourceTree = "<group>"; };
+		114883F42265B89400BB6A81 /* ShowMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMessageModel.h; sourceTree = "<group>"; };
+		114883F52265B89400BB6A81 /* ShowMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMessageModel.m; sourceTree = "<group>"; };
+		114883F72265BE8400BB6A81 /* YLShowInfoTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLShowInfoTableView.h; sourceTree = "<group>"; };
+		114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLShowInfoTableView.m; sourceTree = "<group>"; };
 		1149892421E355BA001E1443 /* YLAreaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaHelper.h; sourceTree = "<group>"; };
 		1149892521E355BA001E1443 /* YLAreaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaHelper.m; sourceTree = "<group>"; };
 		1149892921E35C24001E1443 /* YLAddressPickerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAddressPickerUtil.h; sourceTree = "<group>"; };
@@ -713,6 +725,7 @@
 		1109C4F821FAAF7C00207328 /* Page2 */ = {
 			isa = PBXGroup;
 			children = (
+				114883E92265B32D00BB6A81 /* Pages2Helper */,
 				1109C4FB21FAAFAC00207328 /* Views */,
 				1109C4FA21FAAF9D00207328 /* Models */,
 				1109C4F921FAAF9100207328 /* Controllers */,
@@ -732,6 +745,8 @@
 		1109C4FA21FAAF9D00207328 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				114883F42265B89400BB6A81 /* ShowMessageModel.h */,
+				114883F52265B89400BB6A81 /* ShowMessageModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -739,6 +754,8 @@
 		1109C4FB21FAAFAC00207328 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				114883F72265BE8400BB6A81 /* YLShowInfoTableView.h */,
+				114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -932,6 +949,25 @@
 				1135791021A6B56F00DDEA74 /* PSSignatureView.m */,
 			);
 			path = Signature;
+			sourceTree = "<group>";
+		};
+		114883E92265B32D00BB6A81 /* Pages2Helper */ = {
+			isa = PBXGroup;
+			children = (
+				114883ED2265B67300BB6A81 /* runtime */,
+			);
+			path = Pages2Helper;
+			sourceTree = "<group>";
+		};
+		114883ED2265B67300BB6A81 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				114883EA2265B36000BB6A81 /* RuntimeListViewController.h */,
+				114883EB2265B36000BB6A81 /* RuntimeListViewController.m */,
+				114883F12265B71500BB6A81 /* ShowInfoViewController.h */,
+				114883F22265B71500BB6A81 /* ShowInfoViewController.m */,
+			);
+			path = runtime;
 			sourceTree = "<group>";
 		};
 		1149892321E35594001E1443 /* YLAreaManager */ = {
@@ -1933,6 +1969,7 @@
 				1151C6332192BEF600C08114 /* LPDPhotoPreviewCell.m in Sources */,
 				1151C5F82192BEF600C08114 /* UIResponder+Extension.m in Sources */,
 				1151C5F52192BEF600C08114 /* UIViewController+Extension.m in Sources */,
+				114883F32265B71500BB6A81 /* ShowInfoViewController.m in Sources */,
 				1151C6162192BEF600C08114 /* LoginView.m in Sources */,
 				1150E714223A650F0030CD0E /* GradientProgressView.m in Sources */,
 				1149895221E48E1D001E1443 /* IJKFrameworkViewController.m in Sources */,
@@ -1997,12 +2034,14 @@
 				11DF0C3621D4B9A3006A1D36 /* JX_GCDTimerManager.m in Sources */,
 				11DF0C7F21D4BCFB006A1D36 /* GPBDescriptor.m in Sources */,
 				11DF0C2021D4B82E006A1D36 /* MicrophoneView.m in Sources */,
+				114883F62265B89400BB6A81 /* ShowMessageModel.m in Sources */,
 				11DF0C0F21D4B82E006A1D36 /* ChatListViewController.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
 				11DF0C1521D4B82E006A1D36 /* YLPhotoPreviewController.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
 				11DF0C3721D4B9A3006A1D36 /* amr_wav_converter.c in Sources */,
+				114883EC2265B36000BB6A81 /* RuntimeListViewController.m in Sources */,
 				11DF0C8B21D4BCFB006A1D36 /* Wrappers.pbobjc.m in Sources */,
 				1151C5F92192BEF600C08114 /* NSDate+Extension.m in Sources */,
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
@@ -2017,6 +2056,7 @@
 				1151C62B2192BEF600C08114 /* LPDAssetModel.m in Sources */,
 				11DF0C8321D4BCFB006A1D36 /* GPBExtensionInternals.m in Sources */,
 				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
+				114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */,
 				1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */,
 				1135790921A6986F00DDEA74 /* YLRecordControlView.m in Sources */,
 				11DF0C1B21D4B82E006A1D36 /* YLChatBoxView.m in Sources */,

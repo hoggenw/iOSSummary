@@ -9,6 +9,7 @@
 #import "Page2ViewController.h"
 #import "YLTableView.h"
 #import "DefualtCellModel.h"
+#import "RuntimeListViewController.h"
 
 @interface Page2ViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -55,8 +56,8 @@
     
     
     DefualtCellModel *model1 = [DefualtCellModel new];
-    model1.title = [NSString stringWithFormat:@""];
-    model1.desc = [NSString stringWithFormat:@""];
+    model1.title = [NSString stringWithFormat:@"响应链"];
+    model1.desc = [NSString stringWithFormat:@"响应链"];
     model1.leadImageName = @"tabbar-icon-selected-1";
     model1.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model1];
@@ -99,6 +100,8 @@
     
     NSLog(@"%@",@(index));
     if (index == 0) {
+        RuntimeListViewController * runVC = [RuntimeListViewController new];
+        [self.navigationController pushViewController: runVC animated: true];
 
     }else if (index == 1){
       
