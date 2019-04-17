@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowInfoViewController : UIViewController
-
+@property (nonatomic, strong) NSMutableArray * dataArray;
 @end

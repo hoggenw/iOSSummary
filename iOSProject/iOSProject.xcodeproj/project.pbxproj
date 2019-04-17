@@ -62,6 +62,7 @@
 		114883F32265B71500BB6A81 /* ShowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F22265B71500BB6A81 /* ShowInfoViewController.m */; };
 		114883F62265B89400BB6A81 /* ShowMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F52265B89400BB6A81 /* ShowMessageModel.m */; };
 		114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */; };
+		114883FC2265DA5000BB6A81 /* ShowInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 114883FB2265DA5000BB6A81 /* ShowInfoTableViewCell.m */; };
 		1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892521E355BA001E1443 /* YLAreaHelper.m */; };
 		1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149892A21E35C24001E1443 /* YLAddressPickerUtil.m */; };
 		1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1149893021E35E4A001E1443 /* YLPickerShowView.m */; };
@@ -334,6 +335,8 @@
 		114883F52265B89400BB6A81 /* ShowMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMessageModel.m; sourceTree = "<group>"; };
 		114883F72265BE8400BB6A81 /* YLShowInfoTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLShowInfoTableView.h; sourceTree = "<group>"; };
 		114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLShowInfoTableView.m; sourceTree = "<group>"; };
+		114883FA2265DA5000BB6A81 /* ShowInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowInfoTableViewCell.h; sourceTree = "<group>"; };
+		114883FB2265DA5000BB6A81 /* ShowInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowInfoTableViewCell.m; sourceTree = "<group>"; };
 		1149892421E355BA001E1443 /* YLAreaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAreaHelper.h; sourceTree = "<group>"; };
 		1149892521E355BA001E1443 /* YLAreaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLAreaHelper.m; sourceTree = "<group>"; };
 		1149892921E35C24001E1443 /* YLAddressPickerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLAddressPickerUtil.h; sourceTree = "<group>"; };
@@ -756,6 +759,8 @@
 			children = (
 				114883F72265BE8400BB6A81 /* YLShowInfoTableView.h */,
 				114883F82265BE8400BB6A81 /* YLShowInfoTableView.m */,
+				114883FA2265DA5000BB6A81 /* ShowInfoTableViewCell.h */,
+				114883FB2265DA5000BB6A81 /* ShowInfoTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2084,6 +2089,7 @@
 				11DF0C2621D4B82E006A1D36 /* YLImageMessageCell.m in Sources */,
 				11D6BD0A22252901006E47DE /* Animation1ViewController.m in Sources */,
 				1150E701223660DE0030CD0E /* Menu3DViewController.m in Sources */,
+				114883FC2265DA5000BB6A81 /* ShowInfoTableViewCell.m in Sources */,
 				1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */,
 				11DF0C1121D4B82E006A1D36 /* ChatMessageModel.m in Sources */,
 				1151C6192192BEF600C08114 /* LocalSQliteManager.m in Sources */,

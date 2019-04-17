@@ -23,6 +23,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) ShowMessageType showType;
 @property (nonatomic, strong) UIImage * image;
 @property (nonatomic, copy) NSString * url;
+@property (nonatomic, copy) NSString * boldString;
 
 @end
 

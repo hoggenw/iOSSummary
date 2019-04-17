@@ -8,6 +8,7 @@
 
 #import "YLShowInfoTableView.h"
 #import "ShowMessageModel.h"
+#import "ShowInfoTableViewCell.h"
 
 
 @interface  YLShowInfoTableView()<UITableViewDelegate, UITableViewDataSource>
@@ -174,8 +175,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    return [UITableViewCell new];
-    
+    // cell重用机制
+    ShowInfoTableViewCell * cell = [ShowInfoTableViewCell cellInTableView:tableView];
+    // cell数据展示
+    ShowMessageModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    cell.model = model;
+    return cell;
 }
 
 #pragma mark - delegate <UITableViewDelegate>
@@ -205,8 +210,14 @@
 //}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_cellType == Default) {
-        return  45;
+    
+    ShowMessageModel * model = self.dataArray[indexPath.row];
+    if (model.showType == TextType) {
+        return  [self heightForLabelText: model.content];
+    }
+    
+    if (model.showType == ImageType) {
+        return  model.image.size.height;
     }
     return 45;
 }
@@ -244,6 +255,16 @@
     }
     //    106 95
     return _noDataView;
+}
+
+- (float) heightForLabelText: (NSString *) strText{
+    CGSize constraint = CGSizeMake(ScreenWidth - 20 , CGFLOAT_MAX);
+    CGRect size = [strText boundingRectWithSize:constraint
+                                        options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                     attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}
+                                        context:nil];
+    float textHeight = size.size.height + 22;
+    return textHeight;
 }
 
 @end
