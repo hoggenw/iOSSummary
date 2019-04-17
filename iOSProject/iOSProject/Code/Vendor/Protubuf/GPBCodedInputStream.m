@@ -231,11 +231,7 @@ NSString *GPBCodedInputStreamReadRetainedString(
                                     encoding:NSUTF8StringEncoding];
     state->bufferPos += size;
     if (!result) {
-#ifdef DEBUG
-      // https://developers.google.com/protocol-buffers/docs/proto#scalar
-      NSLog(@"UTF-8 failure, is some field type 'string' when it should be "
-            @"'bytes'?");
-#endif
+
       RaiseException(GPBCodedInputStreamErrorInvalidUTF8, nil);
     }
   }

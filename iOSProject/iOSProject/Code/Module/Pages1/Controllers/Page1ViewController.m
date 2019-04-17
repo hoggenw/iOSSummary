@@ -165,7 +165,7 @@
     
     DefualtCellModel *model11 = [DefualtCellModel new];
     model11.title = [NSString stringWithFormat:@"直播功能"];
-    model11.desc = [NSString stringWithFormat:@"直播功能"];
+    model11.desc = [NSString stringWithFormat:@"IJKFrame"];
     model11.leadImageName = @"tabbar-icon-selected-1";
     model11.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
