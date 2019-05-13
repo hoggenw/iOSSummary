@@ -11,7 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RuntimeTestTemp : NSObject
+//声明类方法，但未实现
++ (void)haveMeal:(NSString *)food;
+//声明实例方法，但未实现
+- (void)singSong:(NSString *)name;
 
+//声明类方法，但未实现
++ (void)comeOn:(NSString *)temp;
+//声明实例方法，但未实现
+- (void)goOn:(NSString *)temp;
 @end
 
 NS_ASSUME_NONNULL_END

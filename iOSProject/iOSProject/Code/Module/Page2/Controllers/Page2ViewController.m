@@ -101,6 +101,7 @@
     NSLog(@"%@",@(index));
     if (index == 0) {
         RuntimeListViewController * runVC = [RuntimeListViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController: runVC animated: true];
 
     }else if (index == 1){

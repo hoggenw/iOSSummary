@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondTestTemp : NSObject
 
+-(void)testForwardingTarget;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

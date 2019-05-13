@@ -11,6 +11,7 @@
 #import "DefualtCellModel.h"
 #import "ShowInfoViewController.h"
 #import "ShowMessageModel.h"
+#import "RuntimeExampleListViewController.h"
 
 
 @interface RuntimeListViewController ()<YLTableViewDelete>
@@ -40,7 +41,10 @@
 }
 
 #pragma mark - Public Methods
-
+-(void)exampleButtonAction{
+    RuntimeExampleListViewController *exampleList = [RuntimeExampleListViewController new];
+    [self.navigationController pushViewController: exampleList animated: true];
+}
 
 #pragma mark - Events
 
@@ -83,7 +87,23 @@
     model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model4];
     [self.tableView.dataArray addObject: model4];
+    //Rutime消息发送
     
+    DefualtCellModel *model5 = [DefualtCellModel new];
+    model5.title = [NSString stringWithFormat:@"Runtime"];
+    model5.desc = [NSString stringWithFormat:@"Rutime消息发送"];
+    model5.leadImageName = @"tabbar-icon-selected-1";
+    model5.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model5];
+    [self.tableView.dataArray addObject: model5];
+    
+    DefualtCellModel *model6 = [DefualtCellModel new];
+    model6.title = [NSString stringWithFormat:@"Runtime"];
+    model6.desc = [NSString stringWithFormat:@"多继承的实现思路"];
+    model6.leadImageName = @"tabbar-icon-selected-1";
+    model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model6];
+    [self.tableView.dataArray addObject: model6];
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
@@ -105,7 +125,12 @@
         //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
-    
+    UIButton *exampleButton = [self creatNormalBUttonWithName:@"事例"];
+    [exampleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.height.equalTo(@(40));
+    }];
+    [exampleButton addTarget:self action:@selector(exampleButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -179,16 +204,30 @@
         ShowMessageModel * model5 = [self getModelWith:@"typedef struct objc_object *id;  \n\n Runtime中对objc_object结构体的具体定义" boldString:@"typedef struct objc_object *id;" showType:TextType];
         ShowMessageModel * model6 = [self getModelWith:@"///Represents an instance of a class.\nstruct objc_object {\nClass _Nonnull isa  OBJC_ISA_AVAILABILITY;\n};\n 我们都知道id在OC中是表示一个任意类型的类实例，从这里也可以看出，OC中的对象虽然没有明显的使用指针，但是在OC代码被编译转化为C之后，每个OC对象其实都是拥有一个isa的指针的。" boldString:@"///Represents an instance of a class.\nstruct objc_object {\nClass _Nonnull isa  OBJC_ISA_AVAILABILITY;\n}" showType:TextType];
         ShowMessageModel * model7 = [self getModelWith:@"2.Class - >objc_classs\n\nclass是一个指向objc_class结构体的指针，即在Runtime中：" boldString:@"2.Class - >objc_classs" showType:TextType];
-         ShowMessageModel * model8 = [self getModelWith:@"typedef struct objc_class *Class; \n\n下面是Runtime中对objc_class结构体的具体定义：" boldString:@"typedef struct objc_class *Class; " showType:TextType];
+        ShowMessageModel * model8 = [self getModelWith:@"typedef struct objc_class *Class; \n\n下面是Runtime中对objc_class结构体的具体定义：" boldString:@"typedef struct objc_class *Class; " showType:TextType];
         ShowMessageModel * model9 = [self getModelWith:@"//usr/include/objc/runtime.h\nstruct objc_class {\n  Class _Nonnull isa OBJC_ISA_AVAILABILITY;\n#if !OBJC2\n Class Nullable super_class       OBJC2UNAVAILABLE;\n const char * Nonnull name                               OBJC2UNAVAILABLE;\n long version       OBJC2_UNAVAILABLE;\n long info       OBJC2_UNAVAILABLE;\n long instance_size                                       OBJC2_UNAVAILABLE;\n struct objc_ivar_list * Nullable ivars       OBJC2UNAVAILABLE;\n struct objc_method_list * Nullable * _Nullable methodLists       OBJC2UNAVAILABLE;\n struct objc_cache * Nonnull cache       OBJC2UNAVAILABLE;\nstruct objc_protocol_list * Nullable protocols       OBJC2UNAVAILABLE;\n #endif\n} OBJC2_UNAVAILABLE;" boldString:@"//usr/include/objc/runtime.h\nstruct objc_class {\n  Class _Nonnull isa OBJC_ISA_AVAILABILITY;\n#if !OBJC2\n Class Nullable super_class       OBJC2UNAVAILABLE;\n const char * Nonnull name                               OBJC2UNAVAILABLE;\n long version       OBJC2_UNAVAILABLE;\n long info       OBJC2_UNAVAILABLE;\n long instance_size                                       OBJC2_UNAVAILABLE;\n struct objc_ivar_list * Nullable ivars       OBJC2UNAVAILABLE;\n struct objc_method_list * Nullable * _Nullable methodLists       OBJC2UNAVAILABLE;\n struct objc_cache * Nonnull cache       OBJC2UNAVAILABLE;\nstruct objc_protocol_list * Nullable protocols       OBJC2UNAVAILABLE;\n #endif\n} OBJC2_UNAVAILABLE;" showType:TextType];
         
         ShowMessageModel * model10 = [self getModelWith:@"isa指针：\n  我们会发现objc_class和objc_object同样是结构体，而且都拥有一个isa指针。我们很容易理解objc_object的isa指针指向对象的定义，那么objc_class的指针是怎么回事呢？\n其实，在Runtime中Objc类本身同时也是一个对象。Runtime把类对象所属类型就叫做元类，用于描述类对象本身所具有的特征，最常见的类方法就被定义于此，所以objc_class中的isa指针指向的是元类，每个类仅有一个类对象，而每个类对象仅有一个与之相关的元类。" boldString:@"isa指针：" showType:TextType];
         
         ShowMessageModel * model11 = [self getModelWith:@"cache:\n  为了优化性能，objc_class中的cache结构体用于记录每次使用类或者实例对象调用的方法。这样每次响应消息的时候，Runtime系统会优先在cache中寻找响应方法，相比直接在类的方法列表中遍历查找，效率更高。" boldString:@"cache:" showType:TextType];
         ShowMessageModel * model12 = [self getModelWith:@"ivars:\n  ivars用于存放所有的成员变量和属性信息，属性的存取方法都存放在methodLists中。" boldString:@"ivars:" showType:TextType];
-         ShowMessageModel * model13 = [self getModelWith:@"methodLists：\n  methodLists用于存放对象的所有成员方法。" boldString:@"methodLists：" showType:TextType];
+        ShowMessageModel * model13 = [self getModelWith:@"methodLists：\n  methodLists用于存放对象的所有成员方法。" boldString:@"methodLists：" showType:TextType];
         
         ShowMessageModel * model14 = [self getModelWith:@"3.SEL\n\n  SEL是一个指向objc_selector结构体的指针，即在Runtime中：" boldString:@"3.SEL" showType:TextType];
+        
+        ShowMessageModel * model15 = [self getModelWith:@"typedef struct objc_selector *SEL;\n\n  SEL在OC中称作方法选择器，用于表示运行时方法的名字，然而我们并不能在Runtime中找到它的结构体的详细定义。Objective-C在编译时，会依据每一个方法的名字、参数序列，生成一个唯一的整型标识(Int类型的地址)，这个标识就是SEL。\n\n注意：\n1.不同类中相同名字的方法对应的方法选择器是相同的。\n2.即使是同一个类中，方法名相同而变量类型不同也会导致它们具有相同的方法选择器。\n通常我们获取SEL有三种方法：\n1.OC中，使用@selector(“方法名字符串”)\n2.OC中，使用NSSelectorFromString(“方法名字符串”)\n 3.Runtime方法，使用sel_registerName(“方法名字符串”)" boldString:@"typedef struct objc_selector *SEL;" showType:TextType];
+        
+        ShowMessageModel * model16 = [self getModelWith:@"4.Ivar\n\n  Ivar代表类中实例变量的类型，是一个指向ojbcet_ivar的结构体的指针，即在Runtime中：\n\n typedef struct objc_ivar *Ivar;\n\n 下面是Runtime中对objc_ivar结构体的具体定义：" boldString:@"4.Ivar" showType:TextType];
+        ShowMessageModel * model17 = [self getModelWith:@"struct objc_ivar {\n  char * Nullable ivar_name    OBJC2UNAVAILABLE;\n  char * Nullable ivar_type    OBJC2UNAVAILABLE;\n  int ivar_offset    OBJC2_UNAVAILABLE;\n#ifdef LP64\n  int space    OBJC2_UNAVAILABLE;\n#endif\n} \n  我们在objc_class中看到的ivars成员列表,其中的元素就是Ivar，我可以通过实例查找其在类中的名字，这个过程被称为反射，下面的class_copyIvarList获取的不仅有实例变量还有属性：" boldString:@"struct objc_ivar {\n  char * Nullable ivar_name    OBJC2UNAVAILABLE;\n  char * Nullable ivar_type    OBJC2UNAVAILABLE;\n  int ivar_offset    OBJC2_UNAVAILABLE;\n#ifdef LP64\n  int space    OBJC2_UNAVAILABLE;\n#endif\n} " showType:TextType];
+        
+        ShowMessageModel * model18 = [self getModelWith:@"Ivar *ivarList = class_copyIvarList([self class], &count);\nfor (int i= 0; i<count; i++) {\nIvar ivar = ivarList[i];\nconst char *ivarName = ivar_getName(ivar);\nNSLog(@\"Ivar(%d): %@\", i, [NSString stringWithUTF8String:ivarName]);\n}\nfree(ivarList)；" boldString:@"Ivar *ivarList = class_copyIvarList([self class], &count);\nfor (int i= 0; i<count; i++) {\nIvar ivar = ivarList[i];\nconst char *ivarName = ivar_getName(ivar);\nNSLog(@\"Ivar(%d): %@\", i, [NSString stringWithUTF8String:ivarName]);\n}\nfree(ivarList)；" showType:TextType];
+        
+         ShowMessageModel * model19 = [self getModelWith:@"5.Method\n\n  Method表示某个方法的类型，即在Runtime中：\n\ntypedef struct objc_method *Method;\n\n 我们可以在objct_class定义中看到methodLists，其中的元素就是Method，下面是Runtime中objc_method结构体的具体定义：" boldString:@"5.Method" showType:TextType];
+        
+        ShowMessageModel * model20 = [self getModelWith:@"struct objc_method {\n\n   SEL Nonnull method_name    OBJC2UNAVAILABLE;\n   char * Nullable method_types    OBJC2UNAVAILABLE;\n   IMP Nonnull method_imp    OBJC2UNAVAILABLE;\n}\n 理解objc_method定义中的参数：\nmethod_name:方法名类型SEL\nmethod_types: 一个char指针，指向存储方法的参数类型和返回值类型\nmethod_imp：本质上是一个指针，指向方法的实现\n这里其实就是SEL(method_name)与IMP(method_name)形成了一个映射，通过SEL，我们可以很方便的找到方法实现IMP。" boldString:@"struct objc_method {\n\n   SEL Nonnull method_name    OBJC2UNAVAILABLE;\n   char * Nullable method_types    OBJC2UNAVAILABLE;\n   IMP Nonnull method_imp    OBJC2UNAVAILABLE;\n}\n " showType:TextType];
+          ShowMessageModel * model21 = [self getModelWith:@"5.IMP\n\n  IMP是一个函数指针，它在Runtime中的定义如下：\n\n  typedef void (IMP)(void / id, SEL, ... */ ); \n\n IMP这个函数指针指向了方法实现的首地址，当OC发起消息后，最终执行的代码是由IMP指针决定的。利用这个特性，我们可以对代码进行优化：当需要大量重复调用方法的时候，我们可以绕开消息绑定而直接利用IMP指针调起方法，这样的执行将会更加高效，相关的代码示例如下：" boldString:@"5.IMP" showType:TextType];
+        ShowMessageModel * model22 = [self getModelWith:@"void (*setter)(id, SEL, BOOL);\n  int i;\n  setter = (void (*)(id, SEL, BOOL))[target methodForSelector:@selector(setFilled:)];\n    for ( i = 0 ; i < 1000 ; i++ )\n      setter(targetList[i], @selector(setFilled:), YES);" boldString:@"void (*setter)(id, SEL, BOOL);\n  int i;\n  setter = (void (*)(id, SEL, BOOL))[target methodForSelector:@selector(setFilled:)];\n    for ( i = 0 ; i < 1000 ; i++ )\n      setter(targetList[i], @selector(setFilled:), YES);" showType:TextType];
+        
         
         [modelArray addObject: model];
         [modelArray addObject: model2];
@@ -203,18 +242,74 @@
         [modelArray addObject: model11];
         [modelArray addObject: model12];
         [modelArray addObject: model13];
-         [modelArray addObject: model14];
-        
-        
-        
+        [modelArray addObject: model14];
+        [modelArray addObject: model15];
+        [modelArray addObject: model16];
+        [modelArray addObject: model17];
+        [modelArray addObject: model18];
+        [modelArray addObject: model19];
+        [modelArray addObject: model20];
+        [modelArray addObject: model21];
+        [modelArray addObject: model22];
         
         vc.dataArray = modelArray;
         [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 4){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"Rutime消息发送" boldString:@"Rutime消息发送" showType:TextType];
+        ShowMessageModel * model2 = [self getModelWith:@"OC调用方法被编译转化为如下的形式：\n\n id _Nullable objc_msgSend(id _Nullable self, SEL _Nonnull op, ...)\n\n 其实，除了常见的objc_msgSend，消息发送的方法还有objc_msgSend_stret,objc_msgSendSuper,objc_msgSendSuper_stret等，如果消息传递给超类就使用带有super的方法，如果返回值是结构体而不是简单值就使用带有stret的值。" boldString:@"id _Nullable objc_msgSend(id _Nullable self, SEL _Nonnull op, ...)" showType:TextType];
+        ShowMessageModel * model3 = [self getModelWith:@"运行时阶段的消息发送的详细步骤如下：" boldString:@"运行时阶段的消息发送的详细步骤如下：" showType:TextType];
+        ShowMessageModel * model4 = [self getModelWith:@"1.检测selector 是不是需要忽略的。比如 Mac OS X 开发，有了垃圾回收就不理会retain,release 这些函数了。\n2.检测target 是不是nil 对象。ObjC 的特性是允许对一个 nil对象执行任何一个方法不会 Crash，因为会被忽略掉。\n3.如果上面两个都过了，那就开始查找这个类的 IMP，先从 cache 里面找，若可以找得到就跳到对应的函数去执行。\n4.如果在cache里找不到就找一下方法列表methodLists。\n5.如果methodLists找不到，就到超类的方法列表里寻找，一直找，直到找到NSObject类为止。\n6.如果还找不到，Runtime就提供了如下三种方法来处理：动态方法解析、消息接受者重定向、消息重定向，这三种方法的调用关系如下图：" boldString:@"动态方法解析、消息接受者重定向、消息重定向" showType:TextType];
+        
+        ShowMessageModel * model5 = [ShowMessageModel new];
+        model5.image = [UIImage imageNamed:@"runtime_message_png"];
+        model5.showType = ImageType;
+        
+        ShowMessageModel * model6 = [self getModelWith:@"1.动态方法解析(Dynamic Method Resolution)\n\n所谓动态解析，我们可以理解为通过cache和方法列表没有找到方法时，Runtime为我们提供一次动态添加方法实现的机会，主要用到的方法如下：\n\n//OC方法：\n//类方法未找到时调起，可于此添加类方法实现\n\n   + (BOOL)resolveClassMethod:(SEL)sel\n\n//实例方法未找到时调起，可于此添加实例方法实现\n\n   + (BOOL)resolveInstanceMethod:(SEL)sel\n\n//Runtime方法：\n/**\n运行时方法：向指定类中添加特定方法实现的操作\n@param cls 被添加方法的类\n@param name selector方法名\n@param imp 指向实现方法的函数指针\n@param types imp函数实现的返回值与参数类型\n@return 添加方法是否成功\n*/\n\n    BOOL class_addMethod(Class _Nullable cls,\n   SEL _Nonnull name,\n   IMP _Nonnull imp,\n   const char * _Nullable types)" boldString:@"1.动态方法解析(Dynamic Method Resolution)" showType:TextType];
+        
+        ShowMessageModel * model7 = [self getModelWith:@"可返回观看代码事例" boldString:@"可返回观看代码事例" showType:TextType];
+    
+        ShowMessageModel * model8 = [self getModelWith:@"2.消息接收者重定向\n\n 我们注意到动态方法解析过程中的两个resolve方法都返回了布尔值，当它们返回YES时方法即可正常执行，但是若它们返回NO，消息发送机制就进入了消息转发(Forwarding)的阶段了，我们可以使用Runtime通过下面的方法替换消息接收者的为其他对象，从而保证程序的继续执行。\n\n\n//重定向类方法的消息接收者，返回一个类\n\n- (id)forwardingTargetForSelector:(SEL)aSelector\n\n//重定向实例方法的消息接受者，返回一个实例对象\n\n- (id)forwardingTargetForSelector:(SEL)aSelector\n\n\n" boldString:@"2.消息接收者重定向" showType:TextType];
+        
+         ShowMessageModel * model9 = [self getModelWith:@"可返回观看代码事例" boldString:@"可返回观看代码事例" showType:TextType];
+        
+        ShowMessageModel * model10 = [self getModelWith:@"3.消息重定向\n\n 当以上两种方法无法生效，那么这个对象会因为找不到相应的方法实现而无法响应消息，此时Runtime系统会通过forwardInvocation：消息通知该对象，给予此次消息发送最后一次寻找IMP的机会：\n\n\n- (void)forwardInvocation:(NSInvocation *)anInvocation；\n\n   其实每个对象都从NSObject类中继承了forwardInvocation：方法，但是NSObject中的这个方法只是简单的调用了doesNotRecongnizeSelector:方法，提示我们错误。所以我们可以重写这个方法：对不能处理的消息做一些默认处理，也可以将消息转发给其他对象来处理，而不抛出错误。\n\n    我们注意到anInvocation是forwardInvocation唯一参数，它封装了原始的消息和消息参数。正是因为它，我们还不得不重写另一个函数：methodSignatureForSelector。这是因为在for\n\n " boldString:@"3.消息重定向" showType:TextType];
+        ShowMessageModel * model11 = [self getModelWith:@"可返回观看代码事例" boldString:@"可返回观看代码事例" showType:TextType];
+        
+        
+        ShowMessageModel * model12 = [self getModelWith:@"总结：\n\n1.从以上的代码中就可以看出，forwardingTargetForSelector仅支持一个对象的返回，也就是说消息只能被转发给一个对象，而forwardInvocation可以将消息同时转发给任意多个对象，这就是两者的最大区别。\n\n2.虽然理论上可以重载doesNotRecognizeSelector函数实现保证不抛出异常（不调用super实现），但是苹果文档着重提出“一定不能让这个函数就这么结束掉，必须抛出异常”。(If you override this method, you must call super or raise an invalidArgumentException exception at the end of your implementation. In other words, this method must not return normally; it must always result in an exception being thrown.)\n\n3.forwardInvocation甚至能够修改消息的内容，用于实现更加强大的功能。" boldString:@"总结：" showType:TextType];
+        
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        [modelArray addObject: model4];
+        [modelArray addObject: model5];
+        [modelArray addObject: model6];
+        [modelArray addObject: model7];
+        [modelArray addObject: model8];
+        [modelArray addObject: model9];
+        [modelArray addObject: model10];
+        [modelArray addObject: model11];
+        [modelArray addObject: model12];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
         
     }else if(index == 5){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"我们会发现Runtime消息转发的一个特点：一个对象可以调起它本身不具备的方法。这个过程与OC中的继承特性很相似，其实官方文档中图示也很好的说明了这个问题：" boldString:@"" showType:TextType];
+        ShowMessageModel * model2 = [ShowMessageModel new];
+        model2.image = [UIImage imageNamed:@"forwardInvocation_png"];
+        model2.showType = ImageType;
         
+        ShowMessageModel * model3 = [self getModelWith:@"图中的Warrior通过forwardInvocation：将negotiate消息转发给了Diplomat，这就好像是Warrior使用了超类Diplomat的方法一样。所以从这个思路，我们可以在实际开发需求中模拟多继承的操作。" boldString:@"" showType:TextType];
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
     }else if(index == 6){
         
     }else if(index == 7){
@@ -261,6 +356,19 @@
 }
 
 
+-(UIButton *)creatNormalBUttonWithName:(NSString *)name{
+    
+    UIButton * button = [UIButton new];
+    [self.view addSubview: button];
+    button.titleLabel.textColor = [UIColor blackColor];
+    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
+    [button setTitle: name forState: UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
+    return button;
+    
+}
+
+
 -(ShowMessageModel *)getModelWith:(NSString *)content boldString:(NSString *)boldString showType:(ShowMessageType)showType{
     ShowMessageModel * model = [ShowMessageModel new];
     model.content =content;
@@ -269,3 +377,4 @@
     return model;
 }
 @end
+

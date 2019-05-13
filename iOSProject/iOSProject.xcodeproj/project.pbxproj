@@ -149,6 +149,11 @@
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
+		11C024982289433F003E61B6 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C024972289433F003E61B6 /* images.xcassets */; };
+		11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */; };
+		11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */; };
+		11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024A1228952E7003E61B6 /* SecondTestTemp.m */; };
+		11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024A422895764003E61B6 /* ThirdTestTemp.m */; };
 		11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */; };
 		11D6BD02222528C1006E47DE /* YLMicphoneVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */; };
 		11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF1222528C1006E47DE /* YLCircleView.m */; };
@@ -503,6 +508,15 @@
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		11C024972289433F003E61B6 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		11C0249922894860003E61B6 /* RuntimeExampleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeExampleListViewController.h; sourceTree = "<group>"; };
+		11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeExampleListViewController.m; sourceTree = "<group>"; };
+		11C0249D22894A74003E61B6 /* RuntimeTestTemp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeTestTemp.h; sourceTree = "<group>"; };
+		11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTestTemp.m; sourceTree = "<group>"; };
+		11C024A0228952E7003E61B6 /* SecondTestTemp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondTestTemp.h; sourceTree = "<group>"; };
+		11C024A1228952E7003E61B6 /* SecondTestTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondTestTemp.m; sourceTree = "<group>"; };
+		11C024A322895764003E61B6 /* ThirdTestTemp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdTestTemp.h; sourceTree = "<group>"; };
+		11C024A422895764003E61B6 /* ThirdTestTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdTestTemp.m; sourceTree = "<group>"; };
 		11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLVoiceCircleView.m; sourceTree = "<group>"; };
 		11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMicphoneVoiceView.m; sourceTree = "<group>"; };
 		11D6BCF1222528C1006E47DE /* YLCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
@@ -967,10 +981,13 @@
 		114883ED2265B67300BB6A81 /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				11C0249C22894A24003E61B6 /* Example */,
 				114883EA2265B36000BB6A81 /* RuntimeListViewController.h */,
 				114883EB2265B36000BB6A81 /* RuntimeListViewController.m */,
 				114883F12265B71500BB6A81 /* ShowInfoViewController.h */,
 				114883F22265B71500BB6A81 /* ShowInfoViewController.m */,
+				11C0249922894860003E61B6 /* RuntimeExampleListViewController.h */,
+				11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -1345,6 +1362,7 @@
 			children = (
 				11DF0C9921D4C48C006A1D36 /* TemporaryPic */,
 				1151C5F02192BEF600C08114 /* Assets.xcassets */,
+				11C024972289433F003E61B6 /* images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1394,6 +1412,19 @@
 				1151C64F219EB06D00C08114 /* GuidanceViewController.m */,
 			);
 			path = Advertisement;
+			sourceTree = "<group>";
+		};
+		11C0249C22894A24003E61B6 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				11C0249D22894A74003E61B6 /* RuntimeTestTemp.h */,
+				11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */,
+				11C024A0228952E7003E61B6 /* SecondTestTemp.h */,
+				11C024A1228952E7003E61B6 /* SecondTestTemp.m */,
+				11C024A322895764003E61B6 /* ThirdTestTemp.h */,
+				11C024A422895764003E61B6 /* ThirdTestTemp.m */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		11D6BCE0222528C1006E47DE /* Animation1 */ = {
@@ -1856,6 +1887,7 @@
 				1149894821E479A8001E1443 /* city.json in Resources */,
 				1151C6152192BEF600C08114 /* LoginView.xib in Resources */,
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
+				11C024982289433F003E61B6 /* images.xcassets in Resources */,
 				111B945B221D2B5400AA7C26 /* Localizable.strings in Resources */,
 				11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */,
 				11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */,
@@ -1990,6 +2022,7 @@
 				113578B421A656AA00DDEA74 /* AVAssetWriteManager.m in Sources */,
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
 				1151C62D2192BEF600C08114 /* LPDPhotoArrangeCell.m in Sources */,
+				11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */,
 				1151C61F2192BEF600C08114 /* PopupView.m in Sources */,
 				113578BA21A656AA00DDEA74 /* CalculatorTools.m in Sources */,
 				11DF0C1C21D4B82E006A1D36 /* YLChatFaceView.m in Sources */,
@@ -2033,6 +2066,7 @@
 				11DF0C2821D4B82E006A1D36 /* YLMessageTableViewCell.m in Sources */,
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				11DF0C1021D4B82E006A1D36 /* ChatListTableViewCell.m in Sources */,
+				11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */,
 				11DF0C8521D4BCFB006A1D36 /* Type.pbobjc.m in Sources */,
 				1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */,
 				113578BC21A656AA00DDEA74 /* PermissionDetector.m in Sources */,
@@ -2063,6 +2097,7 @@
 				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
 				114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */,
 				1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */,
+				11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */,
 				1135790921A6986F00DDEA74 /* YLRecordControlView.m in Sources */,
 				11DF0C1B21D4B82E006A1D36 /* YLChatBoxView.m in Sources */,
 				113578B621A656AA00DDEA74 /* CaptureManager.m in Sources */,
@@ -2096,6 +2131,7 @@
 				11DF0C9121D4BCFB006A1D36 /* GPBUnknownField.m in Sources */,
 				1149893721E44ED5001E1443 /* YLAreaData.m in Sources */,
 				11DF0C0E21D4B82E006A1D36 /* ChatUserModel.m in Sources */,
+				11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */,
 				1151C5F72192BEF600C08114 /* UIImageView+Extension.m in Sources */,
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,

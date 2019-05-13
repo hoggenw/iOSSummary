@@ -7,8 +7,16 @@
 //
 
 #import "RuntimeExampleListViewController.h"
+#import "YLTableView.h"
+#import "DefualtCellModel.h"
+#import "RuntimeTestTemp.h"
+#import "SecondTestTemp.h"
+#import "ThirdTestTemp.h"
 
-@interface RuntimeExampleListViewController ()
+@interface RuntimeExampleListViewController ()<YLTableViewDelete>
+@property (nonatomic, strong) YLTableView  * tableView;
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, strong) NSMutableArray * dataArray;
 
 @end
 
@@ -20,7 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.page = 1;
+    self.dataArray = [NSMutableArray array];
+    [self initialUI];
+    [self initialDataSource];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,8 +46,129 @@
 
 
 #pragma mark - Private Methods
+-(void)initialDataSource {
+    
+    DefualtCellModel *model = [DefualtCellModel new];
+    model.title = [NSString stringWithFormat:@"Runtime"];
+    model.desc = [NSString stringWithFormat:@"动态添加方法实现"];
+    model.leadImageName = @"tabbar-icon-selected-1";
+    model.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model];
+    [self.tableView.dataArray addObject: model];
+    
+    DefualtCellModel *model2 = [DefualtCellModel new];
+    model2.title = [NSString stringWithFormat:@"Runtime"];
+    model2.desc = [NSString stringWithFormat:@"消息接收者重定向"];
+    model2.leadImageName = @"tabbar-icon-selected-1";
+    model2.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model2];
+    [self.tableView.dataArray addObject: model2];
+    
+    DefualtCellModel *model3 = [DefualtCellModel new];
+    model3.title = [NSString stringWithFormat:@"Runtime"];
+    model3.desc = [NSString stringWithFormat:@"消息重定向"];
+    model3.leadImageName = @"tabbar-icon-selected-1";
+    model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model3];
+    [self.tableView.dataArray addObject: model3];
+
+    self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
+    [self.tableView.tableView reloadData];
+    
+}
+- (void)initialUI {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.tableView = [YLTableView new];
+    self.tableView.cellType = Default;
+    self.tableView.delegate = self;
+    self.tableView.tableView.backgroundColor =  [UIColor colorWithRed:225/255.0 green:225/255.0 blue:225/255.0 alpha:1];
+    [self.view addSubview: self.tableView];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(kNavigationHeight);
+        make.left.right.bottom.equalTo(self.view);
+        //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+    }];
+
+    
+}
 
 
 #pragma mark - Extension Delegate or Protocol
 
+-(void)didselectedCell:(NSInteger)index {
+    
+    NSLog(@"%@",@(index));
+    if (index == 0) {
+        RuntimeTestTemp *temp = [[RuntimeTestTemp alloc] init];
+        [RuntimeTestTemp haveMeal:@"Apple"]; //打印：+[Person zs_haveMeal:]
+        [temp singSong:@"纸短情长"];   //打印：-[Person zs_singSong:]
+        
+      //const char *types含义表_png
+        UIImage * image = [UIImage imageNamed:@"const char *types含义表_png"];
+        
+    }else if (index == 1){
+        SecondTestTemp * temp = [SecondTestTemp new];
+        [temp testForwardingTarget];
+        
+    }else if (index == 2){
+        ThirdTestTemp * temp = [ThirdTestTemp new];
+        [temp testForwardInvocation];
+        
+        
+        
+    }else if (index == 3){
+        
+        
+    }else if (index == 4){
+    
+        
+    }else if(index == 5){
+        
+    }else if(index == 6){
+        
+    }else if(index == 7){
+        
+    }
+    else if(index == 8){
+        
+    }else if (index == 9){
+        
+    }else if (index == 10){
+        
+        
+    }else if(index == 11){
+        
+    }
+    
+    else if(index == 12){
+        
+    }
+    else if(index == 13){
+        
+    }
+    
+    
+}
+
+-(void)buttonaction:(UIButton *)sender {
+    
+}
+
+//下拉刷新
+-(void)YLTableViewRefreshAction:(UIView *)view {
+    self.page = 1;
+    self.dataArray = [NSMutableArray array];
+    [self initialDataSource];
+    [self.tableView.tableView.mj_header endRefreshing];
+    
+}
+//上拉刷新
+-(void)YLTableViewLoadMoreAction:(UIView *)view {
+    self.page++;
+    [self.tableView.tableView.mj_footer endRefreshing];
+    
+}
 @end
