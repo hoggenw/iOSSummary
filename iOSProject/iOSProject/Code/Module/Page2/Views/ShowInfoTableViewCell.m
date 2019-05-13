@@ -69,7 +69,7 @@
     [attriStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize: 14] range:NSMakeRange(0, contentString.length)];
     
     [attriStr addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"3333333"] range:range];
-    [attriStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize: 15] range:range];
+    [attriStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize: 16] range:range];
     
     return attriStr;
 }

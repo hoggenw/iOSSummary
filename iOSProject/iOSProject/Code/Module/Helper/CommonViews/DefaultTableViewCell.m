@@ -104,7 +104,6 @@
         [self.contentView addSubview: label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView.mas_right).offset(-10);
-            make.width.lessThanOrEqualTo(@(120));
             make.centerY.equalTo(self.contentView);
         }];
         _desLabel = label;
