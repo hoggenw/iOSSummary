@@ -15,5 +15,10 @@ extern NSString * const Notification_InvalidToken;
 extern NSString * const YLThirdSDKUMSocialAppkey;
 extern NSString *const kRouterEventCellImageTapEventName;
 extern NSString *const kChoiceCellMessageModelKey;
+extern NSString *const kDTActionHandlerTapGestureKey;
+extern NSString *const kDTActionHandlerTapBlockKey;
+extern NSString *const kImageUrlString;
+extern NSString * const YLKVOAssociateObservers;
+extern NSString * const YLKVOClassPrefix;
 
 NS_ASSUME_NONNULL_END

@@ -207,7 +207,7 @@
     [self.dataArray addObject: model15];
     
     DefualtCellModel *model16 = [DefualtCellModel new];
-    model16.title = [NSString stringWithFormat:@"国际化"];
+    model16.title = [NSString stringWithFormat:@""];
     model16.desc = [NSString stringWithFormat:@"APP内国际化及app名称国际化"];
     model16.leadImageName = @"tabbar-icon-selected-1";
     model16.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;

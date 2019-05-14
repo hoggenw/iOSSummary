@@ -7,9 +7,41 @@
 //
 
 #import "UIImage+Extension.h"
+#import <objc/runtime.h>
+
+
 
 @implementation UIImage (Extension)
 
+//set方法
+- (void)setUrlString:(NSString *)urlString{
+    objc_setAssociatedObject(self,
+                             &kImageUrlString,
+                             urlString,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+//get方法
+- (NSString *)urlString{
+    return objc_getAssociatedObject(self,
+                                    &kImageUrlString);
+}
+//添加一个自定义方法，用于清除所有关联属性
+- (void)clearAssociatedObjcet{
+    objc_removeAssociatedObjects(self);
+}
+
+//+(UIImage *)YLImageNamed:(NSString *)name {
+//    NSLog(@"拦截系统的imageNamed方法");
+//    return [UIImage YLImageNamed: name];
+//}
+//
+//+(void)load {
+//    // 获取两个类的类方法
+//    Method m1 = class_getClassMethod([UIImage class], @selector(imageNamed:));
+//    Method m2 = class_getClassMethod([UIImage class], @selector(YLImageNamed:));
+//    // 开始交换方法实现
+//    method_exchangeImplementations(m1, m2);
+//}
 
 /**
  *  获取指定颜色的1像素的图片

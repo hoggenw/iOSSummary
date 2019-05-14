@@ -105,6 +105,40 @@
     [self.dataArray addObject: model6];
     [self.tableView.dataArray addObject: model6];
     
+    DefualtCellModel *model7 = [DefualtCellModel new];
+    model7.title = [NSString stringWithFormat:@"Runtime"];
+    model7.desc = [NSString stringWithFormat:@"开发中的应用"];
+    model7.leadImageName = @"tabbar-icon-selected-1";
+    model7.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model7];
+    [self.tableView.dataArray addObject: model7];
+    
+    //动态方法交换：Method Swizzling
+    DefualtCellModel *model8 = [DefualtCellModel new];
+    model8.title = [NSString stringWithFormat:@""];
+    model8.desc = [NSString stringWithFormat:@"动态方法交换：Method Swizzling"];
+    model8.leadImageName = @"tabbar-icon-selected-1";
+    model8.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model8];
+    [self.tableView.dataArray addObject: model8];
+    //拦截并替换系统方法
+    DefualtCellModel *model9 = [DefualtCellModel new];
+    model9.title = [NSString stringWithFormat:@"Runtime"];
+    model9.desc = [NSString stringWithFormat:@"拦截并替换系统方法"];
+    model9.leadImageName = @"tabbar-icon-selected-1";
+    model9.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model9];
+    [self.tableView.dataArray addObject: model9];
+    
+    //分类添加新属性
+    DefualtCellModel *model10 = [DefualtCellModel new];
+    model10.title = [NSString stringWithFormat:@"Runtime"];
+    model10.desc = [NSString stringWithFormat:@"分类添加新属性"];
+    model10.leadImageName = @"tabbar-icon-selected-1";
+    model10.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model10];
+    [self.tableView.dataArray addObject: model10];
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -311,13 +345,65 @@
         vc.dataArray = modelArray;
         [self.navigationController pushViewController: vc animated: true];
     }else if(index == 6){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        
+        ShowMessageModel * model2 = [ShowMessageModel new];
+        model2.image = [UIImage imageNamed:@"runtime_totalUse_png"];
+        model2.showType = ImageType;
+;
+        [modelArray addObject: model2];
+        
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
         
     }else if(index == 7){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"实现动态方法交换(Method Swizzling )是Runtime中最具盛名的应用场景，其原理是：通过Runtime获取到方法实现的地址，进而动态交换两个方法的功能。使用到关键方法如下：" boldString:@"" showType:TextType];
+    
         
+        ShowMessageModel * model2 = [self getModelWith:@"//获取类方法的Mthod\nMethod _Nullable class_getClassMethod(Class _Nullable cls, SEL _Nonnull name)\n\n//获取实例对象方法的Mthod\nMethod _Nullable class_getInstanceMethod(Class _Nullable cls, SEL _Nonnull name)\n\n//交换两个方法的实现\nvoid method_exchangeImplementations(Method _Nonnull m1, Method _Nonnull m2)" boldString:@"//获取类方法的Mthod\nMethod _Nullable class_getClassMethod(Class _Nullable cls, SEL _Nonnull name)\n\n//获取实例对象方法的Mthod\nMethod _Nullable class_getInstanceMethod(Class _Nullable cls, SEL _Nonnull name)\n\n//交换两个方法的实现\nvoid method_exchangeImplementations(Method _Nonnull m1, Method _Nonnull m2)" showType:TextType];
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
     }
     else if(index == 8){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"2.拦截并替换系统方法" boldString:@"2.拦截并替换系统方法" showType:TextType];
+        
+        
+        ShowMessageModel * model2 = [self getModelWith:@"Runtime动态方法交换更多的是应用于系统类库和第三方框架的方法替换。在不可见源码的情况下，我们可以借助Rutime交换方法实现，为原有方法添加额外功能，这在实际开发中具有十分重要的意义。\n\n  步骤1：在添加分类中 添加替代执行的方法 \n\n+(UIImage *)YLImageNamed:(NSString *)name {\n    NSLog(@\"拦截系统的imageNamed方法\");\n    return [UIImage YLImageNamed: name];\n}" boldString:@"+(UIImage *)YLImageNamed:(NSString *)name {\n    NSLog(@\"拦截系统的imageNamed方法\");\n    return [UIImage YLImageNamed: name];\n}" showType:TextType];
+        
+        ShowMessageModel * model3 = [self getModelWith:@"步骤2：在UIImage的分类中拦截系统方法，将其替换为我们自定义的方法\n\n +(void)load {\n//load方法不需要手动调用，iOS会在应用程序启动的时候自动调起load方法，而且执行时间较早，所以在此方法中执行交换操作比较合适。\n// 获取两个类的类方法\n    Method m1 = class_getClassMethod([UIImage class], @selector(imageNamed:));\n    Method m2 = class_getClassMethod([UIImage class], @selector(YLImageNamed:));\n// 开始交换方法实现\n     method_exchangeImplementations(m1, m2);\n}" boldString:@"+(void)load {\n//load方法不需要手动调用，iOS会在应用程序启动的时候自动调起load方法，而且执行时间较早，所以在此方法中执行交换操作比较合适。\n// 获取两个类的类方法\n    Method m1 = class_getClassMethod([UIImage class], @selector(imageNamed:));\n    Method m2 = class_getClassMethod([UIImage class], @selector(YLImageNamed:));\n// 开始交换方法实现\n     method_exchangeImplementations(m1, m2);\n}" showType:TextType];
+        
+        
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 9){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"二、实现分类添加新属性\n\nOC的类目并不支持直接添加属性，如果我们直接在分类的声明中写入Property属性，那么只能为其生成set与get方法声明，却不能生成成员变量，直接调用这些属性还会造成崩溃" boldString:@"二、实现分类添加新属性" showType:TextType];
+        
+        
+        ShowMessageModel * model2 = [self getModelWith:@"所以为了实现给分类添加属性，我们还需借助Runtime的关联对象(Associated Objects)特性，它能够帮助我们在运行阶段将任意的属性关联到一个对象上，下面是相关的三个方法:" boldString:@"关联对象(Associated Objects)" showType:TextType];
+        
+        ShowMessageModel * model3 = [self getModelWith:@"/**\n1.给对象设置关联属性\n@param object 需要设置关联属性的对象，即给哪个对象关联属性\n@param key 关联属性对应的key，可通过key获取这个属性，\n@param value 给关联属性设置的值\n@param policy 关联属性的存储策略(对应Property属性中的assign,copy，retain等)\nOBJC_ASSOCIATION_ASSIGN             @property(assign)。\nOBJC_ASSOCIATION_RETAIN_NONATOMIC   @property(strong, nonatomic)。\nOBJC_ASSOCIATION_COPY_NONATOMIC     @property(copy, nonatomic)。\nOBJC_ASSOCIATION_RETAIN             @property(strong,atomic)。\nOBJC_ASSOCIATION_COPY               @property(copy, atomic)。\n*/\nvoid objc_setAssociatedObject(id _Nonnull object,\nconst void * _Nonnull key,\nid _Nullable value,\nobjc_AssociationPolicy policy)\n/**\n2.通过key获取关联的属性\n@param object 从哪个对象中获取关联属性\n@param key 关联属性对应的key\n@return 返回关联属性的值\n*/\nid _Nullable objc_getAssociatedObject(id _Nonnull object,\nconst void * _Nonnull key)\n/**\n3.移除对象所关联的属性\n@param object 移除某个对象的所有关联属性\n*/\nvoid objc_removeAssociatedObjects(id _Nonnull object)\n\n" boldString:@"/**\n1.给对象设置关联属性\n@param object 需要设置关联属性的对象，即给哪个对象关联属性\n@param key 关联属性对应的key，可通过key获取这个属性，\n@param value 给关联属性设置的值\n@param policy 关联属性的存储策略(对应Property属性中的assign,copy，retain等)\nOBJC_ASSOCIATION_ASSIGN             @property(assign)。\nOBJC_ASSOCIATION_RETAIN_NONATOMIC   @property(strong, nonatomic)。\nOBJC_ASSOCIATION_COPY_NONATOMIC     @property(copy, nonatomic)。\nOBJC_ASSOCIATION_RETAIN             @property(strong,atomic)。\nOBJC_ASSOCIATION_COPY               @property(copy, atomic)。\n*/\nvoid objc_setAssociatedObject(id _Nonnull object,\nconst void * _Nonnull key,\nid _Nullable value,\nobjc_AssociationPolicy policy)\n/**\n2.通过key获取关联的属性\n@param object 从哪个对象中获取关联属性\n@param key 关联属性对应的key\n@return 返回关联属性的值\n*/\nid _Nullable objc_getAssociatedObject(id _Nonnull object,\nconst void * _Nonnull key)\n/**\n3.移除对象所关联的属性\n@param object 移除某个对象的所有关联属性\n*/\nvoid objc_removeAssociatedObjects(id _Nonnull object)" showType:TextType];
+        ShowMessageModel * model4 = [self getModelWith:@"注意：key与关联属性一一对应，我们必须确保其全局唯一性，常用我们使用@selector(methodName)作为key。" boldString:@"" showType:TextType];
+        
+        
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        [modelArray addObject: model4];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 10){
         

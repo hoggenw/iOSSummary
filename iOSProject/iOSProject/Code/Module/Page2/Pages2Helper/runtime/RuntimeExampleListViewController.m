@@ -12,6 +12,9 @@
 #import "RuntimeTestTemp.h"
 #import "SecondTestTemp.h"
 #import "ThirdTestTemp.h"
+#import "TestRuntime.h"
+#import <objc/runtime.h>
+#import "RuntimeTestViewController.h"
 
 @interface RuntimeExampleListViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -71,6 +74,77 @@
     model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model3];
     [self.tableView.dataArray addObject: model3];
+    
+    
+    DefualtCellModel *model4 = [DefualtCellModel new];
+    model4.title = [NSString stringWithFormat:@"Runtime"];
+    model4.desc = [NSString stringWithFormat:@"动态方法"];
+    model4.leadImageName = @"tabbar-icon-selected-1";
+    model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model4];
+    [self.tableView.dataArray addObject: model4];
+    
+    
+    DefualtCellModel *model5 = [DefualtCellModel new];
+    model5.title = [NSString stringWithFormat:@"Runtime"];
+    model5.desc = [NSString stringWithFormat:@"拦截并替换系统方法"];
+    model5.leadImageName = @"tabbar-icon-selected-1";
+    model5.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model5];
+    [self.tableView.dataArray addObject: model5];
+    
+    DefualtCellModel *model6 = [DefualtCellModel new];
+    model6.title = [NSString stringWithFormat:@""];
+    model6.desc = [NSString stringWithFormat:@"分类添加新属性、block、私有变量赋值等"];
+    model6.leadImageName = @"tabbar-icon-selected-1";
+    model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model6];
+    [self.tableView.dataArray addObject: model6];
+    
+    
+    DefualtCellModel *model7 = [DefualtCellModel new];
+    model7.title = [NSString stringWithFormat:@""];
+    model7.desc = [NSString stringWithFormat:@"获取属性列表"];
+    model7.leadImageName = @"tabbar-icon-selected-1";
+    model7.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model7];
+    [self.tableView.dataArray addObject: model7];
+    
+    DefualtCellModel *model8 = [DefualtCellModel new];
+    model8.title = [NSString stringWithFormat:@""];
+    model8.desc = [NSString stringWithFormat:@"获取所有成员变量"];
+    model8.leadImageName = @"tabbar-icon-selected-1";
+    model8.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model8];
+    [self.tableView.dataArray addObject: model8];
+    
+    
+    DefualtCellModel *model9 = [DefualtCellModel new];
+    model9.title = [NSString stringWithFormat:@""];
+    model9.desc = [NSString stringWithFormat:@"获取所有方法"];
+    model9.leadImageName = @"tabbar-icon-selected-1";
+    model9.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model9];
+    [self.tableView.dataArray addObject: model9];
+    
+    //获取当前遵循的所有协议
+    DefualtCellModel *model10 = [DefualtCellModel new];
+    model10.title = [NSString stringWithFormat:@""];
+    model10.desc = [NSString stringWithFormat:@"获取当前遵循的所有协议"];
+    model10.leadImageName = @"tabbar-icon-selected-1";
+    model10.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model10];
+    [self.tableView.dataArray addObject: model10];
+    
+    
+    DefualtCellModel *model11 = [DefualtCellModel new];
+    model11.title = [NSString stringWithFormat:@""];
+    model11.desc = [NSString stringWithFormat:@"利用runtime 实现自己的kvo"];
+    model11.leadImageName = @"tabbar-icon-selected-1";
+    model11.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model11];
+    [self.tableView.dataArray addObject: model11];
+
 
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
@@ -120,22 +194,59 @@
         
         
     }else if (index == 3){
-        
+         [self runtimeTest];
         
     }else if (index == 4){
-    
+        //测试系统拦截
+        [UIImage imageNamed: @"dksj"];
         
     }else if(index == 5){
+        RuntimeTestViewController *vcTest = [[RuntimeTestViewController alloc] init];
+        [self.navigationController pushViewController:vcTest animated: true];
         
     }else if(index == 6){
+       //获取属性列表
+        unsigned int count;
+        objc_property_t *propertyList = class_copyPropertyList([TestRuntime class], &count);
+        for (unsigned int i = 0; i<count; i++) {
+            const char *propertyName = property_getName(propertyList[i]);
+            NSLog(@"PropertyName(%d): %@",i,[NSString stringWithUTF8String:propertyName]);
+        }
+        free(propertyList);
         
     }else if(index == 7){
-        
+        NSLog(@"取出类中所有成员变量的名字和类型，结果为：\n");
+        unsigned int oucnt = 0;
+        Ivar *lists = class_copyIvarList([TestRuntime class], &oucnt);
+        for (unsigned int i = 0 ; i< oucnt; i ++) {
+            Ivar ivar = lists[i];
+            const char *name = ivar_getName(ivar);
+            const char *type = ivar_getTypeEncoding(ivar);
+            NSLog(@"成员变量名：%s 成员变量类型：%s",name,type);
+        }
+        free(lists);
     }
     else if(index == 8){
+        //获取所有方法
+        unsigned int count = 0;
+        Method *methodList = class_copyMethodList([TestRuntime class], &count);
+        for (unsigned int i = 0; i<count; i++) {
+            Method method = methodList[i];
+            SEL mthodName = method_getName(method);
+            NSLog(@"MethodName(%d): %@",i,NSStringFromSelector(mthodName));
+        }
+        free(methodList);
         
     }else if (index == 9){
-        
+        //获取当前遵循的所有协议
+        unsigned int count = 0;
+        __unsafe_unretained Protocol **protocolList = class_copyProtocolList([self class], &count);
+        for (int i=0; i<count; i++) {
+            Protocol *protocal = protocolList[i];
+            const char *protocolName = protocol_getName(protocal);
+            NSLog(@"protocol(%d): %@",i, [NSString stringWithUTF8String:protocolName]);
+        }
+        free(protocolList);
     }else if (index == 10){
         
         
@@ -156,6 +267,34 @@
 -(void)buttonaction:(UIButton *)sender {
     
 }
+- (void)runtimeTest {
+    TestRuntime * model = [TestRuntime shareRuntimer];
+    Method class1 = class_getClassMethod([TestRuntime class], @selector(classMethod1));
+    Method class2 = class_getClassMethod([TestRuntime class], @selector(classMethod2));
+    Method instanceMethod1 = class_getInstanceMethod([TestRuntime class], @selector(method1));
+    Method instanceMethod2 = class_getInstanceMethod([TestRuntime class], @selector(method2));
+    //两个类方法的交换
+    method_exchangeImplementations(class1, class2);
+    NSLog(@"类方法交换后，先执行1方法，在执行2方法，结果为：\n");
+    [TestRuntime classMethod1];
+    [TestRuntime classMethod2];
+    NSLog(@"实例方法交换后，先执行1方法，在执行2方法，结果为：\n");
+    method_exchangeImplementations(instanceMethod1, instanceMethod2);
+    [model method1];
+    [model method2];
+    
+    NSLog(@"实例方法1和类方法1交换后，先执行实例方法，在执行类方法，结果为：\n");
+    method_exchangeImplementations(class1, instanceMethod1);
+    [TestRuntime classMethod1];
+    [model method1];
+    
+ 
+ 
+    
+    
+}
+
+
 
 //下拉刷新
 -(void)YLTableViewRefreshAction:(UIView *)view {

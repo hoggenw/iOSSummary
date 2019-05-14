@@ -15,3 +15,9 @@ NSString * const YLThirdSDKUMSocialAppkey = @"5bf283a7b465f5a2ab0001e1";
 
 NSString *const kRouterEventCellImageTapEventName = @"kRouterEventCellImageTapEventName";
 NSString *const kChoiceCellMessageModelKey = @"kChoiceCellMessageModelKey";
+
+NSString *const kDTActionHandlerTapGestureKey =@"kDTActionHandlerTapGestureKey";
+NSString *const kDTActionHandlerTapBlockKey =@"kDTActionHandlerTapBlockKey";
+NSString *const kImageUrlString=@"kImageUrlString";
+NSString * const YLKVOAssociateObservers = @"YLKVOAssociateObservers";
+NSString * const YLKVOClassPrefix = @"YL_";

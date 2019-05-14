@@ -154,6 +154,10 @@
 		11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */; };
 		11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024A1228952E7003E61B6 /* SecondTestTemp.m */; };
 		11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024A422895764003E61B6 /* ThirdTestTemp.m */; };
+		11C024A822896306003E61B6 /* TestRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024A722896306003E61B6 /* TestRuntime.m */; };
+		11C024AB22896C3A003E61B6 /* RuntimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AA22896C3A003E61B6 /* RuntimeView.m */; };
+		11C024AE22896CFE003E61B6 /* RuntimeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */; };
+		11C024B1228A6207003E61B6 /* NSObject+YLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AF228A6207003E61B6 /* NSObject+YLKVO.m */; };
 		11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */; };
 		11D6BD02222528C1006E47DE /* YLMicphoneVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */; };
 		11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF1222528C1006E47DE /* YLCircleView.m */; };
@@ -517,6 +521,14 @@
 		11C024A1228952E7003E61B6 /* SecondTestTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondTestTemp.m; sourceTree = "<group>"; };
 		11C024A322895764003E61B6 /* ThirdTestTemp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdTestTemp.h; sourceTree = "<group>"; };
 		11C024A422895764003E61B6 /* ThirdTestTemp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdTestTemp.m; sourceTree = "<group>"; };
+		11C024A622896306003E61B6 /* TestRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRuntime.h; sourceTree = "<group>"; };
+		11C024A722896306003E61B6 /* TestRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRuntime.m; sourceTree = "<group>"; };
+		11C024A922896C3A003E61B6 /* RuntimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeView.h; sourceTree = "<group>"; };
+		11C024AA22896C3A003E61B6 /* RuntimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeView.m; sourceTree = "<group>"; };
+		11C024AC22896CFE003E61B6 /* RuntimeTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeTestViewController.h; sourceTree = "<group>"; };
+		11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTestViewController.m; sourceTree = "<group>"; };
+		11C024AF228A6207003E61B6 /* NSObject+YLKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YLKVO.m"; sourceTree = "<group>"; };
+		11C024B0228A6207003E61B6 /* NSObject+YLKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YLKVO.h"; sourceTree = "<group>"; };
 		11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLVoiceCircleView.m; sourceTree = "<group>"; };
 		11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMicphoneVoiceView.m; sourceTree = "<group>"; };
 		11D6BCF1222528C1006E47DE /* YLCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
@@ -1155,6 +1167,8 @@
 			isa = PBXGroup;
 			children = (
 				1151C55F2192BEF500C08114 /* ExtensionHeader.h */,
+				11C024B0228A6207003E61B6 /* NSObject+YLKVO.h */,
+				11C024AF228A6207003E61B6 /* NSObject+YLKVO.m */,
 				117D7AF6224092C600040568 /* UIScrollView+Extension.h */,
 				117D7AF5224092C600040568 /* UIScrollView+Extension.m */,
 				1151C54C2192BEF500C08114 /* UIResponder+Extension.h */,
@@ -1417,12 +1431,18 @@
 		11C0249C22894A24003E61B6 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				11C024A622896306003E61B6 /* TestRuntime.h */,
+				11C024A722896306003E61B6 /* TestRuntime.m */,
 				11C0249D22894A74003E61B6 /* RuntimeTestTemp.h */,
 				11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */,
 				11C024A0228952E7003E61B6 /* SecondTestTemp.h */,
 				11C024A1228952E7003E61B6 /* SecondTestTemp.m */,
 				11C024A322895764003E61B6 /* ThirdTestTemp.h */,
 				11C024A422895764003E61B6 /* ThirdTestTemp.m */,
+				11C024A922896C3A003E61B6 /* RuntimeView.h */,
+				11C024AA22896C3A003E61B6 /* RuntimeView.m */,
+				11C024AC22896CFE003E61B6 /* RuntimeTestViewController.h */,
+				11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -2012,6 +2032,7 @@
 				1149895221E48E1D001E1443 /* IJKFrameworkViewController.m in Sources */,
 				11DF0C8D21D4BCFB006A1D36 /* FieldMask.pbobjc.m in Sources */,
 				111B9452221A8B2C00AA7C26 /* Page2ViewController.m in Sources */,
+				11C024AE22896CFE003E61B6 /* RuntimeTestViewController.m in Sources */,
 				1151C6222192BEF600C08114 /* ZJImageMagnification.m in Sources */,
 				1151C5F62192BEF600C08114 /* UIImage+Extension.m in Sources */,
 				113578B921A656AA00DDEA74 /* UIImage+compress.m in Sources */,
@@ -2052,6 +2073,7 @@
 				1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */,
 				11D6BD1022252CB6006E47DE /* TopArcView.m in Sources */,
 				1151C5FC2192BEF600C08114 /* NSString+Extension.m in Sources */,
+				11C024AB22896C3A003E61B6 /* RuntimeView.m in Sources */,
 				11D6BD07222528C1006E47DE /* YLMicrophoneViewController.m in Sources */,
 				1135785D21A298E100DDEA74 /* YLTableView.m in Sources */,
 				11DF0C7D21D4BCFB006A1D36 /* GPBExtensionRegistry.m in Sources */,
@@ -2092,7 +2114,9 @@
 				11DF0C8F21D4BCFB006A1D36 /* GPBCodedInputStream.m in Sources */,
 				1151C5F42192BEF600C08114 /* UILabel+Extension.m in Sources */,
 				11DF0C8021D4BCFB006A1D36 /* GPBMessage.m in Sources */,
+				11C024B1228A6207003E61B6 /* NSObject+YLKVO.m in Sources */,
 				1151C62B2192BEF600C08114 /* LPDAssetModel.m in Sources */,
+				11C024A822896306003E61B6 /* TestRuntime.m in Sources */,
 				11DF0C8321D4BCFB006A1D36 /* GPBExtensionInternals.m in Sources */,
 				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
 				114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */,

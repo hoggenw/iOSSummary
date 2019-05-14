@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, YLImageType) {
 
 @interface UIImage (Extension)
 
+//添加一个新属性：图片网络链接
+@property(nonatomic,copy)NSString *urlString;
 /**
  *  获取指定颜色的1像素的图片
  *
@@ -44,5 +46,7 @@ typedef NS_ENUM(NSUInteger, YLImageType) {
 - (UIImage *)compressImageWithSice:(CGSize )rectSize;
 //渐变色的图片
 +(UIImage *)gradientImageStartColor:(UIColor *)startColor endColor:(UIColor *) endColor bounds:(CGRect) bounds;
+
+- (void)clearAssociatedObjcet;
 
 @end
