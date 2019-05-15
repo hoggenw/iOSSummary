@@ -88,7 +88,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
         .receiver = self,  //这是实际消息接受者
         .super_class = class_getSuperclass(object_getClass(self))  //方法查找要到YL_类的父类中去找（因为self类名已经被别名为YL开头的kvo；类）
     };
-    
+    //objc_msgSendSuper 调用 objc_msgSendSuper 告诉系统去父类方法列表里面去找，
     void (*objc_msgSendSuperCasted)(void *, SEL, id) = (void *)objc_msgSendSuper;
     //为原来的key赋值
     objc_msgSendSuperCasted(&superClazz,_cmd,newValue);
@@ -109,10 +109,11 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
 -(void)YLAddObserver:(NSObject *)observer forKey:(NSString *)key withBlock:(YLKVOBlock)block {
     
     NSLog( @"getterForSetter(%@) : %@",key,setterMethodGet(key));
+    //获取设置方法
     SEL setterSelector = NSSelectorFromString(setterMethodGet(key));
     Method setterMethod = class_getInstanceMethod([self class], setterSelector);//用 class_getInstanceMethod 去获得 setKey: 的实现（Method）获取实例方法
     //[self haseSelector:method_getName(setterMethod)];
-    NSLog(@"setterMethod = %@", NSStringFromSelector(method_getName(setterMethod)));
+    NSLog(@"setterMethod = %@   class = %@", NSStringFromSelector(method_getName(setterMethod)), NSStringFromClass([self class]));
     if (!setterMethod) {
         NSString * reason = [NSString stringWithFormat:@"Object %@ doesn not have a setter for key %@ ",self,key];
         @throw [NSException exceptionWithName: NSInvalidArgumentException reason: reason userInfo: nil];
@@ -122,8 +123,9 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
    // NSLog(@"object_getClass(%@) : %@", clazz, object_getClass(self));
     NSString * className = NSStringFromClass(clazz);
     //
+    NSLog(@"className == %@",className);
     if (![className hasPrefix: YLKVOClassPrefix]) {
-        //创建子类，这时clazz的值已经是子类了
+        //创建子类，并赋予这个子类class方法，这时clazz的值已经是子类了，
         clazz = [self makeKvoClassWithOriginalClassName:className];
         NSLog(@"创建新的kvo类");
         //将一个对象设置为别的类类型，这时调用[self class]返回的其实是YL_的子类，由于我们覆写了class的方法返回的使我们新创建kvo类的父类的class，所以看到的还是[self class]的类名
@@ -167,7 +169,8 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     }
     //不存在这个类，那么久新建它
     Class originClazz =  object_getClass(self);
-    //    分配空间,创建类(仅在 创建之后,注册之前 能够添加成员变量)、添加类 superclass 类是父类   name 类的名字  size_t 类占的空间
+    NSLog(@"kvoClassName : %@",kvoClassName);
+    //    分配空间,创建类(仅在 创建之后,注册之前 能够添加成员变量)、添加类 superclass 类是父类   name 类的名字  size_t 类占的空间；运行时创建类的方法
     Class kvoClazz = objc_allocateClassPair(originClazz, kvoClassName.UTF8String, 0);
     //重写了 class 方法。隐藏这个子类的存在。最后 objc_registerClassPair() 告诉 Runtime 这个类的存在。
     Method clazzMethod = class_getInstanceMethod(originClazz, @selector(class));

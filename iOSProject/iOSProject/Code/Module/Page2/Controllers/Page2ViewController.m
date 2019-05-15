@@ -10,6 +10,7 @@
 #import "YLTableView.h"
 #import "DefualtCellModel.h"
 #import "RuntimeListViewController.h"
+#import "UIResponderListViewController.h"
 
 @interface Page2ViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -105,7 +106,9 @@
         [self.navigationController pushViewController: runVC animated: true];
 
     }else if (index == 1){
-      
+        UIResponderListViewController * runVC = [UIResponderListViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController: runVC animated: true];
     }else if (index == 2){
         
     }else if (index == 3){

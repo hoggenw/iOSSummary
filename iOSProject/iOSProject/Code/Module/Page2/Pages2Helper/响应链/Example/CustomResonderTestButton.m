@@ -10,12 +10,14 @@
 
 @implementation CustomResonderTestButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+//扩大按钮的点击范围。
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {
+    //NSLog(@"%@",NSStringFromCGPoint(point));
+    CGRect bounds = self.bounds;
+    bounds = CGRectInset(bounds, -40, -40);
+    // CGRectContainsPoint  判断点是否在矩形内
+    return CGRectContainsPoint(bounds, point);
 }
-*/
+
 
 @end

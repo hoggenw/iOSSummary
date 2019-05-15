@@ -32,6 +32,7 @@
 
 //+(UIImage *)YLImageNamed:(NSString *)name {
 //    NSLog(@"拦截系统的imageNamed方法");
+//    [YLHintView showMessageOnThisPage:@"拦截系统的imageNamed方法"];
 //    return [UIImage YLImageNamed: name];
 //}
 //

@@ -37,24 +37,25 @@
 }
 
 +(void)YLhaveMeal:(NSString *)temp {
-    NSLog(@"%s",__func__);
-    NSLog(@"temp:  %@",temp);
+
+    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 
 - (void)YLSingSong:(NSString *)name{
-    NSLog(@"%s",__func__);
-    NSLog(@"name:  %@",name);
+    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======name: %@ ", __func__,name]];
 }
 
 //声明类方法，但未实现
 + (void)comeOn:(NSString *)temp{
     NSLog(@"%s",__func__);
     NSLog(@"temp:  %@",temp);
+    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 //声明实例方法，但未实现
 - (void)goOn:(NSString *)temp{
     NSLog(@"%s",__func__);
     NSLog(@"temp:  %@",temp);
+    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 
 @end

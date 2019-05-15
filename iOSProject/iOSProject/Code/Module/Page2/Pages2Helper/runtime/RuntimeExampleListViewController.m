@@ -15,11 +15,16 @@
 #import "TestRuntime.h"
 #import <objc/runtime.h>
 #import "RuntimeTestViewController.h"
+#import "Man.h"
+
+
+@class Cat;
 
 @interface RuntimeExampleListViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
+@property (nonatomic, strong) TestRuntime * modelRuntime;
 
 @end
 
@@ -95,7 +100,7 @@
     
     DefualtCellModel *model6 = [DefualtCellModel new];
     model6.title = [NSString stringWithFormat:@""];
-    model6.desc = [NSString stringWithFormat:@"分类添加新属性、block、私有变量赋值等"];
+    model6.desc = [NSString stringWithFormat:@"添加新属性、block、私有变量赋值"];
     model6.leadImageName = @"tabbar-icon-selected-1";
     model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model6];
@@ -144,6 +149,15 @@
     model11.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model11];
     [self.tableView.dataArray addObject: model11];
+    
+    
+    DefualtCellModel *model12 = [DefualtCellModel new];
+    model12.title = [NSString stringWithFormat:@""];
+    model12.desc = [NSString stringWithFormat:@"字典转模型"];
+    model12.leadImageName = @"tabbar-icon-selected-1";
+    model12.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model12];
+    [self.tableView.dataArray addObject: model12];
 
 
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -181,7 +195,7 @@
         [temp singSong:@"纸短情长"];   //打印：-[Person zs_singSong:]
         
       //const char *types含义表_png
-        UIImage * image = [UIImage imageNamed:@"const char *types含义表_png"];
+      //  UIImage * image = [UIImage imageNamed:@"const char *types含义表_png"];
         
     }else if (index == 1){
         SecondTestTemp * temp = [SecondTestTemp new];
@@ -211,6 +225,7 @@
         for (unsigned int i = 0; i<count; i++) {
             const char *propertyName = property_getName(propertyList[i]);
             NSLog(@"PropertyName(%d): %@",i,[NSString stringWithUTF8String:propertyName]);
+             [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"PropertyName(%d): %@",i,[NSString stringWithUTF8String:propertyName]]];
         }
         free(propertyList);
         
@@ -223,6 +238,7 @@
             const char *name = ivar_getName(ivar);
             const char *type = ivar_getTypeEncoding(ivar);
             NSLog(@"成员变量名：%s 成员变量类型：%s",name,type);
+            [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"成员变量名：%s 成员变量类型：%s",name,type]];
         }
         free(lists);
     }
@@ -234,6 +250,7 @@
             Method method = methodList[i];
             SEL mthodName = method_getName(method);
             NSLog(@"MethodName(%d): %@",i,NSStringFromSelector(mthodName));
+             [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"MethodName(%d): %@",i,NSStringFromSelector(mthodName)]];
         }
         free(methodList);
         
@@ -245,13 +262,34 @@
             Protocol *protocal = protocolList[i];
             const char *protocolName = protocol_getName(protocal);
             NSLog(@"protocol(%d): %@",i, [NSString stringWithUTF8String:protocolName]);
+             [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"protocol(%d): %@",i, [NSString stringWithUTF8String:protocolName]]];
         }
         free(protocolList);
     }else if (index == 10){
+        self.modelRuntime = [[TestRuntime alloc] init];
+        [self.modelRuntime YLAddObserver:self forKey:NSStringFromSelector(@selector(string))
+                          withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+                              NSLog(@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject, observedKey, oldValue,newValue);
+                              [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject,observedKey, oldValue,newValue]];
+                          }];
+        NSArray * array = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
+        for (int  i = 0 ; i < array.count; i++) {
+            self.modelRuntime.string = array[i];
+            
+        }
         
+        NSLog(@" class name  :   %@",[self.modelRuntime class]);
         
     }else if(index == 11){
-        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"model.json" ofType:nil];
+        NSData *jsonData = [NSData dataWithContentsOfFile:path];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
+        //NSLog(@"json : %@",json);
+        Man * model = [Man objectWithDict:json];
+        //[model setDict: [Man specialArrayJson]];
+        //        [model setDict:];
+        NSLog(@"测试结果:%@== ==%@==%ld==%f==%@==%@",model.name,model.money,model.age,model.height,model.books.firstObject,model.cat);
+        [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"测试结果:%@== ==%@==%ld==%f==%@===%@",model.name,model.money,model.age,model.height,model.books.firstObject,model.cat]];
     }
     
     else if(index == 12){

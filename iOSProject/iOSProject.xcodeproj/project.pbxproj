@@ -158,6 +158,13 @@
 		11C024AB22896C3A003E61B6 /* RuntimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AA22896C3A003E61B6 /* RuntimeView.m */; };
 		11C024AE22896CFE003E61B6 /* RuntimeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */; };
 		11C024B1228A6207003E61B6 /* NSObject+YLKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024AF228A6207003E61B6 /* NSObject+YLKVO.m */; };
+		11C024B4228A9689003E61B6 /* NSObject+JSONExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024B3228A9689003E61B6 /* NSObject+JSONExtension.m */; };
+		11C024B6228A9B52003E61B6 /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = 11C024B5228A9B52003E61B6 /* model.json */; };
+		11C024BA228A9BEA003E61B6 /* Man.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024B9228A9BE9003E61B6 /* Man.m */; };
+		11C024BE228AA3D0003E61B6 /* UIResponderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024BD228AA3D0003E61B6 /* UIResponderListViewController.m */; };
+		11C024C1228AA464003E61B6 /* ResponderExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024C0228AA464003E61B6 /* ResponderExampleListViewController.m */; };
+		11C024C4228AAE86003E61B6 /* ReponderTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024C3228AAE86003E61B6 /* ReponderTestViewController.m */; };
+		11C024C8228AAF4C003E61B6 /* CustomResonderTestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C024C7228AAF4C003E61B6 /* CustomResonderTestButton.m */; };
 		11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */; };
 		11D6BD02222528C1006E47DE /* YLMicphoneVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */; };
 		11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D6BCF1222528C1006E47DE /* YLCircleView.m */; };
@@ -529,6 +536,19 @@
 		11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeTestViewController.m; sourceTree = "<group>"; };
 		11C024AF228A6207003E61B6 /* NSObject+YLKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YLKVO.m"; sourceTree = "<group>"; };
 		11C024B0228A6207003E61B6 /* NSObject+YLKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YLKVO.h"; sourceTree = "<group>"; };
+		11C024B2228A9689003E61B6 /* NSObject+JSONExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONExtension.h"; sourceTree = "<group>"; };
+		11C024B3228A9689003E61B6 /* NSObject+JSONExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONExtension.m"; sourceTree = "<group>"; };
+		11C024B5228A9B52003E61B6 /* model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = model.json; sourceTree = "<group>"; };
+		11C024B8228A9BE9003E61B6 /* Man.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Man.h; sourceTree = "<group>"; };
+		11C024B9228A9BE9003E61B6 /* Man.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Man.m; sourceTree = "<group>"; };
+		11C024BC228AA3D0003E61B6 /* UIResponderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIResponderListViewController.h; sourceTree = "<group>"; };
+		11C024BD228AA3D0003E61B6 /* UIResponderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIResponderListViewController.m; sourceTree = "<group>"; };
+		11C024BF228AA464003E61B6 /* ResponderExampleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponderExampleListViewController.h; sourceTree = "<group>"; };
+		11C024C0228AA464003E61B6 /* ResponderExampleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponderExampleListViewController.m; sourceTree = "<group>"; };
+		11C024C2228AAE86003E61B6 /* ReponderTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReponderTestViewController.h; sourceTree = "<group>"; };
+		11C024C3228AAE86003E61B6 /* ReponderTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReponderTestViewController.m; sourceTree = "<group>"; };
+		11C024C6228AAF4C003E61B6 /* CustomResonderTestButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomResonderTestButton.h; sourceTree = "<group>"; };
+		11C024C7228AAF4C003E61B6 /* CustomResonderTestButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomResonderTestButton.m; sourceTree = "<group>"; };
 		11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLVoiceCircleView.m; sourceTree = "<group>"; };
 		11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMicphoneVoiceView.m; sourceTree = "<group>"; };
 		11D6BCF1222528C1006E47DE /* YLCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLCircleView.m; sourceTree = "<group>"; };
@@ -985,6 +1005,7 @@
 		114883E92265B32D00BB6A81 /* Pages2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				11C024BB228AA3A6003E61B6 /* 响应链 */,
 				114883ED2265B67300BB6A81 /* runtime */,
 			);
 			path = Pages2Helper;
@@ -1123,6 +1144,7 @@
 		1151C5412192BE3300C08114 /* Supporting file */ = {
 			isa = PBXGroup;
 			children = (
+				11C024B5228A9B52003E61B6 /* model.json */,
 				1149894721E479A8001E1443 /* city.json */,
 				1149894521E47707001E1443 /* Address.plist */,
 				11DF0C9E21D4C798006A1D36 /* normal_face.plist */,
@@ -1191,6 +1213,8 @@
 				1151C5552192BEF500C08114 /* UIImage+Extension.m */,
 				1151C55E2192BEF500C08114 /* UIViewController+Extension.h */,
 				1151C5542192BEF500C08114 /* UIViewController+Extension.m */,
+				11C024B2228A9689003E61B6 /* NSObject+JSONExtension.h */,
+				11C024B3228A9689003E61B6 /* NSObject+JSONExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1431,6 +1455,8 @@
 		11C0249C22894A24003E61B6 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				11C024B8228A9BE9003E61B6 /* Man.h */,
+				11C024B9228A9BE9003E61B6 /* Man.m */,
 				11C024A622896306003E61B6 /* TestRuntime.h */,
 				11C024A722896306003E61B6 /* TestRuntime.m */,
 				11C0249D22894A74003E61B6 /* RuntimeTestTemp.h */,
@@ -1443,6 +1469,29 @@
 				11C024AA22896C3A003E61B6 /* RuntimeView.m */,
 				11C024AC22896CFE003E61B6 /* RuntimeTestViewController.h */,
 				11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		11C024BB228AA3A6003E61B6 /* 响应链 */ = {
+			isa = PBXGroup;
+			children = (
+				11C024C5228AAECF003E61B6 /* Example */,
+				11C024BC228AA3D0003E61B6 /* UIResponderListViewController.h */,
+				11C024BD228AA3D0003E61B6 /* UIResponderListViewController.m */,
+				11C024BF228AA464003E61B6 /* ResponderExampleListViewController.h */,
+				11C024C0228AA464003E61B6 /* ResponderExampleListViewController.m */,
+				11C024C2228AAE86003E61B6 /* ReponderTestViewController.h */,
+				11C024C3228AAE86003E61B6 /* ReponderTestViewController.m */,
+			);
+			path = "响应链";
+			sourceTree = "<group>";
+		};
+		11C024C5228AAECF003E61B6 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				11C024C6228AAF4C003E61B6 /* CustomResonderTestButton.h */,
+				11C024C7228AAF4C003E61B6 /* CustomResonderTestButton.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -1909,6 +1958,7 @@
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
 				11C024982289433F003E61B6 /* images.xcassets in Resources */,
 				111B945B221D2B5400AA7C26 /* Localizable.strings in Resources */,
+				11C024B6228A9B52003E61B6 /* model.json in Resources */,
 				11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */,
 				11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */,
 				111B9455221D298C00AA7C26 /* InfoPlist.strings in Resources */,
@@ -2023,6 +2073,7 @@
 				11DF0C1821D4B82E006A1D36 /* YLChatBoxItemView.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
 				1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */,
+				11C024BA228A9BEA003E61B6 /* Man.m in Sources */,
 				1151C6332192BEF600C08114 /* LPDPhotoPreviewCell.m in Sources */,
 				1151C5F82192BEF600C08114 /* UIResponder+Extension.m in Sources */,
 				1151C5F52192BEF600C08114 /* UIViewController+Extension.m in Sources */,
@@ -2070,6 +2121,7 @@
 				1135787721A3B0AA00DDEA74 /* FileManager.m in Sources */,
 				1151C6232192BEF600C08114 /* YLLabel.m in Sources */,
 				1135790B21A6986F00DDEA74 /* YLProgressRecordView.m in Sources */,
+				11C024B4228A9689003E61B6 /* NSObject+JSONExtension.m in Sources */,
 				1151C5F12192BEF600C08114 /* YLUITabBarViewController.m in Sources */,
 				11D6BD1022252CB6006E47DE /* TopArcView.m in Sources */,
 				1151C5FC2192BEF600C08114 /* NSString+Extension.m in Sources */,
@@ -2086,6 +2138,8 @@
 				1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */,
 				113578BF21A656B400DDEA74 /* FaceStreamDetectorViewController.m in Sources */,
 				11DF0C2821D4B82E006A1D36 /* YLMessageTableViewCell.m in Sources */,
+				11C024C4228AAE86003E61B6 /* ReponderTestViewController.m in Sources */,
+				11C024C8228AAF4C003E61B6 /* CustomResonderTestButton.m in Sources */,
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				11DF0C1021D4B82E006A1D36 /* ChatListTableViewCell.m in Sources */,
 				11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */,
@@ -2161,6 +2215,7 @@
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
 				11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */,
 				1150E710223A31FD0030CD0E /* YLGradientWKWebview.m in Sources */,
+				11C024C1228AA464003E61B6 /* ResponderExampleListViewController.m in Sources */,
 				11DF0C8C21D4BCFB006A1D36 /* Empty.pbobjc.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
 				11DF0C2221D4B82E006A1D36 /* YLVoiceView.m in Sources */,
@@ -2180,6 +2235,7 @@
 				1151C5F22192BEF600C08114 /* YLNavigationController.m in Sources */,
 				1151C6322192BEF600C08114 /* LPDImagePickerController.m in Sources */,
 				11DF0C9821D4BD21006A1D36 /* Message.pbobjc.m in Sources */,
+				11C024BE228AA3D0003E61B6 /* UIResponderListViewController.m in Sources */,
 				1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */,
 				1151C6262192BEF600C08114 /* UIImage+MyBundle.m in Sources */,
 				1151C61B2192BEF600C08114 /* UserDefUtils.m in Sources */,

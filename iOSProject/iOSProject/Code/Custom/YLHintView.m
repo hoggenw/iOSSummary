@@ -105,17 +105,22 @@
 +(void)showMessageOnThisPage:(NSString *)message {
     //单例初始化
     YLHintView *manager= [self shareHintView];
-    manager.tag = 3333;
     //初始化成功
     if (manager !=  nil) {
         //如果没有显示提示
-        if (manager.hintLabel == nil) {
-            [self showHintView:message];
-        }else{
-            [self hintViewRemoveFromSuperview];
-            [self showHintView:message];
-            
-        }
+        dispatch_queue_t queue = dispatch_get_main_queue();
+        NSLog(@"asyncMain---begin");
+        dispatch_async(queue, ^{
+            manager.tag = 3333;
+            if (manager.hintLabel == nil) {
+                [self showHintView:message];
+            }else{
+                [self hintViewRemoveFromSuperview];
+                [self showHintView:message];
+                
+            }
+        });
+       
     }
 }
 +(void)hintViewRemoveFromSuperview {
