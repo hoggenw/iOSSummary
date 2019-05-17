@@ -11,6 +11,7 @@
 #import "DefualtCellModel.h"
 #import "RuntimeListViewController.h"
 #import "UIResponderListViewController.h"
+#import "RAMManagerViewController.h"
 
 @interface Page2ViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -63,8 +64,13 @@
     model1.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model1];
 
-//    
-    
+//    拷贝与内存管理
+    DefualtCellModel *model2 = [DefualtCellModel new];
+    model2.title = [NSString stringWithFormat:@""];
+    model2.desc = [NSString stringWithFormat:@"拷贝与内存管理"];
+    model2.leadImageName = @"tabbar-icon-selected-1";
+    model2.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model2];
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
@@ -111,6 +117,9 @@
         [self.navigationController pushViewController: runVC animated: true];
     }else if (index == 2){
         
+        RAMManagerViewController * runVC = [RAMManagerViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController: runVC animated: true];
     }else if (index == 3){
         
         

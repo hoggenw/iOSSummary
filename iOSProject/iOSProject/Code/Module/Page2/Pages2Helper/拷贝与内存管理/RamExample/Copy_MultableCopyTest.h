@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Copy_MultableCopyTest : NSObject
-
+- (void)containerTest;
+- (void)mutableContainerTest;
+- (void)customObjectiveTest;
+-(void)propertyTest;
 @end
 
 NS_ASSUME_NONNULL_END

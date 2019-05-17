@@ -10,12 +10,21 @@
 
 @implementation CircleButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {
+    CGFloat halfWidth = self.bounds.size.width / 2;
+    
+    CGFloat xDistance = point.x - halfWidth;
+    
+    CGFloat yDistance = point.y - halfWidth;
+    
+    CGFloat radius = sqrt(xDistance * xDistance + yDistance * yDistance);
+    
+    NSLog(@"HaldWidth:%f---point:%@---x轴距离:%f---y轴距离:%f--半径:%f",halfWidth,NSStringFromCGPoint(point),xDistance,yDistance,radius);
+    
+    return radius <= halfWidth;
 }
-*/
+
 
 @end

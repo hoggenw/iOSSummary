@@ -142,4 +142,11 @@
 }
 
 
+
+-(void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
+    if ([eventName isEqualToString:@"circlehit"]) {
+        [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"tabBarController收到button点击事件参数为：%@",userInfo[@"name"]]];
+    }
+    [[self nextResponder] routerEventWithName:eventName userInfo:userInfo];
+}
 @end

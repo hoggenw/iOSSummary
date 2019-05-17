@@ -48,6 +48,15 @@
     [self.dataArray addObject: model];
     [self.tableView.dataArray addObject: model];
     
+    //利用响应链传参
+    DefualtCellModel *model4 = [DefualtCellModel new];
+    model4.title = [NSString stringWithFormat:@""];
+    model4.desc = [NSString stringWithFormat:@"利用响应链传参"];
+    model4.leadImageName = @"tabbar-icon-selected-1";
+    model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model4];
+    [self.tableView.dataArray addObject: model4];
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -84,7 +93,8 @@
         [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 1){
-        
+        ReponderTestViewController * vc = [ReponderTestViewController new];
+        [self.navigationController pushViewController: vc animated: true];
     }else if (index == 2){
         
     }else if (index == 3){

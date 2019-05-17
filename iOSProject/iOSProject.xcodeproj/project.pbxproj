@@ -80,6 +80,10 @@
 		1149895E21E48F4E001E1443 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895D21E48F4E001E1443 /* MediaPlayer.framework */; };
 		1149896021E48F56001E1443 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149895F21E48F56001E1443 /* CoreVideo.framework */; };
 		1149896221E48F8A001E1443 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1149896121E48F8A001E1443 /* libbz2.tbd */; };
+		114DABA3228BB4DE0089B649 /* CircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 114DABA2228BB4DE0089B649 /* CircleButton.m */; };
+		114DABA7228BBFC20089B649 /* RAMManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114DABA6228BBFC20089B649 /* RAMManagerViewController.m */; };
+		114DABAA228BC0180089B649 /* RAMExamapleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 114DABA9228BC0180089B649 /* RAMExamapleListViewController.m */; };
+		114DABB0228BEE380089B649 /* Copy_MultableCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 114DABAF228BEE380089B649 /* Copy_MultableCopyTest.m */; };
 		1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */; };
 		1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6EF22310F250030CD0E /* CircleAnimationViewController.m */; };
 		1150E6F3223115440030CD0E /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1150E6F2223115440030CD0E /* CircleView.m */; };
@@ -376,6 +380,14 @@
 		1149895D21E48F4E001E1443 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1149895F21E48F56001E1443 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		1149896121E48F8A001E1443 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		114DABA1228BB4DE0089B649 /* CircleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleButton.h; sourceTree = "<group>"; };
+		114DABA2228BB4DE0089B649 /* CircleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleButton.m; sourceTree = "<group>"; };
+		114DABA5228BBFC20089B649 /* RAMManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMManagerViewController.h; sourceTree = "<group>"; };
+		114DABA6228BBFC20089B649 /* RAMManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMManagerViewController.m; sourceTree = "<group>"; };
+		114DABA8228BC0180089B649 /* RAMExamapleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RAMExamapleListViewController.h; sourceTree = "<group>"; };
+		114DABA9228BC0180089B649 /* RAMExamapleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RAMExamapleListViewController.m; sourceTree = "<group>"; };
+		114DABAE228BEE380089B649 /* Copy_MultableCopyTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Copy_MultableCopyTest.h; sourceTree = "<group>"; };
+		114DABAF228BEE380089B649 /* Copy_MultableCopyTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Copy_MultableCopyTest.m; sourceTree = "<group>"; };
 		1150E6EA2230FBB40030CD0E /* Animation2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation2ViewController.h; sourceTree = "<group>"; };
 		1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation2ViewController.m; sourceTree = "<group>"; };
 		1150E6EE22310F250030CD0E /* CircleAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleAnimationViewController.h; sourceTree = "<group>"; };
@@ -1005,6 +1017,7 @@
 		114883E92265B32D00BB6A81 /* Pages2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				114DABA4228BBF5F0089B649 /* 拷贝与内存管理 */,
 				11C024BB228AA3A6003E61B6 /* 响应链 */,
 				114883ED2265B67300BB6A81 /* runtime */,
 			);
@@ -1049,6 +1062,27 @@
 				1149895121E48E1D001E1443 /* IJKFrameworkViewController.m */,
 			);
 			path = LiveBroadcast;
+			sourceTree = "<group>";
+		};
+		114DABA4228BBF5F0089B649 /* 拷贝与内存管理 */ = {
+			isa = PBXGroup;
+			children = (
+				114DABAB228BEAE90089B649 /* RamExample */,
+				114DABA5228BBFC20089B649 /* RAMManagerViewController.h */,
+				114DABA6228BBFC20089B649 /* RAMManagerViewController.m */,
+				114DABA8228BC0180089B649 /* RAMExamapleListViewController.h */,
+				114DABA9228BC0180089B649 /* RAMExamapleListViewController.m */,
+			);
+			path = "拷贝与内存管理";
+			sourceTree = "<group>";
+		};
+		114DABAB228BEAE90089B649 /* RamExample */ = {
+			isa = PBXGroup;
+			children = (
+				114DABAE228BEE380089B649 /* Copy_MultableCopyTest.h */,
+				114DABAF228BEE380089B649 /* Copy_MultableCopyTest.m */,
+			);
+			path = RamExample;
 			sourceTree = "<group>";
 		};
 		1150E6ED22310EF90030CD0E /* circle */ = {
@@ -1492,6 +1526,8 @@
 			children = (
 				11C024C6228AAF4C003E61B6 /* CustomResonderTestButton.h */,
 				11C024C7228AAF4C003E61B6 /* CustomResonderTestButton.m */,
+				114DABA1228BB4DE0089B649 /* CircleButton.h */,
+				114DABA2228BB4DE0089B649 /* CircleButton.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -2092,6 +2128,7 @@
 				1149893121E35E4A001E1443 /* YLPickerShowView.m in Sources */,
 				11DF0C1E21D4B82E006A1D36 /* TopViewAnimaton.m in Sources */,
 				113578B421A656AA00DDEA74 /* AVAssetWriteManager.m in Sources */,
+				114DABA7228BBFC20089B649 /* RAMManagerViewController.m in Sources */,
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
 				1151C62D2192BEF600C08114 /* LPDPhotoArrangeCell.m in Sources */,
 				11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */,
@@ -2099,11 +2136,13 @@
 				113578BA21A656AA00DDEA74 /* CalculatorTools.m in Sources */,
 				11DF0C1C21D4B82E006A1D36 /* YLChatFaceView.m in Sources */,
 				1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */,
+				114DABA3228BB4DE0089B649 /* CircleButton.m in Sources */,
 				1151C642219E9F5F00C08114 /* YLProgressView.m in Sources */,
 				11DF0C3821D4B9A3006A1D36 /* DPAudioRecorder.m in Sources */,
 				1151C6202192BEF600C08114 /* DatePickerView.m in Sources */,
 				11D6BD142227B62C006E47DE /* ShowPSDViewController.m in Sources */,
 				1151C52D2192BE0C00C08114 /* main.m in Sources */,
+				114DABB0228BEE380089B649 /* Copy_MultableCopyTest.m in Sources */,
 				11DF0C1A21D4B82E006A1D36 /* YLChatFaceMenuVIew.m in Sources */,
 				1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */,
 				113578BB21A656AA00DDEA74 /* UIImage+Extensions.m in Sources */,
@@ -2218,6 +2257,7 @@
 				11C024C1228AA464003E61B6 /* ResponderExampleListViewController.m in Sources */,
 				11DF0C8C21D4BCFB006A1D36 /* Empty.pbobjc.m in Sources */,
 				1151C61C2192BEF600C08114 /* YLDeviceUtil.m in Sources */,
+				114DABAA228BC0180089B649 /* RAMExamapleListViewController.m in Sources */,
 				11DF0C2221D4B82E006A1D36 /* YLVoiceView.m in Sources */,
 				11DF0C9021D4BCFB006A1D36 /* GPBWellKnownTypes.m in Sources */,
 				11DF0C8821D4BCFB006A1D36 /* SourceContext.pbobjc.m in Sources */,

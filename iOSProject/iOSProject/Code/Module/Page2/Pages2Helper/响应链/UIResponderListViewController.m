@@ -75,8 +75,14 @@
     model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model3];
     [self.tableView.dataArray addObject: model3];
-    
-    
+    //利用响应链传参
+    DefualtCellModel *model4 = [DefualtCellModel new];
+    model4.title = [NSString stringWithFormat:@""];
+    model4.desc = [NSString stringWithFormat:@"利用响应链传参"];
+    model4.leadImageName = @"tabbar-icon-selected-1";
+    model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model4];
+    [self.tableView.dataArray addObject: model4];
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
@@ -158,7 +164,17 @@
         [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 3){
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"利用响应链传参" boldString:@"利用响应链传参" showType:TextType];
+        ShowMessageModel * model2 = [self getModelWith:@"利用响应链UIResponder (Extension)可以使用路由的方式将相关的相应由路由方式将信息传递下去，从而简化程序设计的复杂结构" boldString:@"" showType:TextType];
         
+        ShowMessageModel * model3 = [self getModelWith:@"- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {\n//顺着相应链传递\n[[self nextResponder] routerEventWithName:eventName userInfo:userInfo];\n}\n\n在需要的响应者中重写这个方法即可。" boldString:@"- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {\n//顺着相应链传递\n[[self nextResponder] routerEventWithName:eventName userInfo:userInfo];\n}" showType:TextType];
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
     }else if (index == 4){
         
     }else if(index == 5){
