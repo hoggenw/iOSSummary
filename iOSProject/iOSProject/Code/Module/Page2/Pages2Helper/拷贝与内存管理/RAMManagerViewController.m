@@ -58,6 +58,15 @@
     [self.dataArray addObject: model];
     [self.tableView.dataArray addObject: model];
     
+    
+    DefualtCellModel *model2 = [DefualtCellModel new];
+    model2.title = [NSString stringWithFormat:@""];
+    model2.desc = [NSString stringWithFormat:@"内存泄漏的一些想法"];
+    model2.leadImageName = @"tabbar-icon-selected-1";
+    model2.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model2];
+    [self.tableView.dataArray addObject: model2];
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -129,18 +138,33 @@
     }else if (index == 1){
         ShowInfoViewController * vc = [ShowInfoViewController new];
         NSMutableArray *modelArray = [NSMutableArray array];
-        ShowMessageModel * model = [self getModelWith:@"一个是根据点击坐标返回事件是否发生在本视图以内，另一个方法是返回响应点击事件的对象。\n   系统先调用pointInSide: WithEvent:判断当前视图以及这些视图的子视图是否能接收这次点击事件，然后在调用hitTest: withEvent:依次获取处理这个事件的所有视图对象，在获取所有的可处理事件对象后，开始调用这些对象的touches回调方法\n\n   第一个过程是建立响应链的过程，将可以响应该事件的对象找出来，UIApplication对象维护着自己的一个响应者栈，当pointInSide: withEvent:返回yes的时候，响应者入栈。" boldString:@"" showType:TextType];
+        ShowMessageModel * model = [self getModelWith:@"  总的来说，我认为内存泄漏的原因是由于内存在ARC环境下没有被系统自动释放（如循环引用）" boldString:@"  总的来说，我认为内存泄漏的原因是由于内存在ARC环境下没有被系统自动释放（如循环引用）" showType:TextType];
+        
+        ShowMessageModel * model2 = [self getModelWith:@"记录如何调试内存泄漏的http://blog.csdn.net/Kevintang158/article/details/79027274" boldString:@"http://blog.csdn.net/Kevintang158/article/details/79027274" showType:TextType];
+        ShowMessageModel * model3 = [self getModelWith:@"内存之定时器\n\n我们都知道定时器使用完毕时需要将其停止并滞空，但**置空定时器**方法到底何时调用呢？在当前类的dealloc方法中吗？并不是，若将置空定时器方法调用在dealloc方法中会产生如下问题，**当前类销毁执行dealloc的前提是定时器需要停止并滞空**，**而定时器停止并滞空的时机在当前类调用dealloc方法时**，这样就造成了互相等待的场景，从而内存一直无法释放。因此需要注意**置空定时器**的调用时机从而避免内存无法释放，可以将**置空定时器**方法外漏，在外部调用即可。" boldString:@"内存之定时器" showType:TextType];
+        
+        ShowMessageModel * model4 = [self getModelWith:@"内存之block\n\nBlock的内存泄漏主要是由于循环引用；防止内存泄漏就是要防止对象之间引用的闭环出现； 一般采用的方法是让其中一个对象持有另一个对象的弱引用，例如：" boldString:@"内存之block" showType:TextType];
+        
+        ShowMessageModel * model5 = [self getModelWith:@" __weak typeof(self) weakself = self; " boldString:@" __weak typeof(self) weakself = self; " showType:TextType];
+        ShowMessageModel * model6 = [self getModelWith:@"内存泄漏之delegate\n\n @property (nonatomic, weak) id<****delegate> delegate;\n\n比较值得注意的是swift中的协议要继承与class的，这时候可以用weak来修饰" boldString:@"内存泄漏之delegate\n\n @property (nonatomic, weak) id<****delegate> delegate;" showType:TextType];
+        
+        ShowMessageModel * model7 = [self getModelWith:@"特别之非OC对象\n\n   CGImageRef类型变量非OC对象，其需要手动执行释放操作\n\nCGImageRelease(ref)，否则会造成大量的内存泄漏导致程序崩溃。其他的对于CoreFoundation框架下的某些对象或变量需要手动释放、C语言代码中的malloc等需要对应free等都需要注意。" boldString:@"特别之非OC对象\n\n   CGImageRef类型变量非OC对象，其需要手动执行释放操作\n\n" showType:TextType];
         
         
-        ShowMessageModel * model2 = [ShowMessageModel new];
-        model2.image = [UIImage imageNamed:@"responder_png"];
-        model2.showType = ImageType;
+        ShowMessageModel * model8 = [self getModelWith:@"地图之内存泄漏\n\n若项目中使用地图相关类，一定要检测内存情况，因为地图是比较耗费App内存的，因此在根据文档实现某地图相关功能的同时，我们需要注意内存的正确释放，大体需要注意的有需在使用完毕时将地图、代理等滞空为nil，注意地图中标注（大头针）的复用，并且在使用完毕时清空标注数组等。" boldString:@"地图之内存泄漏" showType:TextType];
         
-        ShowMessageModel * model3 = [self getModelWith:@"栈顶的响应者作为最优先处理事件的对象，假设最顶层的响应者不处理事件，那么出栈，移交给下一个响应者，以此下去，直到事件得到了处理或者到达AppDelegate后依旧未响应，事件被摒弃为止。" boldString:@"" showType:TextType];
+        ShowMessageModel * model9 = [self getModelWith:@"循环数量巨大时内存管理\n\n  for (int i = 0; i < 100000; i++) {\n\n    @autoreleasepool {\n   NSString *string = @\"Abc\";\n   string = [string lowercaseString];\n   string = [string stringByAppendingString:@\"xyz\"];\n    NSLog(@\"%@\", string);\n}\n}\n\n在循环中创建自己的autoReleasePool，及时释放占用内存大的临时变量，减少内存占用峰值。\n\n" boldString:@"循环数量巨大时内存管理\n\n  for (int i = 0; i < 100000; i++) {\n\n    @autoreleasepool {\n   NSString *string = @\"Abc\";\n   string = [string lowercaseString];\n   string = [string stringByAppendingString:@\"xyz\"];\n    NSLog(@\"%@\", string);\n}\n}\n" showType:TextType];
+        
         
         [modelArray addObject: model];
         [modelArray addObject: model2];
         [modelArray addObject: model3];
+        [modelArray addObject: model4];
+        [modelArray addObject: model5];
+        [modelArray addObject: model6];
+        [modelArray addObject: model7];
+        [modelArray addObject: model8];
+        [modelArray addObject: model9];
         vc.dataArray = modelArray;
         [self.navigationController pushViewController: vc animated: true];
         
@@ -159,17 +183,7 @@
         [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 3){
-        ShowInfoViewController * vc = [ShowInfoViewController new];
-        NSMutableArray *modelArray = [NSMutableArray array];
-        ShowMessageModel * model = [self getModelWith:@"利用响应链传参" boldString:@"利用响应链传参" showType:TextType];
-        ShowMessageModel * model2 = [self getModelWith:@"利用响应链UIResponder (Extension)可以使用路由的方式将相关的相应由路由方式将信息传递下去，从而简化程序设计的复杂结构" boldString:@"" showType:TextType];
-        
-        ShowMessageModel * model3 = [self getModelWith:@"- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {\n//顺着相应链传递\n[[self nextResponder] routerEventWithName:eventName userInfo:userInfo];\n}\n\n在需要的响应者中重写这个方法即可。" boldString:@"- (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {\n//顺着相应链传递\n[[self nextResponder] routerEventWithName:eventName userInfo:userInfo];\n}" showType:TextType];
-        [modelArray addObject: model];
-        [modelArray addObject: model2];
-        [modelArray addObject: model3];
-        vc.dataArray = modelArray;
-        [self.navigationController pushViewController: vc animated: true];
+       
     }else if (index == 4){
         
     }else if(index == 5){
