@@ -12,6 +12,7 @@
 #import "RuntimeListViewController.h"
 #import "UIResponderListViewController.h"
 #import "RAMManagerViewController.h"
+#import "LiftCircleListViewController.h"
 
 @interface Page2ViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -72,6 +73,25 @@
     model2.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model2];
     
+    //生命周期总结梳理
+    
+    DefualtCellModel *model3 = [DefualtCellModel new];
+    model3.title = [NSString stringWithFormat:@""];
+    model3.desc = [NSString stringWithFormat:@"生命周期总结梳理"];
+    model3.leadImageName = @"tabbar-icon-selected-1";
+    model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model3];
+    //GCD开发常用总结梳理
+    
+    DefualtCellModel *model4 = [DefualtCellModel new];
+    model4.title = [NSString stringWithFormat:@""];
+    model4.desc = [NSString stringWithFormat:@"GCD开发常用总结梳理"];
+    model4.leadImageName = @"tabbar-icon-selected-1";
+    model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model4];
+    
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
     [self.tableView.tableView reloadData];
@@ -120,8 +140,11 @@
         RAMManagerViewController * runVC = [RAMManagerViewController new];
         runVC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController: runVC animated: true];
-    }else if (index == 3){
         
+    }else if (index == 3){
+        LiftCircleListViewController * runVC = [LiftCircleListViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController: runVC animated: true];
         
     }else if (index == 4){
         

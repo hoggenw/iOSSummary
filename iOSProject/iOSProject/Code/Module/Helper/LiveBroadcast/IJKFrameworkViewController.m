@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.url = [NSURL URLWithString:@"http://221.228.226.23/11/t/j/v/b/tjvbwspwhqdmgouolposcsfafpedmb/sh.yinyuetai.com/691201536EE4912BF7E4F1E2C67B8119.mp4"];
+    self.url = [NSURL URLWithString:@"http://ksy.fffffive.com/mda-hihvysind8etz7ga/mda-hihvysind8etz7ga.mp4"];
     // self.url = [NSURL URLWithString:@"http://static.tripbe.com/videofiles/20121214/9533522808.f4v.mp4"];
     _player = [[IJKFFMoviePlayerController alloc] initWithContentURL: self.url withOptions: nil];
     self.view.backgroundColor = [UIColor whiteColor];

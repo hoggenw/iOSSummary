@@ -152,6 +152,7 @@
 		1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C649219EAA7100C08114 /* AdvertisementViewController.m */; };
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
+		115B0D7522925A8B000E1C69 /* LiftCircleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */; };
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
 		11C024982289433F003E61B6 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C024972289433F003E61B6 /* images.xcassets */; };
 		11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */; };
@@ -529,6 +530,8 @@
 		1151C64E219EB06D00C08114 /* GuidanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidanceViewController.h; sourceTree = "<group>"; };
 		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
+		115B0D7322925A8B000E1C69 /* LiftCircleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiftCircleListViewController.h; sourceTree = "<group>"; };
+		115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiftCircleListViewController.m; sourceTree = "<group>"; };
 		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
 		11C024972289433F003E61B6 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -1017,6 +1020,7 @@
 		114883E92265B32D00BB6A81 /* Pages2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				115B0D722292561D000E1C69 /* 生命周期总结梳理 */,
 				114DABA4228BBF5F0089B649 /* 拷贝与内存管理 */,
 				11C024BB228AA3A6003E61B6 /* 响应链 */,
 				114883ED2265B67300BB6A81 /* runtime */,
@@ -1370,9 +1374,9 @@
 				11DF0C2A21D4B9A3006A1D36 /* Recorder&Player */,
 				1135789821A656AA00DDEA74 /* Tools */,
 				1135789621A656A100DDEA74 /* iflyMSC.framework */,
-				1151C5C62192BEF500C08114 /* CLLocation+Sino.h */,
 				1151C5C72192BEF500C08114 /* Base64 */,
 				1151C5CA2192BEF500C08114 /* LPDQuoteImageView */,
+				1151C5C62192BEF500C08114 /* CLLocation+Sino.h */,
 				1151C5EE2192BEF500C08114 /* CLLocation+Sino.m */,
 			);
 			path = Vendor;
@@ -1484,6 +1488,15 @@
 				1151C64F219EB06D00C08114 /* GuidanceViewController.m */,
 			);
 			path = Advertisement;
+			sourceTree = "<group>";
+		};
+		115B0D722292561D000E1C69 /* 生命周期总结梳理 */ = {
+			isa = PBXGroup;
+			children = (
+				115B0D7322925A8B000E1C69 /* LiftCircleListViewController.h */,
+				115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */,
+			);
+			path = "生命周期总结梳理";
 			sourceTree = "<group>";
 		};
 		11C0249C22894A24003E61B6 /* Example */ = {
@@ -2268,6 +2281,7 @@
 				113578B721A656AA00DDEA74 /* IFlyFaceResultKeys.m in Sources */,
 				1132578221B024E3001A5439 /* FileViewController.m in Sources */,
 				11D6BD05222528C1006E47DE /* YLVoiceAnimationViewController.m in Sources */,
+				115B0D7522925A8B000E1C69 /* LiftCircleListViewController.m in Sources */,
 				11DF0C9221D4BCFB006A1D36 /* GPBArray.m in Sources */,
 				1151C62E2192BEF600C08114 /* UpLoadDataModel.m in Sources */,
 				1151C6282192BEF600C08114 /* YLUIDocumentPickerViewViewController.m in Sources */,

@@ -12,7 +12,7 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
 #import "MapCarAnnotationView.h"
 #import <BMKLocationkit/BMKLocationComponent.h>
-
+#import "CLLocation+Sino.h"
 //百度地图秘钥
 //NS6lYC0TtQdaKmuWseunZ5pqobicYbyY
 
@@ -131,7 +131,7 @@
 - (void)BMKLocationManager:(BMKLocationManager * _Nonnull)manager didUpdateLocation:(BMKLocation * _Nullable)location orError:(NSError * _Nullable)error{
     
     self.userLocation.location = location.location;
-
+    //NSLog(@" self.userLocation.location = %@", self.userLocation.location.locationMarsFromBearPaw);
     [mapView removeAnnotation: pointAnnotation];
     [mapView setCenterCoordinate:_userLocation.location.coordinate animated:YES];
     if (![mapView.annotations containsObject: pointAnnotation]) {

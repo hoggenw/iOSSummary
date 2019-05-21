@@ -67,6 +67,16 @@
     [self.dataArray addObject: model2];
     [self.tableView.dataArray addObject: model2];
     
+    //Xcode中将图片放入assets.xcassets和直接拖入的区别
+    DefualtCellModel *model3 = [DefualtCellModel new];
+    model3.title = [NSString stringWithFormat:@""];
+    model3.desc = [NSString stringWithFormat:@"assets.xcassets和直接拖入图片"];
+    model3.leadImageName = @"tabbar-icon-selected-1";
+    model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model3];
+    [self.tableView.dataArray addObject: model3];
+    
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -172,13 +182,20 @@
         
         ShowInfoViewController * vc = [ShowInfoViewController new];
         NSMutableArray *modelArray = [NSMutableArray array];
-        ShowMessageModel * model = [self getModelWith:@"不规则图形中的应用" boldString:@"不规则图形中的应用" showType:TextType];
-        ShowMessageModel * model2 = [self getModelWith:@"利用下面的方法可以控制响应视图的响应范围\n\n- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event\n\n 在响应方法中做出响应的判断，返回true 表示响应该点击事件" boldString:@"- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event" showType:TextType];
+        ShowMessageModel * model = [self getModelWith:@"Xcode中将图片放入assets.xcassets和直接拖入的区别" boldString:@"Xcode中将图片放入assets.xcassets和直接拖入的区别" showType:TextType];
+        ShowMessageModel * model2 = [self getModelWith:@"1.在mainBundle里面Xcode会生成一个Assets.car文件，将我们放在Images.xcassets的图片打包在里面。这里会有压缩，但是直接拖入（相当于直接将图片放入了mainBundle里面）的不会有压缩，所以程序打包出来会大一点" boldString:@"1." showType:TextType];
         
-        ShowMessageModel * model3 = [self getModelWith:@"扩大按钮的点击范围。\n\n- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {\n   CGRect bounds = self.bounds;\n   bounds = CGRectInset(bounds, -10, -10);\n   // CGRectContainsPoint  判断点是否在矩形内\n   return CGRectContainsPoint(bounds, point);\n}\n\n 在响应方法中做出响应的判断，返回true 表示响应该点击事件" boldString:@"- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {\n   CGRect bounds = self.bounds;\n   bounds = CGRectInset(bounds, -10, -10);\n   // CGRectContainsPoint  判断点是否在矩形内\n   return CGRectContainsPoint(bounds, point);\n}" showType:TextType];
+        ShowMessageModel * model3 = [self getModelWith:@"2.无论是通过imageNamed:来加载图片，还是直接在Storyboard的UIImageView里面设置图片，并且无论图片是jpg格式还是png格式，都不需要写后缀名；而拖入的图片：如果在Storyboard的UIImageView设置图片，那么需要明确地写上后缀名。（无论是.png还是.jpg都要写）在使用imageNamed:加载图片时，如果是.png格式，则不需要使用后缀名；如果是.jpg格式，则必须要写上后缀名。" boldString:@"2." showType:TextType];
+        ShowMessageModel * model4 = [self getModelWith:@"3.放在Images.xcassets的图片不能通过imagesWithContentsOfFile:来加载。（因为这个方法相当于是去mainBundle里面找图片，但是这些图片都被打包进了Assets.car文件）" boldString:@"3." showType:TextType];
+        ShowMessageModel * model5 = [self getModelWith:@"4.存放在.xcassets更方便与资源管理，例如更换图片时并需要修改名称，只需要简单的替换图片资源即可。" boldString:@"4." showType:TextType];
+         ShowMessageModel * model6 = [self getModelWith:@"5.无需为不同像素的图片分别明明，系统会自动排列并且自动选择相应的图片。" boldString:@"5." showType:TextType];
         [modelArray addObject: model];
         [modelArray addObject: model2];
         [modelArray addObject: model3];
+        [modelArray addObject: model4];
+        [modelArray addObject: model5];
+        [modelArray addObject: model6];
+        
         vc.dataArray = modelArray;
         [self.navigationController pushViewController: vc animated: true];
         
