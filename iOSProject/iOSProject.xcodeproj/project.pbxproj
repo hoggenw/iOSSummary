@@ -153,6 +153,12 @@
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
 		115B0D7522925A8B000E1C69 /* LiftCircleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */; };
+		115B0DAD2293A0AC000E1C69 /* GCDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0DAC2293A0AC000E1C69 /* GCDListViewController.m */; };
+		115B0DB12293A929000E1C69 /* GCDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0DB02293A929000E1C69 /* GCDTest.m */; };
+		11727BC52293AD6D00575385 /* GCDTestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BC42293AD6D00575385 /* GCDTestListViewController.m */; };
+		11727BC92293FDA600575385 /* CommunicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BC82293FDA600575385 /* CommunicationViewController.m */; };
+		11727BCD2294EBBB00575385 /* NSRunloopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */; };
+		11727BD02294EC3300575385 /* RunloopTestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCF2294EC3300575385 /* RunloopTestListViewController.m */; };
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
 		11C024982289433F003E61B6 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C024972289433F003E61B6 /* images.xcassets */; };
 		11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */; };
@@ -532,6 +538,18 @@
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
 		115B0D7322925A8B000E1C69 /* LiftCircleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiftCircleListViewController.h; sourceTree = "<group>"; };
 		115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiftCircleListViewController.m; sourceTree = "<group>"; };
+		115B0DAB2293A0AC000E1C69 /* GCDListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDListViewController.h; sourceTree = "<group>"; };
+		115B0DAC2293A0AC000E1C69 /* GCDListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDListViewController.m; sourceTree = "<group>"; };
+		115B0DAF2293A929000E1C69 /* GCDTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTest.h; sourceTree = "<group>"; };
+		115B0DB02293A929000E1C69 /* GCDTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDTest.m; sourceTree = "<group>"; };
+		11727BC32293AD6D00575385 /* GCDTestListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTestListViewController.h; sourceTree = "<group>"; };
+		11727BC42293AD6D00575385 /* GCDTestListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDTestListViewController.m; sourceTree = "<group>"; };
+		11727BC72293FDA600575385 /* CommunicationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunicationViewController.h; sourceTree = "<group>"; };
+		11727BC82293FDA600575385 /* CommunicationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommunicationViewController.m; sourceTree = "<group>"; };
+		11727BCB2294EBBB00575385 /* NSRunloopListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSRunloopListViewController.h; sourceTree = "<group>"; };
+		11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSRunloopListViewController.m; sourceTree = "<group>"; };
+		11727BCE2294EC3300575385 /* RunloopTestListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopTestListViewController.h; sourceTree = "<group>"; };
+		11727BCF2294EC3300575385 /* RunloopTestListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopTestListViewController.m; sourceTree = "<group>"; };
 		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
 		11C024972289433F003E61B6 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -872,6 +890,7 @@
 		1135785E21A29A7A00DDEA74 /* Pages1 */ = {
 			isa = PBXGroup;
 			children = (
+				1151C63D219E9F1900C08114 /* Helper */,
 				1135785F21A29AC100DDEA74 /* Controllers */,
 				1135786021A29AC100DDEA74 /* Modles */,
 				1135786121A29AC100DDEA74 /* Views */,
@@ -1020,6 +1039,9 @@
 		114883E92265B32D00BB6A81 /* Pages2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				11727BCA2294EB8D00575385 /* NSRunloop */,
+				11727BC62293FD7F00575385 /* 通信模式 */,
+				115B0DAA22939CC4000E1C69 /* GCD开发常用总结梳理 */,
 				115B0D722292561D000E1C69 /* 生命周期总结梳理 */,
 				114DABA4228BBF5F0089B649 /* 拷贝与内存管理 */,
 				11C024BB228AA3A6003E61B6 /* 响应链 */,
@@ -1262,7 +1284,6 @@
 			children = (
 				1109C4F821FAAF7C00207328 /* Page2 */,
 				1135785E21A29A7A00DDEA74 /* Pages1 */,
-				1151C63D219E9F1900C08114 /* Helper */,
 				1151C6392192C0A300C08114 /* Base */,
 			);
 			path = Module;
@@ -1497,6 +1518,47 @@
 				115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */,
 			);
 			path = "生命周期总结梳理";
+			sourceTree = "<group>";
+		};
+		115B0DAA22939CC4000E1C69 /* GCD开发常用总结梳理 */ = {
+			isa = PBXGroup;
+			children = (
+				115B0DAE2293A912000E1C69 /* Example */,
+				115B0DAB2293A0AC000E1C69 /* GCDListViewController.h */,
+				115B0DAC2293A0AC000E1C69 /* GCDListViewController.m */,
+				11727BC32293AD6D00575385 /* GCDTestListViewController.h */,
+				11727BC42293AD6D00575385 /* GCDTestListViewController.m */,
+			);
+			path = "GCD开发常用总结梳理";
+			sourceTree = "<group>";
+		};
+		115B0DAE2293A912000E1C69 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				115B0DAF2293A929000E1C69 /* GCDTest.h */,
+				115B0DB02293A929000E1C69 /* GCDTest.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		11727BC62293FD7F00575385 /* 通信模式 */ = {
+			isa = PBXGroup;
+			children = (
+				11727BC72293FDA600575385 /* CommunicationViewController.h */,
+				11727BC82293FDA600575385 /* CommunicationViewController.m */,
+			);
+			path = "通信模式";
+			sourceTree = "<group>";
+		};
+		11727BCA2294EB8D00575385 /* NSRunloop */ = {
+			isa = PBXGroup;
+			children = (
+				11727BCB2294EBBB00575385 /* NSRunloopListViewController.h */,
+				11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */,
+				11727BCE2294EC3300575385 /* RunloopTestListViewController.h */,
+				11727BCF2294EC3300575385 /* RunloopTestListViewController.m */,
+			);
+			path = NSRunloop;
 			sourceTree = "<group>";
 		};
 		11C0249C22894A24003E61B6 /* Example */ = {
@@ -2145,6 +2207,7 @@
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
 				1151C62D2192BEF600C08114 /* LPDPhotoArrangeCell.m in Sources */,
 				11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */,
+				11727BCD2294EBBB00575385 /* NSRunloopListViewController.m in Sources */,
 				1151C61F2192BEF600C08114 /* PopupView.m in Sources */,
 				113578BA21A656AA00DDEA74 /* CalculatorTools.m in Sources */,
 				11DF0C1C21D4B82E006A1D36 /* YLChatFaceView.m in Sources */,
@@ -2204,6 +2267,7 @@
 				114883F62265B89400BB6A81 /* ShowMessageModel.m in Sources */,
 				11DF0C0F21D4B82E006A1D36 /* ChatListViewController.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
+				11727BD02294EC3300575385 /* RunloopTestListViewController.m in Sources */,
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
 				11DF0C1521D4B82E006A1D36 /* YLPhotoPreviewController.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
@@ -2225,6 +2289,8 @@
 				11C024A822896306003E61B6 /* TestRuntime.m in Sources */,
 				11DF0C8321D4BCFB006A1D36 /* GPBExtensionInternals.m in Sources */,
 				1149893421E44EAF001E1443 /* YLArea.m in Sources */,
+				11727BC52293AD6D00575385 /* GCDTestListViewController.m in Sources */,
+				115B0DAD2293A0AC000E1C69 /* GCDListViewController.m in Sources */,
 				114883F92265BE8400BB6A81 /* YLShowInfoTableView.m in Sources */,
 				1150E711223A31FD0030CD0E /* YLUIWebView.m in Sources */,
 				11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */,
@@ -2244,6 +2310,7 @@
 				1151C6242192BEF600C08114 /* NSData+Base64.m in Sources */,
 				11DF0C8A21D4BCFB006A1D36 /* Duration.pbobjc.m in Sources */,
 				11DF0C1621D4B82E006A1D36 /* ChatBoxViewController.m in Sources */,
+				115B0DB12293A929000E1C69 /* GCDTest.m in Sources */,
 				1151C6352192BEF600C08114 /* LPDPhotoPickerController.m in Sources */,
 				1109C4F421F4189B00207328 /* YLGestureLockView.m in Sources */,
 				113578B821A656AA00DDEA74 /* IFlyFaceImage.m in Sources */,
@@ -2294,6 +2361,7 @@
 				1151C6262192BEF600C08114 /* UIImage+MyBundle.m in Sources */,
 				1151C61B2192BEF600C08114 /* UserDefUtils.m in Sources */,
 				1135789421A6511100DDEA74 /* QRCreatViewController.m in Sources */,
+				11727BC92293FDA600575385 /* CommunicationViewController.m in Sources */,
 				1135786D21A2A8CF00DDEA74 /* DefaultTableViewCell.m in Sources */,
 				11DF0C7E21D4BCFB006A1D36 /* GPBRootObject.m in Sources */,
 				11DF0C8E21D4BCFB006A1D36 /* Struct.pbobjc.m in Sources */,

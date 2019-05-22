@@ -13,6 +13,8 @@
 #import "UIResponderListViewController.h"
 #import "RAMManagerViewController.h"
 #import "LiftCircleListViewController.h"
+#import "GCDListViewController.h"
+#import "CommunicationViewController.h"
 
 @interface Page2ViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -91,6 +93,20 @@
     [self.dataArray addObject: model4];
     
     
+    DefualtCellModel *model5 = [DefualtCellModel new];
+    model5.title = [NSString stringWithFormat:@""];
+    model5.desc = [NSString stringWithFormat:@"通信模式"];
+    model5.leadImageName = @"tabbar-icon-selected-1";
+    model5.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model5];
+    
+    //NSRunloop
+    DefualtCellModel *model6 = [DefualtCellModel new];
+    model6.title = [NSString stringWithFormat:@""];
+    model6.desc = [NSString stringWithFormat:@"NSRunloop"];
+    model6.leadImageName = @"tabbar-icon-selected-1";
+    model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model6];
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     
@@ -147,9 +163,14 @@
         [self.navigationController pushViewController: runVC animated: true];
         
     }else if (index == 4){
-        
+        //GCDListViewController
+        GCDListViewController * runVC = [GCDListViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController: runVC animated: true];
     }else if(index == 5){
-        
+        CommunicationViewController * runVC = [CommunicationViewController new];
+        runVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController: runVC animated: true];
     }else if(index == 6){
        
     }else if(index == 7){
