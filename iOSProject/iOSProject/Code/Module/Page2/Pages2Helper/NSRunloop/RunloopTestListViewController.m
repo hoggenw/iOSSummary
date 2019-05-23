@@ -1,33 +1,30 @@
 //
-//  Page2ViewController.m
+//  RunloopTestListViewController.m
 //  iOSProject
 //
-//  Created by 王留根 on 2019/2/18.
+//  Created by 王留根 on 2019/5/22.
 //  Copyright © 2019 hoggenWang.com. All rights reserved.
 //
 
-#import "Page2ViewController.h"
+#import "RunloopTestListViewController.h"
 #import "YLTableView.h"
 #import "DefualtCellModel.h"
-#import "RuntimeListViewController.h"
-#import "UIResponderListViewController.h"
-#import "RAMManagerViewController.h"
-#import "LiftCircleListViewController.h"
-#import "GCDListViewController.h"
-#import "CommunicationViewController.h"
-#import "NSRunloopListViewController.h"
+#import "RunloopTest.h"
 
-@interface Page2ViewController ()<YLTableViewDelete>
+
+
+@interface RunloopTestListViewController ()<YLTableViewDelete>
 @property (nonatomic, strong) YLTableView  * tableView;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
-
+@property (nonatomic, strong)RunloopTest  * temp;
 @end
 
-@implementation Page2ViewController
+@implementation RunloopTestListViewController
 
 
 #pragma mark - Override Methods
+
 
 
 - (void)viewDidLoad {
@@ -36,6 +33,7 @@
     self.dataArray = [NSMutableArray array];
     [self initialUI];
     [self initialDataSource];
+    _temp =[RunloopTest new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,79 +41,60 @@
     
 }
 
-#pragma mark - Public Methods
-
-
-#pragma mark - Events
-
-
 #pragma mark - Private Methods
 -(void)initialDataSource {
     
     DefualtCellModel *model = [DefualtCellModel new];
-    model.title = [NSString stringWithFormat:@"运行时"];
-    model.desc = [NSString stringWithFormat:@"运行时"];
+    model.title = [NSString stringWithFormat:@""];
+    model.desc = [NSString stringWithFormat:@"runloop六种状态"];
     model.leadImageName = @"tabbar-icon-selected-1";
     model.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model];
     [self.tableView.dataArray addObject: model];
-    
-    
-    DefualtCellModel *model1 = [DefualtCellModel new];
-    model1.title = [NSString stringWithFormat:@"响应链"];
-    model1.desc = [NSString stringWithFormat:@"响应链"];
-    model1.leadImageName = @"tabbar-icon-selected-1";
-    model1.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    [self.dataArray addObject: model1];
-
-//    拷贝与内存管理
+    //主线程与线程切换
     DefualtCellModel *model2 = [DefualtCellModel new];
     model2.title = [NSString stringWithFormat:@""];
-    model2.desc = [NSString stringWithFormat:@"拷贝与内存管理"];
+    model2.desc = [NSString stringWithFormat:@"监听runloop状态改变"];
     model2.leadImageName = @"tabbar-icon-selected-1";
     model2.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model2];
+    [self.tableView.dataArray addObject: model2];
     
-    //生命周期总结梳理
+    //dispatch_once用法
     
     DefualtCellModel *model3 = [DefualtCellModel new];
     model3.title = [NSString stringWithFormat:@""];
-    model3.desc = [NSString stringWithFormat:@"生命周期总结梳理"];
+    model3.desc = [NSString stringWithFormat:@"计时器Timer"];
     model3.leadImageName = @"tabbar-icon-selected-1";
     model3.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model3];
-    //GCD开发常用总结梳理
+    [self.tableView.dataArray addObject: model3];
+    
+    //dispatch_group
     
     DefualtCellModel *model4 = [DefualtCellModel new];
     model4.title = [NSString stringWithFormat:@""];
-    model4.desc = [NSString stringWithFormat:@"GCD开发常用总结梳理"];
+    model4.desc = [NSString stringWithFormat:@"常驻线程"];
     model4.leadImageName = @"tabbar-icon-selected-1";
     model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model4];
+    [self.tableView.dataArray addObject: model4];
     
-    
+  //AFNetworking中RunLoop的创建
     DefualtCellModel *model5 = [DefualtCellModel new];
     model5.title = [NSString stringWithFormat:@""];
-    model5.desc = [NSString stringWithFormat:@"通信模式"];
+    model5.desc = [NSString stringWithFormat:@"AFNetworking中RunLoop的创建"];
     model5.leadImageName = @"tabbar-icon-selected-1";
     model5.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model5];
-    
-    //NSRunloop
-    DefualtCellModel *model6 = [DefualtCellModel new];
-    model6.title = [NSString stringWithFormat:@""];
-    model6.desc = [NSString stringWithFormat:@"NSRunloop"];
-    model6.leadImageName = @"tabbar-icon-selected-1";
-    model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    [self.dataArray addObject: model6];
+    [self.tableView.dataArray addObject: model5];
     
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
-    
     [self.tableView.tableView reloadData];
     
 }
 - (void)initialUI {
-
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView = [YLTableView new];
@@ -130,8 +109,7 @@
         //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
-    
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"常驻线程测试" style:UIBarButtonItemStylePlain target:self action:@selector(runloopTest)];
     
     
 }
@@ -142,43 +120,25 @@
 
 -(void)didselectedCell:(NSInteger)index {
     
+ 
+    NSLog(@"GCDTest temp 1: %@",_temp);
     NSLog(@"%@",@(index));
     if (index == 0) {
-        RuntimeListViewController * runVC = [RuntimeListViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
-
+        [_temp logSixStatus];
     }else if (index == 1){
-        UIResponderListViewController * runVC = [UIResponderListViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        [_temp observerRunLoop];
     }else if (index == 2){
-        
-        RAMManagerViewController * runVC = [RAMManagerViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
-        
+      [_temp timerTest];
     }else if (index == 3){
-        LiftCircleListViewController * runVC = [LiftCircleListViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
-        
+        [_temp stateRunLoop];
     }else if (index == 4){
-        //GCDListViewController
-        GCDListViewController * runVC = [GCDListViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        [RunloopTest networkRequestThread];
     }else if(index == 5){
-        CommunicationViewController * runVC = [CommunicationViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+       
     }else if(index == 6){
-        NSRunloopListViewController * runVC = [NSRunloopListViewController new];
-        runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
        
     }else if(index == 7){
-       
+        
     }
     else if(index == 8){
         
@@ -195,11 +155,22 @@
         
     }
     else if(index == 13){
-       
+        
     }
     
     
 }
+
+
+-(void)runloopTest
+{
+    [self performSelector:@selector(testLoop) onThread: _temp.thread withObject:@"hoggen" waitUntilDone:YES];
+}
+-(void)testLoop{
+    NSLog(@"testtesttest");
+}
+
+
 -(void)buttonaction:(UIButton *)sender {
     
 }
@@ -218,5 +189,19 @@
     [self.tableView.tableView.mj_footer endRefreshing];
     
 }
+
+
+-(UIButton *)creatNormalBUttonWithName:(NSString *)name{
+    
+    UIButton * button = [UIButton new];
+    [self.view addSubview: button];
+    button.titleLabel.textColor = [UIColor blackColor];
+    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
+    [button setTitle: name forState: UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
+    return button;
+    
+}
+
 
 @end
