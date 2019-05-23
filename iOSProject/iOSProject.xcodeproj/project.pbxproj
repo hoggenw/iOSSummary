@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1109C4F421F4189B00207328 /* YLGestureLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1109C4F321F4189B00207328 /* YLGestureLockView.m */; };
+		110AE4FD2294FC7A0012F1B0 /* RunloopTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 110AE4FC2294FC7A0012F1B0 /* RunloopTest.m */; };
+		110AE5112295390B0012F1B0 /* ImageDealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110AE50E2295390B0012F1B0 /* ImageDealController.m */; };
+		110AE5122295390B0012F1B0 /* TestImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 110AE5102295390B0012F1B0 /* TestImage.m */; };
+		111545842296462D0030B022 /* GroupAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111545832296462D0030B022 /* GroupAnimationController.m */; };
+		1115458722964B530030B022 /* ActivityIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1115458622964B530030B022 /* ActivityIndicatorViewController.m */; };
 		1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */; };
 		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
 		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
@@ -160,6 +165,8 @@
 		11727BCD2294EBBB00575385 /* NSRunloopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */; };
 		11727BD02294EC3300575385 /* RunloopTestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCF2294EC3300575385 /* RunloopTestListViewController.m */; };
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
+		11A3360822954D7900B1D0E7 /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360722954D7900B1D0E7 /* AnimationListViewController.m */; };
+		11A3360C2295525B00B1D0E7 /* ImplicitAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */; };
 		11C024982289433F003E61B6 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C024972289433F003E61B6 /* images.xcassets */; };
 		11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */; };
 		11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */; };
@@ -265,6 +272,16 @@
 /* Begin PBXFileReference section */
 		1109C4F221F4189B00207328 /* YLGestureLockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGestureLockView.h; sourceTree = "<group>"; };
 		1109C4F321F4189B00207328 /* YLGestureLockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGestureLockView.m; sourceTree = "<group>"; };
+		110AE4FB2294FC7A0012F1B0 /* RunloopTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopTest.h; sourceTree = "<group>"; };
+		110AE4FC2294FC7A0012F1B0 /* RunloopTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopTest.m; sourceTree = "<group>"; };
+		110AE50D2295390A0012F1B0 /* TestImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestImage.h; sourceTree = "<group>"; };
+		110AE50E2295390B0012F1B0 /* ImageDealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDealController.m; sourceTree = "<group>"; };
+		110AE50F2295390B0012F1B0 /* ImageDealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDealController.h; sourceTree = "<group>"; };
+		110AE5102295390B0012F1B0 /* TestImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestImage.m; sourceTree = "<group>"; };
+		111545822296462D0030B022 /* GroupAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GroupAnimationController.h; sourceTree = "<group>"; };
+		111545832296462D0030B022 /* GroupAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupAnimationController.m; sourceTree = "<group>"; };
+		1115458522964B530030B022 /* ActivityIndicatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorViewController.h; sourceTree = "<group>"; };
+		1115458622964B530030B022 /* ActivityIndicatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorViewController.m; sourceTree = "<group>"; };
 		1118C0B121E9954C00C6837A /* MapCarAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapCarAnnotationView.h; sourceTree = "<group>"; };
 		1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapCarAnnotationView.m; sourceTree = "<group>"; };
 		1118C0B421E996A800C6837A /* BaiduMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMapViewController.h; sourceTree = "<group>"; };
@@ -552,6 +569,10 @@
 		11727BCF2294EC3300575385 /* RunloopTestListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopTestListViewController.m; sourceTree = "<group>"; };
 		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		11A3360622954D7900B1D0E7 /* AnimationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
+		11A3360722954D7900B1D0E7 /* AnimationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
+		11A3360A2295525B00B1D0E7 /* ImplicitAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationController.h; sourceTree = "<group>"; };
+		11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImplicitAnimationController.m; sourceTree = "<group>"; };
 		11C024972289433F003E61B6 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		11C0249922894860003E61B6 /* RuntimeExampleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeExampleListViewController.h; sourceTree = "<group>"; };
 		11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeExampleListViewController.m; sourceTree = "<group>"; };
@@ -854,6 +875,26 @@
 				1150E6EB2230FBB40030CD0E /* Animation2ViewController.m */,
 			);
 			path = Animation2;
+			sourceTree = "<group>";
+		};
+		110AE4FA2294FC5E0012F1B0 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				110AE4FB2294FC7A0012F1B0 /* RunloopTest.h */,
+				110AE4FC2294FC7A0012F1B0 /* RunloopTest.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		110AE506229535290012F1B0 /* ImageDeal */ = {
+			isa = PBXGroup;
+			children = (
+				110AE50F2295390B0012F1B0 /* ImageDealController.h */,
+				110AE50E2295390B0012F1B0 /* ImageDealController.m */,
+				110AE50D2295390A0012F1B0 /* TestImage.h */,
+				110AE5102295390B0012F1B0 /* TestImage.m */,
+			);
+			path = ImageDeal;
 			sourceTree = "<group>";
 		};
 		1118C0AC21E990C500C6837A /* VoiceToWords */ = {
@@ -1476,6 +1517,8 @@
 		1151C63D219E9F1900C08114 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				11A3360522954A3400B1D0E7 /* animations */,
+				110AE506229535290012F1B0 /* ImageDeal */,
 				1150E708223A30A20030CD0E /* Webviews */,
 				110A9669222E7DBA002F9EB3 /* Animation2 */,
 				11D6BD1122266AA1006E47DE /* GesturePassword */,
@@ -1553,12 +1596,36 @@
 		11727BCA2294EB8D00575385 /* NSRunloop */ = {
 			isa = PBXGroup;
 			children = (
+				110AE4FA2294FC5E0012F1B0 /* Example */,
 				11727BCB2294EBBB00575385 /* NSRunloopListViewController.h */,
 				11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */,
 				11727BCE2294EC3300575385 /* RunloopTestListViewController.h */,
 				11727BCF2294EC3300575385 /* RunloopTestListViewController.m */,
 			);
 			path = NSRunloop;
+			sourceTree = "<group>";
+		};
+		11A3360522954A3400B1D0E7 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				11A3360922954EE200B1D0E7 /* Example */,
+				11A3360622954D7900B1D0E7 /* AnimationListViewController.h */,
+				11A3360722954D7900B1D0E7 /* AnimationListViewController.m */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
+		11A3360922954EE200B1D0E7 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				11A3360A2295525B00B1D0E7 /* ImplicitAnimationController.h */,
+				11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */,
+				111545822296462D0030B022 /* GroupAnimationController.h */,
+				111545832296462D0030B022 /* GroupAnimationController.m */,
+				1115458522964B530030B022 /* ActivityIndicatorViewController.h */,
+				1115458622964B530030B022 /* ActivityIndicatorViewController.m */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 		11C0249C22894A24003E61B6 /* Example */ = {
@@ -1610,13 +1677,13 @@
 		11D6BCE0222528C1006E47DE /* Animation1 */ = {
 			isa = PBXGroup;
 			children = (
+				11D6BCFB222528C1006E47DE /* YLMicphoneVoiceView.h */,
+				11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */,
+				11D6BCFA222528C1006E47DE /* YLVoiceCircleView.h */,
 				11D6BCE2222528C1006E47DE /* YLVoiceCircleView.m */,
 				11D6BCE3222528C1006E47DE /* part one */,
-				11D6BCEE222528C1006E47DE /* YLMicphoneVoiceView.m */,
 				11D6BCF0222528C1006E47DE /* Part two circle */,
 				11D6BCF3222528C1006E47DE /* Controllers */,
-				11D6BCFA222528C1006E47DE /* YLVoiceCircleView.h */,
-				11D6BCFB222528C1006E47DE /* YLMicphoneVoiceView.h */,
 				11D6BD0822252901006E47DE /* Animation1ViewController.h */,
 				11D6BD0922252901006E47DE /* Animation1ViewController.m */,
 				11D6BD0B22252B38006E47DE /* YLAnimationVoiceView.h */,
@@ -2178,10 +2245,12 @@
 				1150E6FA223633E10030CD0E /* WaveViewController.m in Sources */,
 				1151C646219E9FB800C08114 /* BannerScrollView.m in Sources */,
 				1151C6142192BEF600C08114 /* VoteLoginViewController.m in Sources */,
+				11A3360822954D7900B1D0E7 /* AnimationListViewController.m in Sources */,
 				1135790121A6975500DDEA74 /* RecordVideoViewController.m in Sources */,
 				11D6BCFC222528C1006E47DE /* YLVoiceCircleView.m in Sources */,
 				117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */,
 				11DF0C1821D4B82E006A1D36 /* YLChatBoxItemView.m in Sources */,
+				1115458722964B530030B022 /* ActivityIndicatorViewController.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
 				1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */,
 				11C024BA228A9BEA003E61B6 /* Man.m in Sources */,
@@ -2228,6 +2297,7 @@
 				11DF0C1321D4B82E006A1D36 /* ChatViewController.m in Sources */,
 				1151C6292192BEF600C08114 /* UIView+HandyValue.m in Sources */,
 				11D6BD04222528C1006E47DE /* YLCircleView.m in Sources */,
+				11A3360C2295525B00B1D0E7 /* ImplicitAnimationController.m in Sources */,
 				1135790A21A6986F00DDEA74 /* YLRecordVideoManager.m in Sources */,
 				11DF0C1721D4B82E006A1D36 /* YLChatBoxMoreView.m in Sources */,
 				1151C6172192BEF600C08114 /* UserModel.m in Sources */,
@@ -2256,6 +2326,7 @@
 				11C024C4228AAE86003E61B6 /* ReponderTestViewController.m in Sources */,
 				11C024C8228AAF4C003E61B6 /* CustomResonderTestButton.m in Sources */,
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
+				110AE5112295390B0012F1B0 /* ImageDealController.m in Sources */,
 				11DF0C1021D4B82E006A1D36 /* ChatListTableViewCell.m in Sources */,
 				11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */,
 				11DF0C8521D4BCFB006A1D36 /* Type.pbobjc.m in Sources */,
@@ -2276,7 +2347,9 @@
 				11DF0C8B21D4BCFB006A1D36 /* Wrappers.pbobjc.m in Sources */,
 				1151C5F92192BEF600C08114 /* NSDate+Extension.m in Sources */,
 				1151C5FD2192BEF600C08114 /* UIView+Extension.m in Sources */,
+				110AE5122295390B0012F1B0 /* TestImage.m in Sources */,
 				1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */,
+				111545842296462D0030B022 /* GroupAnimationController.m in Sources */,
 				11DF0C9421D4BCFB006A1D36 /* GPBDictionary.m in Sources */,
 				11DF0C2421D4B82E006A1D36 /* YLSystemMessageCell.m in Sources */,
 				1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */,
@@ -2367,6 +2440,7 @@
 				11DF0C8E21D4BCFB006A1D36 /* Struct.pbobjc.m in Sources */,
 				11DF0C1D21D4B82E006A1D36 /* YLChatFaceItemView.m in Sources */,
 				1151C61D2192BEF600C08114 /* YLHintView.m in Sources */,
+				110AE4FD2294FC7A0012F1B0 /* RunloopTest.m in Sources */,
 				1149892B21E35C24001E1443 /* YLAddressPickerUtil.m in Sources */,
 				11DF0C1421D4B82E006A1D36 /* ChatShowMessageViewController.m in Sources */,
 				11D6BD0D22252B38006E47DE /* YLAnimationVoiceView.m in Sources */,
