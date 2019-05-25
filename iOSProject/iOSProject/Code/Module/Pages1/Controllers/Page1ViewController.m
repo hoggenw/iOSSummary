@@ -27,6 +27,8 @@
 #import "Animation1ViewController.h"
 #import "ShowPSDViewController.h"
 #import "Animation2ViewController.h"
+#import "ImageDealController.h"
+#import "AnimationListViewController.h"
 
 @interface Page1ViewController ()<NormalActionWithInfoDelegate,YLTableViewDelete,YLScanViewControllerDelegate,DatePickerViewDelegate>
 @property (nonatomic, strong) YLTableView  * tableView;
@@ -120,7 +122,7 @@
     
     DefualtCellModel *model6 = [DefualtCellModel new];
     model6.title = [NSString stringWithFormat:@"WebView"];
-    model6.desc = [NSString stringWithFormat:@"vpn加载及进度条"];
+    model6.desc = [NSString stringWithFormat:@"进度条"];
     model6.leadImageName = @"tabbar-icon-selected-1";
     model6.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -200,15 +202,15 @@
     
     
     DefualtCellModel *model15 = [DefualtCellModel new];
-    model15.title = [NSString stringWithFormat:@"核心动画"];
-    model15.desc = [NSString stringWithFormat:@"动画1"];
+    model15.title = [NSString stringWithFormat:@""];
+    model15.desc = [NSString stringWithFormat:@"APP内国际化及app名称国际化"];
     model15.leadImageName = @"tabbar-icon-selected-1";
     model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model15];
     
     DefualtCellModel *model16 = [DefualtCellModel new];
-    model16.title = [NSString stringWithFormat:@""];
-    model16.desc = [NSString stringWithFormat:@"APP内国际化及app名称国际化"];
+    model16.title = [NSString stringWithFormat:@"图片处理"];
+    model16.desc = [NSString stringWithFormat:@"组合图片"];
     model16.leadImageName = @"tabbar-icon-selected-1";
     model16.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -217,11 +219,35 @@
     
     DefualtCellModel *model17 = [DefualtCellModel new];
     model17.title = [NSString stringWithFormat:@"核心动画"];
-    model17.desc = [NSString stringWithFormat:@"动画2"];
+    model17.desc = [NSString stringWithFormat:@"动画1"];
     model17.leadImageName = @"tabbar-icon-selected-1";
     model17.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     [self.dataArray addObject: model17];
+    
+    
+    DefualtCellModel *model18 = [DefualtCellModel new];
+    model18.title = [NSString stringWithFormat:@"核心动画"];
+    model18.desc = [NSString stringWithFormat:@"动画2"];
+    model18.leadImageName = @"tabbar-icon-selected-1";
+    model18.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model18];
+    
+    DefualtCellModel *model19 = [DefualtCellModel new];
+    model19.title = [NSString stringWithFormat:@"核心动画"];
+    model19.desc = [NSString stringWithFormat:@"动画3"];
+    model19.leadImageName = @"tabbar-icon-selected-1";
+    model19.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    [self.dataArray addObject: model19];
+    
+    DefualtCellModel *model20 = [DefualtCellModel new];
+    model20.title = [NSString stringWithFormat:@"核心动画"];
+    model20.desc = [NSString stringWithFormat:@"动画列表"];
+    model20.leadImageName = @"tabbar-icon-selected-1";
+    model20.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model20];
   
     
     
@@ -454,15 +480,29 @@
         [self.navigationController pushViewController:VC animated:YES];
     }
     else if(index == 15){
-        Animation1ViewController * VC = [Animation1ViewController new];
-        VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
-    }else if(index == 16){
         ChangeLanguageViewController * VC = [ChangeLanguageViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
+
+    }else if(index == 16){
+        ImageDealController * VC = [ImageDealController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
     }else if(index == 17){
+        Animation1ViewController * VC = [Animation1ViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }else if(index == 18){
         Animation2ViewController * VC = [Animation2ViewController new];
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }else if(index == 19){
+        ImageDealController * VC = [ImageDealController new];
+        VC.animation = true;
+        VC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:VC animated:YES];
+    }else if(index == 20){
+        AnimationListViewController * VC = [AnimationListViewController new];
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }

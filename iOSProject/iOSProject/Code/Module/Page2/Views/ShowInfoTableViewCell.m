@@ -52,8 +52,8 @@
         [self.imageView setHidden: true];
     }else if (model.showType == ImageType){
          [self.desLable setHidden: true];
-        [self.imageView setHidden: false];
-        self.imageView.image = model.image;
+        [self.leadImageView setHidden: false];
+        self.leadImageView.image = model.image;
     }
    
     
@@ -77,6 +77,7 @@
 -(UIImageView *)leadImageView{
     if(_leadImageView == nil){
         _leadImageView = [UIImageView new];
+        _leadImageView.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:_leadImageView];
         [_leadImageView mas_makeConstraints:^(MASConstraintMaker *make)
          {
