@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Algorithm : NSObject
 
+-(BOOL)testArray:(NSArray<NSNumber *> *)intArray total:(int)total;
+
+
+-(NSString *)testString:(NSString *)temp;
+
 @end
 
 NS_ASSUME_NONNULL_END

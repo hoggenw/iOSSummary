@@ -13,6 +13,7 @@
 		110AE5122295390B0012F1B0 /* TestImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 110AE5102295390B0012F1B0 /* TestImage.m */; };
 		111545842296462D0030B022 /* GroupAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111545832296462D0030B022 /* GroupAnimationController.m */; };
 		1115458722964B530030B022 /* ActivityIndicatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1115458622964B530030B022 /* ActivityIndicatorViewController.m */; };
+		1115458A229B83500030B022 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 11154589229B83500030B022 /* Algorithm.m */; };
 		1118C0B321E9954C00C6837A /* MapCarAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */; };
 		1118C0B621E996A800C6837A /* BaiduMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B521E996A800C6837A /* BaiduMapViewController.m */; };
 		1118C0BB21E9BE2E00C6837A /* ToWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1118C0B921E9BE2E00C6837A /* ToWordsViewController.m */; };
@@ -282,6 +283,8 @@
 		111545832296462D0030B022 /* GroupAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupAnimationController.m; sourceTree = "<group>"; };
 		1115458522964B530030B022 /* ActivityIndicatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatorViewController.h; sourceTree = "<group>"; };
 		1115458622964B530030B022 /* ActivityIndicatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicatorViewController.m; sourceTree = "<group>"; };
+		11154588229B83500030B022 /* Algorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		11154589229B83500030B022 /* Algorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 		1118C0B121E9954C00C6837A /* MapCarAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapCarAnnotationView.h; sourceTree = "<group>"; };
 		1118C0B221E9954C00C6837A /* MapCarAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapCarAnnotationView.m; sourceTree = "<group>"; };
 		1118C0B421E996A800C6837A /* BaiduMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMapViewController.h; sourceTree = "<group>"; };
@@ -1645,6 +1648,8 @@
 				11C024AA22896C3A003E61B6 /* RuntimeView.m */,
 				11C024AC22896CFE003E61B6 /* RuntimeTestViewController.h */,
 				11C024AD22896CFE003E61B6 /* RuntimeTestViewController.m */,
+				11154588229B83500030B022 /* Algorithm.h */,
+				11154589229B83500030B022 /* Algorithm.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -2276,6 +2281,7 @@
 				1151C5F32192BEF600C08114 /* AppDelegate.m in Sources */,
 				1151C62D2192BEF600C08114 /* LPDPhotoArrangeCell.m in Sources */,
 				11C024A2228952E7003E61B6 /* SecondTestTemp.m in Sources */,
+				1115458A229B83500030B022 /* Algorithm.m in Sources */,
 				11727BCD2294EBBB00575385 /* NSRunloopListViewController.m in Sources */,
 				1151C61F2192BEF600C08114 /* PopupView.m in Sources */,
 				113578BA21A656AA00DDEA74 /* CalculatorTools.m in Sources */,

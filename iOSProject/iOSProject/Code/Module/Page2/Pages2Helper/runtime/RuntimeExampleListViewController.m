@@ -16,6 +16,7 @@
 #import <objc/runtime.h>
 #import "RuntimeTestViewController.h"
 #import "Man.h"
+#import "Algorithm.h"
 
 
 @class Cat;
@@ -158,6 +159,33 @@
     model12.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self.dataArray addObject: model12];
     [self.tableView.dataArray addObject: model12];
+    
+    
+    DefualtCellModel *model13 = [DefualtCellModel new];
+    model13.title = [NSString stringWithFormat:@""];
+    model13.desc = [NSString stringWithFormat:@"基础算法1"];
+    model13.leadImageName = @"tabbar-icon-selected-1";
+    model13.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model13];
+    [self.tableView.dataArray addObject: model13];
+    
+    
+    DefualtCellModel *model14 = [DefualtCellModel new];
+    model14.title = [NSString stringWithFormat:@""];
+    model14.desc = [NSString stringWithFormat:@"基础算法2"];
+    model14.leadImageName = @"tabbar-icon-selected-1";
+    model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model14];
+    [self.tableView.dataArray addObject: model14];
+    
+    
+    DefualtCellModel *model14 = [DefualtCellModel new];
+    model14.title = [NSString stringWithFormat:@""];
+    model14.desc = [NSString stringWithFormat:@"基础算法3"];
+    model14.leadImageName = @"tabbar-icon-selected-1";
+    model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model14];
+    [self.tableView.dataArray addObject: model14];
 
 
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -293,9 +321,30 @@
     }
     
     else if(index == 12){
+        Algorithm * temp = [Algorithm new];
+        int arrayCount = [self randomNumber: 100];
+        NSMutableArray * numberArray = [NSMutableArray array];
+        NSLog(@"arrayCount: %@",@(arrayCount));
+        for(int i = 0 ; i < arrayCount ;i++ ){
+            numberArray[i] = [NSNumber numberWithInt: [self randomNumber: 10000]] ;
+        }
+        
+       BOOL result = [temp testArray:[numberArray copy] total: [self randomNumber: 10000]];
+        NSLog(@"result is %@",@(result));
         
     }
     else if(index == 13){
+        Algorithm * temp = [Algorithm new];
+        NSLog(@"%@",[temp testString:@"world hello"]) ;
+    }
+    else if(index == 14){
+        Algorithm * temp = [Algorithm new];
+        
+    }else if(index == 15){
+        Algorithm * temp = [Algorithm new];
+        
+    }else if(index == 16){
+        Algorithm * temp = [Algorithm new];
         
     }
     
@@ -332,7 +381,10 @@
     
 }
 
-
+- (int )randomNumber:(int)number {
+    int randomNumber = arc4random() % number;
+    return randomNumber;
+}
 
 //下拉刷新
 -(void)YLTableViewRefreshAction:(UIView *)view {
