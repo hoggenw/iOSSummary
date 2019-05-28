@@ -68,6 +68,90 @@
     return  [temp copy];
 }
 
+-(int16_t)testInt:(int16_t)number {
+    int16_t x = number;
+    int16_t i = 0;
+    
+    while (x != 0) {
+        i = i * 10 + x%10;
+        x = x/10;
+        NSLog(@"i = %@,x = %@",@(i),@(x));
+    }
+    if (i < INT16_MIN || i > INT16_MAX) {
+        return 0;
+    }
+    return  i;
+}
+
+-(NSMutableArray<NSNumber *> *)bubbleSortTest:(NSMutableArray<NSNumber *> *)tempArray {
+    for (int i = 0; i < tempArray.count-1; i++) {
+        bool isSorted = true  ;
+        for (int j = 0; j < tempArray.count - i -1; j++) {
+            if (tempArray[j].integerValue > tempArray[j + 1].integerValue) {
+                NSNumber * mid = tempArray[j];
+                tempArray[j] = tempArray[j + 1] ;
+                tempArray[j + 1] = mid;
+                isSorted = false;
+            }
+        }
+        if (isSorted) {
+            break;
+        }
+    }
+    return tempArray;
+}
+
+-(NSMutableArray<NSNumber *> *)selectSortTest:(NSMutableArray<NSNumber *> *)tempArray{
+    for (int i = 0; i < tempArray.count-1; i++) {
+        for (int j = i+1; j < tempArray.count ; j++) {
+            if (tempArray[i].integerValue > tempArray[j].integerValue) {
+                NSNumber * mid = tempArray[i];
+                tempArray[i] = tempArray[j] ;
+                tempArray[j] = mid;
+                
+            }
+        }
+    }
+    return tempArray;
+}
+
+-(int)findIndex:(NSMutableArray<NSNumber *> *)tempArray  value:(NSNumber *)number {
+    int min = 0;
+    int max = (int)tempArray.count - 1;
+    int mid;
+    int count = 0;
+    while (min <= max) {
+        count ++;
+        mid = (min + max)/2;
+        if (number.integerValue > tempArray[mid].integerValue) {
+            min = mid + 1;
+        } else if (number.integerValue < tempArray[mid].integerValue) {
+            max = mid - 1;
+        } else {
+            NSLog(@"count times : %@",@(count));
+            return mid;
+        }
+    }
+    
+    return  -1;
+}
+
+
+-(int)findIndex:(NSMutableArray<NSNumber *> *)tempArray  value:(NSNumber *)number max:(int)max min:(int)min {
+    int mid = 0;
+    mid = (min + max)/2;
+    _otherCount ++ ;
+    if (number.integerValue > tempArray[mid].integerValue) {
+        return [self findIndex:tempArray value:number max:max min:mid+1];
+    } else if (number.integerValue < tempArray[mid].integerValue) {
+        return [self findIndex:tempArray value:number max:mid-1 min:min];
+    } else {
+        return mid;
+    }
+
+    
+    return  -1;
+}
 
 
 @end

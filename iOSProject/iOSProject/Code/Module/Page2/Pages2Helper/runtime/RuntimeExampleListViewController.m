@@ -179,13 +179,42 @@
     [self.tableView.dataArray addObject: model14];
     
     
-    DefualtCellModel *model14 = [DefualtCellModel new];
-    model14.title = [NSString stringWithFormat:@""];
-    model14.desc = [NSString stringWithFormat:@"基础算法3"];
-    model14.leadImageName = @"tabbar-icon-selected-1";
-    model14.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    [self.dataArray addObject: model14];
-    [self.tableView.dataArray addObject: model14];
+    DefualtCellModel *model15 = [DefualtCellModel new];
+    model15.title = [NSString stringWithFormat:@""];
+    model15.desc = [NSString stringWithFormat:@"基础算法3"];
+    model15.leadImageName = @"tabbar-icon-selected-1";
+    model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model15];
+    [self.tableView.dataArray addObject: model15];
+    
+    
+    DefualtCellModel *model16 = [DefualtCellModel new];
+    model16.title = [NSString stringWithFormat:@""];
+    model16.desc = [NSString stringWithFormat:@"基础算法4"];
+    model16.leadImageName = @"tabbar-icon-selected-1";
+    model16.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model16];
+    [self.tableView.dataArray addObject: model16];
+    
+    
+    DefualtCellModel *model17 = [DefualtCellModel new];
+    model17.title = [NSString stringWithFormat:@""];
+    model17.desc = [NSString stringWithFormat:@"基础算法5"];
+    model17.leadImageName = @"tabbar-icon-selected-1";
+    model17.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model17];
+    [self.tableView.dataArray addObject: model17];
+    
+    
+    DefualtCellModel *model18 = [DefualtCellModel new];
+    model18.title = [NSString stringWithFormat:@""];
+    model18.desc = [NSString stringWithFormat:@"基础算法6"];
+    model18.leadImageName = @"tabbar-icon-selected-1";
+    model18.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model18];
+    [self.tableView.dataArray addObject: model18];
+    
+
 
 
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
@@ -322,7 +351,7 @@
     
     else if(index == 12){
         Algorithm * temp = [Algorithm new];
-        int arrayCount = [self randomNumber: 100];
+        int arrayCount = [self randomNumber: 100] + 1;
         NSMutableArray * numberArray = [NSMutableArray array];
         NSLog(@"arrayCount: %@",@(arrayCount));
         for(int i = 0 ; i < arrayCount ;i++ ){
@@ -339,12 +368,64 @@
     }
     else if(index == 14){
         Algorithm * temp = [Algorithm new];
-        
+        int16_t result =  [temp testInt:4321];
+        NSLog(@"int16_t : %@",@(result)) ;
     }else if(index == 15){
         Algorithm * temp = [Algorithm new];
+        int arrayCount = [self randomNumber: 10] + 1;
+        NSMutableArray * numberArray = [NSMutableArray array];
+        NSLog(@"arrayCount: %@",@(arrayCount));
+        for(int i = 0 ; i < arrayCount ;i++ ){
+            numberArray[i] = [NSNumber numberWithInt: [self randomNumber: 100]] ;
+            NSLog(@"i = %@ : value=%@",@(i),numberArray[i]);
+        }
+        NSMutableArray * resultArray = [temp bubbleSortTest:numberArray];
+        for(int i = 0 ; i < resultArray.count ;i++ ){
+       
+            NSLog(@"resultArray------ i = %@ : value=%@",@(i),numberArray[i]);
+        }
         
     }else if(index == 16){
+
         Algorithm * temp = [Algorithm new];
+        int arrayCount = [self randomNumber: 10] + 1;
+        NSMutableArray * numberArray = [NSMutableArray array];
+        NSLog(@"arrayCount: %@",@(arrayCount));
+        for(int i = 0 ; i < arrayCount ;i++ ){
+            numberArray[i] = [NSNumber numberWithInt: [self randomNumber: 100]] ;
+            NSLog(@"i = %@ : value=%@",@(i),numberArray[i]);
+        }
+        NSMutableArray * resultArray = [temp selectSortTest:numberArray];
+        for(int i = 0 ; i < resultArray.count ;i++ ){
+            
+            NSLog(@"resultArray------ i = %@ : value=%@",@(i),numberArray[i]);
+        }
+        
+    }else if(index == 17){
+        
+        Algorithm * temp = [Algorithm new];
+        int arrayCount = [self randomNumber: 100] + 1;
+        NSMutableArray * numberArray = [NSMutableArray array];
+  
+        for(int i = 0 ; i < arrayCount ;i++ ){
+            numberArray[i] = [NSNumber numberWithInt: [self randomNumber: 1000]] ;
+        }
+        NSMutableArray * resultArray = [temp selectSortTest:numberArray];
+        for(int i = 0 ; i < resultArray.count ;i++ ){
+            
+            NSLog(@"resultArray------ i = %@ : value=%@",@(i),numberArray[i]);
+        }
+        NSNumber * tempNumber = resultArray[[self randomNumber: (int)resultArray.count]];
+        int index = [temp findIndex:resultArray value:tempNumber];
+        NSLog(@"resultArray------ index = %@ : value=%@",@(index),tempNumber);
+        
+        temp.otherCount = 0;
+        
+        int index2 = [temp findIndex: resultArray value: tempNumber max: (int)resultArray.count-1 min:0];
+         NSLog(@"resultArray------ index2 = %@ : value=%@ count times : %@",@(index2),tempNumber,@(temp.otherCount));
+        
+        
+        
         
     }
     
