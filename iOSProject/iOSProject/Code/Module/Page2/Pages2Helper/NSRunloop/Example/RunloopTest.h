@@ -19,6 +19,27 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)timerTest;
 -(void)stateRunLoop;
 + (NSThread *)networkRequestThread ;
+
+//@synchronized
+-(void)saveLooptest1;
+//dispatch_semaphore
+-(void)saveLooptest2;
+
+-(void)saveLooptest3;
+
+-(void)saveLooptest4;
+
+-(void)saveLooptest5;
+
+
+-(void)saveLooptest6;
+
+-(void)saveLooptest7;
+
+-(void)saveLooptest8;
+
+
+-(void)saveLooptest9;
 @end
 
 NS_ASSUME_NONNULL_END
