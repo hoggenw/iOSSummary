@@ -112,6 +112,11 @@ static const uint16_t port = 6969;
 
 -(void)sendMassege:(ChatMessageModel *)messageModel {
     
+    if (!(_webSocket.readyState == SR_OPEN)) {
+        NSLog(@"程序未连接");
+        return;
+    }
+    
     YLmessageModel * pmessage = [YLmessageModel new];
     switch (messageModel.messageType) {
         case  YLMessageTypeImage:{ // 图片
