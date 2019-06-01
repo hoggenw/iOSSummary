@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(int)findIndex:(NSMutableArray<NSNumber *> *)tempArray  value:(NSNumber *)number max:(int)max min:(int)min;
 
+-(void)primeTest:(int)maxLimit;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -77,6 +77,14 @@
     [self.tableView.dataArray addObject: model3];
     
     
+    DefualtCellModel *model4 = [DefualtCellModel new];
+    model4.title = [NSString stringWithFormat:@""];
+    model4.desc = [NSString stringWithFormat:@"堆与栈"];
+    model4.leadImageName = @"tabbar-icon-selected-1";
+    model4.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model4];
+    [self.tableView.dataArray addObject: model4];
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -200,7 +208,24 @@
         [self.navigationController pushViewController: vc animated: true];
         
     }else if (index == 3){
-       
+        ShowInfoViewController * vc = [ShowInfoViewController new];
+        NSMutableArray *modelArray = [NSMutableArray array];
+        ShowMessageModel * model = [self getModelWith:@"内存管理范围" boldString:@"内存管理范围" showType:TextType];
+        ShowMessageModel * model2 = [self getModelWith:@"只有oc对象需要进行内存管理\n非oc对象类型比如基本数据类型不需要进行内存管理" boldString:@"1." showType:TextType];
+        
+        ShowMessageModel * model3 = [self getModelWith:@"因为：\nObjective-C的对象在内存中是以堆的方式分配空间的,并且堆内存是由你释放的，就是release\nOC对象存放于堆里面(堆内存要程序员手动回收)\n非OC对象一般放在栈里面(栈内存会被系统自动回收)\n堆里面的内存是动态分配的，所以也就需要程序员手动的去添加内存、回收内存" boldString:@"因为：" showType:TextType];
+        ShowMessageModel * model4 = [self getModelWith:@"总结区别管理方式分\n\n对于栈来讲，是由系统编译器自动管理，不需要程序员手动管理\n对于堆来讲，释放工作由程序员手动管理，不及时回收容易产生内存泄露" boldString:@"总结区别管理方式分" showType:TextType];
+        ShowMessageModel * model5 = [self getModelWith:@"总结区别分配方式分\n\n堆是动态分配和回收内存的，没有静态分配的堆\n栈有两种分配方式：静态分配和动态分配\n\n\n    静态分配是系统编译器完成的，比如局部变量的分配\n    动态分配是有alloc函数进行分配的，但是栈的动态分配和堆是不同的，它的动态分配也由系统编译器进行释放，不需要程序员手动管理" boldString:@"总结区别分配方式分" showType:TextType];
+        ShowMessageModel * model6 = [self getModelWith:@"栈先进后出，堆先进先出" boldString:@"5." showType:TextType];
+        [modelArray addObject: model];
+        [modelArray addObject: model2];
+        [modelArray addObject: model3];
+        [modelArray addObject: model4];
+        [modelArray addObject: model5];
+        [modelArray addObject: model6];
+        
+        vc.dataArray = modelArray;
+        [self.navigationController pushViewController: vc animated: true];
     }else if (index == 4){
         
     }else if(index == 5){

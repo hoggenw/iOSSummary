@@ -819,13 +819,13 @@
 			path = GestureLock;
 			sourceTree = "<group>";
 		};
-		1109C4F721F96E1400207328 /* Chart */ = {
+		1109C4F721F96E1400207328 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				11DF0BC821D4B82E006A1D36 /* ChatList */,
 				11DF0BD421D4B82E006A1D36 /* ChatPage */,
 			);
-			path = Chart;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		1109C4F821FAAF7C00207328 /* Page2 */ = {
@@ -1527,7 +1527,7 @@
 				11D6BD1122266AA1006E47DE /* GesturePassword */,
 				11D6BCE0222528C1006E47DE /* Animation1 */,
 				1151C59B2192BEF500C08114 /* Login */,
-				1109C4F721F96E1400207328 /* Chart */,
+				1109C4F721F96E1400207328 /* Chat */,
 				1109C4F121F4185E00207328 /* GestureLock */,
 				1118C0B021E9952100C6837A /* BaiduMap */,
 				1118C0AC21E990C500C6837A /* VoiceToWords */,

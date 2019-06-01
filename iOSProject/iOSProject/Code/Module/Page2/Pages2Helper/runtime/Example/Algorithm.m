@@ -154,4 +154,22 @@
 }
 
 
+-(void)primeTest:(int)maxLimit {
+    for (int i = 2;  i <= maxLimit; i ++) {
+        if ([self isProme:i]) {
+            NSLog(@"prime number : %d",i);
+        }
+    }
+}
+
+-(BOOL)isProme:(int)n {
+    for (int i = 2; i <= sqrt(n); i ++) {
+        if (n%i == 0) {
+            return  false;
+        }
+    }
+    return true;
+}
+
+
 @end

@@ -214,6 +214,15 @@
     [self.dataArray addObject: model18];
     [self.tableView.dataArray addObject: model18];
     
+    
+    DefualtCellModel *model19 = [DefualtCellModel new];
+    model19.title = [NSString stringWithFormat:@""];
+    model19.desc = [NSString stringWithFormat:@"基础算法7"];
+    model19.leadImageName = @"tabbar-icon-selected-1";
+    model19.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model19];
+    [self.tableView.dataArray addObject: model19];
+    
 
 
 
@@ -424,6 +433,13 @@
         int index2 = [temp findIndex: resultArray value: tempNumber max: (int)resultArray.count-1 min:0];
          NSLog(@"resultArray------ index2 = %@ : value=%@ count times : %@",@(index2),tempNumber,@(temp.otherCount));
         
+        
+        
+        
+    }else if(index == 18){
+        
+        Algorithm * temp = [Algorithm new];
+        [temp primeTest: 100];
         
         
         
