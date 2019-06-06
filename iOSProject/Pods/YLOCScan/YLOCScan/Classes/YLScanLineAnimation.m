@@ -87,8 +87,8 @@
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:timeInterval animations:^{
         weakSelf.alpha = 1.0;
-        CGRect frame = _animationRect;
-        CGFloat imageH = weakSelf.image.size.height * _animationRect.size.width / weakSelf.image.size.width;
+        CGRect frame = weakSelf.animationRect;
+        CGFloat imageH = weakSelf.image.size.height * weakSelf.animationRect.size.width / weakSelf.image.size.width;
         frame.origin.y = frame.origin.y  + frame.size.height - imageH;
         frame.size.height = imageH;
         weakSelf.frame = frame;
