@@ -357,8 +357,13 @@
 //    return;
     YLScanViewManager * manager = [YLScanViewManager sharedInstance];
     manager.imageStyle = secondeNetGrid;
-    manager.delegate = self;
-    [manager showScanView: self];
+//    manager.delegate = self;
+//    [manager showScanView: self];
+    
+    
+    [manager showScanView:self withBlock:^(YLScanResult * result) {
+        NSLog(@"wlg====%@", result.strScanned);
+    }];
 }
 
 #pragma mark - Public Methods
