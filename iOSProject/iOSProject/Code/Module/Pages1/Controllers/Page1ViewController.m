@@ -295,72 +295,11 @@
 
 #pragma mark - Events
 -(void)rightButtonAction{
-//    NSString * url = @"http://192.168.0.108:8888/admin/changeStandards";
-//    NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-//    dictionary[@"catalog_id"] = @"10001";
-    NSMutableArray * values =  [NSMutableArray array];
-    NSMutableDictionary * dictionaryValue = [NSMutableDictionary dictionary];
-//    dictionaryValue[@"standardTitle"] = @"标题1";
-//    dictionaryValue[@"min"] = @"1";
-//    dictionaryValue[@"max"] = @"10";
-//    dictionaryValue[@"color"] = @"#6495ED";
-//    dictionaryValue[@"standardId"] = @"100011";
-//    [values addObject: dictionaryValue];
-//
-//
-//    NSMutableDictionary * dictionaryValue1 = [NSMutableDictionary dictionary];
-//    dictionaryValue1[@"standardTitle"] = @"标题2";
-//    dictionaryValue1[@"min"] = @"1";
-//    dictionaryValue1[@"max"] = @"10";
-//    dictionaryValue1[@"color"] = @"#6495ED";
-//    [values addObject: dictionaryValue1];
-//
-//    NSMutableDictionary * dictionaryValue2 = [NSMutableDictionary dictionary];
-//    dictionaryValue2[@"standardTitle"] = @"标题3";
-//    dictionaryValue2[@"min"] = @"1";
-//    dictionaryValue2[@"max"] = @"10";
-//    dictionaryValue2[@"color"] = @"#6495ED";
-//    [values addObject: dictionaryValue2];
-//
-//    NSMutableDictionary * dictionaryValue3 = [NSMutableDictionary dictionary];
-//    dictionaryValue3[@"standardTitle"] = @"标题4";
-//    dictionaryValue3[@"min"] = @"1";
-//    dictionaryValue3[@"max"] = @"10";
-//    dictionaryValue3[@"color"] = @"#6495ED";
-//    [values addObject: dictionaryValue3];
-//
-//    NSMutableDictionary * dictionaryValue4 = [NSMutableDictionary dictionary];
-//    dictionaryValue4[@"standardTitle"] = @"标题5";
-//    dictionaryValue4[@"min"] = @"1";
-//    dictionaryValue4[@"max"] = @"10";
-//    dictionaryValue4[@"color"] = @"#6495ED";
-//    [values addObject: dictionaryValue4];
-//
-//    NSMutableDictionary * dictionaryValue5 = [NSMutableDictionary dictionary];
-//    dictionaryValue5[@"standardTitle"] = @"标题6";
-//    dictionaryValue5[@"min"] = @"1";
-//    dictionaryValue5[@"max"] = @"10";
-//    dictionaryValue5[@"color"] = @"#6495ED";
-//    [values addObject: dictionaryValue5];
-//    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
-//    [values addObject:@"20181207_a8a9504f-aa5a-4b7a-ae12-ea10d6670064"];
-    NSString * jsonString = [values yy_modelToJSONString];
- //   dictionary[@"values"] = jsonString;
-//    NSLog(@"jsonString: %@", jsonString);
-////    [[NetworkManager sharedInstance] postWithURL:url param:dictionary needToken:true returnBlock:^(NSDictionary *returnDict) {
-////        NSLog(@"returnDict: %@", returnDict);
-////    }];
-//    [[NetworkManager sharedInstance] postWithURL:url paramBody:(NSDictionary *)dictionary needToken: true returnBlock:^(NSDictionary *returnDict) {
-//        
-//    }];
-//    
-//    return;
-    YLScanViewManager * manager = [YLScanViewManager sharedInstance];
+
+   YLScanViewManager * manager = [YLScanViewManager sharedInstance];
     manager.imageStyle = secondeNetGrid;
 //    manager.delegate = self;
 //    [manager showScanView: self];
-    
-    
     [manager showScanView:self withBlock:^(YLScanResult * result) {
         NSLog(@"wlg====%@", result.strScanned);
     }];
