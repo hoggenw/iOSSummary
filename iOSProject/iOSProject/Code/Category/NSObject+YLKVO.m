@@ -9,13 +9,14 @@
 #import "NSObject+YLKVO.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-
+#import "YLThread.h"
 
 
 @interface YLObservationInfo: NSObject
 @property (nonatomic, weak) NSObject *observer;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) YLKVOBlock block;
+//@property (nonatomic,strong)   NSThread * thread;
 @end
 
 @implementation YLObservationInfo
@@ -26,6 +27,7 @@
         _observer = observer;
         _key = key;
         _block = block;
+    
     }
     return  self;
 }
@@ -95,7 +97,12 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     NSMutableArray *observers = objc_getAssociatedObject(self, &YLKVOAssociateObservers);
     for(YLObservationInfo *temp in observers) {
         if ([temp.key isEqualToString: getterName]) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+//            [self performSelector:@selector(runBlock) onThread: [YLThread networkRequestThreadName:@"YLObservation"] withObject:@"hoggen" waitUntilDone:YES];
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                temp.block(self, getterName, oldValue, newValue);
+//            });
+            dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 temp.block(self, getterName, oldValue, newValue);
             });
         }
@@ -106,6 +113,8 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
 
 @implementation NSObject (YLKVO)
 
+
+
 -(void)YLAddObserver:(NSObject *)observer forKey:(NSString *)key withBlock:(YLKVOBlock)block {
     
     NSLog( @"getterForSetter(%@) : %@",key,setterMethodGet(key));
@@ -113,7 +122,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     SEL setterSelector = NSSelectorFromString(setterMethodGet(key));
     Method setterMethod = class_getInstanceMethod([self class], setterSelector);//用 class_getInstanceMethod 去获得 setKey: 的实现（Method）获取实例方法
     //[self haseSelector:method_getName(setterMethod)];
-    NSLog(@"setterMethod = %@   class = %@", NSStringFromSelector(method_getName(setterMethod)), NSStringFromClass([self class]));
+    //NSLog(@"setterMethod = %@   class = %@", NSStringFromSelector(method_getName(setterMethod)), NSStringFromClass([self class]));
     if (!setterMethod) {
         NSString * reason = [NSString stringWithFormat:@"Object %@ doesn not have a setter for key %@ ",self,key];
         @throw [NSException exceptionWithName: NSInvalidArgumentException reason: reason userInfo: nil];
@@ -138,6 +147,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
         const char * types = method_getTypeEncoding(setterMethod);
         class_addMethod(clazz, setterSelector, (IMP)kvo_setter, types);
         NSLog(@"添加我们自己kvo的类的实现方法，如果类没有实现它的setter方法");
+//        [self performSelector:setterSelector onThread: [YLThread networkRequestThreadName:@"YLObservation"] withObject:@"hoggen" waitUntilDone:YES];
     }
     YLObservationInfo *info = [[YLObservationInfo alloc] initWithObserver:observer key:key block:block];
     NSMutableArray *observers = objc_getAssociatedObject(self, &YLKVOAssociateObservers);

@@ -336,7 +336,8 @@
         [self.modelRuntime YLAddObserver:self forKey:NSStringFromSelector(@selector(string))
                           withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
                               NSLog(@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject, observedKey, oldValue,newValue);
-                              [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject,observedKey, oldValue,newValue]];
+                              NSLog(@"\n  NSThread:   %@   mainThread :  %@", [NSThread currentThread],[NSThread mainThread]);
+                              //[YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject,observedKey, oldValue,newValue]];
                           }];
         NSArray * array = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
         for (int  i = 0 ; i < array.count; i++) {

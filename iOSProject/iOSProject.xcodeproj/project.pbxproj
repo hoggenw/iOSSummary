@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -168,6 +168,7 @@
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
 		11A3360822954D7900B1D0E7 /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360722954D7900B1D0E7 /* AnimationListViewController.m */; };
 		11A3360C2295525B00B1D0E7 /* ImplicitAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */; };
+		11BAA64A22BA19420006439B /* YLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA64922BA19420006439B /* YLThread.m */; };
 		11C024982289433F003E61B6 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C024972289433F003E61B6 /* images.xcassets */; };
 		11C0249B22894860003E61B6 /* RuntimeExampleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */; };
 		11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C0249E22894A74003E61B6 /* RuntimeTestTemp.m */; };
@@ -576,6 +577,8 @@
 		11A3360722954D7900B1D0E7 /* AnimationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
 		11A3360A2295525B00B1D0E7 /* ImplicitAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationController.h; sourceTree = "<group>"; };
 		11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImplicitAnimationController.m; sourceTree = "<group>"; };
+		11BAA64822BA19420006439B /* YLThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLThread.h; sourceTree = "<group>"; };
+		11BAA64922BA19420006439B /* YLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLThread.m; sourceTree = "<group>"; };
 		11C024972289433F003E61B6 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		11C0249922894860003E61B6 /* RuntimeExampleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeExampleListViewController.h; sourceTree = "<group>"; };
 		11C0249A22894860003E61B6 /* RuntimeExampleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeExampleListViewController.m; sourceTree = "<group>"; };
@@ -1427,6 +1430,8 @@
 				1151C5BB2192BEF500C08114 /* PopupView.m */,
 				1135791C21ABC7EC00DDEA74 /* YLSliderSelectView.h */,
 				1135791D21ABC7EC00DDEA74 /* YLSliderSelectView.m */,
+				11BAA64822BA19420006439B /* YLThread.h */,
+				11BAA64922BA19420006439B /* YLThread.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -2396,6 +2401,7 @@
 				11DF0C8821D4BCFB006A1D36 /* SourceContext.pbobjc.m in Sources */,
 				11DF0C8121D4BCFB006A1D36 /* GPBWireFormat.m in Sources */,
 				1151C62A2192BEF600C08114 /* LPDVideoPlayerController.m in Sources */,
+				11BAA64A22BA19420006439B /* YLThread.m in Sources */,
 				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
 				1150E717223B58050030CD0E /* YLWebViewController.m in Sources */,
 				113578B721A656AA00DDEA74 /* IFlyFaceResultKeys.m in Sources */,

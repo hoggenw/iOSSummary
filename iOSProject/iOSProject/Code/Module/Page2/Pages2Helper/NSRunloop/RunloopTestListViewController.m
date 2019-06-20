@@ -18,6 +18,7 @@
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
 @property (nonatomic, strong)RunloopTest  * temp;
+@property (nonatomic,strong)   NSThread * thread;
 @end
 
 @implementation RunloopTestListViewController
@@ -191,9 +192,8 @@
         //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"常驻线程测试" style:UIBarButtonItemStylePlain target:self action:@selector(runloopTest)];
     
-    
+     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithTitle:@"常驻线程测试1" style:UIBarButtonItemStylePlain target:self action:@selector(runloopTest2)],[[UIBarButtonItem alloc] initWithTitle:@"常驻线程测试2" style:UIBarButtonItemStylePlain target:self action:@selector(runloopTest)]];
 }
 
 #pragma mark - Extension Delegate or Protocol
@@ -214,7 +214,7 @@
     }else if (index == 3){
         [_temp stateRunLoop];
     }else if (index == 4){
-        [RunloopTest networkRequestThread];
+        _thread = [RunloopTest networkRequestThread];
     }else if(index == 5){
         [_temp saveLooptest1];
     }else if(index == 6){
@@ -246,10 +246,22 @@
 
 -(void)runloopTest
 {
-    [self performSelector:@selector(testLoop) onThread: _temp.thread withObject:@"hoggen" waitUntilDone:YES];
+    if (_thread == nil) {
+      _thread =  [RunloopTest networkRequestThread];;
+    }
+    [self performSelector:@selector(testLoop) onThread: _thread withObject:@"hoggen" waitUntilDone:YES];
 }
+
 -(void)testLoop{
     NSLog(@"testtesttest");
+}
+
+-(void)runloopTest2
+{
+    if (_temp.thread == nil) {
+        [_temp stateRunLoop];
+    }
+    [self performSelector:@selector(testLoop) onThread: _temp.thread withObject:@"hoggen" waitUntilDone:YES];
 }
 
 

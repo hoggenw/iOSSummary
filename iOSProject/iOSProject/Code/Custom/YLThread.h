@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLThread : NSObject
 
++ (NSThread *)networkRequestThreadName:(NSString *)name;
+
 @end
 
 NS_ASSUME_NONNULL_END
