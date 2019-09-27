@@ -172,6 +172,14 @@
     [self.tableView.dataArray addObject: model14];
     
     
+    DefualtCellModel *model15 = [DefualtCellModel new];
+    model15.title = [NSString stringWithFormat:@""];
+    model15.desc = [NSString stringWithFormat:@"Loop测试timer"];
+    model15.leadImageName = @"tabbar-icon-selected-1";
+    model15.cellAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [self.dataArray addObject: model15];
+    [self.tableView.dataArray addObject: model15];
+    
     self.tableView.dataArray = [NSMutableArray arrayWithArray: self.dataArray];
     [self.tableView.tableView reloadData];
     
@@ -238,6 +246,8 @@
     }
     else if(index == 13){
          [_temp saveLooptest9];
+    } else if(index == 14){
+        [_temp testLoopWithTimer];
     }
     
     
@@ -253,6 +263,11 @@
 }
 
 -(void)testLoop{
+    NSLog(@"currentThread.name = %@", [[NSThread currentThread] name]);
+    //常驻线程是可以运行timer的
+//    NSTimer *timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(actionTime:) userInfo:nil repeats:YES];
+//
+//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     NSLog(@"testtesttest");
 }
 
@@ -295,6 +310,11 @@
     [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
     return button;
     
+}
+
+
+- (void)actionTime:(NSTimer *)timer {
+    NSLog(@"---- %@",[NSDate date]);
 }
 
 

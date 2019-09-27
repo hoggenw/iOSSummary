@@ -404,6 +404,8 @@
         [addressUtil showWithAreaId:areaId];
     }else if(index == 11){
         IJKFrameworkViewController * VC = [IJKFrameworkViewController new];
+        VC.playUrl = @"http://fastwebcache.yod.cn/yanglan/2013suoluosi/2013suoluosi_850/2013suoluosi_850.m3u8";
+        VC.videoName = @"采访索罗斯";
         VC.hidesBottomBarWhenPushed = true;
         [self.navigationController pushViewController:VC animated:YES];
     }

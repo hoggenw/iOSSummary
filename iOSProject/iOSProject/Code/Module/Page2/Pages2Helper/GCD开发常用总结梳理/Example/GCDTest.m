@@ -71,10 +71,16 @@
         NSLog(@"hoggen complete task 4");
         dispatch_semaphore_signal(semaphoreControl);
     });
+    //会阻塞当前线程。直到完成
+//    for(int i = 0; i < 4; i++){
+//        dispatch_semaphore_wait(semaphoreControl, DISPATCH_TIME_FOREVER);
+//    }
+//    NSLog(@"=================模拟多线程操作时几个任务同时进行，完成后才输出结果======================");
     
     dispatch_async(queue, ^{
         for(int i = 0; i < 4; i++){
-            dispatch_semaphore_wait(semaphoreControl, DISPATCH_TIME_FOREVER);
+        long value =  dispatch_semaphore_wait(semaphoreControl, DISPATCH_TIME_FOREVER);
+        NSLog(@"=================模拟多线程操作时几个任务同时进行，value=====================%@",@(value));
         }
         NSLog(@"=================模拟多线程操作时几个任务同时进行，完成后才输出结果======================");
     });
@@ -85,7 +91,7 @@
     //crate的value表示，最多几个资源可访问
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(2);
     dispatch_queue_t queue2 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
+    NSLog(@"task =====");
     //任务1
     dispatch_async(queue2, ^{
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
@@ -258,7 +264,10 @@
         NSLog(@"执行耗时操作1------%@",[NSThread currentThread]);
         dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             for (long i = 0 ; i < 700000; i ++) {
-                long j = i;
+                @autoreleasepool {
+                    long j = i;
+                }
+               
             }
             NSLog(@"内部在异步1");
             NSLog(@"内部在异步1------%@",[NSThread currentThread]);
@@ -344,6 +353,7 @@
 
 
 -(void)testMain{
+    
     dispatch_queue_t queue = dispatch_get_main_queue();
     NSLog(@"asyncMain---begin");
     dispatch_async(queue, ^{

@@ -22,6 +22,11 @@
 		111B945B221D2B5400AA7C26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 111B945D221D2B5400AA7C26 /* Localizable.strings */; };
 		111B9461221D340700AA7C26 /* LanguageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9460221D340700AA7C26 /* LanguageUtil.m */; };
 		111B9464221D397F00AA7C26 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B9463221D397F00AA7C26 /* ChangeLanguageViewController.m */; };
+		1122622D23277D6D007CE3A6 /* YLMediaButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1122622C23277D6D007CE3A6 /* YLMediaButton.m */; };
+		1122623023277E66007CE3A6 /* YLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1122622F23277E66007CE3A6 /* YLLoadingView.m */; };
+		1122623323278256007CE3A6 /* YLNetNotiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1122623223278256007CE3A6 /* YLNetNotiView.m */; };
+		11226236232784C5007CE3A6 /* YLPlayerOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 11226235232784C5007CE3A6 /* YLPlayerOption.m */; };
+		11226239232785DE007CE3A6 /* YLPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11226238232785DE007CE3A6 /* YLPlayerView.m */; };
 		1132578221B024E3001A5439 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132578121B024E3001A5439 /* FileViewController.m */; };
 		1135785D21A298E100DDEA74 /* YLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135785C21A298E100DDEA74 /* YLTableView.m */; };
 		1135786721A29D3A00DDEA74 /* Page1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1135786621A29D3A00DDEA74 /* Page1ViewController.m */; };
@@ -166,6 +171,8 @@
 		11727BCD2294EBBB00575385 /* NSRunloopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCC2294EBBB00575385 /* NSRunloopListViewController.m */; };
 		11727BD02294EC3300575385 /* RunloopTestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11727BCF2294EC3300575385 /* RunloopTestListViewController.m */; };
 		117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D7AF5224092C600040568 /* UIScrollView+Extension.m */; };
+		11800BF6231E580900A85EBA /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11800BF5231E580900A85EBA /* MineViewController.m */; };
+		11800BFA231E59F500A85EBA /* 王留根个人简历.docx in Resources */ = {isa = PBXBuildFile; fileRef = 11800BF9231E59F500A85EBA /* 王留根个人简历.docx */; };
 		11A3360822954D7900B1D0E7 /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360722954D7900B1D0E7 /* AnimationListViewController.m */; };
 		11A3360C2295525B00B1D0E7 /* ImplicitAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A3360B2295525B00B1D0E7 /* ImplicitAnimationController.m */; };
 		11BAA64A22BA19420006439B /* YLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BAA64922BA19420006439B /* YLThread.m */; };
@@ -302,6 +309,16 @@
 		111B9460221D340700AA7C26 /* LanguageUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageUtil.m; sourceTree = "<group>"; };
 		111B9462221D397F00AA7C26 /* ChangeLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeLanguageViewController.h; sourceTree = "<group>"; };
 		111B9463221D397F00AA7C26 /* ChangeLanguageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeLanguageViewController.m; sourceTree = "<group>"; };
+		1122622B23277D6D007CE3A6 /* YLMediaButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMediaButton.h; sourceTree = "<group>"; };
+		1122622C23277D6D007CE3A6 /* YLMediaButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLMediaButton.m; sourceTree = "<group>"; };
+		1122622E23277E66007CE3A6 /* YLLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLLoadingView.h; sourceTree = "<group>"; };
+		1122622F23277E66007CE3A6 /* YLLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLLoadingView.m; sourceTree = "<group>"; };
+		1122623123278256007CE3A6 /* YLNetNotiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLNetNotiView.h; sourceTree = "<group>"; };
+		1122623223278256007CE3A6 /* YLNetNotiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLNetNotiView.m; sourceTree = "<group>"; };
+		11226234232784C5007CE3A6 /* YLPlayerOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPlayerOption.h; sourceTree = "<group>"; };
+		11226235232784C5007CE3A6 /* YLPlayerOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPlayerOption.m; sourceTree = "<group>"; };
+		11226237232785DE007CE3A6 /* YLPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLPlayerView.h; sourceTree = "<group>"; };
+		11226238232785DE007CE3A6 /* YLPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLPlayerView.m; sourceTree = "<group>"; };
 		1132578021B024E3001A5439 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1132578121B024E3001A5439 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1135785B21A298E100DDEA74 /* YLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLTableView.h; sourceTree = "<group>"; };
@@ -573,6 +590,9 @@
 		11727BCF2294EC3300575385 /* RunloopTestListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopTestListViewController.m; sourceTree = "<group>"; };
 		117D7AF5224092C600040568 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		117D7AF6224092C600040568 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
+		11800BF4231E580900A85EBA /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		11800BF5231E580900A85EBA /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		11800BF9231E59F500A85EBA /* 王留根个人简历.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "王留根个人简历.docx"; sourceTree = "<group>"; };
 		11A3360622954D7900B1D0E7 /* AnimationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		11A3360722954D7900B1D0E7 /* AnimationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
 		11A3360A2295525B00B1D0E7 /* ImplicitAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationController.h; sourceTree = "<group>"; };
@@ -923,6 +943,23 @@
 			path = BaiduMap;
 			sourceTree = "<group>";
 		};
+		1122622A23277C33007CE3A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1122622B23277D6D007CE3A6 /* YLMediaButton.h */,
+				1122622C23277D6D007CE3A6 /* YLMediaButton.m */,
+				1122622E23277E66007CE3A6 /* YLLoadingView.h */,
+				1122622F23277E66007CE3A6 /* YLLoadingView.m */,
+				1122623123278256007CE3A6 /* YLNetNotiView.h */,
+				1122623223278256007CE3A6 /* YLNetNotiView.m */,
+				11226234232784C5007CE3A6 /* YLPlayerOption.h */,
+				11226235232784C5007CE3A6 /* YLPlayerOption.m */,
+				11226237232785DE007CE3A6 /* YLPlayerView.h */,
+				11226238232785DE007CE3A6 /* YLPlayerView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1135785A21A298B500DDEA74 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1131,6 +1168,7 @@
 		1149894F21E48DE0001E1443 /* LiveBroadcast */ = {
 			isa = PBXGroup;
 			children = (
+				1122622A23277C33007CE3A6 /* Views */,
 				1149895021E48E1D001E1443 /* IJKFrameworkViewController.h */,
 				1149895121E48E1D001E1443 /* IJKFrameworkViewController.m */,
 			);
@@ -1329,6 +1367,7 @@
 		1151C5612192BEF500C08114 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				11800BF3231E574F00A85EBA /* Mine */,
 				1109C4F821FAAF7C00207328 /* Page2 */,
 				1135785E21A29A7A00DDEA74 /* Pages1 */,
 				1151C6392192C0A300C08114 /* Base */,
@@ -1506,6 +1545,7 @@
 		1151C5EF2192BEF600C08114 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				11800BF9231E59F500A85EBA /* 王留根个人简历.docx */,
 				11DF0C9921D4C48C006A1D36 /* TemporaryPic */,
 				1151C5F02192BEF600C08114 /* Assets.xcassets */,
 				11C024972289433F003E61B6 /* images.xcassets */,
@@ -1611,6 +1651,15 @@
 				11727BCF2294EC3300575385 /* RunloopTestListViewController.m */,
 			);
 			path = NSRunloop;
+			sourceTree = "<group>";
+		};
+		11800BF3231E574F00A85EBA /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				11800BF4231E580900A85EBA /* MineViewController.h */,
+				11800BF5231E580900A85EBA /* MineViewController.m */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 		11A3360522954A3400B1D0E7 /* animations */ = {
@@ -1721,12 +1770,12 @@
 		11D6BCF3222528C1006E47DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				11D6BCF4222528C1006E47DE /* YLVoiceAnimationViewController.m */,
-				11D6BCF5222528C1006E47DE /* YLVoiceCircleViewController.m */,
-				11D6BCF6222528C1006E47DE /* YLMicrophoneViewController.h */,
-				11D6BCF7222528C1006E47DE /* YLVoiceAnimationViewController.h */,
-				11D6BCF8222528C1006E47DE /* YLMicrophoneViewController.m */,
 				11D6BCF9222528C1006E47DE /* YLVoiceCircleViewController.h */,
+				11D6BCF5222528C1006E47DE /* YLVoiceCircleViewController.m */,
+				11D6BCF7222528C1006E47DE /* YLVoiceAnimationViewController.h */,
+				11D6BCF4222528C1006E47DE /* YLVoiceAnimationViewController.m */,
+				11D6BCF6222528C1006E47DE /* YLMicrophoneViewController.h */,
+				11D6BCF8222528C1006E47DE /* YLMicrophoneViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1805,7 +1854,6 @@
 		11DF0BDA21D4B82E006A1D36 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				11DF0BDB21D4B82E006A1D36 /* ChatViewController.m */,
 				11DF0BE021D4B82E006A1D36 /* YLPhotoPreviewController.h */,
 				11DF0BDD21D4B82E006A1D36 /* YLPhotoPreviewController.m */,
 				11DF0BDE21D4B82E006A1D36 /* ChatBoxViewController.h */,
@@ -1813,6 +1861,7 @@
 				11DF0BE121D4B82E006A1D36 /* ChatShowMessageViewController.h */,
 				11DF0BDC21D4B82E006A1D36 /* ChatShowMessageViewController.m */,
 				11DF0BE221D4B82E006A1D36 /* ChatViewController.h */,
+				11DF0BDB21D4B82E006A1D36 /* ChatViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2141,6 +2190,7 @@
 			files = (
 				1151C62F2192BEF600C08114 /* LPDImagePickerController.bundle in Resources */,
 				11DF0C9D21D4C48C006A1D36 /* send_head.jpg in Resources */,
+				11800BFA231E59F500A85EBA /* 王留根个人简历.docx in Resources */,
 				1149894821E479A8001E1443 /* city.json in Resources */,
 				1151C6152192BEF600C08114 /* LoginView.xib in Resources */,
 				1151C6382192BEF600C08114 /* Assets.xcassets in Resources */,
@@ -2235,6 +2285,7 @@
 				117D7AF7224092C600040568 /* UIScrollView+Extension.m in Sources */,
 				11DF0C1821D4B82E006A1D36 /* YLChatBoxItemView.m in Sources */,
 				1115458722964B530030B022 /* ActivityIndicatorViewController.m in Sources */,
+				11800BF6231E580900A85EBA /* MineViewController.m in Sources */,
 				1151C6372192BEF600C08114 /* CLLocation+Sino.m in Sources */,
 				1135787021A2A8F800DDEA74 /* DefualtCellModel.m in Sources */,
 				11C024BA228A9BEA003E61B6 /* Man.m in Sources */,
@@ -2313,6 +2364,7 @@
 				1151C6302192BEF600C08114 /* LPDImageManager.m in Sources */,
 				110AE5112295390B0012F1B0 /* ImageDealController.m in Sources */,
 				11DF0C1021D4B82E006A1D36 /* ChatListTableViewCell.m in Sources */,
+				1122622D23277D6D007CE3A6 /* YLMediaButton.m in Sources */,
 				11C024A522895764003E61B6 /* ThirdTestTemp.m in Sources */,
 				11DF0C8521D4BCFB006A1D36 /* Type.pbobjc.m in Sources */,
 				1150E6EC2230FBB40030CD0E /* Animation2ViewController.m in Sources */,
@@ -2325,6 +2377,7 @@
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
 				11727BD02294EC3300575385 /* RunloopTestListViewController.m in Sources */,
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
+				11226236232784C5007CE3A6 /* YLPlayerOption.m in Sources */,
 				11DF0C1521D4B82E006A1D36 /* YLPhotoPreviewController.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
 				11DF0C3721D4B9A3006A1D36 /* amr_wav_converter.c in Sources */,
@@ -2340,6 +2393,7 @@
 				1149892621E355BA001E1443 /* YLAreaHelper.m in Sources */,
 				11DF0C0D21D4B82E006A1D36 /* ChatListUserModel.m in Sources */,
 				11DF0C8F21D4BCFB006A1D36 /* GPBCodedInputStream.m in Sources */,
+				1122623323278256007CE3A6 /* YLNetNotiView.m in Sources */,
 				1151C5F42192BEF600C08114 /* UILabel+Extension.m in Sources */,
 				11DF0C8021D4BCFB006A1D36 /* GPBMessage.m in Sources */,
 				11C024B1228A6207003E61B6 /* NSObject+YLKVO.m in Sources */,
@@ -2374,6 +2428,7 @@
 				113578B821A656AA00DDEA74 /* IFlyFaceImage.m in Sources */,
 				1135790D21A6987A00DDEA74 /* YLRecordVideoView.m in Sources */,
 				11DF0C3421D4B9A3006A1D36 /* DPAudioPlayer.m in Sources */,
+				1122623023277E66007CE3A6 /* YLLoadingView.m in Sources */,
 				1151C6272192BEF600C08114 /* LPDAssetCell.m in Sources */,
 				1150E6F3223115440030CD0E /* CircleView.m in Sources */,
 				11DF0C2621D4B82E006A1D36 /* YLImageMessageCell.m in Sources */,
@@ -2404,6 +2459,7 @@
 				11BAA64A22BA19420006439B /* YLThread.m in Sources */,
 				1151C64D219EAC9400C08114 /* YLConst.m in Sources */,
 				1150E717223B58050030CD0E /* YLWebViewController.m in Sources */,
+				11226239232785DE007CE3A6 /* YLPlayerView.m in Sources */,
 				113578B721A656AA00DDEA74 /* IFlyFaceResultKeys.m in Sources */,
 				1132578221B024E3001A5439 /* FileViewController.m in Sources */,
 				11D6BD05222528C1006E47DE /* YLVoiceAnimationViewController.m in Sources */,

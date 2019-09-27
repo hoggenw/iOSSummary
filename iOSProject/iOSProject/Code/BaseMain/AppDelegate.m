@@ -14,6 +14,20 @@
 #import "GuidanceViewController.h"
 #import "YLIFlyHelper.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import "YLSocketRocktManager.h"
+#import "AFNetworkActivityIndicatorManager.h"
+
+
+/***
+ UIApplicationDidFinishLaunchingNotification   // 应用程序启动后
+ UIApplicationDidBecomActiveNotification       //进入前台
+ UIApplicationWillResignActiveNotification     //应用将要进入后台
+ UIApplicationDidEnterBackgroundNotification   //进入后台
+ UIKeyboardWillShowNotification       // 键盘即将显示
+ UIKeyboardDidShowNotification        // 键盘显示完毕
+ UIKeyboardWillHideNotification       // 键盘即将隐藏
+ UIKeyboardDidHideNotification        // 键盘隐藏完毕
+ */
 
 @interface AppDelegate (){
     BMKMapManager* _mapManager;
@@ -22,6 +36,16 @@
 @end
 
 @implementation AppDelegate
+
+#pragma mark - 屏幕旋转相关设置
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (self.allowRotation) {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -97,6 +121,10 @@
         NSLog(@"manager start failed!");
     }
     
+//    [YLSocketRocktManager shareManger];
+    
+     [self netWorkChangeEvent];
+    
     //远程通知调用，未启动app时候需要在此做相关调用
     // 取到url scheme跳转信息 未启动时走这一步
     NSURL *url = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
@@ -109,6 +137,37 @@
    
     
     return YES;
+}
+
+
+#pragma mark - 检测网络状态变化
+-(void)netWorkChangeEvent
+{
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    NSURL *url = [NSURL URLWithString:@"http://baidu.com"];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        self.netWorkStatesCode = status;
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"当前使用的是流量模式");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"当前使用的是wifi模式");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"断网了");
+                break;
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"变成了未知网络状态");
+                break;
+                
+            default:
+                break;
+        }
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"netWorkChangeEventNotification" object:@(status)];
+    }];
+    [manager.reachabilityManager startMonitoring];
 }
 
 // iOS8+需要使用这个方法

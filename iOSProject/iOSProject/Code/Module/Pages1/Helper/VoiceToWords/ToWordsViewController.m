@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self config];
     [self initUI];
     
@@ -85,7 +86,7 @@
     
     
     self.textView = [UITextView new];
-    self.textView.frame = CGRectMake(0, 120, ScreenWidth, ScreenHeight -120);
+    self.textView.frame = CGRectMake(0, kNavigationHeight + 55 , ScreenWidth, ScreenHeight -120);
     [self.view addSubview: self.textView];
     self.textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.textView.layer.borderWidth = 0.5;

@@ -21,7 +21,6 @@
 +(BOOL)resolveClassMethod:(SEL)sel{
     if (sel == @selector(haveMeal:)) {
         //"v@:@"：v：是添加方法无返回值 @表示是id(也就是要添加的类) ：表示添加的方法类型 @表示：参数类型
-
         class_addMethod(object_getClass(self), sel, class_getMethodImplementation(object_getClass(self), @selector(YLhaveMeal:)), "v@");
         return  true;
     }
@@ -38,24 +37,26 @@
 
 +(void)YLhaveMeal:(NSString *)temp {
 
+    NSLog(@"%@",[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]);
     [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 
 - (void)YLSingSong:(NSString *)name{
-    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======name: %@ ", __func__,name]];
+    NSLog(@"%@",[NSString stringWithFormat:@"%s=======name: %@ ", __func__,name]);
+   // [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======name: %@ ", __func__,name]];
 }
 
 //声明类方法，但未实现
 + (void)comeOn:(NSString *)temp{
     NSLog(@"%s",__func__);
     NSLog(@"temp:  %@",temp);
-    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
+    //[YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 //声明实例方法，但未实现
 - (void)goOn:(NSString *)temp{
     NSLog(@"%s",__func__);
     NSLog(@"temp:  %@",temp);
-    [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
+   // [YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%s=======temp: %@ ", __func__,temp]];
 }
 
 @end

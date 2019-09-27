@@ -50,6 +50,7 @@
         NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
         [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
         [runLoop run];
+//        [runLoop removePort:<#(nonnull NSPort *)#> forMode:<#(nonnull NSRunLoopMode)#>]
     }
 }
 
@@ -152,7 +153,7 @@
     });
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
          dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        sleep(1);
+        //sleep(1);
         NSLog(@"需要线程同步的操作2");
         dispatch_semaphore_signal(semaphore);
     });
@@ -169,7 +170,7 @@
         //[lock lock];  lockBeforeDate:方法会在所指定Date之前尝试加锁，如果在指定时间之前都不能加锁，则返回NO。
         [lock lockBeforeDate:[NSDate date]];
         NSLog(@"需要线程同步的操作1 开始");
-        sleep(5);
+        sleep(1);
         NSLog(@"需要线程同步的操作1 结束");
         [lock unlock];
     });
@@ -206,7 +207,7 @@
             }
             [lock unlock];
         };
-        RecursiveMethod(5);
+        RecursiveMethod(7);
     });
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -377,6 +378,42 @@
         OSSpinLockUnlock(&theLock);
     });
 
+}
+-(void)testLoopWithTimer{
+   
+    dispatch_queue_t queue = dispatch_queue_create("com.apple.www", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        NSTimer *timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(actionTime:) userInfo:nil repeats:YES];
+        //=============================而子线程中的RunLoop默认是不启动的==================
+        
+        
+        
+        //[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];//不执行
+        //========================================需要手动启动当前线程
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];//执行
+         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        
+        //========================================因为主线程的loop已经启动
+        //[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];//执行
+        //[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];//执行
+        
+        //============================
+        //[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(actionTime:) userInfo:nil repeats:YES];//不执行 次创建方法会自动会默认自动添加到当前RunLoop中
+        
+        //==========================
+        /* 启动子线程runloop */
+//        [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(actionTime:) userInfo:nil repeats:YES];
+//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        
+/*
+ *主线程中的RunLoop默认是启动的，所以timer只要添加到主线程RunLoop中就会被执行；而子线程中的RunLoop默认是不启动的，所以timer添加到子线程RunLoop中后，还要手动启动RunLoop才能使timer被执行。
+ *NSTimer只有添加到启动起来的RunLoop中才会正常运行。NSTimer通常不建议添加到主线程中执行，因为界面的更新在主线程中，界面导致的卡顿会影响NSTimer的准确性。
+ */
+    });
+}
+
+- (void)actionTime:(NSTimer *)timer {
+    NSLog(@"---- %@",[NSDate date]);
 }
 
 

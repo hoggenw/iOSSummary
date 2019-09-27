@@ -10,4 +10,13 @@
 
 @interface IJKFrameworkViewController : UIViewController
 
+/*
+ 视频播放器的播放地址
+ */
+@property(nonatomic,copy)NSString *playUrl;
+/*
+ 视频名称
+ */
+@property(nonatomic,copy)NSString *videoName;
+
 @end

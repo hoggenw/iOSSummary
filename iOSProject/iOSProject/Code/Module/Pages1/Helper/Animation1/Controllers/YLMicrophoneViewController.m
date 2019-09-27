@@ -26,11 +26,11 @@
     
     
     //测试语音开始动画
-    UIButton * testVioceButton = [self creatNormalBUttonWithName:@"语音动画" frame: CGRectMake(40, 380, 100, 40)];
+    UIButton * testVioceButton = [self creatNormalBUttonWithName:@"语音动画" frame: CGRectMake(40, ScreenHeight - 60, 100, 40)];
     [testVioceButton addTarget: self action:@selector(voiceAnimation) forControlEvents: UIControlEventTouchUpInside];
     
     //测试语音结束动画
-    UIButton * testVioceStopButton = [self creatNormalBUttonWithName:@"结束动画" frame: CGRectMake(180, 380, 100, 40)];
+    UIButton * testVioceStopButton = [self creatNormalBUttonWithName:@"结束动画" frame: CGRectMake(ScreenWidth/2 + 40, ScreenHeight - 60, 100, 40)];
     [testVioceStopButton addTarget: self action:@selector(stopVoiceAnimation) forControlEvents: UIControlEventTouchUpInside];
     
 }
@@ -38,6 +38,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if (  self.micphoneVoiceView != nil) {
+        [self.micphoneVoiceView stopArcAnimation];
+        [self.micphoneVoiceView removeFromSuperview];
+        self.micphoneVoiceView = nil;
+    }
 }
 
 #pragma mark - Public Methods

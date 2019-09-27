@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton * waveButton = [self creatNormalBUttonWithName:@"开始动画" frame: CGRectMake(120, 100, 60, 50)];
+    UIButton * waveButton = [self creatNormalBUttonWithName:@"开始动画" frame: CGRectMake(ScreenWidth/2 -40, kNavigationHeight + 10, 80, 50)];
     [waveButton addTarget: self action:@selector(waveAnimation) forControlEvents: UIControlEventTouchUpInside];
     self.view.backgroundColor = [UIColor whiteColor];
     _circleView =  [[CircleView alloc] initWithFrame:CGRectMake(100, 200, 80, 80)];//(frame: CGRect(x: 100, y: 200, width: 80, height: 80))

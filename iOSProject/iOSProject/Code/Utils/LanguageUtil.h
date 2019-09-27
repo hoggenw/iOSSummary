@@ -10,7 +10,29 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol myProtocol <NSObject>
+
+@required
+-(void)name;
+
+@optional
+
+-(void)work;
+
+@end
+
+typedef NS_ENUM(NSInteger,NAMETYPE){
+    One = 0,
+    Two,
+    Three
+};
+
+
+typedef void (^myBlock) (NSString * name, id delegate,NAMETYPE type);
 @interface LanguageUtil : NSObject
+
+@property (nonatomic, copy) myBlock block;
+
 +(NSString *)languageForKey:(NSString *)key;
 @end
 

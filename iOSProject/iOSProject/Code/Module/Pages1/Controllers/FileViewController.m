@@ -40,7 +40,7 @@
 //    });
     
     CGFloat width = (ScreenWidth- 50 )/4;
-    _quoteImagesView =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(10 , 40, ScreenWidth- 20 , (width + 20)) withCountPerRowInView:4 cellMargin:10 ];
+    _quoteImagesView =[[LPDQuoteImagesView alloc] initWithFrame:CGRectMake(10 , kNavigationHeight, ScreenWidth- 20 , (width + 20)) withCountPerRowInView:4 cellMargin:10 ];
     //初始化view的frame, view里每行cell个数， cell间距（上方的图片1 即为quoteImagesView）
     _quoteImagesView.totalSelectedCount = 12;
     //最大可选照片数

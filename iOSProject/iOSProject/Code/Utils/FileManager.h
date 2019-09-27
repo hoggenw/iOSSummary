@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+
 @interface FileManager : NSObject
 
 +(NSString *)getFileSizeWithPath:(NSString * )path ;

@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RuntimeTestTemp : NSObject
+
+
+@property (nonatomic, copy) NSString *string;
 //声明类方法，但未实现
 + (void)haveMeal:(NSString *)food;
 //声明实例方法，但未实现

@@ -35,6 +35,9 @@
     self.temp = [RuntimeTestTemp new];
     [self performSelector:@selector(singSong:) withObject:@"实例方法重定向且方法动态添加"];
 }
-
+//
+- (void)goOn:(NSString *)temp{
+    NSLog(@"第二个类中的实现=== %@",temp);
+}
 
 @end

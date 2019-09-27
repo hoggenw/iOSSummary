@@ -26,6 +26,7 @@
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSMutableArray * dataArray;
 @property (nonatomic, strong) TestRuntime * modelRuntime;
+@property (nonatomic, strong) RuntimeTestTemp * modelRuntimp;
 
 @end
 
@@ -333,19 +334,34 @@
         free(protocolList);
     }else if (index == 10){
         self.modelRuntime = [[TestRuntime alloc] init];
+       // self.modelRuntimp = [[RuntimeTestTemp alloc] init];
+         NSLog(@"modelRuntime的类名: %@",object_getClass(self.modelRuntime));
+        
+        
         [self.modelRuntime YLAddObserver:self forKey:NSStringFromSelector(@selector(string))
                           withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
-                              NSLog(@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject, observedKey, oldValue,newValue);
-                              NSLog(@"\n  NSThread:   %@   mainThread :  %@", [NSThread currentThread],[NSThread mainThread]);
+                              NSLog(@"1111111111======%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject, observedKey, oldValue,newValue);
+                              //NSLog(@"\n  NSThread:   %@   mainThread :  %@", [NSThread currentThread],[NSThread mainThread]);
                               //[YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject,observedKey, oldValue,newValue]];
                           }];
+        
+//        [self.modelRuntimp YLAddObserver:self forKey:NSStringFromSelector(@selector(string))
+//                               withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+//                                   NSLog(@"22222222222====== %@.%@  oldVlue is %@ newvalue is  now: %@", observedObject, observedKey, oldValue,newValue);
+//                                   //NSLog(@"\n  NSThread:   %@   mainThread :  %@", [NSThread currentThread],[NSThread mainThread]);
+//                                   //[YLHintView showMessageOnThisPage:[NSString stringWithFormat:@"%@.%@  oldVlue is %@ newvalue is  now: %@", observedObject,observedKey, oldValue,newValue]];
+//                               }];
+        NSLog(@"modelRuntime的类名3: %@",object_getClass(self.modelRuntime));
         NSArray * array = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
         for (int  i = 0 ; i < array.count; i++) {
-            self.modelRuntime.string = array[i];
+           self.modelRuntime.string = array[i];
+            //self.modelRuntime.otherString = array[i];
+           // self.modelRuntimp.string = array[i];
+            //NSLog(@"self.modelRuntime.string ===%@    self.modelRuntimp.string===== %@",self.modelRuntime.string, self.modelRuntimp.string);
             
         }
         
-        NSLog(@" class name  :   %@",[self.modelRuntime class]);
+       // NSLog(@" class name  :   %@",[self.modelRuntime class]);
         
     }else if(index == 11){
         NSString *path = [[NSBundle mainBundle] pathForResource:@"model.json" ofType:nil];

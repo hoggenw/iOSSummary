@@ -203,11 +203,28 @@
     listLable.frame = CGRectMake(0, kNavigationHeight, _containView.width, 64);
     listLable.text = @"内容一";
     [_containView addSubview: listLable];
+    
+    UIButton * button = [UIButton new];
+    button.frame  = CGRectMake(0, kNavigationHeight + 64, _containView.width, 35);
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    button.titleLabel.textAlignment = NSTextAlignmentRight;
+    button.titleLabel.font = [UIFont systemFontOfSize:13];
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+     [_containView addSubview: button];
+    
     [self initialTrans];
     
     
     
     
+}
+
+
+-(void)back {
+    if (self.backBlock != nil) {
+        self.backBlock();
+    }
 }
 
 -(UIImage * )getPathImage {

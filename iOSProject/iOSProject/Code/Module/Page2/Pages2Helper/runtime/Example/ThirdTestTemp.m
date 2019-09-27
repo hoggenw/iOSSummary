@@ -7,6 +7,7 @@
 //
 
 #import "ThirdTestTemp.h"
+#import "SecondTestTemp.h"
 #import "RuntimeTestTemp.h"
 
 @interface ThirdTestTemp ()
@@ -24,11 +25,12 @@
     //动态j添加的方法， 在respondsToSelector中是响应不到的
     if ([self.temp respondsToSelector:@selector(goOn:)]) {
         [anInvocation invokeWithTarget:self.temp];
+        [anInvocation invokeWithTarget:[SecondTestTemp new]];
     }else{
         //2.2若仍然无法响应，则报错：找不到响应方法
         [self doesNotRecognizeSelector:sel];
     }
-    //类方法无法实现
+    ///类方法无法实现
 //    if ([RuntimeTestTemp respondsToSelector:@selector(comeOn:)]) {
 //        [anInvocation invokeWithTarget:[RuntimeTestTemp class]];
 //    }else{
@@ -36,6 +38,7 @@
 //        [self doesNotRecognizeSelector:sel];
 //    }
 }
+
 //需要从这个方法中获取的信息来创建NSInvocation对象，因此我们必须重写这个方法，为给定的selector提供一个合适的方法签名。
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     NSMethodSignature * methodSignature = [super methodSignatureForSelector:aSelector];
@@ -46,9 +49,9 @@
 }
 
 -(void)testForwardInvocation {
-   // [ThirdTestTemp performSelector:@selector(comeOn:) withObject:@"类方法重定向且方法动态添加"];
+    //[ThirdTestTemp performSelector:@selector(comeOn:) withObject:@"类方法重定向且方法动态添加"];
     self.temp = [RuntimeTestTemp new];
-    [self performSelector:@selector(goOn:) withObject:@"实例方法重定向且方法动态添加"];
+    [self performSelector:@selector(goOn:) withObject:@"消息重定向"];
 }
 
 @end

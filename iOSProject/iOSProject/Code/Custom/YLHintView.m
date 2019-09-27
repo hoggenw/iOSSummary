@@ -109,7 +109,7 @@
     if (manager !=  nil) {
         //如果没有显示提示
         dispatch_queue_t queue = dispatch_get_main_queue();
-        NSLog(@"asyncMain---begin");
+        //NSLog(@"asyncMain---begin");
         dispatch_async(queue, ^{
             manager.tag = 3333;
             if (manager.hintLabel == nil) {

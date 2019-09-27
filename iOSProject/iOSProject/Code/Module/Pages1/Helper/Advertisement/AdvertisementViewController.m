@@ -119,7 +119,6 @@
         NSString* key = [manager cacheKeyForURL:[NSURL URLWithString:temp]];
         SDImageCache* cache = [SDImageCache sharedImageCache];
         //此方法会先从memory中取。
-        
         NSData  *imageData  = [cache diskImageDataForKey:key];
         if (imageData == NULL) {
             [[manager imageDownloader] downloadImageWithURL:[NSURL URLWithString: temp] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {

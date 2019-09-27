@@ -99,15 +99,18 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    if (_dataArray.count > 0) {
+        ChatMessageModel  * messageModel = _dataArray[indexPath.row];
+        /**
+         *  id类型的cell 通过取出来Model的类型，判断要显示哪一种类型的cell
+         */
+        id cell = [tableView dequeueReusableCellWithIdentifier: messageModel.cellIndentify forIndexPath:indexPath];
+        // 给cell赋值
+        [cell setMessageModel:messageModel];
+        return cell;
+    }
     
-    ChatMessageModel  * messageModel = _dataArray[indexPath.row];
-    /**
-     *  id类型的cell 通过取出来Model的类型，判断要显示哪一种类型的cell
-     */
-    id cell = [tableView dequeueReusableCellWithIdentifier: messageModel.cellIndentify forIndexPath:indexPath];
-    // 给cell赋值
-    [cell setMessageModel:messageModel];
-    return cell;
+    return [UITableViewCell new];
     
 }
 

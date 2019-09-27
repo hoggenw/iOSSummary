@@ -83,7 +83,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
 #pragma mark - self属于子类还是父类
     //如果没有复写子类的clas方法，这里类名是子类类名，但是并不影响类实质上获取getter方法
     //复写方法后看到类名为message类名
-    //NSLog(@"self属于子类还是父类 : %@",[self class]);
+    NSLog(@"self属于子类还是父类 : %@",[self class]);
     id oldValue = [self valueForKey:getterName]; //实质上的类获取方法
     //其中receiver是指类的实例，super_class则是指该实例的父类。
     struct objc_super superClazz = {
@@ -94,6 +94,9 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     void (*objc_msgSendSuperCasted)(void *, SEL, id) = (void *)objc_msgSendSuper;
     //为原来的key赋值
     objc_msgSendSuperCasted(&superClazz,_cmd,newValue);
+    
+   // id value2 = [self valueForKey:getterName]; //实质上的类获取方法
+   // NSLog(@"%@ ====newValue====%@",value2,newValue);
     NSMutableArray *observers = objc_getAssociatedObject(self, &YLKVOAssociateObservers);
     for(YLObservationInfo *temp in observers) {
         if ([temp.key isEqualToString: getterName]) {
@@ -129,18 +132,20 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     }
     
     Class clazz = object_getClass(self);
-   // NSLog(@"object_getClass(%@) : %@", clazz, object_getClass(self));
+    NSLog(@"object_getClass(%@) : %@", clazz, object_getClass(self));
     NSString * className = NSStringFromClass(clazz);
     //
     NSLog(@"className == %@",className);
     if (![className hasPrefix: YLKVOClassPrefix]) {
         //创建子类，并赋予这个子类class方法，这时clazz的值已经是子类了，
         clazz = [self makeKvoClassWithOriginalClassName:className];
-        NSLog(@"创建新的kvo类");
+        NSLog(@"创建新的kvo类 === %@",NSStringFromClass(clazz));
         //将一个对象设置为别的类类型，这时调用[self class]返回的其实是YL_的子类，由于我们覆写了class的方法返回的使我们新创建kvo类的父类的class，所以看到的还是[self class]的类名
         Class c1 = object_setClass(self, clazz);
         NSLog(@"cl - %@", [c1 class]);
         NSLog(@"self - %@", [self class]);
+        NSLog(@"modelRuntime的类名2- %@", object_getClass(self));
+        
     }
     //添加我们自己kvo的类的实现方法，如果被观察的类没有实现它的setter方法，这时的self已经被别名了YL_开头的kvo子类，所以里面只有一个新建时添加的class方法
     if (![self haseSelector: setterSelector]) {

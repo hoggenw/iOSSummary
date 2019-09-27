@@ -34,7 +34,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 @end
 
-static NSString * host = @"192.168.20.14";
+static NSString * host = @"192.168.20.42";
 static const uint16_t port = 6969;
  
 
@@ -54,7 +54,7 @@ static const uint16_t port = 6969;
     if (_webSocket) {
         return;
     }
-    _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:%d",host,port]]];
+    _webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"ws://%@:%d/hoggen",host,port]] protocols:@[@"chat",@"superchat"]];
     _webSocket.delegate = self;
     //设置代理线程Queue
     NSOperationQueue *queue = [NSOperationQueue new];
@@ -71,13 +71,15 @@ static const uint16_t port = 6969;
     self_dispatch_main_async_safe(^{
         [self destoryHeartBeat];
         __weak typeof(self) weakSelf = self;
-        _heartBeat = [NSTimer scheduledTimerWithTimeInterval: 3*60 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        _heartBeat = [NSTimer scheduledTimerWithTimeInterval: 3*9 repeats:YES block:^(NSTimer * _Nonnull timer) {
             NSLog(@"heart beat");
-             ChatMessageModel * message = [ChatMessageModel new];
-            message.from = [ChatOtherUserModel sharedOtherUser].user;
-            message.messageType = YLMessageTypeText;
-            message.text = @"heart";
-            [weakSelf sendMassege: message];
+//             ChatMessageModel * message = [ChatMessageModel new];
+//            message.from = [ChatOtherUserModel sharedOtherUser].user;
+//            message.messageType = YLMessageTypeText;
+//            message.text = @"heart";
+//            [weakSelf sendMassege: message];
+            
+            [weakSelf ping];
         }];
         [[NSRunLoop currentRunLoop]addTimer:_heartBeat forMode:NSRunLoopCommonModes];
     });
@@ -88,7 +90,7 @@ static const uint16_t port = 6969;
 //取消心跳
 - (void)destoryHeartBeat {
     self_dispatch_main_async_safe(^{
-        if (_heartBeat) {
+        if (self->_heartBeat) {
             [_heartBeat invalidate];
             _heartBeat = nil;
         }
@@ -99,8 +101,8 @@ static const uint16_t port = 6969;
 
 - (void)connect {
     [self initSocket];
-    //每次正常连接的时候清零重连时间
-    _reConnectTime = 0;
+//    //每次正常连接的时候清零重连时间
+//    _reConnectTime = 0;
 }
 
 -(void)disconnnet {
@@ -161,7 +163,7 @@ static const uint16_t port = 6969;
 //重连机制
 - (void)reConnect {
     [self disconnnet];
-    
+    NSLog(@"重连时间： %@",@(_reConnectTime));
     if (_reConnectTime > 64) {
         return;
     }
@@ -193,8 +195,11 @@ static const uint16_t port = 6969;
     if (_delegate && [_delegate respondsToSelector:@selector(receiveMessage:)]) {
         NSError *error;
         YLmessageModel * pmessage  = [[YLmessageModel alloc] initWithData:message error:&error];
-        //NSLog(@"%@",pmessage.description);
-        [_delegate receiveMessage: pmessage];
+        NSLog(@"%@",pmessage.description);
+        if (pmessage != NULL) {
+           [_delegate receiveMessage: pmessage];
+        }
+        
     }
     NSLog(@"服务器返回消息：%@",message);
 }
@@ -229,6 +234,7 @@ static const uint16_t port = 6969;
 - (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload {
     NSLog(@"收到PONG回调: %@",[[NSString alloc] initWithData:pongPayload encoding: NSUTF8StringEncoding]);
 }
+
 
 //将收到的消息，是否需要把data转换为NSString，每次收到消息都会被调用，默认YES
 //- (BOOL)webSocketShouldConvertTextFrameToString:(SRWebSocket *)webSocket

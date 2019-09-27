@@ -30,19 +30,19 @@
     objc_removeAssociatedObjects(self);
 }
 
-//+(UIImage *)YLImageNamed:(NSString *)name {
-//    NSLog(@"拦截系统的imageNamed方法");
-//    [YLHintView showMessageOnThisPage:@"拦截系统的imageNamed方法"];
-//    return [UIImage YLImageNamed: name];
-//}
-//
-//+(void)load {
-//    // 获取两个类的类方法
-//    Method m1 = class_getClassMethod([UIImage class], @selector(imageNamed:));
-//    Method m2 = class_getClassMethod([UIImage class], @selector(YLImageNamed:));
-//    // 开始交换方法实现
-//    method_exchangeImplementations(m1, m2);
-//}
++(UIImage *)YLImageNamed:(NSString *)name {
+    NSLog(@"拦截系统的imageNamed方法");
+    //[YLHintView showMessageOnThisPage:@"拦截系统的imageNamed方法"];
+    return [UIImage YLImageNamed: name];
+}
+
++(void)load {
+    // 获取两个类的类方法
+    Method m1 = class_getClassMethod([UIImage class], @selector(imageNamed:));
+    Method m2 = class_getClassMethod([UIImage class], @selector(YLImageNamed:));
+    // 开始交换方法实现
+    method_exchangeImplementations(m1, m2);
+}
 
 /**
  *  获取指定颜色的1像素的图片

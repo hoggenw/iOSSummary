@@ -67,7 +67,7 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(kNavigationHeight);
         make.left.right.bottom.equalTo(self.view);
-        //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
+        //    make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
     

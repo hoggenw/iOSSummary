@@ -27,7 +27,8 @@ target "iOSProject" do
     # 集成短信
     pod 'UMCShare/Social/SMS'
 #自己的二维码库
-	pod 'YLOCScan'
+	  pod 'YLOCScan'
+    pod 'YLOCRecordVideo'
     pod 'CocoaAsyncSocket'
     pod 'SocketRocket'
     pod 'QBImagePickerController'

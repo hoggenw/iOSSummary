@@ -12,6 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLLoadingView : UIView
 
+/*
+ 显示加载框并且显示加载动画
+ */
+-(void)showAndStartAnimation;
+/*
+ 隐藏加载框并且停止加载动画
+ */
+-(void)hideAndStopAnimation;
+
 @end
 
 NS_ASSUME_NONNULL_END

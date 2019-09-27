@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Menu3DView : UIView
 -(instancetype)initWithFrame:(CGRect)frame;
+@property(nonatomic,copy) void(^backBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

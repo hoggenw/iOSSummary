@@ -66,7 +66,7 @@
     self.delegate = self;
     
     // 添加子控制器
-    NSArray *childVCNames  = @[@"Page1ViewController", @"Page2ViewController", @"UIViewController"];
+    NSArray *childVCNames  = @[@"Page1ViewController", @"Page2ViewController", @"MineViewController"];
     NSArray *titles = @[Localized(@"TabbarHome"), Localized(@"TabbarFeatures"), Localized(@"TabbarMe")];
     NSArray *iconNames = @[@"1", @"2", @"3"];
     for (int i=0; i<childVCNames.count; i++)

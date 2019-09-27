@@ -32,8 +32,10 @@ void ProviderReleaseData2 (void *info,const void *data,size_t size)
 
 - (UIImage *)testGraogic {
     UIImage * image = [UIImage imageNamed:@"test"];
-   // UIImage * newImage = [self imageByApplyingAlpha:0.5 image: [self newGost:image]];
+    //UIImage * newImage = [self imageByApplyingAlpha:0.1 image: [self newGost:image]];
      UIImage * newImage = [self changedImageAlpha: [self newGost:image]];
+
+    //newImage = [self imageByApplyingAlpha:0.1 image: newImage];
     NSUInteger width = CGImageGetWidth(newImage.CGImage);
     NSUInteger height = CGImageGetHeight(newImage.CGImage);
     
@@ -124,7 +126,9 @@ void ProviderReleaseData2 (void *info,const void *data,size_t size)
      */
     CGContextRef context = CGBitmapContextCreate(rgbImageBuf, imageWidth, imageHeight, bitsPerComponent, bytesPerRow, colorSpace,  kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipLast);
     // 4.把缓存中的图形绘制到显示器上。像素的填充格式是由你在创建context的时候进行指定的。
+    //CGContextSetAlpha(context, alpha);
     CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), image.CGImage);
+    
     // 遍历像素，透明背景
     int pixelNum = imageWidth * imageHeight;
     uint32_t* pCurPtr = rgbImageBuf;

@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)saveLooptest9;
+
+-(void)testLoopWithTimer;
+
 @end
 
 NS_ASSUME_NONNULL_END
