@@ -263,15 +263,16 @@
         NSLog(@"执行耗时操作1");
         NSLog(@"执行耗时操作1------%@",[NSThread currentThread]);
         dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            for (long i = 0 ; i < 700000; i ++) {
-                @autoreleasepool {
-                    long j = i;
-                }
-               
+             @autoreleasepool {
+                 for (long i = 0 ; i < 700; i ++) {
+                     long j = i;
+                 }
             }
             NSLog(@"内部在异步1");
             NSLog(@"内部在异步1------%@",[NSThread currentThread]);
         });
+        
+        //dispatch_group_enter(group);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSLog(@"内部在异步3");
             NSLog(@"内部在异步3------%@",[NSThread currentThread]);
@@ -287,7 +288,7 @@
                      NSLog(@"内部在异步2");
                      NSLog(@"内部在异步2------%@",[NSThread currentThread]);
                      NSLog(@" ------------l--------------成功 =  ");
-                     
+                     // dispatch_group_leave(group);
                      
                  }
                                             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
@@ -295,6 +296,7 @@
                      NSLog(@" ------------l--------------失败 = %@ ",error);
                      NSLog(@"内部在异步2");
                      NSLog(@"内部在异步2------%@",[NSThread currentThread]);
+                      //dispatch_group_leave(group);
                  }];
                 
                 
@@ -314,6 +316,7 @@
         NSLog(@"执行耗时操作3");
     });
     
+    // dispatch_group_enter(group);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //                sleep(1); //h会让线程提前进入到   dispatch_group_notify
         
@@ -327,7 +330,7 @@
              NSLog(@"执行耗时操作4");
              
              NSLog(@" ------------l--------------成功 =  ");
-             
+             //dispatch_group_leave(group);
              
          }
                                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
@@ -335,7 +338,7 @@
              NSLog(@" ------------l--------------失败 = %@ ",error);
              NSLog(@"执行耗时操作4------%@",[NSThread currentThread]);
              NSLog(@"执行耗时操作4");
-             
+             //dispatch_group_leave(group);
          }];
         
         
@@ -343,6 +346,8 @@
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         NSLog(@"前面的异步操作已完成");
     });
+    
+    NSLog(@"=====================测试微端group的 demo 以结束=======================");
     
     //dispatch_group_create()可以创建一个完全的线程控制，这这个group中的线程，无论该线程是否新开异步线程，
     //dispatch_group_notify都会在该group线程所有内容执行完成以后,再执行相关内容

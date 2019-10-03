@@ -26,9 +26,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - delegate <UIGestureRecognizerDelegate>
-
 // 左滑功能是否开启
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer{
     BOOL sholdBeginFlag = YES;

@@ -163,7 +163,6 @@
     selectedDay=day;
     selectedHour=hour;
     selectedMinute=minute;
-    
     dayRange=[self isAllDay:year andMonth:month];
     
     [self.pickerView selectRow:year-startYear inComponent:0 animated:NO];
