@@ -53,10 +53,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             NSInteger lastRowIndex =  [self.tableView numberOfRowsInSection: 0] - 1;
             //NSLog(@"scrollToBottom lastRowIndex: %@",@(lastRowIndex));
-            if (lastRowIndex >= 0 && _dataArray.count >  [self.tableView numberOfRowsInSection: 0]) {
-                [self.tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow: lastRowIndex  inSection: 0] atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+            if (lastRowIndex >= 0 && self->_dataArray.count >  [self.tableView numberOfRowsInSection: 0]) {
+                [self.tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow: lastRowIndex  inSection: 0] atScrollPosition: UITableViewScrollPositionBottom animated: false];
             }else{
-                [self.tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow: (_dataArray.count - 1)  inSection: 0] atScrollPosition: UITableViewScrollPositionBottom animated: YES];
+                [self.tableView scrollToRowAtIndexPath: [NSIndexPath indexPathForRow: (self->_dataArray.count - 1)  inSection: 0] atScrollPosition: UITableViewScrollPositionBottom animated: false];
                 
             }
         });

@@ -14,7 +14,7 @@
  *  消息拥有者
  */
 typedef NS_ENUM(NSUInteger, YLMessageOwnerType){
-    YLMessageOwnerTypeUnknown,  // 未知的消息拥有者
+    YLMessageOwnerTypeUnknown = 0,  // 未知的消息拥有者
     YLMessageOwnerTypeSystem,   // 系统消息
     YLMessageOwnerTypeSelf,     // 自己发送的消息
     YLMessageOwnerTypeOther,    // 接收到的他人消息

@@ -8,7 +8,8 @@
 
 #import "YLSocketRocktManager.h"
 #import "SocketRocket.h"
- #import "Message.pbobjc.h"
+ #import "UserMessage.pbobjc.h"
+#import "BaseMessage.pbobjc.h"
 #import "GPBProtocolBuffers_RuntimeSupport.h"
 #import "ChatMessageModel.h"
 #import "ChatOtherUserModel.h"
@@ -25,6 +26,8 @@ block();\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
 
+#define SokectTile -6524123
+
 
 @interface YLSocketRocktManager ()<SRWebSocketDelegate>
 
@@ -34,8 +37,11 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 @end
 
-static NSString * host = @"192.168.20.42";
+static NSString * host = @"192.168.20.3";
 static const uint16_t port = 6969;
+
+static const uint16_t commonModule = 101;
+static const uint16_t commandMessage = 1;
  
 
 @implementation YLSocketRocktManager
@@ -68,21 +74,25 @@ static const uint16_t port = 6969;
 //初始化心跳
 - (void)initHeartBeat {
     
-    self_dispatch_main_async_safe(^{
-        [self destoryHeartBeat];
-        __weak typeof(self) weakSelf = self;
-        _heartBeat = [NSTimer scheduledTimerWithTimeInterval: 3*9 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            NSLog(@"heart beat");
-//             ChatMessageModel * message = [ChatMessageModel new];
-//            message.from = [ChatOtherUserModel sharedOtherUser].user;
-//            message.messageType = YLMessageTypeText;
-//            message.text = @"heart";
-//            [weakSelf sendMassege: message];
-            
-            [weakSelf ping];
-        }];
-        [[NSRunLoop currentRunLoop]addTimer:_heartBeat forMode:NSRunLoopCommonModes];
-    });
+    if (@available(iOS 10.0, *)) {
+        self_dispatch_main_async_safe(^{
+            [self destoryHeartBeat];
+            __weak typeof(self) weakSelf = self;
+            self->_heartBeat = [NSTimer scheduledTimerWithTimeInterval: 3*9 repeats:YES block:^(NSTimer * _Nonnull timer) {
+                NSLog(@"heart beat");
+                //             ChatMessageModel * message = [ChatMessageModel new];
+                //            message.from = [ChatOtherUserModel sharedOtherUser].user;
+                //            message.messageType = YLMessageTypeText;
+                //            message.text = @"heart";
+                //            [weakSelf sendMassege: message];
+                
+                [weakSelf ping];
+            }];
+            [[NSRunLoop currentRunLoop]addTimer:self->_heartBeat forMode:NSRunLoopCommonModes];
+        });
+    } else {
+        // Fallback on earlier versions
+    }
     
     
 }
@@ -91,8 +101,8 @@ static const uint16_t port = 6969;
 - (void)destoryHeartBeat {
     self_dispatch_main_async_safe(^{
         if (self->_heartBeat) {
-            [_heartBeat invalidate];
-            _heartBeat = nil;
+            [self->_heartBeat invalidate];
+            self->_heartBeat = nil;
         }
     });
 }
@@ -129,7 +139,7 @@ static const uint16_t port = 6969;
             break;
         }
         case  YLMessageTypeText:{ // 文字
-             pmessage.textString = messageModel.text;
+            pmessage.textString = messageModel.text;
             pmessage.name = messageModel.from.username;
             pmessage.messageType = YLMessageTypeText;
             break;
@@ -156,8 +166,15 @@ static const uint16_t port = 6969;
     }
     // 序列化为Data
     NSData *data = [pmessage data];
-    NSLog(@"%@",data);
-    [_webSocket send: data];
+    
+    YLBaseMessageModel * base = [YLBaseMessageModel new];
+    base.title = SokectTile;
+    base.command = commandMessage;
+    base.module = commonModule;
+    base.data_p = data;
+    //NSLog(@"%@",data);
+    [_webSocket send: [base data]];
+   
     
 }
 //重连机制
@@ -169,7 +186,7 @@ static const uint16_t port = 6969;
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_reConnectTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _webSocket = nil;
+        self->_webSocket = nil;
         [self initSocket];
     });
     
@@ -194,11 +211,15 @@ static const uint16_t port = 6969;
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
     if (_delegate && [_delegate respondsToSelector:@selector(receiveMessage:)]) {
         NSError *error;
-        YLmessageModel * pmessage  = [[YLmessageModel alloc] initWithData:message error:&error];
-        NSLog(@"%@",pmessage.description);
-        if (pmessage != NULL) {
-           [_delegate receiveMessage: pmessage];
+        YLBaseMessageModel * baseModel = [[YLBaseMessageModel alloc] initWithData:message error: &error];
+        if (baseModel != NULL) {
+            YLmessageModel * pmessage  = [[YLmessageModel alloc] initWithData:baseModel.data_p error:&error];
+            NSLog(@"%@",pmessage.description);
+            if (pmessage != NULL) {
+               [_delegate receiveMessage: pmessage];
+            }
         }
+        
         
     }
     NSLog(@"服务器返回消息：%@",message);
@@ -219,7 +240,7 @@ static const uint16_t port = 6969;
 
 //网络连接中断被调用
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
-    NSLog(@"被关闭连接，code:%ld,reason:%@,wasClean:%d",code,reason,wasClean);
+    NSLog(@"被关闭连接，code:%ld,reason:%@,wasClean:%d",(long)code,reason,wasClean);
     if (code == disConnectByUser) {
         [self disconnnet];
         NSLog(@"用户操作，终端连接");

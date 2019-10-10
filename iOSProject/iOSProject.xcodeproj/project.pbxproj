@@ -163,6 +163,8 @@
 		1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C649219EAA7100C08114 /* AdvertisementViewController.m */; };
 		1151C64D219EAC9400C08114 /* YLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64C219EAC9400C08114 /* YLConst.m */; };
 		1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1151C64F219EB06D00C08114 /* GuidanceViewController.m */; };
+		1154E1CC234DAC0100D54C05 /* UserMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1154E1CB234DAC0100D54C05 /* UserMessage.pbobjc.m */; };
+		1154E1CF234ED77A00D54C05 /* BaseMessage.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1154E1CD234ED77A00D54C05 /* BaseMessage.pbobjc.m */; };
 		115B0D7522925A8B000E1C69 /* LiftCircleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */; };
 		115B0DAD2293A0AC000E1C69 /* GCDListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0DAC2293A0AC000E1C69 /* GCDListViewController.m */; };
 		115B0DB12293A929000E1C69 /* GCDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 115B0DB02293A929000E1C69 /* GCDTest.m */; };
@@ -261,7 +263,6 @@
 		11DF0C9221D4BCFB006A1D36 /* GPBArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0C6A21D4BCFB006A1D36 /* GPBArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11DF0C9321D4BCFB006A1D36 /* GPBCodedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0C7421D4BCFB006A1D36 /* GPBCodedOutputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11DF0C9421D4BCFB006A1D36 /* GPBDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0C7521D4BCFB006A1D36 /* GPBDictionary.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		11DF0C9821D4BD21006A1D36 /* Message.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF0C9621D4BD21006A1D36 /* Message.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11DF0C9C21D4C48C006A1D36 /* receive_head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9A21D4C48C006A1D36 /* receive_head.jpg */; };
 		11DF0C9D21D4C48C006A1D36 /* send_head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9B21D4C48C006A1D36 /* send_head.jpg */; };
 		11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9E21D4C798006A1D36 /* normal_face.plist */; };
@@ -574,6 +575,10 @@
 		1151C64E219EB06D00C08114 /* GuidanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidanceViewController.h; sourceTree = "<group>"; };
 		1151C64F219EB06D00C08114 /* GuidanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidanceViewController.m; sourceTree = "<group>"; };
 		1151C651219ECD1C00C08114 /* iOSProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSProject.entitlements; sourceTree = "<group>"; };
+		1154E1CA234DAC0100D54C05 /* UserMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMessage.pbobjc.h; sourceTree = "<group>"; };
+		1154E1CB234DAC0100D54C05 /* UserMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMessage.pbobjc.m; sourceTree = "<group>"; };
+		1154E1CD234ED77A00D54C05 /* BaseMessage.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMessage.pbobjc.m; sourceTree = "<group>"; };
+		1154E1CE234ED77A00D54C05 /* BaseMessage.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMessage.pbobjc.h; sourceTree = "<group>"; };
 		115B0D7322925A8B000E1C69 /* LiftCircleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiftCircleListViewController.h; sourceTree = "<group>"; };
 		115B0D7422925A8B000E1C69 /* LiftCircleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiftCircleListViewController.m; sourceTree = "<group>"; };
 		115B0DAB2293A0AC000E1C69 /* GCDListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDListViewController.h; sourceTree = "<group>"; };
@@ -780,8 +785,6 @@
 		11DF0C7A21D4BCFB006A1D36 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBWellKnownTypes.h; sourceTree = "<group>"; };
 		11DF0C7B21D4BCFB006A1D36 /* GPBUnknownField_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBUnknownField_PackagePrivate.h; sourceTree = "<group>"; };
 		11DF0C7C21D4BCFB006A1D36 /* GPBDictionary_PackagePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBDictionary_PackagePrivate.h; sourceTree = "<group>"; };
-		11DF0C9621D4BD21006A1D36 /* Message.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.pbobjc.m; sourceTree = "<group>"; };
-		11DF0C9721D4BD21006A1D36 /* Message.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.pbobjc.h; sourceTree = "<group>"; };
 		11DF0C9A21D4C48C006A1D36 /* receive_head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = receive_head.jpg; sourceTree = "<group>"; };
 		11DF0C9B21D4C48C006A1D36 /* send_head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = send_head.jpg; sourceTree = "<group>"; };
 		11DF0C9E21D4C798006A1D36 /* normal_face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = normal_face.plist; sourceTree = "<group>"; };
@@ -2045,8 +2048,10 @@
 		11DF0C9521D4BD21006A1D36 /* Protobuf */ = {
 			isa = PBXGroup;
 			children = (
-				11DF0C9621D4BD21006A1D36 /* Message.pbobjc.m */,
-				11DF0C9721D4BD21006A1D36 /* Message.pbobjc.h */,
+				1154E1CE234ED77A00D54C05 /* BaseMessage.pbobjc.h */,
+				1154E1CD234ED77A00D54C05 /* BaseMessage.pbobjc.m */,
+				1154E1CA234DAC0100D54C05 /* UserMessage.pbobjc.h */,
+				1154E1CB234DAC0100D54C05 /* UserMessage.pbobjc.m */,
 			);
 			path = Protobuf;
 			sourceTree = "<group>";
@@ -2348,6 +2353,7 @@
 				1151C5FC2192BEF600C08114 /* NSString+Extension.m in Sources */,
 				11C024AB22896C3A003E61B6 /* RuntimeView.m in Sources */,
 				11D6BD07222528C1006E47DE /* YLMicrophoneViewController.m in Sources */,
+				1154E1CF234ED77A00D54C05 /* BaseMessage.pbobjc.m in Sources */,
 				1135785D21A298E100DDEA74 /* YLTableView.m in Sources */,
 				11DF0C7D21D4BCFB006A1D36 /* GPBExtensionRegistry.m in Sources */,
 				11DF0C8421D4BCFB006A1D36 /* GPBUnknownFieldSet.m in Sources */,
@@ -2415,6 +2421,7 @@
 				11DF0C8921D4BCFB006A1D36 /* Api.pbobjc.m in Sources */,
 				11DF0C3B21D4BBAC006A1D36 /* YLSocketRocktManager.m in Sources */,
 				11DF0C2521D4B82E006A1D36 /* YLTextTableViewCell.m in Sources */,
+				1154E1CC234DAC0100D54C05 /* UserMessage.pbobjc.m in Sources */,
 				11DF0C1F21D4B82E006A1D36 /* MicrophoneTopView.m in Sources */,
 				113578B321A656AA00DDEA74 /* CanvasView.m in Sources */,
 				111B9464221D397F00AA7C26 /* ChangeLanguageViewController.m in Sources */,
@@ -2470,7 +2477,6 @@
 				11D6BD06222528C1006E47DE /* YLVoiceCircleViewController.m in Sources */,
 				1151C5F22192BEF600C08114 /* YLNavigationController.m in Sources */,
 				1151C6322192BEF600C08114 /* LPDImagePickerController.m in Sources */,
-				11DF0C9821D4BD21006A1D36 /* Message.pbobjc.m in Sources */,
 				11C024BE228AA3D0003E61B6 /* UIResponderListViewController.m in Sources */,
 				1135791421A6B57000DDEA74 /* PSSignatureView.m in Sources */,
 				1151C6262192BEF600C08114 /* UIImage+MyBundle.m in Sources */,

@@ -15,7 +15,7 @@
 #import "YLSocketRocktManager.h"
 #import "YLPhotoPreviewController.h"
 
-#import "Message.pbobjc.h"
+#import "UserMessage.pbobjc.h"
 
 
 @interface ChatViewController ()<ChatShowMessageViewControllerDelegate,ChatBoxViewControllerDelegate,receiveMessageDelegate>

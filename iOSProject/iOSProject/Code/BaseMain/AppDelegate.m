@@ -121,7 +121,7 @@
         NSLog(@"manager start failed!");
     }
     
-//    [YLSocketRocktManager shareManger];
+    [YLSocketRocktManager shareManger];
     
      [self netWorkChangeEvent];
     
