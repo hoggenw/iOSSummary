@@ -49,4 +49,9 @@ typedef NS_ENUM(NSUInteger, YLImageType) {
 
 - (void)clearAssociatedObjcet;
 
+
+- (UIImage *)fixOrientation;                                    //修正图片方向
+
+- (UIImage *)rotation:(UIImageOrientation)orientation;          //设置图片方向
+
 @end
