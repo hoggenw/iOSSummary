@@ -91,18 +91,12 @@
 
 -(UILabel *)desLable{
     if (!_desLable) {
-        UILabel * desTextView = [UILabel new];
-        
-        desTextView.font = [UIFont systemFontOfSize: 14];
-        desTextView.textColor = [UIColor colorWithHexString:@"666666"];
-        desTextView.numberOfLines = 0;
-//        desTextView.delegate = self;
-//        desTextView.returnKeyType = UIReturnKeyDone;
-        [self.contentView addSubview: desTextView];
-        [desTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
+        _desLable = [UILabel makeLabel:^(LabelMaker * _Nonnull make) {
+            make.font([UIFont systemFontOfSize:14]).textColor([UIColor colorWithHexString:@"666666"]).numberOfLines(0).addToSuperView(self.contentView);
         }];
-        _desLable = desTextView;
+        [_desLable mas_makeConstraints:^(MASConstraintMaker *make) {
+                   make.edges.equalTo(self.contentView);
+               }];
         
     }
     return  _desLable;
