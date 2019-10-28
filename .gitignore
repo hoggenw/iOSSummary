@@ -1,2 +1,57 @@
-IJKMediaFramework
-IJKMediaFramework.framework
+
+*~
+# for Mac OS X System Files
+.DS_Store
+Thumbs.db
+
+# for emacs
+*~
+[#]*[#]
+
+
+
+# for Eclipse
+*.project
+.classpath
+
+/.settings/
+/target/
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+*.jar
+
+
+# generated files
+bin/
+gen/ 
+
+
+
+
+
+# for Logs and databases
+*.log
+
+# for Xcode
+.*.swp
+.clang_complete
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+*.xcscheme
+*.plist
+*.iws
+*.ipr
+*.xcsetting
+
+
+# for IDEA
+*/build/*
+.idea/*
+*.iml
+/out/*s
+
