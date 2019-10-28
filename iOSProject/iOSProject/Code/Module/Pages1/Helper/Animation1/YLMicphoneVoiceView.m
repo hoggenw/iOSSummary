@@ -56,8 +56,8 @@
         self.lineColor = [UIColor cyanColor];
         self.colidColor = self.lineColor;
         self.count = 0;
-        self.layer.cornerRadius = self.width/2;
-        self.clipsToBounds = true;
+//        self.layer.cornerRadius = self.width/2;
+        [self cornerRadius:self.width/2];
         self.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.8];
         [window addSubview: self];
         self.center = window.center;

@@ -197,19 +197,6 @@
 }
 
 
--(UIButton *)creatNormalBUttonWithName:(NSString *)name{
-    
-    UIButton * button = [UIButton new];
-    [self.view addSubview: button];
-    button.titleLabel.textColor = [UIColor blackColor];
-    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
-    [button setTitle: name forState: UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
-    return button;
-    
-}
-
-
 -(ShowMessageModel *)getModelWith:(NSString *)content boldString:(NSString *)boldString showType:(ShowMessageType)showType{
     ShowMessageModel * model = [ShowMessageModel new];
     model.content =content;

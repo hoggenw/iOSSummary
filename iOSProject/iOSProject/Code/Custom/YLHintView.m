@@ -84,7 +84,7 @@
     }
 
     manager.timeLabel.userInteractionEnabled = YES;
-    manager.timeLabel.clipsToBounds = YES;
+    [manager.hintLabel cornerRadius:5];
     manager.timeLabel.textAlignment = NSTextAlignmentLeft;
     manager.timeLabel.font = [UIFont systemFontOfSize:11];
     manager.timeLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
@@ -151,9 +151,9 @@
     
     [[[UIApplication sharedApplication].delegate window] addSubview:manager];
     
-    manager.hintLabel.layer.cornerRadius = 5;
+
     manager.hintLabel.userInteractionEnabled = NO;
-    manager.hintLabel.clipsToBounds = YES;
+    [manager.hintLabel cornerRadius:5];
     manager.hintLabel.textAlignment = NSTextAlignmentCenter;
     manager.hintLabel.font = [UIFont systemFontOfSize:15];
     manager.hintLabel.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];

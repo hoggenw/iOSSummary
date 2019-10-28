@@ -300,17 +300,6 @@
 }
 
 
--(UIButton *)creatNormalBUttonWithName:(NSString *)name{
-    
-    UIButton * button = [UIButton new];
-    [self.view addSubview: button];
-    button.titleLabel.textColor = [UIColor blackColor];
-    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
-    [button setTitle: name forState: UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
-    return button;
-    
-}
 
 
 - (void)actionTime:(NSTimer *)timer {

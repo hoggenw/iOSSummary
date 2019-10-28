@@ -21,12 +21,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     UIButton * button1 = [self creatNormalButtonWithName:@"扩大范围"];
     button1.frame =CGRectMake(40, kNavigationHeight + 40, 80, 40);
+    [button1 cornerRadius:2];
     [button1 addTarget:self action:@selector(button1Action) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton * button2 = [self creatNormalButtonWithName:@"圆圈"];
     button2.frame =CGRectMake(40, kNavigationHeight + 140, 60, 60);
-    button2.layer.cornerRadius = 30;
-    button2.clipsToBounds = true;
+    //button2.layer.cornerRadius = 30;
+    [button2 cornerRadius:30];
     [button2 addTarget:self action:@selector(button2Action) forControlEvents:UIControlEventTouchUpInside];
     
     

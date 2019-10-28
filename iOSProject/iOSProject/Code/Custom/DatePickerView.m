@@ -388,85 +388,7 @@
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"yyyy-MM-dd HH-mm"];
-//    NSDate * choiceDate = [formatter dateFromString: self.string];
-//    double inTime = [choiceDate timeIntervalSince1970];
-//    //开始时间
-//    if (self.typeFeild == 1 && self.endTime != 0) {
-//        if (self.endTime < inTime) {
-//            [YLHintView showMessageOnThisPage:@"开始时间不能大于结束时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 1 && self.beginNoticeTime != 0) {
-//        if (self.beginNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"开始时间必须大于公示开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 1 && self.endNoticeTime != 0) {
-//        if (self.endNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"开始时间必须大于公示结束时间"];
-//            return;
-//        }
-//    }
-//    //结束时间
-//    if (self.typeFeild == 2 && self.beginTime != 0) {
-//        if (self.beginTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"结束时间不能小于开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 2 && self.beginNoticeTime != 0) {
-//        if (self.beginNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"结束时间必须大于公示开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 2 && self.endNoticeTime != 0) {
-//        if (self.endNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"结束时间必须大于公示结束时间"];
-//            return;
-//        }
-//    }
-//    //公示开始时间
-//    if (self.typeFeild == 3 && self.endNoticeTime != 0) {
-//        if (self.endNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示开始时间不能小于公示结束时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 3 && self.beginTime != 0) {
-//        if (self.beginTime < inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示开始时间不能大于投票开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 3 && self.endTime != 0) {
-//        if (self.endTime < inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示开始时间不能大于投票结束时间"];
-//            return;
-//        }
-//    }
-//    //公示结束时间
-//    if (self.typeFeild == 4 && self.beginNoticeTime != 0) {
-//        if (self.beginNoticeTime > inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示结束时间不能小于公示开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 4 && self.beginTime != 0) {
-//        if (self.beginTime < inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示结束时间不能大于投票开始时间"];
-//            return;
-//        }
-//    }
-//    if (self.typeFeild == 4 && self.endTime != 0) {
-//        if (self.endTime < inTime) {
-//            [YLHintView showMessageOnThisPage:@"公示结束时间不能大于投票结束时间"];
-//            return;
-//        }
-//    }
-    
+
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(didClickFinishDateTimePickerView:)]) {
         [self.delegate didClickFinishDateTimePickerView:_string];
     }
@@ -514,8 +436,8 @@
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self hideDateTimePickerView];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self hideDateTimePickerView];
+//}
 
 @end
