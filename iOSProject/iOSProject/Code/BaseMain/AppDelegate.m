@@ -51,6 +51,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //设置背景色  [WXFX HexStringToColor:@"ff3356"]
+    
     [[UINavigationBar appearance] setBarTintColor: ThemeColor ];
     //设置导航栏标题颜色
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -181,12 +182,20 @@
 #pragma mark - deviceToken
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    NSString * string = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
-                          stringByReplacingOccurrencesOfString: @">" withString: @""]
-                         stringByReplacingOccurrencesOfString: @" " withString: @""];
+    //ios 13 已经无法获取token
+//    NSString * hexToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]
+//                          stringByReplacingOccurrencesOfString: @">" withString: @""]
+//                         stringByReplacingOccurrencesOfString: @" " withString: @""];
     
-    NSLog(@"%@", string);
-    [YLHintView showAlertMessage:string title:@"获取deviceToken"];
+    if (![deviceToken isKindOfClass:[NSData class]]) return;
+    const unsigned *tokenBytes = [deviceToken bytes];
+    NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
+                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+    
+    NSLog(@"%@", hexToken);
+    [YLHintView showAlertMessage:hexToken title:@"获取deviceToken"];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
