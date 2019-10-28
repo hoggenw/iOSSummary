@@ -93,17 +93,16 @@
         //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
-    UIButton *exampleButton = [self creatNormalBUttonWithName:@"事例"];
+    UIButton *exampleButton = [UIButton makeBUtton:^(ButtonMaker * _Nonnull make) {
+        make.addToSuperView(self.view).backgroundImageForState([UIImage imageWithColor:[UIColor whiteColor]],UIControlStateNormal).titleColorForState( [UIColor blackColor],UIControlStateNormal).titleForState(@"事例",UIControlStateNormal).addAction(self,@selector(exampleButtonAction),UIControlEventTouchUpInside);
+    }];
+ 
+    
     [exampleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.equalTo(@(40));
     }];
-    [exampleButton addTarget:self action:@selector(exampleButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
-    
-    
+
 }
 
 #pragma mark - Extension Delegate or Protocol
@@ -244,19 +243,6 @@
 -(void)YLTableViewLoadMoreAction:(UIView *)view {
     self.page++;
     [self.tableView.tableView.mj_footer endRefreshing];
-    
-}
-
-
--(UIButton *)creatNormalBUttonWithName:(NSString *)name{
-    
-    UIButton * button = [UIButton new];
-    [self.view addSubview: button];
-    button.titleLabel.textColor = [UIColor blackColor];
-    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
-    [button setTitle: name forState: UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
-    return button;
     
 }
 

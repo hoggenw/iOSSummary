@@ -104,12 +104,13 @@
         //        make.bottom.equalTo(self.view.mas_bottom).offset(-50);
     }];
     
-    UIButton *exampleButton = [self creatNormalBUttonWithName:@"事例"];
+    UIButton *exampleButton = [UIButton makeBUtton:^(ButtonMaker * _Nonnull make) {
+        make.addToSuperView(self.view).backgroundImageForState([UIImage imageWithColor:[UIColor whiteColor]],UIControlStateNormal).titleColorForState( [UIColor blackColor],UIControlStateNormal).titleForState(@"事例",UIControlStateNormal).addAction(self,@selector(exampleButtonAction),UIControlEventTouchUpInside);
+    }];
     [exampleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.equalTo(@(40));
     }];
-    [exampleButton addTarget:self action:@selector(exampleButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -130,6 +131,8 @@
         [modelArray addObject: model];
         [modelArray addObject: model2];
         vc.dataArray = modelArray;
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+//        [self presentViewController: nav animated:true completion:nil];
         [self.navigationController pushViewController: vc animated: true];
     }else if (index == 1){
         ShowInfoViewController * vc = [ShowInfoViewController new];
@@ -225,17 +228,6 @@
 }
 
 
--(UIButton *)creatNormalBUttonWithName:(NSString *)name{
-    
-    UIButton * button = [UIButton new];
-    [self.view addSubview: button];
-    button.titleLabel.textColor = [UIColor blackColor];
-    [button setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState: UIControlStateNormal];
-    [button setTitle: name forState: UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState: UIControlStateNormal];
-    return button;
-    
-}
 
 
 -(ShowMessageModel *)getModelWith:(NSString *)content boldString:(NSString *)boldString showType:(ShowMessageType)showType{
