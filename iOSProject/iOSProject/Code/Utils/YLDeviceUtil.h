@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+
+typedef void(^AuthorizationStatusCallBack)(void);
+
+
 typedef NS_ENUM(NSInteger, PhoneType) {
     Phone4     = 0,
     Phone5     = 1,
@@ -29,4 +33,16 @@ typedef NS_ENUM(NSInteger, PhoneType) {
 + (NSString *)getSystemInfo;
 + (NSString *)getAPPVersion;
 +(BOOL)isiPhoneXLater;
+/*
+ *x相册请求权限
+ */
++ (void)checkLibraryAuthorityWithCallBack:(AuthorizationStatusCallBack)callback;
+/*
+*x相机请求权限
+*/
++ (void)checkVideoAuthorityWithCallBack:(AuthorizationStatusCallBack)callback；
+/*
+*麦克风求权限
+*/
++ (void)checkMicroAuthorityWithCallBack:(AuthorizationStatusCallBack)callback
 @end
