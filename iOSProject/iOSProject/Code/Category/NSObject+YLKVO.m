@@ -72,7 +72,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     NSString * setterName = NSStringFromSelector(_cmd);
     
     NSString *getterName = getterForSetter(setterName);
-    NSLog(@"setterName :%@ ---getterNmae: %@ ",setterName,getterName);
+    //NSLog(@"setterName :%@ ---getterNmae: %@ ",setterName,getterName);
     if (!getterName) {
         NSString *reason = [NSString stringWithFormat:@"Object %@ does not have setter %@", self, setterName];
         @throw [NSException exceptionWithName:NSInvalidArgumentException
@@ -83,7 +83,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
 #pragma mark - self属于子类还是父类
     //如果没有复写子类的clas方法，这里类名是子类类名，但是并不影响类实质上获取getter方法
     //复写方法后看到类名为message类名
-    NSLog(@"self属于子类还是父类 : %@",[self class]);
+    //NSLog(@"self属于子类还是父类 : %@",[self class]);
     id oldValue = [self valueForKey:getterName]; //实质上的类获取方法
     //其中receiver是指类的实例，super_class则是指该实例的父类。
     struct objc_super superClazz = {
@@ -98,6 +98,10 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
    // id value2 = [self valueForKey:getterName]; //实质上的类获取方法
    // NSLog(@"%@ ====newValue====%@",value2,newValue);
     NSMutableArray *observers = objc_getAssociatedObject(self, &YLKVOAssociateObservers);
+    dispatch_queue_t queueSerialbBack= objc_getAssociatedObject(self, &kYLDISPATCH_QUEUE_T_Observers);
+    
+    //[value getValue:&queueSerialbBack];
+    //NSLog(@"%@",queueSerialbBack);
     for(YLObservationInfo *temp in observers) {
         if ([temp.key isEqualToString: getterName]) {
             
@@ -105,7 +109,7 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
 //            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //                temp.block(self, getterName, oldValue, newValue);
 //            });
-            dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_async(queueSerialbBack, ^{
                 temp.block(self, getterName, oldValue, newValue);
             });
         }
@@ -159,7 +163,16 @@ static void kvo_setter(id self, SEL _cmd, id newValue) {
     if (!observers) {
         observers = [NSMutableArray array];
         objc_setAssociatedObject(self,&YLKVOAssociateObservers, observers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
     }
+    
+    dispatch_queue_t queueSerial= objc_getAssociatedObject(self, &kYLDISPATCH_QUEUE_T_Observers);
+       if (!queueSerial) {
+            queueSerial = dispatch_queue_create("obser.queue", DISPATCH_QUEUE_SERIAL);
+          // value = [NSValue valueWithBytes:&queueSerial objCType:@encode(dispatch_queue_t)];
+           objc_setAssociatedObject(self, &kYLDISPATCH_QUEUE_T_Observers, queueSerial, OBJC_ASSOCIATION_RETAIN);
+       }
+
     [observers addObject: info];
     
 }
