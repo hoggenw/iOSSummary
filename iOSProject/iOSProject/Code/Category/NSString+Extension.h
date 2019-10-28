@@ -51,8 +51,14 @@
  */
 - (BOOL)isIdentityForChina;
 
-
-
+/**
+*  数字判断
+*/
+- (BOOL)checkNumber;
+/**
+*  中文判断
+*/
+- (BOOL)checkChinese;
 
 #pragma mark - 加密部分
 
