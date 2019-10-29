@@ -21,3 +21,4 @@ NSString *const kDTActionHandlerTapBlockKey =@"kDTActionHandlerTapBlockKey";
 NSString *const kImageUrlString=@"kImageUrlString";
 NSString * const YLKVOAssociateObservers = @"YLKVOAssociateObservers";
 NSString * const YLKVOClassPrefix = @"YL_";
+NSString *const kYLDISPATCH_QUEUE_T_Observers =@"kYLDISPATCHQUEUETObservers";

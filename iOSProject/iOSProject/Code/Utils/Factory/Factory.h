@@ -9,5 +9,9 @@
 #ifndef Factory_h
 #define Factory_h
 
+#import "UIButton+Factory.h"
+#import "UILabel+Factory.h"
+#import "UITableView+Factory.h"
+#import "UITextField+Factory.h"
 
 #endif /* Factory_h */

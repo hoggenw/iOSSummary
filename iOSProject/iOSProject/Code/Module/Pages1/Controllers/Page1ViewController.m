@@ -349,12 +349,15 @@
             
             
         };
-        [self.navigationController pushViewController:faceVC animated:YES];
+        if (!faceVC.isBeingPresented) {
+            [self.navigationController pushViewController: faceVC animated: true];
+        }
+        
         
     }else if (index == 4){
         RecordVideoViewController *faceVC = [[RecordVideoViewController alloc]init];
         faceVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:faceVC animated:YES];
+        [self.navigationController pushViewController:faceVC animated:false];
     }else if(index == 5){
         AutographViewController *autographVC = [AutographViewController new];
         autographVC.hidesBottomBarWhenPushed = YES;
@@ -364,20 +367,20 @@
                 [YLHintView showAlertMessage:iamgeString title:@"图片信息"];
             });
         };
-        [self.navigationController pushViewController:autographVC animated:YES];
+        [self.navigationController pushViewController:autographVC animated:false];
     }else if(index == 6){
         YLWebViewController * webVC = [YLWebViewController new];
         webVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:webVC animated:YES];
+        [self.navigationController pushViewController:webVC animated:false];
     }else if(index == 7){
         FileViewController * VC = [FileViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     else if(index == 8){
         ChatListViewController * VC = [ChatListViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }else if (index == 9){
         DatePickerView * pickView = [[DatePickerView alloc] initWithFrame: CGRectMake(0, ScreenHeight - 260,  ScreenWidth,  260)];
         [self.view addSubview: pickView];
@@ -407,50 +410,50 @@
         VC.playUrl = @"http://fastwebcache.yod.cn/yanglan/2013suoluosi/2013suoluosi_850/2013suoluosi_850.m3u8";
         VC.videoName = @"采访索罗斯";
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     
     else if(index == 12){
         ToWordsViewController * VC = [ToWordsViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     else if(index == 13){
         BaiduMapViewController * VC = [BaiduMapViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     else if(index == 14){
         ShowPSDViewController * VC = [ShowPSDViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     else if(index == 15){
         ChangeLanguageViewController * VC = [ChangeLanguageViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
 
     }else if(index == 16){
         ImageDealController * VC = [ImageDealController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }else if(index == 17){
         Animation1ViewController * VC = [Animation1ViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }else if(index == 18){
         Animation2ViewController * VC = [Animation2ViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }else if(index == 19){
         ImageDealController * VC = [ImageDealController new];
         VC.animation = true;
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }else if(index == 20){
         AnimationListViewController * VC = [AnimationListViewController new];
         VC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController:VC animated:YES];
+        [self.navigationController pushViewController:VC animated:false];
     }
     
    

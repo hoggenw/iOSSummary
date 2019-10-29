@@ -20,5 +20,6 @@ extern NSString *const kDTActionHandlerTapBlockKey;
 extern NSString *const kImageUrlString;
 extern NSString * const YLKVOAssociateObservers;
 extern NSString * const YLKVOClassPrefix;
+extern NSString * const kYLDISPATCH_QUEUE_T_Observers;
 
 NS_ASSUME_NONNULL_END

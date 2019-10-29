@@ -146,36 +146,51 @@
     if (index == 0) {
         RuntimeListViewController * runVC = [RuntimeListViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
+        
 
     }else if (index == 1){
         UIResponderListViewController * runVC = [UIResponderListViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+         if (!runVC.isBeingPresented) {
+             [self.navigationController pushViewController: runVC animated: true];
+         }
     }else if (index == 2){
         
         RAMManagerViewController * runVC = [RAMManagerViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
         
     }else if (index == 3){
         LiftCircleListViewController * runVC = [LiftCircleListViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
         
     }else if (index == 4){
         //GCDListViewController
         GCDListViewController * runVC = [GCDListViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+     if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
     }else if(index == 5){
         CommunicationViewController * runVC = [CommunicationViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
     }else if(index == 6){
         NSRunloopListViewController * runVC = [NSRunloopListViewController new];
         runVC.hidesBottomBarWhenPushed = true;
-        [self.navigationController pushViewController: runVC animated: true];
+        if (!runVC.isBeingPresented) {
+            [self.navigationController pushViewController: runVC animated: true];
+        }
        
     }else if(index == 7){
        

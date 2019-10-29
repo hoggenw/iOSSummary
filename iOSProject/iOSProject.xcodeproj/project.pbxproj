@@ -267,6 +267,11 @@
 		11DF0C9D21D4C48C006A1D36 /* send_head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9B21D4C48C006A1D36 /* send_head.jpg */; };
 		11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9E21D4C798006A1D36 /* normal_face.plist */; };
 		1376DB829E8F2A6AFD7A2A3E /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */; };
+		A5852F2F23667D1E009E5CB3 /* UIButton+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F2E23667D1E009E5CB3 /* UIButton+Factory.m */; };
+		A5852F352366CE47009E5CB3 /* UILabel+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F342366CE47009E5CB3 /* UILabel+Factory.m */; };
+		A5852F382366D2D1009E5CB3 /* UITextField+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F372366D2D1009E5CB3 /* UITextField+Factory.m */; };
+		A5852F3B2366D34A009E5CB3 /* UITableView+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F3A2366D34A009E5CB3 /* UITableView+Factory.m */; };
+		A5E1A4A623616FE00007937F /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E1A4A523616FE00007937F /* NSObject+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -789,6 +794,17 @@
 		11DF0C9B21D4C48C006A1D36 /* send_head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = send_head.jpg; sourceTree = "<group>"; };
 		11DF0C9E21D4C798006A1D36 /* normal_face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = normal_face.plist; sourceTree = "<group>"; };
 		12A08ECB809499985BFE69DF /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
+		A5852F2C23667B86009E5CB3 /* Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		A5852F2D23667D1E009E5CB3 /* UIButton+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Factory.h"; sourceTree = "<group>"; };
+		A5852F2E23667D1E009E5CB3 /* UIButton+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Factory.m"; sourceTree = "<group>"; };
+		A5852F332366CE47009E5CB3 /* UILabel+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Factory.h"; sourceTree = "<group>"; };
+		A5852F342366CE47009E5CB3 /* UILabel+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Factory.m"; sourceTree = "<group>"; };
+		A5852F362366D2D1009E5CB3 /* UITextField+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Factory.h"; sourceTree = "<group>"; };
+		A5852F372366D2D1009E5CB3 /* UITextField+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Factory.m"; sourceTree = "<group>"; };
+		A5852F392366D34A009E5CB3 /* UITableView+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+Factory.h"; sourceTree = "<group>"; };
+		A5852F3A2366D34A009E5CB3 /* UITableView+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Factory.m"; sourceTree = "<group>"; };
+		A5E1A4A423616FE00007937F /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		A5E1A4A523616FE00007937F /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
 		F3048EB154CC17839965E089 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1363,6 +1379,8 @@
 				1151C5542192BEF500C08114 /* UIViewController+Extension.m */,
 				11C024B2228A9689003E61B6 /* NSObject+JSONExtension.h */,
 				11C024B3228A9689003E61B6 /* NSObject+JSONExtension.m */,
+				A5E1A4A423616FE00007937F /* NSObject+Extension.h */,
+				A5E1A4A523616FE00007937F /* NSObject+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1435,6 +1453,7 @@
 		1151C5AE2192BEF500C08114 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A5852F2B23667AED009E5CB3 /* Factory */,
 				1151C5B12192BEF500C08114 /* UtilsHeader.h */,
 				1135787521A3B0AA00DDEA74 /* FileManager.h */,
 				1135787621A3B0AA00DDEA74 /* FileManager.m */,
@@ -2095,6 +2114,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A5852F2B23667AED009E5CB3 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A5852F2C23667B86009E5CB3 /* Factory.h */,
+				A5852F2D23667D1E009E5CB3 /* UIButton+Factory.h */,
+				A5852F2E23667D1E009E5CB3 /* UIButton+Factory.m */,
+				A5852F332366CE47009E5CB3 /* UILabel+Factory.h */,
+				A5852F342366CE47009E5CB3 /* UILabel+Factory.m */,
+				A5852F362366D2D1009E5CB3 /* UITextField+Factory.h */,
+				A5852F372366D2D1009E5CB3 /* UITextField+Factory.m */,
+				A5852F392366D34A009E5CB3 /* UITableView+Factory.h */,
+				A5852F3A2366D34A009E5CB3 /* UITableView+Factory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		B65B4900F49A790A45796C20 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2331,7 +2366,9 @@
 				114DABB0228BEE380089B649 /* Copy_MultableCopyTest.m in Sources */,
 				11DF0C1A21D4B82E006A1D36 /* YLChatFaceMenuVIew.m in Sources */,
 				1150E6F022310F250030CD0E /* CircleAnimationViewController.m in Sources */,
+				A5E1A4A623616FE00007937F /* NSObject+Extension.m in Sources */,
 				113578BB21A656AA00DDEA74 /* UIImage+Extensions.m in Sources */,
+				A5852F382366D2D1009E5CB3 /* UITextField+Factory.m in Sources */,
 				11DF0C2921D4B82E006A1D36 /* YLPhotoPreviewCell.m in Sources */,
 				11DF0C8721D4BCFB006A1D36 /* Any.pbobjc.m in Sources */,
 				1151C62C2192BEF600C08114 /* LPDProgressView.m in Sources */,
@@ -2378,6 +2415,7 @@
 				11DF0C3621D4B9A3006A1D36 /* JX_GCDTimerManager.m in Sources */,
 				11DF0C7F21D4BCFB006A1D36 /* GPBDescriptor.m in Sources */,
 				11DF0C2021D4B82E006A1D36 /* MicrophoneView.m in Sources */,
+				A5852F2F23667D1E009E5CB3 /* UIButton+Factory.m in Sources */,
 				114883F62265B89400BB6A81 /* ShowMessageModel.m in Sources */,
 				11DF0C0F21D4B82E006A1D36 /* ChatListViewController.m in Sources */,
 				1151C5FB2192BEF600C08114 /* UIColor+Extension.m in Sources */,
@@ -2385,6 +2423,7 @@
 				1151C64A219EAA7100C08114 /* AdvertisementViewController.m in Sources */,
 				11226236232784C5007CE3A6 /* YLPlayerOption.m in Sources */,
 				11DF0C1521D4B82E006A1D36 /* YLPhotoPreviewController.m in Sources */,
+				A5852F352366CE47009E5CB3 /* UILabel+Factory.m in Sources */,
 				1151C63C2192C0BA00C08114 /* OwnersTabBarViewController.m in Sources */,
 				11DF0C3721D4B9A3006A1D36 /* amr_wav_converter.c in Sources */,
 				114883EC2265B36000BB6A81 /* RuntimeListViewController.m in Sources */,
@@ -2450,6 +2489,7 @@
 				11DF0C0E21D4B82E006A1D36 /* ChatUserModel.m in Sources */,
 				11C0249F22894A74003E61B6 /* RuntimeTestTemp.m in Sources */,
 				1151C5F72192BEF600C08114 /* UIImageView+Extension.m in Sources */,
+				A5852F3B2366D34A009E5CB3 /* UITableView+Factory.m in Sources */,
 				1151C6342192BEF600C08114 /* LPDQuoteImagesView.m in Sources */,
 				1151C650219EB06D00C08114 /* GuidanceViewController.m in Sources */,
 				11D6BD172227D57C006E47DE /* GesturePasswordView.m in Sources */,
@@ -2664,7 +2704,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F6Z4326W;
+				DEVELOPMENT_TEAM = MFH447PL47;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2687,7 +2727,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Code/Vendor/Recorder&Player",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectComeOn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjecthoggens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2701,7 +2741,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iOSProject/iOSProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 87F6Z4326W;
+				DEVELOPMENT_TEAM = MFH447PL47;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2724,7 +2764,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSProject/Code/Vendor/Recorder&Player",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjectComeOn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoggenwang.iOSProjecthoggens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

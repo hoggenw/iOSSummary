@@ -155,7 +155,6 @@
                 // 线条在view的底部
             case LineViewSideInBottom:
                 make.bottom.equalTo(self);
-                
                 make.left.equalTo(self).offset(leftMargin);
                 make.right.equalTo(self).offset(-rightMargin);
                 make.height.equalTo(@(height));
