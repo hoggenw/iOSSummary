@@ -15,7 +15,7 @@
 #define ifiPhoneXLater ([YLDeviceUtil isiPhoneXLater])
 #define kNavigationHeight  (ifiPhoneXLater ? 88 : 64)
 #define HEIGHT_STATUSBAR    (ifiPhoneXLater ? 44 : 20) // 状态栏
-#define HEIGHT_TABBAR       49 // 标签
+#define HEIGHT_TABBAR       (ifiPhoneXLater ? 83 : 49)  // 标签
 #define HEIGHT_NAVBAR       44 // 导航
 #define ScreenWidth   [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight     [[UIScreen mainScreen] bounds].size.height
@@ -38,8 +38,7 @@
 
 #endif
 
-
-
+#import "Factory.h"
 #import "ManagersHeader.h"
 #import "UtilsHeader.h"
 #import "CustomHeader.h"
@@ -51,6 +50,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJRefresh/MJRefresh.h>
 #import <YYModel/YYModel.h>
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
