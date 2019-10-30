@@ -40,9 +40,10 @@ typedef NS_ENUM(NSInteger, PhoneType) {
 /*
 *x相机请求权限
 */
-+ (void)checkVideoAuthorityWithCallBack:(AuthorizationStatusCallBack)callback；
++ (void)checkVideoAuthorityWithCallBack:(AuthorizationStatusCallBack)callback;
 /*
 *麦克风求权限
 */
-+ (void)checkMicroAuthorityWithCallBack:(AuthorizationStatusCallBack)callback
++ (void)checkMicroAuthorityWithCallBack:(AuthorizationStatusCallBack)callback;
+
 @end

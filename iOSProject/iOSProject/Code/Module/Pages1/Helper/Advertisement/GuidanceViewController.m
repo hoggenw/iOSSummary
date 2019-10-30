@@ -11,7 +11,7 @@
 
 #define PAGE_NUMBER 5
 
-@interface GuidanceViewController ()
+@interface GuidanceViewController ()<UIScrollViewDelegate>
 @property (nonatomic, weak) UIPageControl *pageControl;
 @property (nonatomic, strong)UIScrollView *scrollView;
 @end

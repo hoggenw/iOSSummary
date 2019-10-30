@@ -106,7 +106,7 @@
 }
 
 - (void)update:(UserModel *)user {
-    if (self.user) {
+    if (user) {
         self.user = user;
         NSString *bundleIdentifier = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
         NSLog(@"%@",bundleIdentifier);

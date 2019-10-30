@@ -29,7 +29,7 @@ PODS:
   - SDWebImage/Core (4.4.2)
   - SocketRocket (0.5.1)
   - SSKeychain (1.4.1)
-  - UMCCommon (1.5.3)
+  - UMCCommon (2.1.1)
   - UMCSecurityPlugins (1.0.6)
   - UMCShare/Core (6.9.5):
     - UMCCommon
@@ -106,7 +106,7 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  UMCCommon: 016af43c0f769feb1ae1861d65aaf2b23b89c9c7
+  UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   YLOCRecordVideo: 221659d294193404f30e2f777dff7fee9683f95c
@@ -115,4 +115,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e2c95512db517afe43b732cdc13685028faadad0
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.5.3

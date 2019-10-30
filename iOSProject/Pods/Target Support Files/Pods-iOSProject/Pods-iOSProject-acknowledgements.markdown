@@ -263,7 +263,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## UMCCommon
 
-Copyright 2011 - 2018 umeng.com. All rights reserved.
+Copyright 2011 - 2019 umeng.com. All rights reserved.
 
 
 ## UMCSecurityPlugins
