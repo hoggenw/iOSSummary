@@ -76,7 +76,7 @@
                 //此方法会先从memory中取。
                 
                 NSData  *imageData  = [cache diskImageDataForKey:key];
-                imageView.image = [UIImage sd_animatedGIFWithData:imageData];
+                imageView.image = [UIImage sd_imageWithGIFData:imageData];//[UIImage sd_animatedGIFWithData:imageData];
             }else{
                [imageView sd_setImageWithURL: [NSURL URLWithString: imageString]];
             }

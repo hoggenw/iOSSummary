@@ -121,7 +121,7 @@
         //此方法会先从memory中取。
         NSData  *imageData  = [cache diskImageDataForKey:key];
         if (imageData == NULL) {
-            [[manager imageDownloader] downloadImageWithURL:[NSURL URLWithString: temp] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            [[manager imageLoader] requestImageWithURL:[NSURL URLWithString: temp] options:0 context:nil progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
                 
             } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
                 [cache storeImageDataToDisk:data forKey: key];

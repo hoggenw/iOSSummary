@@ -35,7 +35,11 @@ static const BMKFeatureDisplayPriority BMKFeatureDisplayPriorityDefaultLow = 250
 @protocol BMKAnnotation;
 @class BMKMapView;
 @class BMKMapViewInternal;
-///标注view
+/**
+ * 标注view
+ * 注意：如果在BMKAnnotationView中添加手势，会覆盖原本的点击和长按事件，不推荐这样使用。
+ * 如必须添加，请将手势的delegate设置到BMKAnnotationView中。
+ */
 @interface BMKAnnotationView : UIView
 {
 @private
@@ -82,7 +86,7 @@ static const BMKFeatureDisplayPriority BMKFeatureDisplayPriorityDefaultLow = 250
 ///默认为YES,当为NO时view忽略触摸事件
 @property (nonatomic, getter=isEnabled) BOOL enabled;
 
-///默认为NO,当view被点中时被设为YES,用户不要直接设置这个属性.若设置，需要在设置后调用BMKMapView的- (void)mapForceRefresh; 方法刷新地图
+///默认为NO,当为YES时为会弹出气泡
 @property (nonatomic, getter=isSelected) BOOL selected;
 
 /**

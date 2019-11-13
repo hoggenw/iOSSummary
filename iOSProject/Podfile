@@ -5,36 +5,36 @@ target "iOSProject" do
     # Comment this line if you're not using Swift and don't want to use dynamic frameworks
     use_frameworks!
     
-    pod 'AFNetworking'
-    pod 'MJRefresh'
-    pod 'FMDB'
-    pod 'SDWebImage'
-    pod 'YYModel'
-    pod 'Masonry'
-    pod 'MBProgressHUD'
-	pod 'SSKeychain'
-    
-    pod 'UMCCommon'
-    pod 'UMCSecurityPlugins'
-    #友盟统计和分享
-    #pod 'UMengAnalytics'
-    # U-Share SDK UI模块（分享面板，建议添加）
-    pod 'UMCShare/UI'
-    # 集成微信(精简版0.2M)
-    pod 'UMCShare/Social/ReducedWeChat'
-    # 集成QQ/QZone/TIM(精简版0.5M)
-    pod 'UMCShare/Social/ReducedQQ'
-    # 集成短信
-    pod 'UMCShare/Social/SMS'
-#自己的二维码库
-	  pod 'YLOCScan'
-    pod 'YLOCRecordVideo'
-    pod 'CocoaAsyncSocket'
-    pod 'SocketRocket'
-    pod 'QBImagePickerController'
-    
-    pod 'BaiduMapKit' #百度地图SDK
-    pod 'BMKLocationKit' #定位功能
+        pod 'AFNetworking'
+        pod 'MJRefresh'
+        pod 'FMDB'
+        pod 'SDWebImage'
+        pod 'YYModel'
+        pod 'Masonry'
+        pod 'MBProgressHUD'
+        pod 'SSKeychain'
+        
+        pod 'UMCCommon'
+        pod 'UMCSecurityPlugins'
+        #友盟统计和分享
+        #pod 'UMengAnalytics'
+        # U-Share SDK UI模块（分享面板，建议添加）
+        pod 'UMCShare/UI'
+        # 集成微信(精简版0.2M)
+        pod 'UMCShare/Social/ReducedWeChat'
+        # 集成QQ/QZone/TIM(精简版0.5M)
+        pod 'UMCShare/Social/ReducedQQ'
+        # 集成短信
+        pod 'UMCShare/Social/SMS'
+    #自己的二维码库
+          pod 'YLOCScan'
+        pod 'YLOCRecordVideo'
+        pod 'CocoaAsyncSocket'
+        pod 'SocketRocket'
+        pod 'QBImagePickerController'
+        
+        pod 'BaiduMapKit' #百度地图SDK
+        pod 'BMKLocationKit' #定位功能
 
 end
 

@@ -4,7 +4,7 @@
 
 --------------------------------------------------------------------------------------
 
-iOS 地图 SDK v4.2.0是适用于iOS系统移动设备的矢量地图开发包
+iOS 地图 SDK v5.0.0是适用于iOS系统移动设备的矢量地图开发包
 
 --------------------------------------------------------------------------------------
 
@@ -45,26 +45,56 @@ LBS云检索：支持查询存储在LBS云内的自有数据；
  pod setup //更新CocoPods的本地库
  pod search BaiduMapKit  //查看最新地图SDK
  
+ v5.0.0版本：
+ 
+【注意事项】
 
-V4.2.1版本：
+ 1.新引入系统库libz.tbd。
+ 
+ 2.Overlay线宽变细，lineWidth统一为画笔宽度。
+ 
+ 3.步骑行导航适配App Store关于新的后台定位的审核机制，有后台定位需求的开发者请通过doRequestAlwaysAuthorization代理方法调用后台定位API：[locationManager requestAlwaysAuthorization]。
 
-【新 增】
-1.BMKAnnotationView新增hidePaopaoWhenSingleTapOnMap、hidePaopaoWhenDrag、displayPriority等新字段，提供更灵活的控制annotationView和paopaoView显示层级的解决方案。
-2.BMKMapview新增 mapView:regionWillChangeAnimated:reason:和 mapView:regionDidChangeAnimated:reason: 两个回调，其中reason说明本次地图区域发生变化是由何种原因触发的。
-3.BMKMapview的方法selectAnnotation:animated:开始支持动画效果。
-4.支持长按paopaoView拖动annotationView。
-5.BMKLocationViewDisplayParam新增属性locationViewImage，支持由开发者提供定位图标的图片。
-
-【优 化】
-1.提升底图加载渲染速度。
-2.提升拖动地图时annotationView随地图移动的平滑度。
-
-【修 复】
-1.修复多页面多瓦片图切换时，瓦片图加载不出来的问题。
-2.修复断网后应用退到杀进程界面，从杀进程界面进入应用，进行重复多次会导致手机重启的问题。
-3.修复步行导航退出导航后，外部地图无法滑动的问题。
-4.修复地图比例尺可能会超出屏幕边界的问题。
-5.修复首次进入地图滑动地图没有mapView:regionWillChangeAnimated回调的问题。
-6.修复屏幕上添加固定标注后，showAnnotations方法显示不准确的问题。
-7.修复地图点击时，region没有发生变化，但是会触发regionchange回调的问题。
-8.修复用户按住某个annotation缩放或拖动过程中，会触发didSelectAnnotationView而不触发regionDidChangeAnimated的问题。
+ 【新 增】
+ 
+ 1.个性化地图支持多地图多样式，新增加载在线个性化样式接口。
+ 
+ 2.新增Polygon、Circle镂空绘制功能，镂空区域支持polygon(多边形)和circle(圆)图形。
+ 
+ 3.新增Polyline拐角样式，支持平角、尖角和圆角。
+ 
+ 4.新增Polyline头尾样式，支持普通头和圆形头。
+ 
+ 5.新增Overlay虚线样式，支持方块样式和圆点样式。
+ 
+ 6.新增OpenGL映射矩阵(getProjectionMatrix)和视图矩阵(getViewMatrix)接口，用于3D绘制场景。
+ 
+ 7.新增地理矩形区域面积、多边形面积计算工具。
+ 
+ 8.新增坐标方向计算工具。
+ 
+ 9.逆地理编码服务返回poi类型字段(tag，如：”美食;中餐厅“)
+ 
+ 【优 化】
+ 
+ 1.优化地图进入/移出室内图时调用的接口。
+ 
+ 2.优化手势操作造成的地图区域的变化回调原因不准确的问题。
+ 
+ 3.优化地图等级level设置，标准地图可设置范围为4-21，室内图开启时可设置的最大值为22。
+ 
+ 【修 复】
+ 
+ 1.修复BMKMapView与UIScrollView手势响应冲突的问题。
+ 
+ 2.修复BMKAnnotationView的selected属性默认设置为YES不起作用的问题。
+ 
+ 3.修复当前定位点图标在旋转地图后部分被精度圈遮挡的问题。
+ 
+ 4.修复自定义热力图频繁切换切换造成crash的问题。
+ 
+ 5.修复骑行导航返回时间信息有误的问题。
+ 
+ 6.修复其他已知问题。
+ 
+------------------------------------------------------------------------------------------------
