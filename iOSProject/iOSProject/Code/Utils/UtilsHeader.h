@@ -16,6 +16,8 @@
 #import "FileManager.h"
 #import "LanguageUtil.h"
 
+#import "DeviceInfoUtil.h"
+
 @protocol ActionSelcetControlDelegate <NSObject>
 
 - (void) buttonAction: (NSInteger )index;

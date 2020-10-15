@@ -76,6 +76,8 @@
 /** Base64解码 */
 + (NSString*)decodeBase64String:(NSString*)strBase64;
 
+/** aes加密码 */
++ (NSString *)aesEncryptString:(NSString *)sourceStr;
 /**NSMutableAttributedString*/
 
 -(NSAttributedString *)attributedStringWith:(NSDictionary *)attributedStringDictionary;

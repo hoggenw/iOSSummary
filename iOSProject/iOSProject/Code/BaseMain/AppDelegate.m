@@ -51,6 +51,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //设置背景色  [WXFX HexStringToColor:@"ff3356"]
+   NSLog(@"加密 -- : %@", [NSString aesEncryptString:@"18682565339"]);
+    [DeviceInfoUtil iphoneInfo];
     
     [[UINavigationBar appearance] setBarTintColor: ThemeColor ];
     //设置导航栏标题颜色

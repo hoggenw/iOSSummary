@@ -14,6 +14,7 @@
 
 
 static NSString * base64hash=@"T62tz1XHCUjk8NBveQaInA3GMswumo7gc~9VZRdqhbKyiOFlJS-xPfWE04rLY5Dp";
+static NSString *key = @"12345678900poiuytrewqasdfghjklmn";
 
 @implementation NSString (Extension)
 
@@ -67,8 +68,32 @@ static NSString * base64hash=@"T62tz1XHCUjk8NBveQaInA3GMswumo7gc~9VZRdqhbKyiOFlJ
     }
     return NO;
 }
-
-
+ 
++ (NSString *)aesEncryptString:(NSString *)sourceStr
+{
+    char keyPtr[kCCKeySizeAES256 + 1];
+    bzero(keyPtr, sizeof(keyPtr));
+    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+     
+    NSData *sourceData = [sourceStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSUInteger dataLength = [sourceData length];
+    size_t buffersize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(buffersize);
+    size_t numBytesEncrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128, kCCOptionPKCS7Padding | kCCOptionECBMode, keyPtr, kCCBlockSizeAES128, NULL, [sourceData bytes], dataLength, buffer, buffersize, &numBytesEncrypted);
+     
+    if (cryptStatus == kCCSuccess) {
+        NSData *encryptData = [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];
+        //对加密后的二进制数据进行base64转码
+        return [encryptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    }
+    else
+    {
+        free(buffer);
+        return nil;
+    }
+}
+ 
 
 /**
  *  是否符合某种正字表达式

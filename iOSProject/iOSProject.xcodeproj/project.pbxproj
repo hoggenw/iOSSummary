@@ -267,6 +267,7 @@
 		11DF0C9D21D4C48C006A1D36 /* send_head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9B21D4C48C006A1D36 /* send_head.jpg */; };
 		11DF0C9F21D4C798006A1D36 /* normal_face.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11DF0C9E21D4C798006A1D36 /* normal_face.plist */; };
 		1376DB829E8F2A6AFD7A2A3E /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6078FDCFE902E0B7707A7B /* Pods_iOSProject.framework */; };
+		87EF67B02452E876008F21C1 /* DeviceInfoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EF67AF2452E876008F21C1 /* DeviceInfoUtil.m */; };
 		A5852F2F23667D1E009E5CB3 /* UIButton+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F2E23667D1E009E5CB3 /* UIButton+Factory.m */; };
 		A5852F352366CE47009E5CB3 /* UILabel+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F342366CE47009E5CB3 /* UILabel+Factory.m */; };
 		A5852F382366D2D1009E5CB3 /* UITextField+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = A5852F372366D2D1009E5CB3 /* UITextField+Factory.m */; };
@@ -794,6 +795,8 @@
 		11DF0C9B21D4C48C006A1D36 /* send_head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = send_head.jpg; sourceTree = "<group>"; };
 		11DF0C9E21D4C798006A1D36 /* normal_face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = normal_face.plist; sourceTree = "<group>"; };
 		12A08ECB809499985BFE69DF /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
+		87EF67AE2452E876008F21C1 /* DeviceInfoUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoUtil.h; sourceTree = "<group>"; };
+		87EF67AF2452E876008F21C1 /* DeviceInfoUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoUtil.m; sourceTree = "<group>"; };
 		A5852F2C23667B86009E5CB3 /* Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
 		A5852F2D23667D1E009E5CB3 /* UIButton+Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Factory.h"; sourceTree = "<group>"; };
 		A5852F2E23667D1E009E5CB3 /* UIButton+Factory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Factory.m"; sourceTree = "<group>"; };
@@ -1469,6 +1472,8 @@
 				113578C921A65B7F00DDEA74 /* YLIFlyHelper.m */,
 				111B945F221D340700AA7C26 /* LanguageUtil.h */,
 				111B9460221D340700AA7C26 /* LanguageUtil.m */,
+				87EF67AE2452E876008F21C1 /* DeviceInfoUtil.h */,
+				87EF67AF2452E876008F21C1 /* DeviceInfoUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -2512,6 +2517,7 @@
 				11D6BD05222528C1006E47DE /* YLVoiceAnimationViewController.m in Sources */,
 				115B0D7522925A8B000E1C69 /* LiftCircleListViewController.m in Sources */,
 				11DF0C9221D4BCFB006A1D36 /* GPBArray.m in Sources */,
+				87EF67B02452E876008F21C1 /* DeviceInfoUtil.m in Sources */,
 				1151C62E2192BEF600C08114 /* UpLoadDataModel.m in Sources */,
 				1151C6282192BEF600C08114 /* YLUIDocumentPickerViewViewController.m in Sources */,
 				11D6BD06222528C1006E47DE /* YLVoiceCircleViewController.m in Sources */,
